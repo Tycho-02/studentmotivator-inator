@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreatePuntentellingTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('puntentelling', function (Blueprint $table) {
+            $table->unsignedBigInteger('userId');
+            $table->foreign('userId')->references('userId')->on('users');
+            $table->integer('punten');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('puntentelling', function (Blueprint $table) {
+            $table->dropForeign('puntentelling_userId_foreign');
+        });
+        Schema::dropIfExists('puntentelling');
+    }
+}
