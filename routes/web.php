@@ -12,5 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController@index");
 
 Route::get('/mobiel', [\App\Http\Controllers\MobielController::class, 'index']);
