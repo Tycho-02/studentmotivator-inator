@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use DB; 
 
-class MobielTableSeeder extends Seeder
+class TimerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,13 +14,10 @@ class MobielTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('mobiel')->insert([
-            'userId' => '1',
+        DB::table('timer')->insert([
             'mobielId' => '1',
-            'beschikbaar' => true,
-            'berichtsturen' => false,
-            'smiley' => false
+            'buzzer' => false,
+            'tijd' => '5',
         ]);
     }
-    
 }

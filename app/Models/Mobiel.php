@@ -10,6 +10,6 @@ class Mobiel extends Model
     protected $table = 'mobiel';
 
     public function alleInfo(){
-        return $this->belongsTo(\App\Models\Users::class, 'userId', 'userId');
+        return $this->belongsTo('\App\Models\Users', 'userId', 'userId');
     }
 }

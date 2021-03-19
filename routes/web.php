@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController@index");
 
 Route::get('/mobiel', [\App\Http\Controllers\MobielController::class, 'index']);
+Route::get('/timer', [\App\Http\Controllers\TimerController::class, 'index']);
+

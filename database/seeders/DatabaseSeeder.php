@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             HumeurSeeder::class,
             UserIdSeeder::class,
             TijdInstellingenSeeder::class,
-            MobielTableSeeder::class
+            MobielTableSeeder::class,
+            TimerSeeder::class,
         ]);
     }
 }

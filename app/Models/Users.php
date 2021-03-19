@@ -14,7 +14,7 @@ class Users extends Model
     function tijdInstellingen() {
         return $this->belongsTo(\App\Models\TijdInstellingen::class,"userId", "userId");
     }
-    function mobielId() {
-        return $this->belongsTo(\App\Models\mobiel::class,"userId", "userId");
+    function mobiel() {
+        return $this->belongsTo("\App\Models\Mobiel","userId", "userId");
     }
 }
