@@ -13,6 +13,13 @@ class UserIdSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('users')->insert([ 
+            'userId' => '1',
+            'name' => 'Alex',
+            'email' => 's1118551@student.hsleiden.nl',
+            'telefoonnummer' => '0686090814',
+            'password' => 'lol',
+            'humeur' => 'blij'        
+            ]);
     }
 }
