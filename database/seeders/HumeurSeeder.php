@@ -13,6 +13,8 @@ class HumeurSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('humeur')->insert([ 
+            'humeur' => 'blij'       
+            ]);
     }
 }
