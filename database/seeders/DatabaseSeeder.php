@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             TijdInstellingenSeeder::class,
             MobielTableSeeder::class,
             TimerSeeder::class,
+            StudiebuddySeeder::class,
         ]);
     }
 }
