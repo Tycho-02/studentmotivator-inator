@@ -11,6 +11,10 @@ class Users extends Model
 
     use HasFactory;
 
+    function studiebuddy(){
+        return $this->hasOne(Studiebuddy::class);
+    }
+
     function tijdInstellingen() {
         return $this->belongsTo(\App\Models\TijdInstellingen::class,"userId", "userId");
     }
