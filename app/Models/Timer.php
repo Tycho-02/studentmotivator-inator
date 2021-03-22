@@ -10,6 +10,6 @@ class Timer extends Model
     protected $table = 'timer';
 
     public function timer(){
-        return $this->belongsTo("\App\Models\Mobiel","userId", "userId");
+        return $this->belongsTo("\App\Models\Mobiel","mobielId", "mobielId");
     }
 }

@@ -3,12 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Mobiel;
 
 class MobielController extends Controller
 {
     public function index(){
+        // $userId = '1';
+        // $mobiel = \App\Models\Mobiel::where('mobielId',$userId)->first();
+        $mobiel = Mobiel::all()->first();
+
+        if($mobiel->beschikbaar == true){
+            $mobiel->beschikbaar = false;
+        }else{
+            $mobiel->beschikbaar = true;
+        }
+
+        $mobiel->save();
         return view('mobiel.index', [
-            'mobiel' => \App\Models\Mobiel::first()
+            'mobiel' => $mobiel
         ]);
     }
 }

@@ -8,8 +8,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-    speakerMAP = map(0, 1000, 120, 1500);
-    tone(speakerPIN, speakerMAP, 10);
+    speakerMAP = map(0, 0, 1000, 120, 1500);
+    tone(speakerPIN, speakerMAP, 1000);
 
     delay(10);
 }
