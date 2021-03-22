@@ -15,11 +15,11 @@ class UserIdSeeder extends Seeder
     {
         DB::table('users')->insert([ 
             'userId' => '1',
-            'name' => 'Alex',
-            'email' => 's1118551@student.hsleiden.nl',
-            'telefoonnummer' => '0686090814',
-            'password' => 'lol',
+            'name' => 'Peter',
+            'email' => 's1105390@student.hsleiden.nl',
+            'telefoonnummer' => '0617416016',
+            'password' => 'hoi',
             'humeur' => 'blij'        
-            ]);
+        ]);
     }
 }

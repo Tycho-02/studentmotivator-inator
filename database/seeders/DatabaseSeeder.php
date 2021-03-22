@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
                     TijdInstellingenSeeder::class,
                     MobielTableSeeder::class,
                     TimerSeeder::class,
+                    AfspeellijstSeeder::class,
+                    NummerSeeder::class,
                 ]);
     }
 }

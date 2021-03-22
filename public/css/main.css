@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    box-sizing: inherit;
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.8rem;
+    padding: 4rem;
+    background: #222831;
+    font-family: sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 0.5fr  1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5fr;
+    grid-template-areas: 
+       "menu content content "  
+       "menu content content" 
+       "player player player";
+  }
+
+.menu{
+    grid-area: menu;
+    border: 1px solid green;
+
+}
+
+.content{
+    grid-area: content;
+    
+}
+.muziekSpeler{
+    grid-area: player;
+}
