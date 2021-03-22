@@ -10,4 +10,11 @@ class Nummer extends Model
     use HasFactory;
 
     protected $table = "nummer";
+    protected $fillable = [
+        //if id is not autoincrement then add 'id'
+        'naam', 
+        'artiest', 
+        'genre', 
+        'bestandLocatie',
+    ];
 }

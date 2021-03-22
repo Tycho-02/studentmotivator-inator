@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 class NummersController extends Controller
 {
     public function index(){
-        return view('app', [
+        return view('layouts.app', [
             'nummers' => \App\Models\Nummer::all()
         ]);
     }
+
 }

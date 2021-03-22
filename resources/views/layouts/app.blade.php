@@ -18,11 +18,12 @@
             <li class="menu__list__item"><a href="#">Afspeellijsten</a></li>
             <li class="menu__list__item"><a href="#">Afspeellijst toevoegen</a></li>
             <li class="menu__list__item"><a href="#">Nummers</a></li>
-            <li class="menu__list__item"><a href="#">Voeg nummer toe</a></li>
+            <li class="menu__list__item"><a href="{{url('/toevoegen')}}">Voeg nummer toe</a></li>
     </ul>
    </aside>
    <section class="content">
         @yield('content')
+        <!-- @include('components.nummers') -->
    </section>
    <section class="muziekSpeler">
         {{ $nummers }}
