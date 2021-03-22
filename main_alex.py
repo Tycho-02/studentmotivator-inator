@@ -16,10 +16,10 @@ port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
 print('hi')
 mycursor = mydb.cursor()
 while True:
-
-    print(port.readline())
+    #print(port.readline())
     rcv = port.readline().strip()
-    if rcv == '101b':
+    if rcv == 's':
+        print('geupdate, gebruiker gaat nu slapen')
         os.system("python update_alex.py")
-        print('update gestart, gebruiker gaat slapen, bevestigd door arduino')
+        
 mydb.close()

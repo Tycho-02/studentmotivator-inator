@@ -1,4 +1,5 @@
 import mysql.connector
+import time
 
 mydb = mysql.connector.connect(
     host="localhost",
@@ -11,6 +12,12 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("INSERT into tijdslapen (userId, tijdInBedGegaan) values ('1', DEFAULT";)
+#als de gebruiker bed in gaat
+mycursor.execute("INSERT into tijdslapen (userId, tijdInBedGegaan, tijdUitBedGegaan) values (1, now(), NULL);")
+
+#als de gebruiker uit bed gaat.
+#mycursor.execute("UPDATE tijdslapen SET tijdUitBedGegaan = now() WHERE userId = 1 order by tijdId DESC limit 1;")
+
 mydb.commit()
-print(geupdate)
+print(mycursor.rowcount, "record(s) affected")
+

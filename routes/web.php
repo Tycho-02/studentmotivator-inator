@@ -13,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController@index");
+Route::get("/tijdinstellingen/edit", "App\Http\Controllers\TijdInstellingenController@edit"); 
+//Route::put("/tijdinstellingen/update", "App\Http\Controllers\TijdInstellingenController@update"); 
+Route::post('/update', [
+    'uses' => 'App\Http\Controllers\TijdInstellingenController@update',
+    'as' => 'tijdinstellingen.update',
+]);
 
 Route::get('/', function () {
     return view('welcome');
 });
+
