@@ -1,13 +1,5 @@
-@foreach ($weerbericht as $weer)
-    <p>{{$weer}}</p>
-@endforeach
-
-@foreach ($hours as $hour)
-    <p>{{$hour}}</p>
-@endforeach
-
-@foreach ($temps as $temp)
-    <p>{{$temp}}</p>
+@foreach ($hours as $key=>$hour)
+    <p>{{$hour}} {{$temps[$key]}} {{$weerbericht[$key]}}</p>
 @endforeach
 
 @foreach ($planning as $plan)
