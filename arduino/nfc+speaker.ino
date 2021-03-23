@@ -15,22 +15,22 @@ int time = 0;
 int data = 0;
 char object = ' ';
 
-void setup(void) {
+void setup() {
   Serial.begin(9600);
-  Serial.println("Hello!");
+  // Serial.println("Hello!");
   nfc.begin();
 
   uint32_t versiondata = nfc.getFirmwareVersion();
   
   if (! versiondata) {
-    Serial.print("Didn't find PN53x board");
+    // Serial.print("Didn't find PN53x board");
     while (1); // halt
   }
 
   // Got ok data, print it out!
-  Serial.print("Found chip PN5"); Serial.println((versiondata>>24) & 0xFF, HEX); 
-  Serial.print("Firmware ver. "); Serial.print((versiondata>>16) & 0xFF, DEC); 
-  Serial.print('.'); Serial.println((versiondata>>8) & 0xFF, DEC);
+  // Serial.print("Found chip PN5"); Serial.println((versiondata>>24) & 0xFF, HEX); 
+  // Serial.print("Firmware ver. "); Serial.print((versiondata>>16) & 0xFF, DEC); 
+  // Serial.print('.'); Serial.println((versiondata>>8) & 0xFF, DEC);
   
   // Set the max number of retry attempts to read from a card
   // This prevents us from waiting forever for a card, which is
@@ -40,7 +40,7 @@ void setup(void) {
   // configure board to read RFID tags
   nfc.SAMConfig(); 
 
-  Serial.println("Waiting for an ISO14443A card");
+  // Serial.println("Waiting for an ISO14443A card");
 }
 
 void loop() {
@@ -58,34 +58,20 @@ void loop() {
     data = Serial.read();
   }
 
-  switch(data){
-    case 'a':
-      object = 'a';
-      break;
-    case '1':
-      if(object == 'a'){
-        return success;
-      }
-      break;
-    case '0':
-      if(object == 'a'){
-        return !success;
-      }
-      break;
-  }
-
   if (success) {
-    Serial.println("Found a card!");
-    time = 0;
+    // Serial.println("Found a card!");
+//    time = 0;
 //    speakerMAP = map(0,0, 1000, 300, 1000);
 //    tone(speakerPIN, speakerMAP, 0);
-    delay(1000);
+    Serial.println('a');
+    delay(3000);
   }
-  else if (!success && time >= 3){
+  if (!success){
     // PN532 probably timed out waiting for a card
-    Serial.println("Waiting for a card...");
+    // Serial.println("Waiting for a card...");
 //    speakerMAP = map(0,0, 1000, 300, 700);
 //    tone(speakerPIN, speakerMAP);
+    Serial.println('b');
     delay(1000);
   }
   Serial.println(time);

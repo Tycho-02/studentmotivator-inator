@@ -8,7 +8,8 @@ mydb = mysql.connector.connect(
     host="localhost",
     user="damion",
     passwd="damion",
-    database="ipmedt5"
+    database="ipmedt5",
+    buffered=True
 )
 port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
 
@@ -16,19 +17,15 @@ mycursor = mydb.cursor()
 
 while True:
     mycursor.execute("SELECT * FROM mobiel;")
-    for x in mycursor:
-        print(x[2])
-    if (x[2] == True):
-        print(x[2])
-        port.write("a1")
-    else:
-        port.write("a0")
+    rcv = port.readline().strip()
+    if(rcv == 'a'):
+        print('ja')
+        mycursor.execute("UPDATE mobiel SET beschikbaar = true;")
+    if(rcv == 'b'):
+        print('nee')
+        mycursor.execute("UPDATE mobiel SET beschikbaar = false;")
 
-    # rcv = port.readline().strip()
-    # if(rcv == 'b'):
-    #     os.system("python update.py")
-
-    time.sleep(2)
+    time.sleep(1)
     mydb.commit()
 
 mydb.close()

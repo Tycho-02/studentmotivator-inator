@@ -12,10 +12,10 @@ class MobielController extends Controller
         // $mobiel = \App\Models\Mobiel::where('mobielId',$userId)->first();
         $mobiel = Mobiel::all()->first();
 
-        if($mobiel->beschikbaar == true){
-            $mobiel->beschikbaar = false;
+        if($mobiel->beschikbaar == 1){
+            $mobiel->beschikbaar = 0;
         }else{
-            $mobiel->beschikbaar = true;
+            $mobiel->beschikbaar = 1;
         }
 
         $mobiel->save();

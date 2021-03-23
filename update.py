@@ -8,5 +8,5 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
-
+mycursor.execute("UPDATE mobiel SET beschikbaar = NOT beschikbaar;")
 mydb.commit()
