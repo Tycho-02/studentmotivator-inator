@@ -16,8 +16,8 @@ class TimerSeeder extends Seeder
     {
         DB::table('timer')->insert([
             'mobielId' => '1',
-            'buzzer' => false,
-            'tijd' => '5',
+            'buzzer' => 0,
+            'tijd' => '00:30',
         ]);
     }
 }

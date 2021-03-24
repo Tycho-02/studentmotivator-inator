@@ -37,7 +37,7 @@ body{
 }
 .timer__form{
     width: 100%;
-    height: 35%;
+    height: 25%;
     display: inline-block;
     text-align: center;
 }
@@ -75,13 +75,30 @@ body{
 }
 .timer__buttonsSection{
     margin-top: 2rem;
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2,minmax(0,1fr));
     grid-template-rows: 3.5rem 3.5rem 3.5rem;
     row-gap: 2rem;
-    column-gap: 1rem;
+    column-gap: 1rem; */
+    display: flex;
+    justify-content: center;
 }
-.u-btn-style{
+/* .u-btn-style{
+    height: 3.5rem;
+    border-radius: 2.5rem;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: #4E4E50;
+    box-shadow: 0 0.5rem 0.5rem #950740;
+} */
+/* .u-btn-style:active{
+    transform: translateY(4px);
+    box-shadow: 0 0rem 0rem #950740;
+} */
+.timer__buttonGo{
+    /* width: 29rem; */
+    width: 22rem;
     height: 3.5rem;
     border-radius: 2.5rem;
     cursor: pointer;
@@ -90,11 +107,8 @@ body{
     background-color: #4E4E50;
     box-shadow: 0 0.5rem 0.5rem #950740;
 }
-.u-btn-style:active{
+.timer__buttonGo:active{
     transform: translateY(4px);
     box-shadow: 0 0rem 0rem #950740;
-}
-.timer__buttonGo{
-    width: 29rem;
 }
 

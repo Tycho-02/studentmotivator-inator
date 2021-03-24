@@ -16,8 +16,8 @@ class CreateTimerTable extends Migration
         Schema::create('timer', function (Blueprint $table) {
             $table->unsignedBigInteger('mobielId');
             $table->foreign('mobielId')->references('mobielId')->on('mobiel');
-            $table->boolean('buzzer');
-            $table->time('tijd');
+            $table->boolean('buzzer')->default(0);
+            $table->time('tijd')->default(0);
         });
     }
 
