@@ -10,10 +10,11 @@
 </head>
 <body class="grid">
    <aside class="menu">
+       @yield('menu')
        <figure class="menu__figure">
            <img class="menu__img" src="" alt="">
        </figure>
-       <ul class="menu__list">
+       <ul class="menu__list list">
             <li class="menu__list__item"><a href="#">user</a></li>
             <li class="menu__list__item"><a href="#">Afspeellijsten</a></li>
             <li class="menu__list__item"><a href="#">Afspeellijst toevoegen</a></li>
@@ -25,7 +26,7 @@
         @yield('content')
    </section>
    <section class="muziekSpeler">
-        
+        @yield('muziekSpeler')
    </section>
 </body>
 </html>
