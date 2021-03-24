@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get("/afspeellijst", "App\Http\Controllers\AfspeellijstController@index");
+
+Route::get("/nummers", "App\Http\Controllers\NummersController@index");
+
+Route::get("/nummerToevoegen", "App\Http\Controllers\NummersController@show");
+Route::post("/toevoegen", "App\Http\Controllers\NummersController@upload");
+
+
+Route::get('/', function(){
+    return view('layouts.app');
 });
+
+
+
+
