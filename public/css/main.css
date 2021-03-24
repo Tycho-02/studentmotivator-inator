@@ -48,6 +48,7 @@ body{
     padding: 16px 42px;
     box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
     line-height: 1.25;
+    border-radius: 15px;
     background: #950740;
     text-decoration: none;
     color: white;
@@ -151,12 +152,14 @@ body{
 
   .content--button__actions__ghost {
     display: inline-block;
+    border-radius: 12px;
     width: 150px;
     padding: 15px;
     color: #fff;
     border: 1px solid #fff;
     text-align: center;
     outline: none;
+    border-radius: 15px;
     text-decoration: none;
 
 }
