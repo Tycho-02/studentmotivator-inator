@@ -14,8 +14,8 @@ class CreateNummerTable extends Migration
     public function up()
     {
         Schema::create('nummer', function (Blueprint $table) {
-            $table->unsignedBigInteger('afspeellijstId');
-            $table->foreign('afspeellijstId')->references('afspeellijstId')->on('afspeellijst');
+            // $table->unsignedBigInteger('afspeellijstId');
+            // $table->foreign('afspeellijstId')->references('afspeellijstId')->on('afspeellijst');
             $table->string('naam');
             $table->string('artiest');
             $table->string('genre');
