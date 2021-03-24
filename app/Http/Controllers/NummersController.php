@@ -22,7 +22,7 @@ class NummersController extends Controller
         //checkt in de input field of er een file is
         
         $request->validate([
-            'naam' => 'required|unique:nummer|max:255',
+            'naam' => 'required',
             'artiest' => 'required',
             'genre' => 'required',
             
