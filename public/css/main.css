@@ -4,6 +4,7 @@
     --PrimaryColor: #1A1A1D;
     --TextColor: #fff;
     --fullwidth: 100%;
+    --SecondaryColor: #4E4E50;
   }
 
 * {
@@ -25,6 +26,19 @@ body{
     font-family: sans-serif;
     width: 100vw;
     height: 100vh;
+}
+
+h1{
+    font-size: 2.8rem;
+}
+h2{
+    font-size: 2.4rem;
+}
+h3{
+    font-size: 2.0rem;
+}
+p{
+    font-size: 1.6rem;
 }
 
 a{
@@ -158,7 +172,7 @@ a{
   }
   
   .form__field:focus {
-    padding-bottom: 6px;
+    padding-bottom: 1rem;
     font-weight: 700;
     border-width: 3px;
     border-image: linear-gradient(to right, #C3073F, #950740);
@@ -195,7 +209,7 @@ a{
 @media (min-width: 500px) {
     .grid {
         display: grid;
-        grid-gap: 20px;
+        grid-gap: 2rem;
         grid-template-columns: 0.5fr  1fr 1fr;
         grid-template-rows: 1fr 1fr 0.5fr;
         grid-template-areas: 
@@ -204,10 +218,34 @@ a{
            "player player player";
       }
       .form__field {
-          width: 50%;
+          width: 30%;
       }
     .content--button__actions__primary {
-        width: 50%;
+        width: 30%;
     }
 
+    .list__item{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "nummer artiest genre"  
+   }
+    .list__item > p:nth-child(1){
+        color: var(--TextColor);
+        font-size: 1.6rem;
+        grid-area: nummer;
+    }
+    
+    .list__item > p:nth-child(2){
+        color: var(--TextColor);
+        font-size: 1.6rem;
+        grid-area: artiest;
+    }
+    .list__item > p:nth-child(3){
+        color: var(--TextColor);
+        font-size: 1.6rem;
+        grid-area: genre;
+        text-align: left;
+    }
   }
