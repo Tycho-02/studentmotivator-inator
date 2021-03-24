@@ -14,10 +14,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-    //Alex - eerst moet humeur worden geseed vanwege het gebruik van foreign key humeur in users
-            HumeurSeeder::class,
-            UserIdSeeder::class,
-            TijdInstellingenSeeder::class,
-        ]);
+            //Alex - eerst moet humeur worden geseed vanwege het gebruik van foreign key humeur in users
+                    HumeurSeeder::class,
+                    UserIdSeeder::class,
+                    TijdInstellingenSeeder::class,
+                    MobielTableSeeder::class,
+                    TimerSeeder::class,
+                    AfspeellijstSeeder::class,
+                    NummerSeeder::class,
+                ]);
     }
 }

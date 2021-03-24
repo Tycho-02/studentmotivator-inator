@@ -43,13 +43,13 @@ print(datetime.datetime.now().strftime("%H:%M:%S"))
 
 def check_slapen():
     while(datetime.datetime.now().strftime("%H:%M:%S") < str(uit_bed)):
-        print(slapen)
+        #print(slapen)
         slapen = True
         time.sleep(2)
     else:
         time.sleep(2)
         slapen = False
-        print(slapen)
+        #print(slapen)
     today = datetime.date.today()
     print(today)
 

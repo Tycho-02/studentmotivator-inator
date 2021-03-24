@@ -16,7 +16,12 @@ class HumeurSeeder extends Seeder
     {
         DB::table('humeur')->insert([ 
             'humeur' => 'blij'       
-            ]);
-        //
-    }
+        ]);
+        DB::table('humeur')->insert([ 
+            'humeur' => 'meh'       
+        ]);
+        DB::table('humeur')->insert([ 
+            'humeur' => 'verdrietig'       
+        ]);
+}
 }
