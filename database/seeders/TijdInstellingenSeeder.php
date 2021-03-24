@@ -13,6 +13,12 @@ class TijdInstellingenSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('tijd_instellingen')->insert([ 
+            'userId' => '1',
+            'tijdInBed' => '22:00',
+            'tijdUitBed' => '05:30'
+
+            ]);
         //
     }
 }

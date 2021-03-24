@@ -17,8 +17,8 @@ class CreateTijdslapenTable extends Migration
             $table->id('tijdId');
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('userId')->on('users');
-            $table->timestamp('tijdInBedGegaan')->useCurrent();
-            $table->timestamp('tijdUitBedGegaan')->useCurrent();
+            $table->timestamp('tijdInBedGegaan')->nullable();
+            $table->timestamp('tijdUitBedGegaan')->nullable();
         });
     }
 

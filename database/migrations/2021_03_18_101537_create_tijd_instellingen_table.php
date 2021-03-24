@@ -14,10 +14,12 @@ class CreateTijdInstellingenTable extends Migration
     public function up()
     {
         Schema::create('tijd_instellingen', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('userId')->on('users');
             $table->time('tijdInBed');
             $table->time('tijdUitBed');
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
