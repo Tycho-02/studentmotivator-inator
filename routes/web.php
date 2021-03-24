@@ -14,20 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/afspeellijst", "App\Http\Controllers\AfspeellijstController@index");
+
 Route::get("/nummers", "App\Http\Controllers\NummersController@index");
 
-Route::get("/nummers/create", [
-    'uses' => 'App\Http\Controllers\NummersController@create'
-]);
-Route::post("/nummers", [
-    'uses' => 'App\Http\Controllers\NummersController@store'
-]);
+Route::get("/nummerToevoegen", "App\Http\Controllers\NummersController@show");
+Route::post("/toevoegen", "App\Http\Controllers\NummersController@upload");
 
 
-
-Route::get('/', function () {
-    return view('default');
+Route::get('/', function(){
+    return view('layouts.app');
 });
+
 
 
 
