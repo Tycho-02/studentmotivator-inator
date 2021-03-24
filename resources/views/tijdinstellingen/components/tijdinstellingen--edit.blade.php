@@ -4,6 +4,7 @@
     <form action="{{ route('tijdinstellingen.update') }}" method="POST">
         @csrf
         <input type="hidden" name="id" value="{{ $data['id'] }}">
+       
         <input type="text" class="content--tijdInstellingen_naarBed__input form__field" name="tijdInBed" value="{{ $data['tijdInBed'] }}" id="">
         <input type="text" class="content--tijdInstellingen_uitBed__input form__field" name="tijdUitBed" value="{{ $data['tijdUitBed'] }}">
         <div class="content--tijdInstellingen__actions">
