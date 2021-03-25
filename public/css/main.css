@@ -46,10 +46,6 @@ a{
     text-decoration: none;
 }
 
-.grid {
-   
-}
-
 .menu{
     grid-area: menu;
     border: 1px solid green;
