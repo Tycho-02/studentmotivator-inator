@@ -1,92 +1,67 @@
+#include "SevenSegmentTM1637.h"
+#include "SevenSegmentExtended.h"
 #include <Wire.h>
 #include <PN532_I2C.h>
 #include <PN532.h>
 #include <NfcAdapter.h>
-// #include <TimeLib.h>
-#include "SevenSegmentTM1637.h"
-#include "SevenSegmentExtended.h"
+
+const int CLK = 6;
+const int DIO = 9;
 
 #define SEC_PER_MIN (60)
 #define SEC_PER_HOUR (60ul * 60)
 #define SEC_PER_DAY (24ul * 60 * 60)
 
-const int CLK = 6;
-const int DIO = 9;
+unsigned long countdownTime = 0;
+int run = 0;
+boolean success;
 
+SevenSegmentExtended display(CLK, DIO);
 PN532_I2C pn532i2c(Wire);
 PN532 nfc(pn532i2c);
-SevenSegmentExtended display(CLK, DIO);
 
-unsigned long countdownTime = 0;
-
-// time_t t = now();
-// int time = 0;
-
-void setup() {
+void setup(){  
   Serial.begin(9600);
-  delay(20);
-  int days = 0;
-  String t_hours;
-  String t_minutes;
-  int seconds = 0;
-
-  int hours;
-  int minutes;
-  while(Serial.available() > 0){
-    t_minutes = Serial.readStringUntil(':');
-    Serial.read();
-    t_hours = Serial.readStringUntil(':');
-  }
-  hours = t_hours.toInt();
-  minutes = t_minutes.toInt();
+  nfc.begin();
+  nfc.setPassiveActivationRetries(0xFF);
+  // configure board to read RFID tags
+  nfc.SAMConfig(); 
   
-  countdownTime = seconds + (minutes * SEC_PER_MIN) + (hours * SEC_PER_HOUR) + (days * SEC_PER_DAY); 
+  delay(20);
 
   display.begin();            // initializes the display
   display.setBacklight(70);  // set the brightness to 100 %
-  nfc.begin();
-
-  uint32_t versiondata = nfc.getFirmwareVersion();
-  
-  if (! versiondata) {
-    while (1); // halt
-  }  
-
-  nfc.setPassiveActivationRetries(0xFF);
-  nfc.SAMConfig(); 
-
 }
 
 void loop() {
+
+  uint8_t uid[] = { 0, 0, 0, 0, 0, 0, 0 };  // Buffer to store the returned UID
+  uint8_t uidLength;                        // Length of the UID (4 or 7 bytes depending on ISO14443A card type)
+  success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, &uid[0], &uidLength); 
   
-  static unsigned long lastTick = millis();  
-  unsigned long currentMillis = millis();
-  
-  if (currentMillis - lastTick >= 1000){
-    lastTick += 1000;
-    countdownTime--;
-    displayTime(countdownTime);
+  if(run < 2){
+    setuptTimer();
+    run++;
   }
   
+  n_fc(success);
+  timer(success);
+}
+
+void timer(boolean success){
+  static unsigned long lastTick = millis();  
+  unsigned long currentMillis = millis();
+  if(success){
+    if (currentMillis - lastTick >= 1000){
+      lastTick += 1000;
+      countdownTime--;
+      displayTime(countdownTime);
+    }
+  }
+
   if (countdownTime == 0){
     Serial.println(F("Countdown Finished"));
   }  
-
-  boolean success;
-  uint8_t uid[] = { 0, 0, 0, 0, 0, 0, 0 };  // Buffer to store the returned UID
-  uint8_t uidLength;                        // Length of the UID (4 or 7 bytes depending on ISO14443A card type)
-
-  success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, &uid[0], &uidLength); 
-  // time += 1;
-
-  if (success) {
-    Serial.println('a');
-    delay(3000);
-  }
-  if (!success){
-    Serial.println('b');
-    delay(1000);
-  }
 }
 
 void displayTime(unsigned long aTime){
