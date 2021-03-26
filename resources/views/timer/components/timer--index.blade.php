@@ -16,6 +16,6 @@
         <button class="timer__button2 u-btn-style">45 min</button>
         <button class="timer__button3 u-btn-style">1 uur</button>
         <button class="timer__button4 u-btn-style">1uur 15 min</button> -->
-        <button class="timer__buttonGo">Start de tijd!</button>
+        <!-- <button class="timer__buttonGo">Start de tijd!</button> -->
     </section>
 </section>
