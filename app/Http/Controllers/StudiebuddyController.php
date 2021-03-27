@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Http\Requests\UpdateBuddyRequest;
 use Illuminate\Support\Facades\Http;
 
 class StudiebuddyController extends Controller
@@ -13,7 +14,7 @@ class StudiebuddyController extends Controller
         return view('studiebuddy.index', ['studiebuddy' => $studiebuddy]);
     }
 
-    public function update(Request $request){
+    public function update(UpdateBuddyRequest $request){
         $studiebuddy = \App\Models\Studiebuddy::find(1);
         $studiebuddy->naam = $request->naam;
         $studiebuddy->skin = $request->skin;
@@ -22,7 +23,7 @@ class StudiebuddyController extends Controller
         $studiebuddy->ideale_temp = $request->temp;
         $studiebuddy->ideale_luchtvochtigheid = $request->luchtvochtigheid;
         $studiebuddy->ideale_licht = $request->licht;
-
         $studiebuddy->save();
+        return redirect('/studiebuddy');
     }
 }

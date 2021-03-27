@@ -9,7 +9,7 @@
         @method('POST')
             <section class="form__group">
                 <label class="form__label" for="Naam">Naam</label>
-                <input type="form__field" type="text" name="naam" placeholder="Huidige naam: {{$studiebuddy->naam}}">
+                <input type="form__field" type="text" name="naam" value="{{$studiebuddy->naam}}" maxlength="10">
             </section>
             <section class="form__group">
                 <label class="form__label" for="Naam">Latitude</label>
