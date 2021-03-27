@@ -46,9 +46,9 @@ a{
     text-decoration: none;
 }
 
-.grid {
+/* .grid {
    
-}
+} */
 
 .menu{
     grid-area: menu;
