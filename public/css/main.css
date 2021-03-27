@@ -106,7 +106,7 @@ a{
     transition: background-color .6s ease;
     overflow: hidden;
     border: 1px solid #950740;
-    
+    border-radius: 15px;
 }
 .content--button__actions__primary:after {
       width: 0;
@@ -167,8 +167,6 @@ a{
     transition: 0.2s;
     font-size: 1.6rem;
     color: var(--TextColor);
-
-
   }
   
   .form__field:focus {
@@ -205,6 +203,15 @@ a{
   background-color: var(--TextColor);
   color: #000;
 }
+.timer__header{
+    display: flex;
+    justify-content: center;
+}
+.timer__timeSection{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
 
 @media (min-width: 500px) {
     .grid {
@@ -216,10 +223,11 @@ a{
            "menu content content "  
            "menu content content" 
            "player player player";
-      }
-      .form__field {
+    }
+    
+    .form__field {
           width: 30%;
-      }
+    }
     .content--button__actions__primary {
         width: 30%;
     }
@@ -247,5 +255,15 @@ a{
         font-size: 1.6rem;
         grid-area: genre;
         text-align: left;
+    }
+    .timer__form{
+        display: inline-block;
+        text-align: center;
+    }
+    .timer__form-field{
+        width: 50%;
+    }
+    .timer__form-submitBtn{
+        width: 50%;
     }
   }
