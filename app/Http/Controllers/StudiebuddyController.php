@@ -14,13 +14,15 @@ class StudiebuddyController extends Controller
     }
 
     public function update(Request $request){
-        $studiebuddy = \App\Models\Studiebuddy::find($request->id);
+        $studiebuddy = \App\Models\Studiebuddy::find(1);
         $studiebuddy->naam = $request->naam;
         $studiebuddy->skin = $request->skin;
         $studiebuddy->long = $request->long;
         $studiebuddy->lat = $request->lat;
-        $studiebuddy->ideale_temp = $request->ideale_temp;
-        $studiebuddy->ideale_luchtvochtigheid = $request->ideale_luchtvochtigheid;
-        $studiebuddy->ideale_licht = $request->ideale_licht;
+        $studiebuddy->ideale_temp = $request->temp;
+        $studiebuddy->ideale_luchtvochtigheid = $request->luchtvochtigheid;
+        $studiebuddy->ideale_licht = $request->licht;
+
+        $studiebuddy->save();
     }
 }

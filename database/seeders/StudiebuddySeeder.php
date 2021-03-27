@@ -19,7 +19,7 @@ class StudiebuddySeeder extends Seeder
             'long' => '4.658150',
             'lat' => '52.485771',
             'naam' => 'Piet',
-            'skin' => 'Lion',
+            'skin' => 'Ladybug',
             'ideale_temp' => '23',
             'ideale_luchtvochtigheid' => '50',
             'ideale_licht' => '69'        
