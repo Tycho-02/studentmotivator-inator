@@ -257,13 +257,32 @@ a{
         text-align: left;
     }
     .timer__form{
-        display: inline-block;
-        text-align: center;
+        align-items: center;
     }
     .timer__form-field{
         width: 50%;
+        text-align: center;
+        font-size: 1.8rem;
     }
     .timer__form-submitBtn{
         width: 50%;
     }
-  }
+}
+
+@media (min-width: 900px) {
+    .timer__form-field{
+        width: 40%;
+    }
+    .timer__form-submitBtn{
+        width: 40%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .timer__form-field{
+        width: 30%;
+    }
+    .timer__form-submitBtn{
+        width: 30%;
+    }
+}
