@@ -18,8 +18,8 @@ class StudiebuddySeeder extends Seeder
             'userId' => '1',
             'long' => '4.658150',
             'lat' => '52.485771',
-            'naam' => 'Jeroen',
-            'skin' => 'Hamster',
+            'naam' => 'Piet',
+            'skin' => 'Ladybug',
             'ideale_temp' => '23',
             'ideale_luchtvochtigheid' => '50',
             'ideale_licht' => '69'        

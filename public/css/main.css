@@ -1,0 +1,282 @@
+/* VARIABELEN */
+
+:root {
+    --PrimaryColor: #1A1A1D;
+    --TextColor: #fff;
+    --fullwidth: 100%;
+    --SecondaryColor: #4E4E50;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    box-sizing: inherit;
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.8rem;
+    color: var(--TextColor);
+    padding: 4rem;
+    background: var(--PrimaryColor);
+    font-family: sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1{
+    font-size: 2.8rem;
+}
+h2{
+    font-size: 2.4rem;
+}
+h3{
+    font-size: 2.0rem;
+}
+p{
+    font-size: 1.6rem;
+}
+
+a{
+    color: var(--TextColor);
+    text-decoration: none;
+}
+
+.menu{
+    grid-area: menu;
+    border: 1px solid green;
+}
+
+
+.content{
+    grid-area: content;
+    
+}
+.muziekSpeler{
+    grid-area: player;
+}
+
+.list{
+    list-style: none;
+}
+
+.list__item{
+    display:grid;
+    grid-column: 1fr 1fr;
+    grid-row: 1fr 1fr;
+    grid-template-areas:
+    "naam naam"
+    "artiest genre"
+}
+.list__item >p:nth-child(1){
+    grid-area: naam;
+    font-size: 1.6rem;
+}
+.list__item >p:nth-child(2){
+    grid-area: artiest;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.548);
+}
+.list__item >p:nth-child(3){
+    grid-area: genre;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.548);
+    text-align: right
+}
+
+.content--button__actions__primary {
+    padding: 1.6rem 4.2rem;
+    box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+    line-height: 1.25;
+    background: #950740;
+    text-decoration: none;
+    color: white;
+    font-size: 1.6rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    position: relative;
+    transition: background-color .6s ease;
+    overflow: hidden;
+    border: 1px solid #950740;
+    
+}
+.content--button__actions__primary:after {
+      width: 0;
+      height: 0;
+      transform-style: flat;
+      transform: translate3d(-50%,-50%,0);
+      background: rgba(white,.1);
+      border-radius: 100%;
+      transition: width .3s ease, height .3s ease;
+    }
+    .content--button__actions__primary :focus,
+    .content--button__actions__primary :hover {
+        cursor: pointer;
+        background: darken(#4E4E50,7%);
+}
+.content--button__actions__primary :active,
+.content--button__actions__primary :after {
+        width: 200px;
+        height: 200px;
+      
+}
+
+.form{
+    margin-top: 4rem;
+    display:flex;
+    flex-direction: column;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+  }
+
+.form__group--icons{
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.form__sliderholder{
+    display: flex;
+}
+
+.form__group--slider{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form__range{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.form__iconselect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    gap: 15px;
+}
+
+.form__icon{
+    width: 100px;
+    height: 100px;
+}
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--TextColor);
+    outline: 0;
+    font-size: 1.3rem;
+    color: var(--TextColor);
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  .form__field::placeholder {
+    color: transparent;
+  }
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 1.4rem;
+    cursor: text;
+  }
+  
+  .form__label {
+    transition: 0.2s;
+    font-size: 1.6rem;
+    color: var(--TextColor);
+
+
+  }
+  
+  .form__field:focus {
+    padding-bottom: 1rem;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #C3073F, #950740);
+    border-image-slice: 1;
+  }
+  
+  /* reset input */
+  .form__field:required, .form__field:invalid {
+    box-shadow: none;
+  }
+
+  .content--tijdInstellingen__actions {
+      margin-top: 5rem;
+  }
+
+  .content--button__actions__ghost {
+    display: inline-block;
+    width: 15rem;
+    padding: 1.5rem;
+    color: #fff;
+    border: 1px solid var(--TextColor);
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+
+}
+
+.content--button__actions__ghost:hover,
+.content--button__actions__ghost:active {
+  background-color: var(--TextColor);
+  color: #000;
+}
+
+@media (min-width: 500px) {
+    .grid {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: 0.5fr  1fr 1fr;
+        grid-template-rows: 1fr 1fr 0.5fr;
+        grid-template-areas: 
+           "menu content content "  
+           "menu content content" 
+           "player player player";
+      }
+      .form__field {
+          width: 30%;
+      }
+    .content--button__actions__primary {
+        width: 30%;
+    }
+
+    .list__item{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "nummer artiest genre"  
+   }
+    .list__item > p:nth-child(1){
+        color: var(--TextColor);
+        font-size: 1.6rem;
+        grid-area: nummer;
+    }
+    
+    .list__item > p:nth-child(2){
+        color: var(--TextColor);
+        font-size: 1.6rem;
+        grid-area: artiest;
+    }
+    .list__item > p:nth-child(3){
+        color: var(--TextColor);
+        font-size: 1.6rem;
+        grid-area: genre;
+        text-align: left;
+    }
+  }

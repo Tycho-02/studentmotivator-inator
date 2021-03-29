@@ -1,4 +1,4 @@
 @extends('default')
     @section('content')
-        @include('studiebuddy.components.weerbericht')
+        @include('studiebuddy.components.studiebuddysettings')
     @endsection
