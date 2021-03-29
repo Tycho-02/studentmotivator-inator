@@ -34,7 +34,7 @@ while True:
         port.write(timer)
         if rcv:
             print(rcv) 
-    time.sleep(1)
+    # time.sleep(1)
     mydb.commit()
 
 mydb.close()

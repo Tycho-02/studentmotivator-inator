@@ -29,7 +29,7 @@ Route::post("/toevoegen", "App\Http\Controllers\NummersController@upload");
 
 // Route::get('/mobiel', [\App\Http\Controllers\MobielController::class, 'index']);
 Route::get('/timer', [\App\Http\Controllers\TimerController::class, 'index']);
-Route::post('/timer', [\App\Http\Controllers\TimerController::class, 'toevoegenTijd']);
+Route::post('/timer', [\App\Http\Controllers\TimerController::class, 'store']);
 
 Route::get('/', function(){
     return view('layouts.app');
