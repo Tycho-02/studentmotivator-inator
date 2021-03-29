@@ -14,6 +14,7 @@ class StudiebuddyController extends Controller
         return view('studiebuddy.index', ['studiebuddy' => $studiebuddy]);
     }
 
+
     public function update(UpdateBuddyRequest $request){
         $studiebuddy = \App\Models\Studiebuddy::find(1);
         $studiebuddy->naam = $request->naam;
