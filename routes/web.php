@@ -23,6 +23,10 @@ Route::post('/update', [
 Route::get("/afspeellijst", "App\Http\Controllers\AfspeellijstController@index");
 
 Route::get("/nummers", "App\Http\Controllers\NummersController@index");
+Route::get("/krijgNummer/{nummer}", [
+    'uses' => 'App\Http\Controllers\NummersController@getNummer',
+    'as' => 'krijg-nummer',
+]);
 
 Route::get("/nummerToevoegen", "App\Http\Controllers\NummersController@show");
 Route::post("/toevoegen", "App\Http\Controllers\NummersController@upload");

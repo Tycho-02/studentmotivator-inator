@@ -37,7 +37,7 @@ class NummersController extends Controller
                 $posts_music->naam = $request->naam;
                 $posts_music->genre = $request->genre;
                 $posts_music->artiest = $request->artiest;
-                $posts_music->bestandLocatie = $request->artiest;
+                $posts_music->bestandLocatie = $naam;
             };
 
             // Storage::disk('public')->put($music ,base64_decode($music));
@@ -45,9 +45,13 @@ class NummersController extends Controller
         }
 
         return redirect('/nummers');
- 
+    }
 
-    
+    public function getNummer($nummer){
+        return view('nummers.nummers', [
+            'nummers' => \App\Models\Nummer::all(),
+            'nummer' => $nummer
+        ]);
     }
 
 }

@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
-
+    
     <title>Document</title>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
 <body class="grid">
    <aside class="menu">
@@ -18,15 +19,16 @@
             <li class="menu__list__item"><a href="#">user</a></li>
             <li class="menu__list__item"><a href="#">Afspeellijsten</a></li>
             <li class="menu__list__item"><a href="#">Afspeellijst toevoegen</a></li>
-            <li class="menu__list__item"><a href="nummers">Nummers</a></li>
-            <li class="menu__list__item"><a href="nummerToevoegen">Voeg nummer toe</a></li>
+            <li class="menu__list__item"><a href="/nummers">Nummers</a></li>
+            <li class="menu__list__item"><a href="/nummerToevoegen">Voeg nummer toe</a></li>
     </ul>
    </aside>
    <section class="content">
         @yield('content')
    </section>
    <section class="muziekSpeler">
-        @yield('muziekSpeler')
+        <!-- @yield('muziekSpeler') -->
+        @include('nummers.components.muziekSpeler--index')
    </section>
 </body>
 </html>

@@ -70,12 +70,16 @@ a{
 
 .list__item{
     display:grid;
-    grid-column: 1fr 1fr;
+    grid-column: 1fr 1fr 1fr;
     grid-row: 1fr 1fr;
     grid-template-areas:
-    "naam naam"
-    "artiest genre"
+    "naam naam play"
+    "artiest genre play"
 }
+.list__item:nth-child(1){
+    display: none;
+}
+
 .list__item >p:nth-child(1){
     grid-area: naam;
     font-size: 1.6rem;
@@ -90,6 +94,9 @@ a{
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.548);
     text-align: right
+}
+.list__item--button__play{
+    grid-area: play;
 }
 
 .content--button__actions__primary {
@@ -206,6 +213,7 @@ a{
   color: #000;
 }
 
+
 @media (min-width: 500px) {
     .grid {
         display: grid;
@@ -231,6 +239,10 @@ a{
         grid-template-areas: 
         "nummer artiest genre"  
    }
+   .list__item:nth-child(1){
+        display:grid;
+    }
+  
     .list__item > p:nth-child(1){
         color: var(--TextColor);
         font-size: 1.6rem;

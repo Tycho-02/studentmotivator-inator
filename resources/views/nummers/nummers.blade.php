@@ -9,4 +9,5 @@
         </li>
         @include('nummers.components.nummer--index')
     </ul>
-@stop
+@endsection
+
