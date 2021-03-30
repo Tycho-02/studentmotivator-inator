@@ -1,3 +1,11 @@
+@foreach($errors->all() as $error)
+    <li>{{ $error }}</li>
+@endforeach
+@if(session('success_message'))
+    <div class="alert alert-success">
+        {{ session('success_message') }}
+    </div> 
+@endif
 <article class="content--tijdInstellingen">
     <h2 class="content--tijdInstellingen__header">Huidige dagelijkse tijd</h2>
     <article class="content--tijdInstellingen__naarBed">

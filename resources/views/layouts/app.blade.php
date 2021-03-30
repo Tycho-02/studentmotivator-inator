@@ -28,6 +28,7 @@
    <section class="muziekSpeler">
         @yield('muziekSpeler')
    </section>
+   @include('sweetalert::alert')
 </body>
 </html>
 

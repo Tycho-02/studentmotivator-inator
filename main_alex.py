@@ -64,11 +64,12 @@ while gebruikerNaarBed == False:
     else:
         print('Gebruiker kan nu gaan slapen! Hier gaat de buzzer ook af')
         print('Sensoor gaat zijn werk doen!')
-        time.sleep(3)
         gebruikerNaarBed = True
         port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
+        time.sleep(2)
         mycursor = mydb.cursor()
         while True:
+            opstaan = 'o'
             rcv = port.readline().strip()
             print(rcv)
             if rcv == 's':
@@ -80,6 +81,19 @@ while gebruikerNaarBed == False:
                 print('geupdate, gebruiker gaat nu uit bed')
                 os.system("python update_naar_bed_alex.py")
                 sys.exit("Gebruiker is klaar met slapen!")
+            while(datetime.datetime.now().strftime("%H:%M:%S") != str(uit_bed)):
+                print('Gebruiker is nog niet wakker. Tijd dat gebruiker wakker wilt worden:' + str(naar_bed))
+                time.sleep(1)
+            else:
+                print('gebruiker wordt wakker volgens de gekozen tijd!')
+                port.write(opstaan)
+                time.sleep(6) #langere tijd met wachten om data in arduino te zetten
+
+                # Serial lezen sectie
+                msg = port.read(port.inWaiting()) #lees alles in buffer
+                print ("Bericht van arduino: ")
+                print (msg)
+                
 
 mydb.close()
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use RealRashid\SweetAlert\Facades\Alert;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,7 @@ Route::post('/timer', [\App\Http\Controllers\TimerController::class, 'toevoegenT
 
 Route::get('/', function(){
     return view('layouts.app');
+    
 });
 
 
