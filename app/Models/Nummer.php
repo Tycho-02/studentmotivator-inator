@@ -18,7 +18,7 @@ class Nummer extends Model
         'bestandLocatie',
         'afspeellijstId',
     ];
-    public function playlists() {
+    public function afspeellijst() {
         return $this->belongsToMany('Model\Afspeellijst', 'afspeellijstId');
     }
 }

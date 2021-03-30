@@ -13,7 +13,7 @@ class NummersController extends Controller
 {
     public function index(){
         return view('nummers.nummers', [
-            'nummers' => \App\Models\Nummer::all()
+            'nummers' => Nummer::all()
         ]);
     }
 
@@ -57,7 +57,7 @@ class NummersController extends Controller
 
     public function getNummer($nummer){
         return view('nummers.nummers', [
-            'nummers' => \App\Models\Nummer::all(),
+            'nummers' => Nummer::all(),
             'nummer' => $nummer
         ]);
     }

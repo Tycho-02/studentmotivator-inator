@@ -10,6 +10,7 @@ class Afspeellijst extends Model
     use HasFactory;
 
     protected $table = "afspeellijst";
+    protected $primaryKey = 'afspeellijstId';
     protected $fillable = [
         //if id is not autoincrement then add 'id'
         'naam', 
@@ -17,6 +18,6 @@ class Afspeellijst extends Model
         'humeur', 
     ];
     public function nummers() {
-        return $this->belongsToMany('Model\Nummer', 'afspeellijstId');
-    }
+        return $this->hasMAny('App\Models\Nummer', 'afspeellijstId');
+    } 
 }

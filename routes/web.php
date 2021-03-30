@@ -21,9 +21,15 @@ Route::post('/update', [
 ]);
 
 Route::get("/afspeellijst", "App\Http\Controllers\AfspeellijstController@index");
+Route::get("/afspeellijst/{afspeellijstId}", "App\Http\Controllers\AfspeellijstController@nummersInlijst");
+Route::get("/afspeellijst/{afspeellijstId}/{nummer}", [
+    'uses' => "App\Http\Controllers\AfspeellijstController@getnummerInlijst",
+    'as' => 'afspeellijstNummer'
+]);
+
 
 Route::get("/nummers", "App\Http\Controllers\NummersController@index");
-Route::get("/krijgNummer/{nummer}", [
+Route::get("/nummers/{nummer}", [
     'uses' => 'App\Http\Controllers\NummersController@getNummer',
     'as' => 'krijg-nummer',
 ]);

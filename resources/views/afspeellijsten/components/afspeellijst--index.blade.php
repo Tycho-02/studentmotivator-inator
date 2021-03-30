@@ -1,8 +1,8 @@
 
-@foreach($Afspeellijsten as $Afspeellijst)
+@foreach($afspeellijsten as $afspeellijst)
 <li class="list__item">
-    <p>{{ $Afspeellijst->naam }}</p>
-    <p>{{ $Afspeellijst->aantalNummers }}</p>
-    <p>{{ $Afspeellijst->humeur }}</p>
+    <p>{{ $afspeellijst->naam }}</p>
+    <p>{{ $afspeellijst->aantalNummers }}</p>
+    <p>{{ $afspeellijst->humeur }}</p>
 </li>
 @endforeach

@@ -5,7 +5,7 @@
         <audio controls>
             <source src="/muziek/{{$nummer}}">
         </audio>
-        <div>{{$nummer}}</div>
+        <!-- <div>{{$nummer}}</div> -->
     @else
     <p>hoi</p>
     @endif

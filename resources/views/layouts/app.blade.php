@@ -27,7 +27,12 @@
    </section>
    <section class="muziekSpeler">
         <!-- @yield('muziekSpeler') -->
-        @include('nummers.components.muziekSpeler--index')
+        @isset($nummers)
+            @include('nummers.components.muziekSpeler--index')
+        @endisset
+        @isset($afspeellijstnummers)
+            @include('afspeellijsten.components.muziekSpeler--index')
+        @endisset
    </section>
 </body>
 </html>
