@@ -14,6 +14,12 @@
         <input class='form__field' type="text" name="artiest">
         <label class="form__label" for="genre">genre</label>
         <input class='form__field' type="text" name="genre">
+        <label class="form__label" for="mood">Mood van het nummer</label>
+        <select class='form__field' id="mood" name="mood">
+            <option value="1">Blij</option>
+            <option value="2">meh</option>
+            <option value="3">verdrietig</option>
+        </select> 
         <button class="content--button__actions__primary" type="submit">Upload</button>
     </form>   
 @endsection

@@ -17,8 +17,7 @@
        </figure>
        <ul class="menu__list list">
             <li class="menu__list__item"><a href="#">user</a></li>
-            <li class="menu__list__item"><a href="#">Afspeellijsten</a></li>
-            <li class="menu__list__item"><a href="#">Afspeellijst toevoegen</a></li>
+            <li class="menu__list__item"><a href="/afspeellijst">Afspeellijsten</a></li>
             <li class="menu__list__item"><a href="/nummers">Nummers</a></li>
             <li class="menu__list__item"><a href="/nummerToevoegen">Voeg nummer toe</a></li>
     </ul>
