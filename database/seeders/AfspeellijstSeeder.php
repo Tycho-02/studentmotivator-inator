@@ -26,14 +26,14 @@ class AfspeellijstSeeder extends Seeder
             'afspeellijstId' => '2',
             'naam' => 'meh lijst',
             'aantalNummers' => 0,
-            'humeur' => "meh"
+            'humeur' => "Meh"
         ]);
         DB::table('afspeellijst')->insert([ 
             'userId' => '1',
             'afspeellijstId' => '3',
             'naam' => 'sad lijst',
             'aantalNummers' => 0 ,
-            'humeur' => "verdrietig"
+            'humeur' => "Verdrietig"
         ]);
     }
 }

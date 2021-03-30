@@ -19,6 +19,6 @@ class Users extends Model
     }
 
     function afspeellijst(){
-        return $this->belongTo('\App\Models\Afspeellijst', 'userId', "userId")
+        return $this->belongTo('\App\Models\Afspeellijst', 'userId', "userId");
     }
 }

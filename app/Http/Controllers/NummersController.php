@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Nummer as Nummer;
 use App\Models\Afspeellijst as Afspeellijst;
+use App\Models\Users as User;
+
 use DB;
 
 use Storage;
@@ -13,7 +15,10 @@ class NummersController extends Controller
 {
     public function index(){
         return view('nummers.nummers', [
-            'nummers' => Nummer::all()
+            'nummers' => Nummer::all(),
+            'user' => User::first(),
+            'afspeellijst' => Afspeellijst::all()
+
         ]);
     }
 

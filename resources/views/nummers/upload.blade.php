@@ -17,8 +17,8 @@
         <label class="form__label" for="mood">Mood van het nummer</label>
         <select class='form__field' id="mood" name="mood">
             <option value="1">Blij</option>
-            <option value="2">meh</option>
-            <option value="3">verdrietig</option>
+            <option value="2">Meh</option>
+            <option value="3">Verdrietig</option>
         </select> 
         <button class="content--button__actions__primary" type="submit">Upload</button>
     </form>   

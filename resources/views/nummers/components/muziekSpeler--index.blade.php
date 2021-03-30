@@ -7,5 +7,13 @@
         </audio>
         <!-- <div>{{$nummer}}</div> -->
     @else
-    <p>hoi</p>
+            @foreach($afspeellijst as $afspeellijst) 
+            @if($user->humeur == $afspeellijst->humeur)
+                @foreach($afspeellijst->nummers->random(1) as $random )
+                    <audio controls>
+                        <source src="/muziek/{{$random->bestandLocatie }}">
+                    </audio>
+                @endforeach
+            @endif
+        @endforeach
     @endif
