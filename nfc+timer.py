@@ -16,15 +16,19 @@ port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
 mycursor = mydb.cursor()
 while True:
     rcv = port.readline().strip()
-    if(rcv == 'a'):
-        print('ja')
-        # mycursor.execute("UPDATE mobiel SET beschikbaar = true;")
+    # mobiel aanwezig
+    if(rcv == 'm1'):
         os.system("python update.py")
-    if(rcv == 'b'):
-        print('nee')
-        # mycursor.execute("UPDATE mobiel SET beschikbaar = false;")
+    #mobiel niet aanwezig 
+    if(rcv == 'm0'):
         os.system("python update.py")
-    
+    # punten bij
+    if(rcv == 'pb'):
+        mycursor.execute("UPDATE puntentelling SET punten = punten + 10;")
+    # punten af
+    if(rcv == 'pa'):
+        mycursor.execute("UPDATE puntentelling SET punten = punten - 10;")
+
     sql_timer = "SELECT tijd FROM timer WHERE mobielId = 1"
     mycursor.execute(sql_timer)
     for x in mycursor:
@@ -34,7 +38,7 @@ while True:
         port.write(timer)
         if rcv:
             print(rcv) 
-    # time.sleep(1)
+    time.sleep(1)
     mydb.commit()
 
 mydb.close()

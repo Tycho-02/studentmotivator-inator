@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             TimerSeeder::class,
             AfspeellijstSeeder::class,
             NummerSeeder::class,
+            PuntentellingSeeder::class,
         ]);
     }
 }
