@@ -13,13 +13,13 @@
         @method('POST')
             <label class="form__label" for="title">Taak</label>
             <input class="form__field" type="text" name="title" placeholder="Nieuw taak" required/>
-        
+
             <label class="form__label" for="omschrijving">Omschrijving</label>
             <textarea class="form__field" name="omschrijving" rows="5" placeholder="Taak omschrijving...."></textarea>
-        
+
             <label class="form__label" for="label">Label</label>
             <input class="form__field" type="text" name="label" placeholder="Label" />
-        
+
             <label class="form__label" for="deadline">Deadline</label>
             <input class="form__field" type="date" name="deadline" value="{{date('Y-m-d', time() + 86400)}}" min="{{date('Y-m-d')}}" />
 
@@ -27,6 +27,11 @@
             <input class="form__field" type="date" name="uitvoerdatum" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" />
 
             <input class="content--button__actions__primary" type="submit" value="Taak toevoegen"/>
+            @if (session()->has('message'))
+                <div class="form__alert">
+                    <p>{{ session()->get('message') }}</p>
+                </div>
+            @endif
 
     </form>
 @endsection

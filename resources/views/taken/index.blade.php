@@ -7,6 +7,11 @@
 
 <!-- Content -->
 @section('content')
+    @if (session()->has('message'))
+        <div class="taak__alert">
+            <p>{{ session()->get('message') }}</p>
+        </div>
+    @endif
     <h1>Taken:</h1>
     <ul>
         @foreach ($taken as $taak)

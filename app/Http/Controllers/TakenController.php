@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Taak;
+use Exception;
 
 class TakenController extends Controller
 {
@@ -24,9 +25,14 @@ class TakenController extends Controller
         $taak->deadline = request('deadline');
         $taak->uitvoerdatum = request('uitvoerdatum');
 
-        $taak->save();
+        try {
 
-        return redirect('/taken');
+            $taak->save();
+            return redirect('/taken')->with('message', 'Taak is toegevoegd!');
+
+        } catch (Exception $err) {
+            return redirect('/taken/create')->with('message', 'Taak kon niet worden toegevoegd!');
+        }
     }
 
     public function destroy($taakId) {
