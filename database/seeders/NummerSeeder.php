@@ -14,11 +14,11 @@ class NummerSeeder extends Seeder
     public function run()
     {
         DB::table('nummer')->insert([ 
-                // 'afspeellijstId' => '1',
+                'afspeellijstId' => '1',
                 'naam' => 'Happy',
                 'artiest' => 'Pharrel Williams',
                 'genre' => 'pop',
-                'bestandLocatie' => 'Pharrell-Williams-Happy'
+                'bestandLocatie' => 'Pharrell-Williams-Happy.mp3'
         ]);
     }
 }

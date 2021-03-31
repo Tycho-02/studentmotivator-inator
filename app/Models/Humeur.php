@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Humeur extends Model
 {
     use HasFactory;
+
+    protected $table = 'humeur';
+    public $timestamps = false;
+
+    public function userHumeur(){
+        return $this->belongsTo('\App\Models\Users', 'userId', 'userId');
+    }
 }

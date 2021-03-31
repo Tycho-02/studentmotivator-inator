@@ -15,7 +15,6 @@ class CreateHumeurTable extends Migration
     {
         Schema::create('humeur', function (Blueprint $table) {
             $table->string('humeur')->unique();
-            
         });
     }
 

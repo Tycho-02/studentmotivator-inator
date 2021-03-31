@@ -14,8 +14,8 @@ class CreateNummerTable extends Migration
     public function up()
     {
         Schema::create('nummer', function (Blueprint $table) {
-            // $table->unsignedBigInteger('afspeellijstId');
-            // $table->foreign('afspeellijstId')->references('afspeellijstId')->on('afspeellijst');
+            $table->unsignedBigInteger('afspeellijstId');
+            $table->foreign('afspeellijstId')->references('afspeellijstId')->on('afspeellijst');
             $table->string('naam');
             $table->string('artiest');
             $table->string('genre');
@@ -31,10 +31,10 @@ class CreateNummerTable extends Migration
      */
     public function down()
     {
-        Schema::table('nummer', function (Blueprint $table) {
-            $table->dropForeign('nummer_afspeellijstId_foreign');
+        // Schema::table('nummer', function (Blueprint $table) {
+        //     $table->dropForeign('nummer_afspeellijstId_foreign');
 
-        });
+        // });
         Schema::dropIfExists('nummer');
     }
 }

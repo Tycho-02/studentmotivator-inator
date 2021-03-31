@@ -18,8 +18,22 @@ class AfspeellijstSeeder extends Seeder
             'userId' => '1',
             'afspeellijstId' => '1',
             'naam' => 'Chill lijst',
-            'aantalNummers' => '1',
+            'aantalNummers' => 1,
             'humeur' => "Blij"
+        ]);
+        DB::table('afspeellijst')->insert([ 
+            'userId' => '1',
+            'afspeellijstId' => '2',
+            'naam' => 'meh lijst',
+            'aantalNummers' => 0,
+            'humeur' => "Meh"
+        ]);
+        DB::table('afspeellijst')->insert([ 
+            'userId' => '1',
+            'afspeellijstId' => '3',
+            'naam' => 'sad lijst',
+            'aantalNummers' => 0 ,
+            'humeur' => "Verdrietig"
         ]);
     }
 }
