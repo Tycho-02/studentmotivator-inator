@@ -21,6 +21,7 @@ idealTemp = ""
 
 mycursor = mydb.cursor()
 while True:
+    rcv = port.readline().strip()
     mycursor.execute("SELECT * from studiebuddy;")
     for x in mycursor:    
         buddyName = x[3]
@@ -41,6 +42,13 @@ while True:
     time.sleep(0.1)
     port.write(stuuridealTemp)
     port.write('\n')
+    time.sleep(0.1)
+
+    
+    if(rcv == 'b'):
+        os.system("python weerbericht.py")
+    
+
     time.sleep(1)
     mydb.commit()
 
