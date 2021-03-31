@@ -8,7 +8,7 @@
     
     <title>Document</title>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-    <script src="/js/msin.js"></script>
+    <script src="/js/main.js"></script>
 
 </head>
 <body class="grid">
@@ -28,7 +28,7 @@
         @yield('content')
    </section>
    <section class="muziekSpeler">
-        <!-- @yield('muziekSpeler') -->
+        <!-- kijk welke variabelen bestaat en displayed dat wat er bij hoort -->
         @isset($nummers)
             @include('nummers.components.muziekSpeler--index')
         @endisset

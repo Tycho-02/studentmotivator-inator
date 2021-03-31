@@ -1,7 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    @foreach($afspeellijstnummers as $afspeellijstnummer)
     <h1>{{ $afspeellijst }}</h1>
+    <li class="list__item">
+            <h2>Naam</h2>
+            <h2>Artiest</h2>
+            <h2>genre</h2>
+    </li>
+    @foreach($afspeellijstnummers as $afspeellijstnummer)
     <li class="list__item">
         <p>{{ $afspeellijstnummer->naam }}</p>
         <p>{{ $afspeellijstnummer->artiest }}</p>

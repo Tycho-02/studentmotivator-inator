@@ -17,16 +17,18 @@ class AfspeellijstController extends Controller
         $nummers = Afspeellijst::find($afspeellijstId)->nummers()->get();
         return view('afspeellijsten.afspeellijstNummers')->with([
             'afspeellijstnummers'=> $nummers, 
-            'afspeellijst'=> Afspeellijst::find($afspeellijstId)->naam,
-            'afspeellijstId' => $afspeellijstId
+            'afspeellijstId' => $afspeellijstId,
+            'afspeellijst'=> Afspeellijst::find($afspeellijstId)->naam
         ]);
     }
 
-    public function getnummerInlijst($afspeellijstId , $afspeellijst){
+    public function getnummerInlijst($afspeellijstId , $nummer){
+        $nummers = Afspeellijst::find($afspeellijstId)->nummers()->get();
         return view('afspeellijsten.afspeellijstNummers', [
-            'afspeellijstnummers' => Afspeellijst::find($afspeellijstId)->nummers()->get(),
-            'afspeellijst'=> Afspeellijst::find($afspeellijstId)->naam,
+            'afspeellijstnummers' => $nummers,
             'afspeellijstId' => $afspeellijstId,
+            'afspeellijst'=> Afspeellijst::find($afspeellijstId)->naam,
+            'nummer' => $nummer
         ]);
     }
 }

@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Nummer as Nummer;
 use App\Models\Afspeellijst as Afspeellijst;
 use App\Models\Users as User;
-
-use DB;
-
 use Storage;
+use DB;
 
 class NummersController extends Controller
 {
@@ -18,7 +16,6 @@ class NummersController extends Controller
             'nummers' => Nummer::all(),
             'user' => User::first(),
             'afspeellijst' => Afspeellijst::all()
-
         ]);
     }
 
@@ -49,6 +46,7 @@ class NummersController extends Controller
                 $posts_music->bestandLocatie = $naam;
                 $posts_music->afspeellijstId = $request->mood;
 
+                // na het toevoegen van een nummer word het aantalnummer opgehoogt met 1 bij de afspeellijst met dezelfde mood
                 Afspeellijst::where('afspeellijstId', $posts_music->afspeellijstId)->update([
                     'aantalNummers' => DB::raw('aantalNummers+1')
                 ]);
