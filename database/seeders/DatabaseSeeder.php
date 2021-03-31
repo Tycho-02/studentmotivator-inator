@@ -23,4 +23,6 @@ class DatabaseSeeder extends Seeder
             AfspeellijstSeeder::class,
             NummerSeeder::class,
             TakenTableSeeder::class,
-                ]);
+        ]);
+    }
+}
