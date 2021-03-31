@@ -266,4 +266,74 @@ color: #000;
   .timer__form-submitBtn{
       width: 50%;
   }
+
+}
+.content--tijdInstellingen {
+  margin-top: 5rem;
+}
+
+.content--tijdInstellingen__form {
+  margin-top: 4rem;
+}
+
+.content--tijdInstellingen_naarBed__input, .content--tijdInstellingen_uitBed__input {
+  font-size: 150%;
+}
+
+.content--tijdInstellingen__section {
+  margin-top: 3rem;
+}
+
+.content--tijdInstellingen__buzzer {
+  margin-top: 3rem;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: var(--PrimaryColor);
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.content--tijdInstellingen__form__section__select {
+
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.content--tijdInstellingen__form__section__select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background:var(--SecondaryColor);
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.content--tijdInstellingen__form__section__select:hover::after {
+  color: #f39c12;
 }

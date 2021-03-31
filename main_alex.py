@@ -85,7 +85,6 @@ while gebruikerNaarBed == False:
                 print('Nu gaat sensor kijken wanneer de gebruiker wakker is. Dit kan ook eerder zijn dan de ingestelde tijd!')
                 ###while loop check om wekker af te laten gaan wanneer de gebruiker wakker wordt
                 while(datetime.datetime.now().strftime("%H:%M:%S") <= str(uit_bed)):
-                    port.write('')
                     print('#### USER WAKKERWORDEN BUZZER CHECK ####')
                     print('Gebruiker is nog niet wakker. Tijd dat gebruiker wakker wilt worden:' + str(uit_bed))
                     print("tijd nu :" + datetime.datetime.now().strftime("%H:%M:%S"))
