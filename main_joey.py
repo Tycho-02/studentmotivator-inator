@@ -1,5 +1,6 @@
 import mysql.connector
 import time
+import requests
 
 import serial
 import os
@@ -13,19 +14,23 @@ mydb = mysql.connector.connect(
 
 port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
 
-
-
+buddyName = "Test"
+buddySkin = ""
+idealTemp = ""
 
 
 mycursor = mydb.cursor()
 while True:
-    mycursor.execute("SELECT * from studiebuddy")
-    for x in mycursor:
-        buddyName = x[3];
-        buddySkin = x[4];
+    mycursor.execute("SELECT * from studiebuddy;")
+    for x in mycursor:    
+        buddyName = x[3]
+        buddySkin = x[4]
+        idealTemp = int(x[5])
+
     
     stuurNaam = bytes(buddyName)
     stuurSkin = bytes(buddySkin)
+    stuuridealTemp = bytes(idealTemp)
     port.write('\n')
     time.sleep(0.1)
     port.write(stuurNaam)
@@ -33,9 +38,11 @@ while True:
     time.sleep(0.1)
     port.write(stuurSkin)
     port.write('\n')
-
+    time.sleep(0.1)
+    port.write(stuuridealTemp)
+    port.write('\n')
     time.sleep(1)
-    
+    mydb.commit()
 
     
     

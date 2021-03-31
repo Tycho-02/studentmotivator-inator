@@ -57,6 +57,6 @@ class StudiebuddyController extends Controller
             }
         }
         
-        return view('studiebuddy.index')->with(['temps' => $temperatures, 'weerbericht' => $weather, 'hours' => $hours, 'planning' => $planning]);
+        return view('studiebuddy.components.weerbericht')->with(['temps' => $temperatures, 'weerbericht' => $weather, 'hours' => $hours, 'planning' => $planning]);
     }
 }

@@ -1,7 +1,2 @@
-@foreach ($hours as $key=>$hour)
-    <p>{{$hour}} {{$temps[$key]}} {{$weerbericht[$key]}}</p>
-@endforeach
-
-@foreach ($planning as $plan)
-    <p>{{$plan}}</p>
-@endforeach
+@extends('default')
+<h1>wa wa wa</h1>
