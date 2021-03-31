@@ -2,7 +2,7 @@
 @section('content')
     <h1>Nummers</h1>
     <ul class="list">
-        <li class="list__item">
+        <li class="list__item hidden">
             <h2>Nummer</h2>
             <h2>Artiest</h2>
             <h2>Genre</h2>

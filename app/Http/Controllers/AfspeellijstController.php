@@ -24,11 +24,13 @@ class AfspeellijstController extends Controller
 
     public function getnummerInlijst($afspeellijstId , $nummer){
         $nummers = Afspeellijst::find($afspeellijstId)->nummers()->get();
+        $nummer = Afspeellijst::find($afspeellijstId)->nummers()->where('bestandLocatie',$nummer)->get()->first();
         return view('afspeellijsten.afspeellijstNummers', [
             'afspeellijstnummers' => $nummers,
             'afspeellijstId' => $afspeellijstId,
             'afspeellijst'=> Afspeellijst::find($afspeellijstId)->naam,
-            'nummer' => $nummer
+            'nummer' => $nummer,
+
         ]);
     }
 }

@@ -4,8 +4,8 @@
     <p>{{ $nummer->naam }}</p>
     <p>{{ $nummer->artiest }}</p>
     <p>{{ $nummer->genre }}</p>
-    <button>
-        <a href="{{ route('krijg-nummer',  ['nummer' => $nummer->bestandLocatie])}}">play</a>
+    <button class="list__item--button__play">
+        <a href="{{ route('krijg-nummer',  ['bestandLocatie' => $nummer->bestandLocatie, 'object' => $nummer])}}">    <i class="list__item--button__play fas fa-play"></i></a>
     </button>
 
 </li>

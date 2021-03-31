@@ -29,7 +29,7 @@ Route::get("/afspeellijst/{afspeellijstId}/{nummer}", [
 
 
 Route::get("/nummers", "App\Http\Controllers\NummersController@index");
-Route::get("/nummers/{nummer}", [
+Route::get("/nummers/{bestandLocatie}", [
     'uses' => 'App\Http\Controllers\NummersController@getNummer',
     'as' => 'krijg-nummer',
 ]);

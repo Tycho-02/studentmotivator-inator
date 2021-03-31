@@ -58,10 +58,12 @@ class NummersController extends Controller
         return redirect('/nummers');
     }
 
-    public function getNummer($nummer){
+    public function getNummer($bestandLocatie){
         return view('nummers.nummers', [
             'nummers' => Nummer::all(),
-            'nummer' => $nummer
+            'bestandLocatie' => $bestandLocatie,
+            'nummer' => Nummer::where('bestandLocatie', $bestandLocatie)->get()->first()
+            
         ]);
     }
 
