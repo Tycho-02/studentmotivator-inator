@@ -31,10 +31,10 @@ class CreateNummerTable extends Migration
      */
     public function down()
     {
-        Schema::table('nummer', function (Blueprint $table) {
-            $table->dropForeign('nummer_afspeellijstId_foreign');
+        // Schema::table('nummer', function (Blueprint $table) {
+        //     $table->dropForeign('nummer_afspeellijstId_foreign');
 
-        });
+        // });
         Schema::dropIfExists('nummer');
     }
 }
