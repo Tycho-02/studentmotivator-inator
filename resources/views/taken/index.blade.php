@@ -24,5 +24,5 @@
         <hr>
         @endforeach
     </ul>
-    <a href="/taken/add"><button class="content--button__actions__primary">Taak toevoegen</button></a>
+    <a href="/taken/create"><button class="content--button__actions__primary">Taak toevoegen</button></a>
 @endsection

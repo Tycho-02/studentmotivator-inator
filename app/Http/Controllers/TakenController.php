@@ -11,11 +11,11 @@ class TakenController extends Controller
         return view('taken.index', ['taken' => \App\Models\Taak::all()]);
     }
 
-    public function add() {
-        return view('taken.add');
+    public function create() {
+        return view('taken.create');
     }
 
-    public function addTaak() {
+    public function store() {
         $taak = new Taak();
 
         $taak->title = request('title');
@@ -29,10 +29,8 @@ class TakenController extends Controller
         return redirect('/taken');
     }
 
-    public function deleteTaak($taakId) {
+    public function destroy($taakId) {
         \App\Models\Taak::destroy($taakId);
-        // $taak->delete();
         return redirect('/taken');
-        // return $taak;
     }
 }

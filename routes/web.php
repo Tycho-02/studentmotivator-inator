@@ -21,9 +21,9 @@ Route::post('/update', [
 ]);
 
 Route::get('/taken', [\App\Http\Controllers\TakenController::class, 'index']);
-Route::get('/taken/add', [\App\Http\Controllers\TakenController::class, 'add']);
-Route::post('/taaktoevoegen', [\App\Http\Controllers\TakenController::class, 'addTaak']);
-Route::get('/taakverwijderen/{id}', [\App\Http\Controllers\TakenController::class, 'deleteTaak']);
+Route::get('/taken/create', [\App\Http\Controllers\TakenController::class, 'create']);
+Route::post('/taken', [\App\Http\Controllers\TakenController::class, 'store']);
+Route::get('/taakverwijderen/{id}', [\App\Http\Controllers\TakenController::class, 'destroy']);
 
 Route::get("/afspeellijst", "App\Http\Controllers\AfspeellijstController@index");
 
