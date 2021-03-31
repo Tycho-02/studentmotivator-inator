@@ -16,5 +16,5 @@ mycursor = mydb.cursor()
 mycursor.execute("UPDATE tijdslapen SET tijdUitBedGegaan = now() WHERE userId = 1 order by tijdId DESC limit 1;")
 
 mydb.commit()
-print(mycursor.rowcount, "naar bed succesvol geupdate")
+print(mycursor.rowcount, "uit bed succesvol geupdate")
 

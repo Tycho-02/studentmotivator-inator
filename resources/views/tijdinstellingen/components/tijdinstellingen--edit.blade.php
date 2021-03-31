@@ -9,11 +9,11 @@
     @csrf
 
         <section class="content--tijdInstellingen__form__section">
-            <label for="tijdInBed">Tijd Naar bed:</label>
+            <label for="tijdInBed">Tijd naar bed:</label>
             <input type="time" step="1" class="content--tijdInstellingen_naarBed__input form__field" name="tijdInBed" value="{{ $data['tijdInBed'] }}" id="tijdInBed">
         </section>
         <section class="content--tijdInstellingen__form__section">
-            <label for="tijdUitBed">Tijd Uit bed:</label>
+            <label for="tijdUitBed">Tijd uit bed:</label>
             <input type="time" step="1" class="content--tijdInstellingen_uitBed__input form__field" name="tijdUitBed" value="{{ $data['tijdUitBed'] }}" id="tijdUitBed">
     </section>
     <section class="content--tijdInstellingen__form__section ">

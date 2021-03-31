@@ -80,7 +80,7 @@ while gebruikerNaarBed == False:
             print(rcv)
             if rcv == 's':
                 print('geupdate, gebruiker gaat nu slapen')
-                os.system("python update_uit_bed_alex.py")
+                os.system("python update_naar_bed_alex.py")
                 time.sleep(10)
                 print('Nu gaat sensor kijken wanneer de gebruiker wakker is. Dit kan ook eerder zijn dan de ingestelde tijd!')
                 ###while loop check om wekker af te laten gaan wanneer de gebruiker wakker wordt
@@ -97,7 +97,7 @@ while gebruikerNaarBed == False:
                 #mocht gebruiker eerder willen opstaan
             elif rcv == 't':
                 print('geupdate, gebruiker gaat nu uit bed')
-                os.system("python update_naar_bed_alex.py")
+                os.system("python update_uit_bed_alex.py")
                 time.sleep(2)
                 exit()
                

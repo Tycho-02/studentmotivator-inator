@@ -278,6 +278,7 @@ color: #000;
 
 .content--tijdInstellingen_naarBed__input, .content--tijdInstellingen_uitBed__input {
   font-size: 150%;
+  width: 10em;
 }
 
 .content--tijdInstellingen__section {
@@ -309,7 +310,7 @@ select::-ms-expand {
   width: 20em;
   height: 3em;
   line-height: 3;
-  background: #2c3e50;
+  background: var(--SecondaryColor);
   overflow: hidden;
   border-radius: .25em;
 }
