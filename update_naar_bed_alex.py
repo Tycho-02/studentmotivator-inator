@@ -18,5 +18,5 @@ mycursor.execute("INSERT into tijdslapen (userId, tijdInBedGegaan, tijdUitBedGeg
 
 
 mydb.commit()
-print(mycursor.rowcount, "naar bed succesvol geupdate")
+print(mycursor.rowcount, "uit bed succesvol geupdate")
 

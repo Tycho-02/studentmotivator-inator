@@ -7,6 +7,7 @@ import pause
 
 #global variables
 gebruikerNaarBed = False
+gebruikerEerderUitBed = False
 
 mydb = mysql.connector.connect(
     host="localhost",
@@ -65,37 +66,53 @@ while gebruikerNaarBed == False:
         print('Gebruiker kan nu gaan slapen! Hier gaat de buzzer ook af')
         print('Sensoor gaat zijn werk doen!')
         gebruikerNaarBed = True
+        gebruikerWordtWakker = False
         port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
-        time.sleep(2)
+        time.sleep(3)
+
+        port.write('x') #we schrijven X naar port
+        print('naar bed geschreven naar port')
+        time.sleep(4)
         mycursor = mydb.cursor()
         while True:
-            opstaan = 'o'
+            opstaan = int(1)
             rcv = port.readline().strip()
             print(rcv)
             if rcv == 's':
                 print('geupdate, gebruiker gaat nu slapen')
                 os.system("python update_uit_bed_alex.py")
                 time.sleep(10)
-                print('Nu gaat sensor kijken wanneer de gebruiker wakker is. Dit kan ook eerder zijn dan de ingestelde tijd! ')
+                print('Nu gaat sensor kijken wanneer de gebruiker wakker is. Dit kan ook eerder zijn dan de ingestelde tijd!')
+                ###while loop check om wekker af te laten gaan wanneer de gebruiker wakker wordt
+                while(datetime.datetime.now().strftime("%H:%M:%S") <= str(uit_bed)):
+                    port.write('')
+                    print('#### USER WAKKERWORDEN BUZZER CHECK ####')
+                    print('Gebruiker is nog niet wakker. Tijd dat gebruiker wakker wilt worden:' + str(uit_bed))
+                    print("tijd nu :" + datetime.datetime.now().strftime("%H:%M:%S"))
+                    time.sleep(1)
+                else:
+                    print('gebruiker wordt wakker volgens de gekozen tijd!')
+                    port.write('b')
+                    time.sleep(3)
+                    print('naar bed geschreven naar port')
+                #mocht gebruiker eerder willen opstaan
             elif rcv == 't':
                 print('geupdate, gebruiker gaat nu uit bed')
                 os.system("python update_naar_bed_alex.py")
-                sys.exit("Gebruiker is klaar met slapen!")
-            while(datetime.datetime.now().strftime("%H:%M:%S") != str(uit_bed)):
-                print('Gebruiker is nog niet wakker. Tijd dat gebruiker wakker wilt worden:' + str(naar_bed))
-                time.sleep(1)
-            else:
-                print('gebruiker wordt wakker volgens de gekozen tijd!')
-                port.write(opstaan)
-                time.sleep(6) #langere tijd met wachten om data in arduino te zetten
-
-                # Serial lezen sectie
-                msg = port.read(port.inWaiting()) #lees alles in buffer
-                print ("Bericht van arduino: ")
-                print (msg)
-                
-
+                time.sleep(2)
+                exit()
+               
 mydb.close()
+
+
+
+
+
+
+#created by 1118551 - student motivator-inator 1118551
+
+
+
 
 
 
