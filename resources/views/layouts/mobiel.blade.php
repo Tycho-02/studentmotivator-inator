@@ -16,19 +16,6 @@
    <section class="menu">
       @include('layouts.components.menu--index')
    </section>
-
-   <section class="content">
-        @yield('content')
-   </section>
-   <section class="muziekSpeler">
-        <!-- kijk welke variabelen bestaat en displayed dat wat er bij hoort -->
-        @isset($nummers)
-            @include('nummers.components.muziekSpeler--index')
-        @endisset
-        @isset($afspeellijstnummers)
-            @include('afspeellijsten.components.muziekSpeler--index')
-        @endisset
-   </section>
 </body>
 </html>
 
