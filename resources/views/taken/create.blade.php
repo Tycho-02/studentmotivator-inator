@@ -27,6 +27,8 @@
             <input class="form__field" type="date" name="uitvoerdatum" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" />
 
             <input class="content--button__actions__primary" type="submit" value="Taak toevoegen"/>
+
+            {{-- Een Error message als een taak niet kon worden opgeslagen --}}
             @if (session()->has('message'))
                 <div class="form__alert">
                     <p>{{ session()->get('message') }}</p>

@@ -13,17 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController@index");
-Route::get("/tijdinstellingen/edit", "App\Http\Controllers\TijdInstellingenController@edit"); 
-//Route::put("/tijdinstellingen/update", "App\Http\Controllers\TijdInstellingenController@update"); 
+Route::get("/tijdinstellingen/edit", "App\Http\Controllers\TijdInstellingenController@edit");
+//Route::put("/tijdinstellingen/update", "App\Http\Controllers\TijdInstellingenController@update");
 Route::post('/update', [
     'uses' => 'App\Http\Controllers\TijdInstellingenController@update',
     'as' => 'tijdinstellingen.update',
 ]);
 
-Route::get('/taken', [\App\Http\Controllers\TakenController::class, 'index']);
-Route::get('/taken/create', [\App\Http\Controllers\TakenController::class, 'create']);
-Route::post('/taken', [\App\Http\Controllers\TakenController::class, 'store']);
-Route::get('/taakverwijderen/{id}', [\App\Http\Controllers\TakenController::class, 'destroy']);
+Route::get('/taken', [\App\Http\Controllers\TakenController::class, 'index']); // Het taken overzicht
+Route::get('/taken/create', [\App\Http\Controllers\TakenController::class, 'create']); // Een taak toevoegen
+Route::post('/taken', [\App\Http\Controllers\TakenController::class, 'store']); // Een taak opslaan in de DB
+Route::get('/taken/destroy/{id}', [\App\Http\Controllers\TakenController::class, 'destroy']); // Een taak verwijderen
 
 Route::get("/afspeellijst", "App\Http\Controllers\AfspeellijstController@index");
 
