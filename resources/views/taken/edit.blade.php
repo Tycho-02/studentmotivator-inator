@@ -20,6 +20,9 @@
             <label class="form__label" for="label">Label</label>
             <input value="{{$taak->label}}" class="form__field" type="text" name="label" placeholder="Label" />
 
+            <label class="form__label" for="prioriteit">Prioriteit (0-3)</label>
+            <input class="form__field" type="number" name="prioriteit" min="0" max="3" value="{{$taak->prioriteit}}"/>
+
             <label class="form__label" for="deadline">Deadline</label>
             <input value="{{$taak->deadline}}" class="form__field" type="date" name="deadline" value="{{date('Y-m-d', time() + 86400)}}" min="{{date('Y-m-d')}}" />
 

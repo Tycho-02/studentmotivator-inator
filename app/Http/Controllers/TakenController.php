@@ -25,6 +25,7 @@ class TakenController extends Controller
         $taak->title = request('title');
         $taak->omschrijving = request('omschrijving');
         $taak->label = request('label');
+        $taak->prioriteit = request('prioriteit', 0);
         $taak->deadline = request('deadline');
         $taak->uitvoerdatum = request('uitvoerdatum');
 
@@ -60,6 +61,7 @@ class TakenController extends Controller
         $taak->title = request('title');
         $taak->omschrijving = request('omschrijving');
         $taak->label = request('label');
+        $taak->prioriteit = request('prioriteit', 0);
         $taak->deadline = request('deadline');
         $taak->uitvoerdatum = request('uitvoerdatum');
 
