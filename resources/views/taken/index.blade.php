@@ -17,7 +17,6 @@
     <ul>
         {{-- Lijst met alle taken --}}
         @foreach ($taken as $taak)
-        <a href="/taken/destroy/{{$taak->id}}">
         <ul>
             <li>Titel: {{$taak->title}}</li>
             <li>Omschrijving: {{$taak->omschrijving}}</li>
@@ -26,8 +25,9 @@
             <li>Prioriteit: {{$taak->prioriteit}}</li>
             <li>Deadline: {{$taak->deadline}}</li>
             <li>Uitvoerdatum: {{$taak->uitvoerdatum}}</li>
+            <a href="/taken/{{$taak->id}}/destroy"><button>Verwijder Taak</button></a>
+            <a href="/taken/{{$taak->id}}/edit"><button>Wijzig Taak</button></a>
         </ul>
-        </a>
         <hr>
         @endforeach
     </ul>

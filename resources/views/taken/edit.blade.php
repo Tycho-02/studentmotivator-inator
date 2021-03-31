@@ -8,25 +8,31 @@
 <!-- Content -->
 @section('content')
     <h1 class="taken__add__header">Taak Toevoegen:</h1>
-    <form class="taken__add__form" method='POST' action="/taaktoevoegen">
+    <form class="taken__add__form" method='POST' action="/taken/{{$taak->id}}">
         @csrf
-        @method('POST')
+        @method('PUT')
             <label class="form__label" for="title">Taak</label>
-            <input class="form__field" type="text" name="title" placeholder="Nieuw taak" required/>
-        
+            <input value="{{$taak->title}}" class="form__field" type="text" name="title" placeholder="Nieuw taak" required/>
+
             <label class="form__label" for="omschrijving">Omschrijving</label>
-            <textarea class="form__field" name="omschrijving" rows="5" placeholder="Taak omschrijving...."></textarea>
-        
+            <textarea class="form__field" name="omschrijving" rows="5" placeholder="Taak omschrijving....">{{$taak->omschrijving}}</textarea>
+
             <label class="form__label" for="label">Label</label>
-            <input class="form__field" type="text" name="label" placeholder="Label" />
-        
+            <input value="{{$taak->label}}" class="form__field" type="text" name="label" placeholder="Label" />
+
             <label class="form__label" for="deadline">Deadline</label>
-            <input class="form__field" type="date" name="deadline" value="{{date('Y-m-d', time() + 86400)}}" min="{{date('Y-m-d')}}" />
+            <input value="{{$taak->deadline}}" class="form__field" type="date" name="deadline" value="{{date('Y-m-d', time() + 86400)}}" min="{{date('Y-m-d')}}" />
 
-            <label class="form__label" for="uitvoerdatum">Uitvoerdatu:</label>
-            <input class="form__field" type="date" name="uitvoerdatum" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" />
+            <label class="form__label" for="uitvoerdatum">Uitvoerdatum</label>
+            <input value="{{$taak->uitvoerdatum}}" class="form__field" type="date" name="uitvoerdatum" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" />
 
-            <input class="content--button__actions__primary" type="submit" value="Taak toevoegen"/>
+            <input class="content--button__actions__primary" type="submit" value="Taak wijzigen"/>
 
+            {{-- Een Error message als een taak niet kon worden gewijzigd --}}
+            @if (session()->has('message'))
+                <div class="form__alert">
+                    <p>{{ session()->get('message') }}</p>
+                </div>
+            @endif
     </form>
 @endsection
