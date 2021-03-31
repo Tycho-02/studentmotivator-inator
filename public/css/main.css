@@ -1,16 +1,16 @@
 /* VARIABELEN */
 
 :root {
-    --PrimaryColor: #1a1a1d;
-    --TextColor: #fff;
-    --fullwidth: 100%;
-    --SecondaryColor: #4e4e50;
+  --PrimaryColor: #1A1A1D;
+  --TextColor: #fff;
+  --fullwidth: 100%;
+  --SecondaryColor: #4E4E50;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -21,11 +21,11 @@ html {
 body {
     font-size: 1.8rem;
     color: var(--TextColor);
-    padding: 4rem;
+    padding: 3rem;
     background: var(--PrimaryColor);
     font-family: sans-serif;
-    width: 100vw;
-    height: 100vh;
+    /* width: 100vw;
+    height: 100vh; */
 }
 
 h1 {
@@ -46,12 +46,10 @@ a {
     text-decoration: none;
 }
 
-.ondertext{
+.ondertext {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.548);
 }
-
-
 
 .content {
     grid-area: content;
@@ -61,21 +59,21 @@ a {
     list-style: none;
 }
 
-.list__item{
-    display:grid;
+.list__item {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(10px, auto);
     margin-top: 1rem;
     grid-template-areas:
-    "naam naam naam play"
-    "artiest artiest genre play"
+        "naam naam naam play"
+        "artiest artiest genre play";
 }
 
-.hidden{
-    display:none;
+.hidden {
+    display: none;
 }
 
-.list__item >p:nth-child(1){
+.list__item > p:nth-child(1) {
     grid-area: naam;
     font-size: 1.6rem;
 }
@@ -91,7 +89,7 @@ a {
     text-align: right;
 }
 
-.list__item--button__play{
+.list__item--button__play {
     float: right;
     background-color: transparent;
     border: none;
@@ -102,6 +100,7 @@ a {
     padding: 1.6rem 4.2rem;
     box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
     line-height: 1.25;
+    border-radius: 15px;
     background: #950740;
     text-decoration: none;
     color: white;
@@ -112,6 +111,7 @@ a {
     transition: background-color 0.6s ease;
     overflow: hidden;
     border: 1px solid #950740;
+    margin-bottom: 2rem;
 }
 .content--button__actions__primary:after {
     width: 0;
@@ -133,8 +133,9 @@ a {
     height: 200px;
 }
 
-.form {
-    margin-top: 4rem;
+.form,
+.taken__form {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -146,20 +147,22 @@ a {
     width: 50%;
 }
 
-.form__field {
+.form__field,
+.taken__form__field {
     font-family: inherit;
     width: 100%;
     border: 0;
-    border-bottom: 2px solid var(--TextColor);
+    border-bottom: 2px solid #4E4E50;
     outline: 0;
     font-size: 1.3rem;
     color: var(--TextColor);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     margin-bottom: 1rem;
     background: transparent;
     transition: border-color 0.2s;
 }
-.form__field::placeholder {
+.form__field::placeholder,
+.taken__form__field::placeholder {
     color: transparent;
 }
 .form__field:placeholder-shown ~ .form__label {
@@ -167,23 +170,35 @@ a {
     cursor: text;
 }
 
-.form__label {
+.form__label,
+.taken__form_label {
     transition: 0.2s;
     font-size: 1.6rem;
     color: var(--TextColor);
 }
 
-.form__field:focus {
-    padding-bottom: 1rem;
+.form__field:focus,
+.taken__form__field:focus {
+    padding-bottom: 0.5rem;
     font-weight: 700;
     border-width: 3px;
     border-image: linear-gradient(to right, #c3073f, #950740);
     border-image-slice: 1;
+  }
+  .timer__form{
+      display: inline-block;
+      text-align: center;
+  }
+  
+  /* reset input */
+  .form__field:required, .form__field:invalid {
 }
 
 /* reset input */
 .form__field:required,
-.form__field:invalid {
+.form__field:invalid,
+.taken__form__field:required,
+.taken__form__field:invalid {
     box-shadow: none;
 }
 
@@ -193,12 +208,14 @@ a {
 
 .content--button__actions__ghost {
     display: inline-block;
-    width: 15rem;
-    padding: 1.5rem;
+    border-radius: 12px;
+    width: 150px;
+    padding: 15px;
     color: #fff;
-    border: 1px solid var(--TextColor);
+    border: 1px solid #fff;
     text-align: center;
     outline: none;
+    border-radius: 15px;
     text-decoration: none;
 }
 
@@ -221,42 +238,41 @@ a {
     grid-auto-rows: minmax(10rem, auto);
 }
 
-
 /* audio styling */
 audio {
     width: 100%;
     height: 3rem;
     color: var(--TextColor);
 }
-.muziekSpeler{
+.muziekSpeler {
     margin-top: 4rem;
     grid-area: player;
     display: flex;
     flex-direction: column;
-    width:100%;
+    width: 100%;
     height: 100%;
 }
-.muziekSpeler--info{
-    display:flex;
+.muziekSpeler--info {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-  
+
 .muziekSpeler--timeline {
     width: 100%;
     height: 2px;
     margin-top: 2rem;
     -webkit-border-radius: 1.5rem;
     border-radius: 1.5rem;
-    background: rgba(255, 255, 255, 0.849); 
+    background: rgba(255, 255, 255, 0.849);
 }
-  
+
 .muziekSpeler--play__Button {
     margin-top: 12px;
-    cursor: pointer; 
+    cursor: pointer;
     color: var(--TextColor);
 }
-  
+
 .muziekSpeler--timeline__playhead {
     width: 1rem;
     height: 1rem;
@@ -264,9 +280,9 @@ audio {
     border-radius: 50%;
     margin-top: -4px;
     background: var(--SecondaryColor);
-    cursor: pointer; 
+    cursor: pointer;
 }
-  
+
 @media (min-width: 500px) {
     .grid {
         display: grid;
@@ -282,25 +298,23 @@ audio {
         width: 30%;
     }
     .content--button__actions__primary {
-        width: 30%;
+        width: fit-content;
     }
 
-    .list__item{
-    grid-template-columns: repeat(3, 1fr);
+    .list__item {
+        grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: minmax(10px, auto);
-        grid-template-areas: 
-        "nummer artiest genre play"  
-   }
-   .list__item:nth-child(1){
-        display:grid;
+        grid-template-areas: "nummer artiest genre play";
+    }
+    .list__item:nth-child(1) {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: minmax(10px, auto);
         margin-top: 1rem;
-        grid-template-areas:
-        "nummer artiest genre play"
+        grid-template-areas: "nummer artiest genre play";
     }
-  
-    .list__item > p:nth-child(1){
+
+    .list__item > p:nth-child(1) {
         color: var(--TextColor);
         font-size: 1.6rem;
         grid-area: nummer;
@@ -308,29 +322,140 @@ audio {
 
     .list__item > p:nth-child(2) {
         color: var(--TextColor);
-        margin-left:0.5rem;
+        margin-left: 0.5rem;
         font-size: 1.6rem;
         grid-area: artiest;
     }
     .list__item > p:nth-child(3) {
         color: var(--TextColor);
         font-size: 1.6rem;
-        margin-left:0.8rem;
+        margin-left: 0.8rem;
         grid-area: genre;
         text-align: left;
     }
-    .muziekSpeler--info{
+    .muziekSpeler--info {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
-    .muziekSpeler--buttons{
-        display:flex;
+    .muziekSpeler--buttons {
+        display: flex;
         justify-content: center;
     }
-    .muziekSpeler--buttons > i{
+    .muziekSpeler--buttons > i {
         margin: 0 1rem;
     }
+}
+
+/* Taken styling */
+.taken__add__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.taken__form__alert {
+    background-color: red;
+    padding: 1rem;
+}
+
+@media (min-width: 500px) {
+    .taken__form {
+        width: 70%;
+    }
+}
+
+@media (min-width: 768px) {
+    .taken__form {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .taken__form {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1440px) {
+    .taken__form {
+        width: 25%;
+    }
+  .timer__form-field{
+      width: 50%;
+  }
+  .timer__form-submitBtn{
+      width: 50%;
   }
 
+}
+.content--tijdInstellingen {
+  margin-top: 5rem;
+}
 
-  
+.content--tijdInstellingen__form {
+  margin-top: 4rem;
+}
+
+.content--tijdInstellingen_naarBed__input, .content--tijdInstellingen_uitBed__input {
+  font-size: 150%;
+  width: 10em;
+}
+
+.content--tijdInstellingen__section {
+  margin-top: 3rem;
+}
+
+.content--tijdInstellingen__buzzer {
+  margin-top: 3rem;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: var(--PrimaryColor);
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.content--tijdInstellingen__form__section__select {
+
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: var(--SecondaryColor);
+  overflow: hidden;
+  border-radius: .25em;
+}
+select {
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.content--tijdInstellingen__form__section__select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background:var(--SecondaryColor);
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.content--tijdInstellingen__form__section__select:hover::after {
+  color: #f39c12;
+}

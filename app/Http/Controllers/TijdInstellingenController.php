@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Models\TijdInstellingen;
+use Illuminate\Support\Facades\Validator;
 
 class TijdInstellingenController extends Controller
 {
@@ -28,16 +29,29 @@ class TijdInstellingenController extends Controller
     }
 
     public function update(Request $request) {
-        /*$request->validate([
-            'tijdInBed' => 'required',
-            'tijdUitBed' => 'required'
-        ]);*/
+
+        //validatie request
+
+        $validator = Validator::make($request->all(), [
+            'tijdInBed' => 'required|min:4',
+            'tijdUitBed' => 'required|min:4'
+        ]);
+
+        if ($validator->fails()) {
+            return back()->with('toast_error', 'Tijd in en uit bed moet correct ingevuld zijn!');
+        }
+      /*  $request->validate([
+            'tijdInBed' => 'required|min:4',
+            'tijdUitBed' => 'required|min:4'
+        ]);
+        */
         $updaten = TijdInstellingen::find($request->id);
         $updaten->tijdInBed = $request->tijdInBed;
         $updaten->tijdUitBed = $request->tijdUitBed;
+        $updaten->buzzer = $request->buzzer;
         $updaten->save();
 
-        return redirect('/tijdinstellingen');
+        return redirect('/tijdinstellingen')->with('success', 'Bedtijd is succesvol gewijzigd!');
         
     }
         //wordt later gecodeerd met Auth::user 

@@ -29,6 +29,7 @@
             @include('afspeellijsten.components.muziekSpeler--index')
         @endisset
    </section>
+   @include('sweetalert::alert')
 </body>
 </html>
 

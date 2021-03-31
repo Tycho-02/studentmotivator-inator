@@ -25,7 +25,7 @@
         @foreach($afspeellijst as $afspeellijst) 
             @if($user->humeur == $afspeellijst->humeur)
                 @foreach($afspeellijst->nummers->random(1) as $random )
-                    <audio id="music" preload="true">
+            <audio id="music" preload="true">
                 <source src="/muziek/{{$random->bestandLocatie}}">
             </audio>
             <section id="audioplayer" class="muziekSpeler" >

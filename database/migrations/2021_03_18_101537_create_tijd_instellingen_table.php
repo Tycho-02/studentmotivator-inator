@@ -19,6 +19,7 @@ class CreateTijdInstellingenTable extends Migration
             $table->foreign('userId')->references('userId')->on('users');
             $table->time('tijdInBed');
             $table->time('tijdUitBed');
+            $table->string('buzzer');
             $table->timestamp('updated_at')->nullable();
         });
     }

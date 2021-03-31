@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Upload Nummer</h2>
+    <h2>Upload Nummer</h2>
     <form class='form' method="POST" action="toevoegen" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="afspeellijstId" value='1' >
@@ -19,7 +19,7 @@
             <option value="1">Blij</option>
             <option value="2">Meh</option>
             <option value="3">Verdrietig</option>
-        </select> 
+        </select>
         <button class="content--button__actions__primary" type="submit">Upload</button>
-    </form>   
+    </form>
 @endsection
