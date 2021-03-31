@@ -22,5 +22,4 @@ class MobielTableSeeder extends Seeder
             'smiley' => false
         ]);
     }
-
 }
