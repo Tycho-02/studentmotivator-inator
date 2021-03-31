@@ -46,16 +46,9 @@ a {
     text-decoration: none;
 }
 
-.grid {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 0.5fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 0.5fr;
-    grid-template-areas:
-        "menu content content "
-        "menu content content"
-        "player player player";
-}
+/* .grid {
+   
+} */
 
 .menu {
     grid-area: menu;

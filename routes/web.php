@@ -32,7 +32,12 @@ Route::get("/nummers", "App\Http\Controllers\NummersController@index");
 Route::get("/nummerToevoegen", "App\Http\Controllers\NummersController@show");
 Route::post("/toevoegen", "App\Http\Controllers\NummersController@upload");
 
+// Route::get('/mobiel', [\App\Http\Controllers\MobielController::class, 'index']);
+Route::get('/timer', [\App\Http\Controllers\TimerController::class, 'index']);
+Route::post('/timer', [\App\Http\Controllers\TimerController::class, 'toevoegenTijd']);
 
 Route::get('/', function(){
     return view('layouts.app');
 });
+
+
