@@ -2,7 +2,7 @@
 
 <!-- Page Title -->
 @section('title')
-    {{"Taak Toevoegen"}}
+    {{"Taak Wijzigen"}}
 @endsection
 
 <!-- Content -->

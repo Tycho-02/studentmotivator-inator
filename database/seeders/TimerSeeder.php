@@ -3,11 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use DB; 
-<<<<<<< HEAD
-=======
-
->>>>>>> 49e41e4dcc9c4672238e0a7eede284352a221a30
+use DB;
 class TimerSeeder extends Seeder
 {
     /**
