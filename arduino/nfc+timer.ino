@@ -25,6 +25,7 @@ int secondsBreak = 5;
 int run = 0;
 boolean success;
 int punten = 10;
+int verliesPunten = 0;
 
 //speaker
 int speakerPIN = 8;
@@ -78,6 +79,7 @@ void timer(boolean success){
     if (currentMillis - lastTick >= 1000){
       lastTick += 1000;
       countdownTime = countdownTime - 2;
+      verliesPunten = 0;
       displayTime(countdownTime);
     }
   }
@@ -86,21 +88,22 @@ void timer(boolean success){
     Serial.println(F("Countdown Finished"));
     speakerMAP = map(5, 800, 1023, 800, 1000);
     tone(speakerPIN, speakerMAP, 10000);
-    display.printTime(0, 0, false);
+    display.printTime(0,0,false);
     punten += 10;
     Serial.println("pb");
     delay(11000);
   }
 //punten beloning word minder voor het te vroeg weg halen van de mobiel  
-  if(countdownTime != 1 && !success){
+  if(countdownTime != 1 && !success && verliesPunten == 0){
     punten -= 10;  
     Serial.println("pa");
+    verliesPunten = 1;
   }
 //start de pauze timer
   if(!success && countdownTime == 1){
     timerBreak(hoursBreak, minutesBreak);
   }
-  
+    
 }
 
 void displayTime(unsigned long aTime){
@@ -149,4 +152,14 @@ void displayTimeBreak(unsigned long countdownTimeBreak){
     display.printTime(0, 0, false);
     delay(30000);
   }
+  //mobiel terug leggen tijdens de break levert je 10 punten op + nieuwe tijd gaat lopen die je zelf moet instellen
+
+  if(countdownTimeBreak > 1 && succes){
+    display.printTime(0, 0, false);
+    punten += 10;
+    delay(30000);
+  }
+
+
+  
 }
