@@ -16,8 +16,8 @@ class CreateStudieplanningTable extends Migration
         Schema::create('studieplanning', function (Blueprint $table) {
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('userId')->on('users');
-            $table->planning();
-            $table->timestamps();
+            $table->string('planning');
+            $table->string('datum');
         });
     }
 
