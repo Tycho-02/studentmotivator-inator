@@ -24,8 +24,8 @@ body {
     padding: 3rem;
     background: var(--PrimaryColor);
     font-family: sans-serif;
-    /* width: 100vw;
-    height: 100vh; */
+    width: 99vw;
+    height: 99vh;
 }
 
 h1 {
@@ -226,16 +226,37 @@ a {
 }
 /* menu styling */
 .menu {
-    grid-area: menu;
-    height: 100%
+    height: 100%;
+    width: 100%;
 }
 
 .menu__list{
     width:100%;
     height: 100%;
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(10rem, auto);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu__list__item{
+    width: 9rem;
+    height: 9rem;
+    margin: 1rem 1.4rem;
+    background-color: #c3073f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+}
+.menu__list__item > a{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menu__list__item > a > i{
+    margin-bottom: 0.2em ;
 }
 
 /* audio styling */
@@ -245,7 +266,7 @@ audio {
     color: var(--TextColor);
 }
 .muziekSpeler {
-    margin-top: 4rem;
+    margin-top: 10rem;
     grid-area: player;
     display: flex;
     flex-direction: column;
@@ -284,11 +305,17 @@ audio {
 }
 
 @media (min-width: 500px) {
+    .content{
+        margin-left: -30rem;
+    }
+    .content--button__actions__primary {
+        width: fit-content;
+    }
     .grid {
         display: grid;
         grid-gap: 2rem;
-        grid-template-columns: 0.5fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 0.5fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
             "menu content content "
             "menu content content"
@@ -297,9 +324,7 @@ audio {
     .form__field {
         width: 30%;
     }
-    .content--button__actions__primary {
-        width: fit-content;
-    }
+  
 
     .list__item {
         grid-template-columns: repeat(3, 1fr);
@@ -333,6 +358,16 @@ audio {
         grid-area: genre;
         text-align: left;
     }
+    .menu{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .muziek
     .muziekSpeler--info {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

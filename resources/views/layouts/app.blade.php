@@ -13,10 +13,9 @@
 
 </head>
 <body class="grid">
-   <section class="menu">
-      @include('layouts.components.menu--index')
+   <section>
+        <button class="" type="button" onclick="window.location='http://localhost:8000/'">Button</button>
    </section>
-
    <section class="content">
         @yield('content')
    </section>
