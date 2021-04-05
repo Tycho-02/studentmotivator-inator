@@ -13,9 +13,7 @@
 
 </head>
 <body class="grid">
-   <section>
-        <button class="" type="button" onclick="window.location='http://localhost:8000/'">Button</button>
-   </section>
+        <button class="menu--button__action" onclick="window.location='http://localhost:8000/'"><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
    <section class="content">
         @yield('content')
    </section>

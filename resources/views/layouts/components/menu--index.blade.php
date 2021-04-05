@@ -1,6 +1,6 @@
 <ul class="menu__list list">
     <li id="js--slaaptijdButton" class="menu__list__item">
-        <a href="#">
+        <a href="/tijdinstellingen">
             <i class="fas fa-bed fa-2x"></i>
             <p>Slaaptijd</p> 
         </a>
