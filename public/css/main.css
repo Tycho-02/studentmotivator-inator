@@ -252,7 +252,7 @@ a {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: ;
+    justify-content: center ;
 }
 
 .menu__list__item{
@@ -518,7 +518,9 @@ select::-ms-expand {
   border-radius: .25em;
 }
 select {
-  flex: 1;.content--tijdInstellingen__form__section__select::after {
+  flex: 1;
+}
+.content--tijdInstellingen__form__section__select::after {
   content: '\25BC';
   position: absolute;
   top: 0;
