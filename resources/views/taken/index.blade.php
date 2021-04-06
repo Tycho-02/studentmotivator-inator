@@ -31,7 +31,7 @@
             @if ($taak->uitvoerdatum != $taak->deadline)
                 <li>Uitvoerdatum: {{$taak->uitvoerdatum}}</li>
             @endif
-            <a href="/taken/{{$taak->id}}/destroy"><button>Verwijder Taak</button></a>
+            <a href="/taken/{{$taak->id}}/destroy"><button>Voltooi Taak</button></a>
             <a href="/taken/{{$taak->id}}/edit"><button>Wijzig Taak</button></a>
         </ul>
         <hr>
