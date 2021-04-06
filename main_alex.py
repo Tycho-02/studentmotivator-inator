@@ -27,15 +27,18 @@ for row in records:
 
     slapen.append(row[2])
     slapen.append(row[3])
+    slapen.append(row[4])
 
 
 naar_bed = (datetime.datetime.min + slapen[0]).time()
 uit_bed = (datetime.datetime.min + slapen[1]).time()
+buzzerInstellingen = slapen[2]
 
 
 
 print('tijd naar bed gebruiker: ' + str(naar_bed))
 print('tijd uit bed gebruiker: ' + str(uit_bed))
+print('buzzer instelling: ' + str(buzzerInstellingen))
 
 
 print(datetime.datetime.now().strftime("%H:%M:%S"))
@@ -69,7 +72,10 @@ while gebruikerNaarBed == False:
         gebruikerWordtWakker = False
         port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
         time.sleep(3)
-
+        if str(buzzerInstellingen) == 'aan':
+            port.write('a')
+        else:
+            port.write('u')
         port.write('x') #we schrijven X naar port
         print('naar bed geschreven naar port')
         time.sleep(4)
@@ -90,6 +96,10 @@ while gebruikerNaarBed == False:
                     print("tijd nu :" + datetime.datetime.now().strftime("%H:%M:%S"))
                     time.sleep(1)
                 else:
+                    if str(buzzerInstellingen) == 'aan':
+                        port.write('a')
+                    else:
+                        port.write('u')
                     print('gebruiker wordt wakker volgens de gekozen tijd!')
                     port.write('b')
                     time.sleep(3)
@@ -108,7 +118,11 @@ mydb.close()
 
 
 
-#created by 1118551 - student motivator-inator 1118551
+#created by 1118551 - student motivator-inator 1118551 voor ipmedt5
+
+#functionaliteiten
+#wakker worden met behulp van een arduino sensor 
+#buzzer instellen op aan en uit
 
 
 

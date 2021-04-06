@@ -25,7 +25,7 @@
     </section>
 
         <div class="content--tijdInstellingen__actions">
-            <input type="submit" value="Opslaan" class="content--button__actions__primary">
+            <button type="submit" class="content--button__actions__primary">Opslaan</button>
             <a href="/tijdinstellingen" class="content--button__actions__ghost">Annuleren</a>
         </div>
     </form>
