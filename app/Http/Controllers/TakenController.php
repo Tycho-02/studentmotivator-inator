@@ -8,9 +8,17 @@ use Exception;
 
 class TakenController extends Controller
 {
-    // Deze functie zorgt ervoor dat alle taken worden getoond
+    // Deze functie zorgt ervoor dat alle taken worden getoond gessorteerd op uitvoerdatum en op deadline
     public function index() {
-        return view('taken.index', ['taken' => \App\Models\Taak::all()]);
+        $collection = \App\Models\Taak::all();
+
+        $filterd = $collection->sortBy(function($data, $key) {
+            return $data['uitvoerdatum'].$data['deadline'];
+        });
+
+        $filterd->all();
+
+        return view('taken.index', ['taken' => $filterd]);
     }
 
     // Deze functie zorgt ervoor dat de gebruiker naar de pagina gaat om taken te kunne toevoegen
