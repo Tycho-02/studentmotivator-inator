@@ -154,7 +154,7 @@ void displayTimeBreak(unsigned long countdownTimeBreak){
   }
   //mobiel terug leggen tijdens de break levert je 10 punten op + nieuwe tijd gaat lopen die je zelf moet instellen
 
-  if(countdownTimeBreak > 1 && succes){
+  if(countdownTimeBreak > 1 && success){
     display.printTime(0, 0, false);
     punten += 10;
     delay(30000);
