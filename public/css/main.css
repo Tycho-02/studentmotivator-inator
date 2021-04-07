@@ -191,9 +191,9 @@ a {
 }
 
 /* reset input */
-.form__field:required,
+/* .form__field:required,
 .form__field:invalid {
-}
+} */
 
 /* reset input */
 .form__field:required,
@@ -363,7 +363,6 @@ audio {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-content: center;
 }
 
 .taken__form__alert {
