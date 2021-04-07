@@ -252,6 +252,10 @@ a {
     border-radius: 2rem;
 }
 
+.menu--button__action:hover {
+    cursor: pointer;
+}
+
 .menu__list {
     width: 100%;
     height: 100%;
