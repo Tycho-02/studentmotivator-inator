@@ -2,6 +2,9 @@
 @extends('layouts.app')
 
 @section('content')
+@foreach($errors->all() as $error)
+    <li>{{ $error }}</li>
+@endforeach
     <h2>Upload Nummer</h2>
     <form class='form' method="POST" action="toevoegen" enctype="multipart/form-data">
         @csrf
@@ -15,11 +18,13 @@
         <label class="form__label" for="genre">genre</label>
         <input class='form__field' type="text" name="genre">
         <label class="form__label" for="mood">Mood van het nummer</label>
-        <select class='form__field' id="mood" name="mood">
+        <select class='form__field section__select' id="mood" name="mood">
             <option value="1">Blij</option>
             <option value="2">Meh</option>
             <option value="3">Verdrietig</option>
         </select>
         <button class="content--button__actions__primary" type="submit">Upload</button>
     </form>
+    @include('sweetalert::alert')
 @endsection
+

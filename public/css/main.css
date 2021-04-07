@@ -1,10 +1,18 @@
 /* VARIABELEN */
 
 :root {
+<<<<<<< HEAD
+  --PrimaryColor: #1A1A1D;
+  --SecondaryColor: #4E4E50;
+  --ThirdColor: #C3073F;
+  --TextColor: #fff;
+  --fullwidth: 100%;
+=======
     --PrimaryColor: #1a1a1d;
     --TextColor: #fff;
     --fullwidth: 100%;
     --SecondaryColor: #4e4e50;
+>>>>>>> 1f9fc8f22f9cb612a64abf03fc08993ae98d3677
 }
 
 * {
@@ -24,8 +32,8 @@ body {
     padding: 3rem;
     background: var(--PrimaryColor);
     font-family: sans-serif;
-    /* width: 100vw;
-    height: 100vh; */
+    width: 99vw;
+    height: 99vh;
 }
 
 h1 {
@@ -53,47 +61,6 @@ a {
 
 .content {
     grid-area: content;
-}
-
-.list {
-    list-style: none;
-}
-
-.list__item {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(10px, auto);
-    margin-top: 1rem;
-    grid-template-areas:
-        "naam naam naam play"
-        "artiest artiest genre play";
-}
-
-.hidden {
-    display: none;
-}
-
-.list__item > p:nth-child(1) {
-    grid-area: naam;
-    font-size: 1.6rem;
-}
-.list__item > p:nth-child(2) {
-    grid-area: artiest;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.548);
-}
-.list__item > p:nth-child(3) {
-    grid-area: genre;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.548);
-    text-align: right;
-}
-
-.list__item--button__play {
-    float: right;
-    background-color: transparent;
-    border: none;
-    grid-area: play;
 }
 
 .content--button__actions__primary {
@@ -132,7 +99,36 @@ a {
     width: 200px;
     height: 200px;
 }
+.content--tijdInstellingen__actions {
+    margin-top: 5rem;
+}
 
+.content--button__actions__ghost {
+    display: inline-block;
+    border-radius: 12px;
+    width: 150px;
+    padding: 15px;
+    color: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+    outline: none;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.content--button__actions__ghost:hover,
+.content--button__actions__ghost:active {
+    background-color: var(--TextColor);
+    color: #000;
+}
+.content--hyperlink__button{
+    color: var(--ThirdColor);
+    text-decoration: underline;
+}
+.content--hyperlink__button:hover{
+    cursor:pointer;
+    color: #fff;
+}
 .form,
 .taken__form {
     margin-top: 2rem;
@@ -157,7 +153,7 @@ a {
     font-size: 1.3rem;
     color: var(--TextColor);
     padding: 0.5rem 0;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     background: transparent;
     transition: border-color 0.2s;
 }
@@ -203,41 +199,110 @@ a {
     box-shadow: none;
 }
 
-.content--tijdInstellingen__actions {
-    margin-top: 5rem;
+
+.list {
+    list-style: none;
 }
 
-.content--button__actions__ghost {
-    display: inline-block;
-    border-radius: 12px;
-    width: 150px;
-    padding: 15px;
-    color: #fff;
-    border: 1px solid #fff;
-    text-align: center;
-    outline: none;
-    border-radius: 15px;
-    text-decoration: none;
+.list__item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(10px, auto);
+    margin-top: 1rem;
+    grid-template-areas:
+        "naam naam naam play"
+        "artiest artiest genre play";
 }
 
-.content--button__actions__ghost:hover,
-.content--button__actions__ghost:active {
-    background-color: var(--TextColor);
-    color: #000;
+.hidden {
+    display: none;
 }
+
+.list__item > p:nth-child(1) {
+    grid-area: naam;
+    font-size: 1.6rem;
+}
+.list__item > p:nth-child(2) {
+    grid-area: artiest;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.548);
+}
+<<<<<<< HEAD
+.list__item > p:nth-child(3) {
+    grid-area: genre;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.548);
+    text-align: right;
+}
+.list__item > a {
+    grid-area: play;
+    font-size: 1.6rem;
+    margin-left: 2rem;
+}
+
+
+.list__item--button__play {
+    float: right;
+    background-color: transparent;
+    border: none;
+    grid-area: play;
+}
+
+/* menu styling */
+.menu {
+    min-height: 10%;
+    width: 100%;
+}
+.menu--button__action{
+    background-color: transparent;
+    color: var(--ThirdColor);
+    border: 1px solid var(--ThirdColor);
+    width: 6rem;
+    height: 3rem;
+    border-radius: 2rem;
+=======
 
 /* menu styling */
 .menu {
     grid-area: menu;
     height: 100%;
+>>>>>>> 1f9fc8f22f9cb612a64abf03fc08993ae98d3677
 }
 
 .menu__list {
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center ;
+}
+
+.menu__list__item{
+    width: 9rem;
+    height: 9rem;
+    margin: 1rem 1.4rem;
+    background-color: #c3073f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+}
+.menu__list__item > a{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menu__list__item > a > i{
+    margin-bottom: 0.2em ;
+=======
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(10rem, auto);
+>>>>>>> 1f9fc8f22f9cb612a64abf03fc08993ae98d3677
 }
 
 /* audio styling */
@@ -247,7 +312,7 @@ audio {
     color: var(--TextColor);
 }
 .muziekSpeler {
-    margin-top: 4rem;
+    margin-top: 10rem;
     grid-area: player;
     display: flex;
     flex-direction: column;
@@ -285,12 +350,47 @@ audio {
     cursor: pointer;
 }
 
+.section__select{
+    width: 100%;
+    height: 3em;
+    padding-left: 1rem;
+    line-height: 3;
+    background: var(--SecondaryColor);
+    overflow: hidden;
+    border-radius: .25em;
+}
+
+.section__select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background:var(--SecondaryColor);
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .section__select:hover::after {
+    color: #f39c12;
+  }
+  
+
 @media (min-width: 500px) {
+    .content{
+        margin-left: -30rem;
+    }
+    .content--button__actions__primary {
+        width: fit-content;
+    }
     .grid {
         display: grid;
         grid-gap: 2rem;
-        grid-template-columns: 0.5fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 0.5fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
             "menu content content "
             "menu content content"
@@ -299,6 +399,9 @@ audio {
     .form__field {
         width: 30%;
     }
+<<<<<<< HEAD
+  
+=======
     .content--button__actions__primary {
         width: fit-content;
         cursor: pointer;
@@ -307,15 +410,16 @@ audio {
     .content--tijdInstellingen__uitBed {
         margin-top: 3rem;
     }
+>>>>>>> 1f9fc8f22f9cb612a64abf03fc08993ae98d3677
 
     .list__item {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: minmax(10px, auto);
         grid-template-areas: "nummer artiest genre play";
     }
     .list__item:nth-child(1) {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: minmax(10px, auto);
         margin-top: 1rem;
         grid-template-areas: "nummer artiest genre play";
@@ -340,6 +444,16 @@ audio {
         grid-area: genre;
         text-align: left;
     }
+    .menu{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .muziek
     .muziekSpeler--info {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -454,12 +568,15 @@ select::-ms-expand {
     border-radius: 0.25em;
 }
 select {
+<<<<<<< HEAD
+  flex: 1;
+=======
     flex: 1;
     padding: 0 0.5em;
     color: #fff;
     cursor: pointer;
+>>>>>>> 1f9fc8f22f9cb612a64abf03fc08993ae98d3677
 }
-/* Arrow */
 .content--tijdInstellingen__form__section__select::after {
     content: "\25BC";
     position: absolute;
@@ -477,3 +594,5 @@ select {
 .content--tijdInstellingen__form__section__select:hover::after {
     color: #f39c12;
 }
+
+/* Arrow */

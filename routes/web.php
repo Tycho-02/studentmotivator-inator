@@ -50,11 +50,5 @@ Route::get('/timer', [\App\Http\Controllers\TimerController::class, 'index']);
 Route::post('/timer', [\App\Http\Controllers\TimerController::class, 'toevoegenTijd']);
 
 Route::get('/', function(){
-    $agent = new \Jenssegers\Agent\Agent;
-    $result = $agent->isMobile();
-    if($result == true){
         return view('layouts.mobiel');
-    }else{
-        return view('layouts.app');
-    }
 });
