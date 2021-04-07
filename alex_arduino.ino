@@ -7,11 +7,14 @@ long duration; // variable for the duration of sound wave travel
 int distance; // variable for the distance measurement
 int buzzer = 8;//the pin of the active buzzer
 boolean stoppen = false;
+int buzzerInstellingen;
 
 boolean gestuurd = false;
 int binnenAfstand; // withindistance - calculate how often user keeps his hand in front of sensor
 boolean reset = false;
 boolean opstaan = false;
+int data = 0;
+char object = ' ';
 void setup() {
   pinMode(trigPin, OUTPUT); // Sets the trigPin as an OUTPUT
   pinMode(echoPin, INPUT); // Sets the echoPin as an INPUT
@@ -20,10 +23,18 @@ void setup() {
 }
 
 
+
 void loop() {
 
 while(Serial.available()) {
   
+    if(Serial.read() == 'u') {
+      buzzerInstellingen = 2; 
+      //buzzer uit
+    } else if(Serial.read() == 'a') {
+        buzzerInstellingen = 1; 
+        //aan
+    }
     while(binnenAfstand < 100) {
     // Clears the trigPin condition
     digitalWrite(trigPin, LOW);
@@ -47,12 +58,12 @@ while(Serial.available()) {
       delay(10);
     }
     
-    if(distance > 50 and gestuurd == false and reset == false and stoppen == false and Serial.read() == 'x') {
+    if(distance > 50 and gestuurd == false and reset == false and stoppen == false and Serial.read() == 'x' and buzzerInstellingen != 2) {
       tone(buzzer, 10);
       delay(10);
     }
 
-    if(distance > 50 and gestuurd == true and reset == true and stoppen == false and Serial.read() == 'b') {
+    if(distance > 50 and gestuurd == true and reset == true and stoppen == false and Serial.read() == 'b' and buzzerInstellingen != 2) {
       tone(buzzer, 10);
       delay(10);
   }
