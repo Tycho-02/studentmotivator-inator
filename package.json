@@ -14,5 +14,12 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14"
+    },
+    "dependencies": {
+        "howler": "^2.2.1",
+        "jplayer": "^2.9.2",
+        "jquery": "^3.6.0",
+        "mediaelement": "^4.2.16",
+        "sweetalert": "^2.1.2"
     }
 }

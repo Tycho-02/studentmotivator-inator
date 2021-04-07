@@ -17,4 +17,8 @@ class Users extends Model
     function mobiel() {
         return $this->belongsTo("\App\Models\Mobiel","userId", "userId");
     }
+
+    function afspeellijst(){
+        return $this->belongTo('\App\Models\Afspeellijst', 'userId', "userId");
+    }
 }

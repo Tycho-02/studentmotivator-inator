@@ -16,5 +16,9 @@ class Nummer extends Model
         'artiest', 
         'genre', 
         'bestandLocatie',
+        'afspeellijstId',
     ];
+    public function afspeellijst() {
+        return $this->belongsToMany('Model\Afspeellijst', 'afspeellijstId');
+    }
 }

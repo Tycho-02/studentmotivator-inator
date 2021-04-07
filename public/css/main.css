@@ -1,11 +1,12 @@
 /* VARIABELEN */
 
 :root {
-    --PrimaryColor: #1A1A1D;
-    --TextColor: #fff;
-    --fullwidth: 100%;
-    --SecondaryColor: #4E4E50;
-  }
+  --PrimaryColor: #1A1A1D;
+  --SecondaryColor: #4E4E50;
+  --ThirdColor: #C3073F;
+  --TextColor: #fff;
+  --fullwidth: 100%;
+}
 
 * {
     margin: 0;
@@ -13,125 +14,118 @@
     box-sizing: border-box;
 }
 
-html{
+html {
     box-sizing: inherit;
     font-size: 62.5%;
 }
 
-body{
+body {
     font-size: 1.8rem;
     color: var(--TextColor);
-    padding: 4rem;
+    padding: 3rem;
     background: var(--PrimaryColor);
     font-family: sans-serif;
-    width: 100vw;
-    height: 100vh;
+    width: 99vw;
+    height: 99vh;
 }
 
-h1{
+h1 {
     font-size: 2.8rem;
 }
-h2{
+h2 {
     font-size: 2.4rem;
 }
-h3{
-    font-size: 2.0rem;
+h3 {
+    font-size: 2rem;
 }
-p{
+p {
     font-size: 1.6rem;
 }
 
-a{
+a {
     color: var(--TextColor);
     text-decoration: none;
 }
 
-/* .grid {
-   
-} */
-
-.menu{
-    grid-area: menu;
-    border: 1px solid green;
+.ondertext {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.548);
 }
 
-
-.content{
+.content {
     grid-area: content;
-    
-}
-.muziekSpeler{
-    grid-area: player;
-}
-
-.list{
-    list-style: none;
-}
-
-.list__item{
-    display:grid;
-    grid-column: 1fr 1fr;
-    grid-row: 1fr 1fr;
-    grid-template-areas:
-    "naam naam"
-    "artiest genre"
-}
-.list__item >p:nth-child(1){
-    grid-area: naam;
-    font-size: 1.6rem;
-}
-.list__item >p:nth-child(2){
-    grid-area: artiest;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.548);
-}
-.list__item >p:nth-child(3){
-    grid-area: genre;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.548);
-    text-align: right
 }
 
 .content--button__actions__primary {
     padding: 1.6rem 4.2rem;
-    box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
     line-height: 1.25;
+    border-radius: 15px;
     background: #950740;
     text-decoration: none;
     color: white;
     font-size: 1.6rem;
-    letter-spacing: .08em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     position: relative;
-    transition: background-color .6s ease;
+    transition: background-color 0.6s ease;
     overflow: hidden;
     border: 1px solid #950740;
-    border-radius: 15px;
+    margin-bottom: 2rem;
 }
 .content--button__actions__primary:after {
-      width: 0;
-      height: 0;
-      transform-style: flat;
-      transform: translate3d(-50%,-50%,0);
-      background: rgba(white,.1);
-      border-radius: 100%;
-      transition: width .3s ease, height .3s ease;
-    }
-    .content--button__actions__primary :focus,
-    .content--button__actions__primary :hover {
-        cursor: pointer;
-        background: darken(#4E4E50,7%);
+    width: 0;
+    height: 0;
+    transform-style: flat;
+    transform: translate3d(-50%, -50%, 0);
+    background: rgba(white, 0.1);
+    border-radius: 100%;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+.content--button__actions__primary :focus,
+.content--button__actions__primary :hover {
+    cursor: pointer;
+    background: darken(#4e4e50, 7%);
 }
 .content--button__actions__primary :active,
 .content--button__actions__primary :after {
-        width: 200px;
-        height: 200px;
-      
+    width: 200px;
+    height: 200px;
+}
+.content--tijdInstellingen__actions {
+    margin-top: 5rem;
 }
 
-.form{
-    margin-top: 4rem;
-    display:flex;
+.content--button__actions__ghost {
+    display: inline-block;
+    border-radius: 12px;
+    width: 150px;
+    padding: 15px;
+    color: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+    outline: none;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.content--button__actions__ghost:hover,
+.content--button__actions__ghost:active {
+    background-color: var(--TextColor);
+    color: #000;
+}
+.content--hyperlink__button{
+    color: var(--ThirdColor);
+    text-decoration: underline;
+}
+.content--hyperlink__button:hover{
+    cursor:pointer;
+    color: #fff;
+}
+.form,
+.taken__form {
+    margin-top: 2rem;
+    display: flex;
     flex-direction: column;
 }
 
@@ -140,30 +134,33 @@ a{
     padding: 15px 0 0;
     margin-top: 10px;
     width: 50%;
-  }
-  
-  .form__field {
+}
+
+.form__field,
+.taken__form__field {
     font-family: inherit;
     width: 100%;
     border: 0;
-    border-bottom: 2px solid var(--TextColor);
+    border-bottom: 2px solid #4e4e50;
     outline: 0;
     font-size: 1.3rem;
     color: var(--TextColor);
-    padding: 1rem 0;
-    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    margin: 1rem 0;
     background: transparent;
     transition: border-color 0.2s;
-  }
-  .form__field::placeholder {
+}
+.form__field::placeholder,
+.taken__form__field::placeholder {
     color: transparent;
-  }
-  .form__field:placeholder-shown ~ .form__label {
+}
+.form__field:placeholder-shown ~ .form__label {
     font-size: 1.4rem;
     cursor: text;
-  }
-  
-  .form__label {
+}
+
+.form__label,
+.taken__form_label {
     transition: 0.2s;
     font-size: 1.6rem;
     color: var(--TextColor);
@@ -173,35 +170,65 @@ a{
     padding-bottom: 1rem;
     font-weight: 700;
     border-width: 3px;
-    border-image: linear-gradient(to right, #C3073F, #950740);
+    border-image: linear-gradient(to right, #c3073f, #950740);
     border-image-slice: 1;
-  }
-  
-  /* reset input */
-  .form__field:required, .form__field:invalid {
-    box-shadow: none;
-  }
-
-  .content--tijdInstellingen__actions {
-      margin-top: 5rem;
-  }
-
-  .content--button__actions__ghost {
+}
+.timer__form {
     display: inline-block;
-    width: 15rem;
-    padding: 1.5rem;
-    color: #fff;
-    border: 1px solid var(--TextColor);
     text-align: center;
-    outline: none;
-    text-decoration: none;
-
 }
 
-.content--button__actions__ghost:hover,
-.content--button__actions__ghost:active {
-  background-color: var(--TextColor);
-  color: #000;
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid,
+.taken__form__field:required,
+.taken__form__field:invalid {
+    box-shadow: none;
+}
+
+
+.list {
+    list-style: none;
+}
+
+.list__item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(10px, auto);
+    margin-top: 1rem;
+    grid-template-areas:
+        "naam naam naam play"
+        "artiest artiest genre play";
+}
+
+.hidden {
+    display: none;
+}
+
+.list__item > p:nth-child(1) {
+    grid-area: naam;
+    font-size: 1.6rem;
+}
+.list__item > p:nth-child(2) {
+    grid-area: artiest;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.548);
+}
+.list__item > p:nth-child(3) {
+    grid-area: genre;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.548);
+    text-align: right;
+}
+.list__item > a {
+    grid-area: play;
+    font-size: 1.6rem;
+    margin-left: 2rem;
 }
 .timer__header{
     display: flex;
@@ -213,7 +240,139 @@ a{
     justify-content: center;
 }
 
+
+.list__item--button__play {
+    float: right;
+    background-color: transparent;
+    border: none;
+    grid-area: play;
+}
+
+/* menu styling */
+.menu {
+    min-height: 10%;
+    width: 100%;
+}
+.menu--button__action{
+    background-color: transparent;
+    color: var(--ThirdColor);
+    border: 1px solid var(--ThirdColor);
+    width: 6rem;
+    height: 3rem;
+    border-radius: 2rem;
+}
+
+.menu__list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center ;
+}
+
+.menu__list__item{
+    width: 9rem;
+    height: 9rem;
+    margin: 1rem 1.4rem;
+    background-color: #c3073f;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+}
+.menu__list__item > a{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menu__list__item > a > i{
+    margin-bottom: 0.2em ;
+}
+
+/* audio styling */
+audio {
+    width: 100%;
+    height: 3rem;
+    color: var(--TextColor);
+}
+.muziekSpeler {
+    margin-top: 10rem;
+    grid-area: player;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.muziekSpeler--info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.muziekSpeler--timeline {
+    width: 100%;
+    height: 2px;
+    margin-top: 2rem;
+    -webkit-border-radius: 1.5rem;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.849);
+}
+
+.muziekSpeler--play__Button {
+    margin-top: 12px;
+    cursor: pointer;
+    color: var(--TextColor);
+}
+
+.muziekSpeler--timeline__playhead {
+    width: 1rem;
+    height: 1rem;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin-top: -4px;
+    background: var(--SecondaryColor);
+    cursor: pointer;
+}
+
+.section__select{
+    width: 100%;
+    height: 3em;
+    padding-left: 1rem;
+    line-height: 3;
+    background: var(--SecondaryColor);
+    overflow: hidden;
+    border-radius: .25em;
+}
+
+.section__select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background:var(--SecondaryColor);
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .section__select:hover::after {
+    color: #f39c12;
+  }
+  
+
 @media (min-width: 500px) {
+    .content{
+        margin-left: -30rem;
+    }
+    .content--button__actions__primary {
+        width: fit-content;
+    }
     .grid {
         display: grid;
         grid-gap: 2rem;
@@ -231,28 +390,45 @@ a{
     .content--button__actions__primary {
         width: 30%;
     }
+  
+    .content--button__actions__primary {
+        width: fit-content;
+        cursor: pointer;
+    }
 
-    .list__item{
+    .content--tijdInstellingen__uitBed {
+        margin-top: 3rem;
+    }
+
+    .list__item {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(10px, auto);
+        grid-template-areas: "nummer artiest genre play";
+    }
+    .list__item:nth-child(1) {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-template-areas: 
-        "nummer artiest genre"  
-   }
-    .list__item > p:nth-child(1){
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(10px, auto);
+        margin-top: 1rem;
+        grid-template-areas: "nummer artiest genre play";
+    }
+
+    .list__item > p:nth-child(1) {
         color: var(--TextColor);
         font-size: 1.6rem;
         grid-area: nummer;
     }
-    
-    .list__item > p:nth-child(2){
+
+    .list__item > p:nth-child(2) {
         color: var(--TextColor);
+        margin-left: 0.5rem;
         font-size: 1.6rem;
         grid-area: artiest;
     }
-    .list__item > p:nth-child(3){
+    .list__item > p:nth-child(3) {
         color: var(--TextColor);
         font-size: 1.6rem;
+        margin-left: 0.8rem;
         grid-area: genre;
         text-align: left;
     }
@@ -273,10 +449,74 @@ a{
     .timer__form-field{
         width: 40%;
     }
-    .timer__form-submitBtn{
+    /* .timer__form-submitBtn{ */
+    .menu{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .muziek
+    .muziekSpeler--info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .muziekSpeler--buttons {
+        display: flex;
+        justify-content: center;
+    }
+    .muziekSpeler--buttons > i {
+        margin: 0 1rem;
+    }
+}
+
+/*tijd instellingen*/
+
+.content--tijdInstellingen__form__section
+
+/* Taken styling */
+.taken__add__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.taken__form__alert {
+    background-color: red;
+    padding: 1rem;
+}
+
+@media (min-width: 500px) {
+    .taken__form {
+        width: 70%;
+    }
+    .content--tijdInstellingen__form {
+        display: grid;
+        grid-row-gap: 3rem;
+    }
+    .content--tijdInstellingen__form__section {
+        display: grid;
+        grid-row-gap: 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .taken__form {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .taken__form {
         width: 40%;
     }
 }
+
 
 @media (min-width: 1100px) {
     .timer__form-field{
@@ -286,3 +526,87 @@ a{
         width: 30%;
     }
 }
+
+@media (min-width: 1440px) {
+    .taken__form {
+        width: 25%;
+    }
+    .timer__form-field {
+        width: 50%;
+    }
+    .timer__form-submitBtn {
+        width: 50%;
+    }
+}
+.content--tijdInstellingen {
+    margin-top: 5rem;
+}
+
+.content--tijdInstellingen__form {
+    margin-top: 4rem;
+}
+
+.content--tijdInstellingen_naarBed__input,
+.content--tijdInstellingen_uitBed__input {
+    font-size: 150%;
+    width: 10em;
+}
+
+.content--tijdInstellingen__section {
+    margin-top: 3rem;
+}
+
+.content--tijdInstellingen__buzzer {
+    margin-top: 3rem;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: var(--PrimaryColor);
+    background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+/* Custom Select */
+.content--tijdInstellingen__form__section__select {
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: var(--SecondaryColor);
+    overflow: hidden;
+    border-radius: 0.25em;
+}
+select {
+    flex: 1;
+    padding: 0 0.5em;
+    color: #fff;
+    cursor: pointer;
+}
+.content--tijdInstellingen__form__section__select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: var(--SecondaryColor);
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+}
+/* Transition */
+.content--tijdInstellingen__form__section__select:hover::after {
+    color: #f39c12;
+}
+
+/* Arrow */
+
