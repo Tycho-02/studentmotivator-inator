@@ -1,11 +1,19 @@
 /* VARIABELEN */
 
 :root {
+<<<<<<< HEAD
   --PrimaryColor: #1A1A1D;
   --SecondaryColor: #4E4E50;
   --ThirdColor: #C3073F;
   --TextColor: #fff;
   --fullwidth: 100%;
+=======
+    --PrimaryColor: #1a1a1d;
+    --SecondaryColor: #4e4e50;
+    --ThirdColor: #c3073f;
+    --TextColor: #fff;
+    --fullwidth: 100%;
+>>>>>>> 9b85edc211f45d3d861d18f12a0084f04f6894af
 }
 
 * {
@@ -114,12 +122,12 @@ a {
     background-color: var(--TextColor);
     color: #000;
 }
-.content--hyperlink__button{
+.content--hyperlink__button {
     color: var(--ThirdColor);
     text-decoration: underline;
 }
-.content--hyperlink__button:hover{
-    cursor:pointer;
+.content--hyperlink__button:hover {
+    cursor: pointer;
     color: #fff;
 }
 .form,
@@ -174,15 +182,22 @@ a {
     border-image: linear-gradient(to right, #c3073f, #950740);
     border-image-slice: 1;
 }
-.timer__form {
-    display: inline-block;
-    text-align: center;
+
+.timer__header{
+    display: flex;
+    justify-content: center;
+}
+.timer__timeSection{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
 }
 
+
 /* reset input */
-.form__field:required,
+/* .form__field:required,
 .form__field:invalid {
-}
+} */
 
 /* reset input */
 .form__field:required,
@@ -191,7 +206,6 @@ a {
 .taken__form__field:invalid {
     box-shadow: none;
 }
-
 
 .list {
     list-style: none;
@@ -232,7 +246,6 @@ a {
     margin-left: 2rem;
 }
 
-
 .list__item--button__play {
     float: right;
     background-color: transparent;
@@ -245,13 +258,20 @@ a {
     min-height: 10%;
     width: 100%;
 }
-.menu--button__action{
+.menu--button__action {
     background-color: transparent;
     color: var(--ThirdColor);
     border: 1px solid var(--ThirdColor);
-    width: 6rem;
+    width: 12rem;
     height: 3rem;
     border-radius: 2rem;
+<<<<<<< HEAD
+=======
+}
+
+.menu--button__action:hover {
+    cursor: pointer;
+>>>>>>> 9b85edc211f45d3d861d18f12a0084f04f6894af
 }
 
 .menu__list {
@@ -259,10 +279,10 @@ a {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center ;
+    justify-content: center;
 }
 
-.menu__list__item{
+.menu__list__item {
     width: 9rem;
     height: 9rem;
     margin: 1rem 1.4rem;
@@ -273,15 +293,20 @@ a {
     align-items: center;
     border-radius: 10%;
 }
-.menu__list__item > a{
+.menu__list__item > a {
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+<<<<<<< HEAD
 .menu__list__item > a > i{
     margin-bottom: 0.2em ;
+=======
+.menu__list__item > a > i {
+    margin-bottom: 0.2em;
+>>>>>>> 9b85edc211f45d3d861d18f12a0084f04f6894af
 }
 
 /* audio styling */
@@ -329,37 +354,36 @@ audio {
     cursor: pointer;
 }
 
-.section__select{
+.section__select {
     width: 100%;
     height: 3em;
     padding-left: 1rem;
     line-height: 3;
     background: var(--SecondaryColor);
     overflow: hidden;
-    border-radius: .25em;
+    border-radius: 0.25em;
 }
 
 .section__select::after {
-    content: '\25BC';
+    content: "\25BC";
     position: absolute;
     top: 0;
     right: 0;
     padding: 0 1em;
-    background:var(--SecondaryColor);
+    background: var(--SecondaryColor);
     cursor: pointer;
     pointer-events: none;
-    -webkit-transition: .25s all ease;
-    -o-transition: .25s all ease;
-    transition: .25s all ease;
-  }
-  /* Transition */
-  .section__select:hover::after {
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+}
+/* Transition */
+.section__select:hover::after {
     color: #f39c12;
-  }
-  
+}
 
 @media (min-width: 500px) {
-    .content{
+    .content {
         margin-left: -30rem;
     }
     .content--button__actions__primary {
@@ -419,7 +443,7 @@ audio {
         grid-area: genre;
         text-align: left;
     }
-    .menu{
+    .menu {
         grid-column-start: 2;
         grid-column-end: 2;
         grid-row-start: 2;
@@ -428,8 +452,7 @@ audio {
         flex-wrap: nowrap;
         align-items: center;
     }
-    .muziek
-    .muziekSpeler--info {
+    .muziek .muziekSpeler--info {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
@@ -439,6 +462,17 @@ audio {
     }
     .muziekSpeler--buttons > i {
         margin: 0 1rem;
+    }
+    .timer__form{
+        align-items: center;
+    }
+    .timer__form-field{
+        width: 50%;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    .timer__form-submitBtn{
+        width: 50%;
     }
 }
 
@@ -452,7 +486,14 @@ audio {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-content: center;
+}
+
+.taken__form {
+    margin: 0 auto;
+}
+
+.taken__add__header {
+    text-align: center;
 }
 
 .taken__form__alert {
@@ -479,10 +520,26 @@ audio {
         width: 50%;
     }
 }
+@media (min-width: 900px) {
+    .timer__form-field{
+        width: 40%;
+    }
+    .timer__form-submitBtn{
+        width: 40%;
+    }
+}
 
 @media (min-width: 1024px) {
     .taken__form {
         width: 40%;
+    }
+}
+@media (min-width: 1100px) {
+    .timer__form-field{
+        width: 30%;
+    }
+    .timer__form-submitBtn{
+        width: 30%;
     }
 }
 
