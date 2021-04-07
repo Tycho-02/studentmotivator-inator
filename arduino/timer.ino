@@ -1,8 +1,8 @@
-void setuptTimer(){
+void setuptTimer(int daysBreak, int hoursBreak, int minutesBreak, int secondsBreak){
   int days = 0;
   String t_hours;
   String t_minutes;
-  int seconds = 1;
+  int seconds = 3;
   
   int hours;
   int minutes;
@@ -21,5 +21,6 @@ void setuptTimer(){
   minutes = t_minutes.toInt();
   
   countdownTime = seconds + (minutes * SEC_PER_MIN) + (hours * SEC_PER_HOUR) + (days * SEC_PER_DAY); 
-}
 
+  countdownTimeBreak = secondsBreak + (minutesBreak * SEC_PER_MIN) + (hoursBreak * SEC_PER_HOUR) + (daysBreak * SEC_PER_DAY); 
+}

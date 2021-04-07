@@ -3,7 +3,11 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+<<<<<<< HEAD
+use DB; 
+=======
 use DB;
+>>>>>>> 4565b5cf15e6096150312ebaf0c775226ec2faa3
 
 class MobielTableSeeder extends Seeder
 {
@@ -22,4 +26,8 @@ class MobielTableSeeder extends Seeder
             'smiley' => false
         ]);
     }
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 4565b5cf15e6096150312ebaf0c775226ec2faa3
 }
