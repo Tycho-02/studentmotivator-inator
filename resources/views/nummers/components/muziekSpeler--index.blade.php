@@ -1,4 +1,3 @@
-
     @if(isset($bestandLocatie))
         <audio id="music" preload="true">
                 <source src="/muziek/{{$nummer->bestandLocatie}}">
@@ -21,6 +20,7 @@
                 </div>
             </section>
     @else
+
     <!-- zoek in de afspeellijst die de zelfde humeur heeft als de gebruiker naar een random nummer -->
         @foreach($afspeellijst as $afspeellijst) 
             @if($user->humeur == $afspeellijst->humeur)
