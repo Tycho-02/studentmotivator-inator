@@ -1,19 +1,11 @@
 /* VARIABELEN */
 
 :root {
-<<<<<<< HEAD
   --PrimaryColor: #1A1A1D;
   --SecondaryColor: #4E4E50;
   --ThirdColor: #C3073F;
   --TextColor: #fff;
   --fullwidth: 100%;
-=======
-    --PrimaryColor: #1a1a1d;
-    --SecondaryColor: #4e4e50;
-    --ThirdColor: #c3073f;
-    --TextColor: #fff;
-    --fullwidth: 100%;
->>>>>>> 9b85edc211f45d3d861d18f12a0084f04f6894af
 }
 
 * {
@@ -265,13 +257,10 @@ a {
     width: 12rem;
     height: 3rem;
     border-radius: 2rem;
-<<<<<<< HEAD
-=======
 }
 
 .menu--button__action:hover {
     cursor: pointer;
->>>>>>> 9b85edc211f45d3d861d18f12a0084f04f6894af
 }
 
 .menu__list {
@@ -300,13 +289,8 @@ a {
     justify-content: center;
     align-items: center;
 }
-<<<<<<< HEAD
 .menu__list__item > a > i{
     margin-bottom: 0.2em ;
-=======
-.menu__list__item > a > i {
-    margin-bottom: 0.2em;
->>>>>>> 9b85edc211f45d3d861d18f12a0084f04f6894af
 }
 
 /* audio styling */
