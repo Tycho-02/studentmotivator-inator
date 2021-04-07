@@ -13,7 +13,7 @@
 
 </head>
 <body class="grid">
-        <button class="menu--button__action" onclick="window.location='/'" ><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
+        <button class="menu--button__action" onclick="window.location='{{url()->previous()}}'" ><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
     <section class="content">
         @yield('content')
    </section>

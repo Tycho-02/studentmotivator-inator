@@ -247,7 +247,7 @@ a {
     background-color: transparent;
     color: var(--ThirdColor);
     border: 1px solid var(--ThirdColor);
-    width: 6rem;
+    width: 12rem;
     height: 3rem;
     border-radius: 2rem;
 }
