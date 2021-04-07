@@ -13,7 +13,7 @@ class TimerController extends Controller
         ]);
     }
 
-    public function toevoegenTijd(Request $request){
+    public function store(Request $request){
         $timer = \App\Models\Timer::first();
         $timer->tijd = $request->input('tijd');
         $timer->save();
