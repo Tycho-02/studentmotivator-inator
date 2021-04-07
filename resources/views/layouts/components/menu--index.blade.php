@@ -30,7 +30,7 @@
         </a>
     </li>
     <li class="menu__list__item">
-        <a href="#">
+        <a href="/timer">
             <i class="fas fa-stopwatch fa-2x"></i>
             <p>Timer</p>
         </a>

@@ -174,10 +174,17 @@ a {
     border-image: linear-gradient(to right, #c3073f, #950740);
     border-image-slice: 1;
 }
-.timer__form {
-    display: inline-block;
-    text-align: center;
+
+.timer__header{
+    display: flex;
+    justify-content: center;
 }
+.timer__timeSection{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
 
 /* reset input */
 /* .form__field:required,
@@ -440,6 +447,17 @@ audio {
     .muziekSpeler--buttons > i {
         margin: 0 1rem;
     }
+    .timer__form{
+        align-items: center;
+    }
+    .timer__form-field{
+        width: 50%;
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    .timer__form-submitBtn{
+        width: 50%;
+    }
 }
 
 /*tijd instellingen*/
@@ -486,10 +504,26 @@ audio {
         width: 50%;
     }
 }
+@media (min-width: 900px) {
+    .timer__form-field{
+        width: 40%;
+    }
+    .timer__form-submitBtn{
+        width: 40%;
+    }
+}
 
 @media (min-width: 1024px) {
     .taken__form {
         width: 40%;
+    }
+}
+@media (min-width: 1100px) {
+    .timer__form-field{
+        width: 30%;
+    }
+    .timer__form-submitBtn{
+        width: 30%;
     }
 }
 
