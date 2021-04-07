@@ -1,11 +1,10 @@
 <ul class="menu__list list">
-<<<<<<< HEAD
     <li id="js--slaaptijdButton" class="menu__list__item">
         <a href="/tijdinstellingen">
             <i class="fas fa-bed fa-2x"></i>
             <p>Slaaptijd</p> 
         </a>
-    </li>
+    </li> 
     <li class="menu__list__item">
         <a href="#">
             <i class="fas fa-calendar-alt fa-2x"></i>
@@ -49,14 +48,3 @@
         </a>
     </li>
 </ul>
-=======
-    <li class="menu__list__item"><a href="#">Slaaptijd</a></li>
-    <li class="menu__list__item"><a href="#">Rooster</a></li>
-    <li class="menu__list__item"><a href="#">Humeur</a></li>
-    <li class="menu__list__item"><a href="#">Studie Buddy</a></li>
-    <li class="menu__list__item"><a href="/taken">Taken</a></li>
-    <li class="menu__list__item"><a href="#">Focus Timer</a></li>
-    <li class="menu__list__item"><a href="/nummers">Nummers</a></li>
-    <li class="menu__list__item"><a href="/afspeellijst">Afspeellijst</a></li>
-</ul>
->>>>>>> 1f9fc8f22f9cb612a64abf03fc08993ae98d3677
