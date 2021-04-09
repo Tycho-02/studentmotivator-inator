@@ -33,4 +33,6 @@ class AfspeellijstController extends Controller
 
         ]);
     }
+
+  
 }

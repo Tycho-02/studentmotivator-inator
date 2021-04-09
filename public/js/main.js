@@ -1,17 +1,12 @@
 window.onload = function () {
-    const basis_URL = 'http://localhost:8000'
     const music = document.getElementById('music'); // id for audio element
 
     // bekijkt of muziek aanwezig is en voert daarna code van afspelen
     if (music != null) {
-        console.log(music)
         const pButton = document.getElementById('pButton'); // play button
         const playhead = document.getElementById('playhead'); // playhead
         const timeline = document.getElementById('timeline'); // timeline
         let duration = music.duration; // Duration of audio clip, calculated here for embedding purposes
-
-
-
 
 
         // timeline width adjusted for playhead
@@ -113,4 +108,5 @@ window.onload = function () {
             return el.getBoundingClientRect().left;
         }
     }
+
 }

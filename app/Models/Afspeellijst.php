@@ -19,7 +19,5 @@ class Afspeellijst extends Model
     ];
     public function nummers() {
         return $this->hasMAny('App\Models\Nummer', 'afspeellijstId');
-    } 
-  
-    
+    }
 }
