@@ -1,7 +1,9 @@
 window.onload = function () {
     const music = document.getElementById('music'); // id for audio element
-
     // bekijkt of muziek aanwezig is en voert daarna code van afspelen
+
+
+
     if (music != null) {
         const pButton = document.getElementById('pButton'); // play button
         const playhead = document.getElementById('playhead'); // playhead
@@ -100,6 +102,7 @@ window.onload = function () {
         // Gets audio file duration
         music.addEventListener("canplaythrough", function () {
             duration = music.duration;
+            
         }, false);
 
         // getPosition
@@ -107,6 +110,10 @@ window.onload = function () {
         function getPosition(el) {
             return el.getBoundingClientRect().left;
         }
+
+
+
     }
 
 }
+

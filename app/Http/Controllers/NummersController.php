@@ -13,11 +13,10 @@ use DB;
 class NummersController extends Controller
 {
     public function index(){
-        return view('nummers.nummers', [
-            'nummers' => Nummer::all(),
-            'user' => User::first(),
-            'afspeellijst' => Afspeellijst::all()
-        ]);
+        $nummers = Nummer::orderBy('created_at','asc')->get();
+        $userHumeur = User::first()->pluck('humeur')->first();
+        $afspeellijst = Afspeellijst::where('humeur', $userHumeur)->get();
+        return view('nummers.nummers', compact("nummers","userHumeur", "afspeellijst"));
     }
 
     public function show(){
