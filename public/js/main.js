@@ -8,13 +8,21 @@ window.onload = function () {
         const pButton = document.getElementById('pButton'); // play button
         const playhead = document.getElementById('playhead'); // playhead
         const timeline = document.getElementById('timeline'); // timeline
+        const backwarButton = document.getElementById('backwardButton'); // previous music
+        const forwardButton = document.getElementById('forwardButton'); // next music
         let duration = music.duration; // Duration of audio clip, calculated here for embedding purposes
-
+        let nummer = 0;
 
         // timeline width adjusted for playhead
         let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
         // play button event listenter
         pButton.addEventListener("click", play);
+
+        //volgende nummer inline
+        forwardButton.addEventListener("click", volgende);
+
+        //vorige nummer inline
+        backwarButton.addEventListener("click", vorige);
 
         // timeupdate event listener
         music.addEventListener("timeupdate", timeUpdate, false);
@@ -99,10 +107,24 @@ window.onload = function () {
             }
         }
 
+        function volgende() {
+            nummer += 1;
+            console.log(nummer);
+            //veranderd de innerHTML in die van het volgende nummer met nummer als index
+        }
+
+        function vorige() {
+            if (nummer != 0) {
+                nummer -= 1;
+                console.log(nummer);
+                //veranderd de innerHTML in die van het vorige nummer met nummer als index
+            }
+        }
+
         // Gets audio file duration
         music.addEventListener("canplaythrough", function () {
             duration = music.duration;
-            
+
         }, false);
 
         // getPosition
