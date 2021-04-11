@@ -72,8 +72,17 @@ class NummersController extends Controller
             }
             
             public function getNummer($bestandLocatie){
-                return view('nummers.nummers', [
-                    'nummers' => Nummer::all(),
+                    //get alle nummers op volgorde van wanneer ze gemaakt zijn
+            $nummers = Nummer::orderBy('created_at','asc')->get();
+            //checkt de humeur van de gebruiker
+            $userHumeur = User::first()->pluck('humeur')->first();
+            //zoekt de afspeellijst met de nummers die overeenkomt met de humeur van de gebruiker
+            $afspeellijst = Afspeellijst::where('humeur', $userHumeur)->first()->nummers;
+            //shuffle de lijst met nummers
+            $afspeellijstShuffle = $afspeellijst->shuffle();
+            //pakt het eerste nummer van de lijst
+            $afspeellijstEersteNummer = $afspeellijst->first();
+            return view('nummers.nummers', compact("nummers","userHumeur", "afspeellijst","afspeellijstShuffle","afspeellijstEersteNummer"), [
                     'bestandLocatie' => $bestandLocatie,
                     'nummer' => Nummer::where('bestandLocatie', $bestandLocatie)->get()->first()
                     

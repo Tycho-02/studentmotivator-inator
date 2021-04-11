@@ -1,28 +1,27 @@
 window.onload = function () {
-    const music = document.getElementById('muziek'); // id for audio element
+    muziek = document.getElementById('js--muziek'); // id for audio element
     // bekijkt of muziek aanwezig is en voert daarna code van afspelen
-    audio = document.getElementById('muziek-audio');
+    audio = document.getElementById('js--muziek-audio');
+    nummerNaam = document.getElementById('js--nummerNaam');
+    nummerArtiest = document.getElementById('js--nummerArtiest');
 
-
-    if (music != null) {
-        const pButton = document.getElementById('pButton'); // play button
-        const playhead = document.getElementById('playhead'); // playhead
-        const timeline = document.getElementById('timeline'); // timeline
-        const backwarButton = document.getElementById('backwardButton'); // previous music
-        const forwardButton = document.getElementById('forwardButton'); // next music
-        let duration = music.duration; // Duration of audio clip, calculated here for embedding purposes
+    if (muziek != null) {
+        const pButton = document.getElementById('js--pButton'); // play button
+        const playhead = document.getElementById('js--playhead'); // playhead
+        const timeline = document.getElementById('js--timeline'); // timeline
+        let duration = muziek.duration; // Duration of audio clip, calculated here for embedding purposes
 
         // timeline width adjusted for playhead
         let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
         // play button event listenter
         pButton.addEventListener("click", play);
         // timeupdate event listener
-        music.addEventListener("timeupdate", timeUpdate, false);
+        muziek.addEventListener("timeupdate", timeUpdate, false);
 
         // makes timeline clickable
         timeline.addEventListener("click", function (event) {
             moveplayhead(event);
-            music.currentTime = duration * clickPercent(event);
+            muziek.currentTime = duration * clickPercent(event);
         }, false);
 
         // returns click as decimal (.77) of the total timelineWidth
@@ -41,7 +40,7 @@ window.onload = function () {
         function mouseDown() {
             onplayhead = true;
             window.addEventListener('mousemove', moveplayhead, true);
-            music.removeEventListener('timeupdate', timeUpdate, false);
+            muziek.removeEventListener('timeupdate', timeUpdate, false);
         }
 
         // mouseUp EventListener
@@ -51,8 +50,8 @@ window.onload = function () {
                 moveplayhead(event);
                 window.removeEventListener('mousemove', moveplayhead, true);
                 // change current time
-                music.currentTime = duration * clickPercent(event);
-                music.addEventListener('timeupdate', timeUpdate, false);
+                muziek.currentTime = duration * clickPercent(event);
+                muziek.addEventListener('timeupdate', timeUpdate, false);
             }
             onplayhead = false;
         }
@@ -75,9 +74,9 @@ window.onload = function () {
         // timeUpdate
         // Synchronizes playhead position with current point in audio
         function timeUpdate() {
-            var playPercent = timelineWidth * (music.currentTime / duration);
+            var playPercent = timelineWidth * (muziek.currentTime / duration);
             playhead.style.marginLeft = playPercent + "px";
-            if (music.currentTime == duration) {
+            if (muziek.currentTime == duration) {
                 pButton.className = "muziekSpeler--play__Button";
                 pButton.className = "fas fa-play muziekSpeler--play__Button";
             }
@@ -86,13 +85,13 @@ window.onload = function () {
         //Play and Pause
         function play() {
             // start music
-            if (music.paused) {
-                music.play();
+            if (muziek.paused) {
+                muziek.play();
                 // remove play, add pause
                 pButton.className = "muziekSpeler--play__Button";
                 pButton.className = "fas fa-pause muziekSpeler--play__Button";
             } else { // pause music
-                music.pause();
+                muziek.pause();
                 // remove pause, add play
                 pButton.className = "muziekSpeler--play__Button";
                 pButton.className = "fas fa-play muziekSpeler--play__Button";
@@ -104,8 +103,8 @@ window.onload = function () {
 
 
         // Gets audio file duration
-        music.addEventListener("canplaythrough", function () {
-            duration = music.duration;
+        muziek.addEventListener("canplaythrough", function () {
+            duration = muziek.duration;
 
         }, false);
 
@@ -122,16 +121,28 @@ window.onload = function () {
 let nummer = 0;
 const basisURL = 'http://127.0.0.1:8000/nummers/'
 
+
 function vorigNummer(afspeellijst) {
-    nummer -= 1;
-    const vorige = afspeellijst[nummer].bestandLocatie;
-    location.href = basisURL + vorige;
+    if (nummer != 0) {
+        nummer -= 1;
+        const vorige = afspeellijst[nummer].bestandLocatie;
+        audio.setAttribute('src', "/muziek/" + vorige);
+        muziek.load();
+        nummerNaam.innerHTML = afspeellijst[nummer].naam;
+        nummerArtiest.innerHTML = afspeellijst[nummer].artiest;
+        muziek.play();
+    }
 }
 
 function volgendNummer(afspeellijst) {
     nummer += 1;
     const volgende = afspeellijst[nummer].bestandLocatie;
-    console.log(volgende);
-    // location.href = basisURL + volgende;
-    console.log(window.location.href);
+    console.log(afspeellijst[nummer]);
+    audio.setAttribute('src', "/muziek/" + volgende);
+    muziek.load();
+    nummerNaam.innerHTML = afspeellijst[nummer].naam;
+    nummerArtiest.innerHTML = afspeellijst[nummer].artiest;
+    muziek.play();
+    console.log(nummerNaam);
+
 }
