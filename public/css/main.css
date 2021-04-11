@@ -175,21 +175,7 @@ a {
     border-image-slice: 1;
 }
 
-.timer__header{
-    display: flex;
-    justify-content: center;
-}
-.timer__timeSection{
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-}
 
-
-/* reset input */
-/* .form__field:required,
-.form__field:invalid {
-} */
 
 /* reset input */
 .form__field:required,
@@ -243,6 +229,15 @@ a {
     background-color: transparent;
     border: none;
     grid-area: play;
+}
+.button__actions__ghost--tijdInstellingen {
+    width: 20rem;
+}
+
+.content--button__actions__ghost:hover,
+.content--button__actions__ghost:active {
+    background-color: var(--TextColor);
+    color: #000;
 }
 
 /* menu styling */
