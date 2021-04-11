@@ -23,7 +23,6 @@ class StudiebuddyController extends Controller
         $studiebuddy->lat = $request->lat;
         $studiebuddy->ideale_temp = $request->temp;
         $studiebuddy->ideale_luchtvochtigheid = $request->luchtvochtigheid;
-        $studiebuddy->ideale_licht = $request->licht;
         $studiebuddy->save();
         return redirect('/studiebuddy');
     }

@@ -21,8 +21,7 @@ class StudiebuddySeeder extends Seeder
             'naam' => 'Piet',
             'skin' => 'Ladybug',
             'ideale_temp' => '23',
-            'ideale_luchtvochtigheid' => '50',
-            'ideale_licht' => '69'        
+            'ideale_luchtvochtigheid' => '50'    
             ]);
         //
     }

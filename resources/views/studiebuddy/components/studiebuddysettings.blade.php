@@ -38,8 +38,6 @@
                     <div class="form__sliderholder"><p>15</p><input class="form__range" type="range" id="temp" name="temp" min="15" max="25" step="1" value="{{$studiebuddy->ideale_temp}}"><p>25</p></div>
                 <label for="temp" class="form__label">Luchtvochtigheid</label>
                     <div class="form__sliderholder"><p>10</p><input class="form__range" type="range" id="luchtvochtigheid" name="luchtvochtigheid" min="10" max="90" step="5" value="{{$studiebuddy->ideale_luchtvochtigheid}}"><p>90</p></div>
-                <label for="temp" class="form__label">Licht</label>
-                    <div class="form__sliderholder"><p>10</p><input class="form__range" type="range" id="licht" name="licht" min="10" max="100" step="5" value="{{$studiebuddy->ideale_licht}}"><p>100</p></div>
             </section>
             <section class="form__group">
                 <input type="submit">

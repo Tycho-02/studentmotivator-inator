@@ -30,7 +30,6 @@ class UpdateBuddyRequest extends FormRequest
             'skin' => 'required|String',
             'temp' => 'required|integer',
             'luchtvochtigheid' => 'required|integer',
-            'licht' => 'required|integer',
         ];
     }
 }

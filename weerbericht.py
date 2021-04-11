@@ -22,7 +22,7 @@ if rowcount == 0:
     for x in mycursor:
         userlong = x[1]
         userlat = x[2]
-    allowedTimes = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]
+    allowedTimes = ["08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00", "20:00", "21:00", "22:00", "23:00"]
 
     url = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + str(userlat) + '&lon=' + str(userlong) + '&units=metric&exclude=current,minutely&appid=7deb7ae20398f8a5f63fb56749812be9'
     response = requests.get(url)
@@ -52,6 +52,7 @@ if rowcount == 0:
     else:
         aantalpauzes = 3
 
+    
     print("Aantal pauzes: " + str(aantalpauzes))
 
 

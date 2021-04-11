@@ -16,26 +16,31 @@ port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
 
 
 today = str(date.today())
-
+planning = ""
 mycursor = mydb.cursor()
 while True:
     rcv = port.readline().strip()
-    selectstring = "SELECT * from studiebuddy, studieplanning WHERE studieplanning.userId = 1 AND studieplanning.datum = %s"
-    vals = (today,)
-    mycursor.execute(selectstring, vals)
-    selectvals =  ()
+    mycursor.execute("SELECT * from studiebuddy;")
     for x in mycursor:    
         buddyName = x[3]
         buddySkin = x[4]
         idealTemp = int(x[5])
         idealHum = int(x[6])
         idealLight = int(x[7])
-        planning = x[11]
     
+    selectstring = "SELECT * from studieplanning WHERE userId = '1' AND datum = %s"
+    selectvals =  (today,)
+    mycursor.execute(selectstring, selectvals)
+    for x in mycursor:
+        planning = x[1]
+
+
+
     stuurNaam = bytes(buddyName)
     stuurSkin = bytes(buddySkin)
     stuuridealTemp = bytes(idealTemp)
     stuurPlanning = bytes(planning)
+    stuuridealHum = bytes(idealHum)
     port.write('\n')
     time.sleep(0.1)
     port.write(stuurNaam)
@@ -45,6 +50,9 @@ while True:
     port.write('\n')
     time.sleep(0.1)
     port.write(stuuridealTemp)
+    port.write('\n')
+    time.sleep(0.1)
+    port.write(stuuridealHum)
     port.write('\n')
     time.sleep(0.1)
     port.write(stuurPlanning)
