@@ -1,15 +1,15 @@
 window.onload = function () {
+    //deze variableen worden globaal gemaakt omdat de onclick functies anders niet werken
     muziek = document.getElementById('js--muziek'); // id for audio element
     // bekijkt of muziek aanwezig is en voert daarna code van afspelen
     audio = document.getElementById('js--muziek-audio');
     nummerNaam = document.getElementById('js--nummerNaam');
     nummerArtiest = document.getElementById('js--nummerArtiest');
-
     if (muziek != null) {
-        const pButton = document.getElementById('js--pButton'); // play button
+        const pButton = document.getElementById('js--pButton'); // play knop
         const playhead = document.getElementById('js--playhead'); // playhead
-        const timeline = document.getElementById('js--timeline'); // timeline
-        let duration = muziek.duration; // Duration of audio clip, calculated here for embedding purposes
+        const timeline = document.getElementById('js--timeline'); // tijdlijn
+        let duration = muziek.duration; // De duratie van het nummer
 
         // timeline width adjusted for playhead
         let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
@@ -121,28 +121,37 @@ window.onload = function () {
 let nummer = 0;
 const basisURL = 'http://127.0.0.1:8000/nummers/'
 
-
+//functie die de lijst van nummers binnen krijgt
 function vorigNummer(afspeellijst) {
     if (nummer != 0) {
         nummer -= 1;
+        //selecteerd het vorige nummer in de lijst
         const vorige = afspeellijst[nummer].bestandLocatie;
+        //zet het vorige nummer in van de lijst
         audio.setAttribute('src', "/muziek/" + vorige);
+        //laad het vorige nummer in van de lijst
         muziek.load();
+        //veranderd de innerhtml naar de bijbehoordende nummer
         nummerNaam.innerHTML = afspeellijst[nummer].naam;
         nummerArtiest.innerHTML = afspeellijst[nummer].artiest;
+        //speeld het nummer af
         muziek.play();
     }
 }
 
+//de functies moeten buiten de onload funcatie aangemaakt worden anders kunnen ze niet aan geroepen worden door de onclick die een object meegeeft
+//functie die de lijst van nummers binnen krijgt
 function volgendNummer(afspeellijst) {
     nummer += 1;
+    //selecteerd het volgende nummer in de lijst
     const volgende = afspeellijst[nummer].bestandLocatie;
-    console.log(afspeellijst[nummer]);
+    //zet het volgende nummer in van de lijst
     audio.setAttribute('src', "/muziek/" + volgende);
+    //laad het volgende nummer in van de lijst
     muziek.load();
+    //veranderd de innerhtml naar de bijbehoordende nummer
     nummerNaam.innerHTML = afspeellijst[nummer].naam;
     nummerArtiest.innerHTML = afspeellijst[nummer].artiest;
+    //speeld het nummer af
     muziek.play();
-    console.log(nummerNaam);
-
 }
