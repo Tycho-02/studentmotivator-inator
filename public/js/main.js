@@ -1,7 +1,7 @@
 window.onload = function () {
-    const music = document.getElementById('music'); // id for audio element
+    const music = document.getElementById('muziek'); // id for audio element
     // bekijkt of muziek aanwezig is en voert daarna code van afspelen
-
+    audio = document.getElementById('muziek-audio');
 
 
     if (music != null) {
@@ -11,19 +11,11 @@ window.onload = function () {
         const backwarButton = document.getElementById('backwardButton'); // previous music
         const forwardButton = document.getElementById('forwardButton'); // next music
         let duration = music.duration; // Duration of audio clip, calculated here for embedding purposes
-        let nummer = 0;
 
         // timeline width adjusted for playhead
         let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
         // play button event listenter
         pButton.addEventListener("click", play);
-
-        //volgende nummer inline
-        forwardButton.addEventListener("click", volgende);
-
-        //vorige nummer inline
-        backwarButton.addEventListener("click", vorige);
-
         // timeupdate event listener
         music.addEventListener("timeupdate", timeUpdate, false);
 
@@ -107,19 +99,9 @@ window.onload = function () {
             }
         }
 
-        function volgende() {
-            nummer += 1;
-            console.log(nummer);
-            //veranderd de innerHTML in die van het volgende nummer met nummer als index
-        }
 
-        function vorige() {
-            if (nummer != 0) {
-                nummer -= 1;
-                console.log(nummer);
-                //veranderd de innerHTML in die van het vorige nummer met nummer als index
-            }
-        }
+
+
 
         // Gets audio file duration
         music.addEventListener("canplaythrough", function () {
@@ -133,9 +115,23 @@ window.onload = function () {
             return el.getBoundingClientRect().left;
         }
 
-
-
     }
 
 }
 
+let nummer = 0;
+const basisURL = 'http://127.0.0.1:8000/nummers/'
+
+function vorigNummer(afspeellijst) {
+    nummer -= 1;
+    const vorige = afspeellijst[nummer].bestandLocatie;
+    location.href = basisURL + vorige;
+}
+
+function volgendNummer(afspeellijst) {
+    nummer += 1;
+    const volgende = afspeellijst[nummer].bestandLocatie;
+    console.log(volgende);
+    // location.href = basisURL + volgende;
+    console.log(window.location.href);
+}
