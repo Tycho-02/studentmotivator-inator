@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             HumeurSeeder::class,
             UserIdSeeder::class,
             TijdInstellingenSeeder::class,
+            TijdSlapenSeeder::class,
             MobielTableSeeder::class,
             TimerSeeder::class,
             AfspeellijstSeeder::class,

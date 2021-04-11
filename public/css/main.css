@@ -195,6 +195,8 @@ a {
   .form__field:required, .form__field:invalid {
 }
 
+
+
 /* reset input */
 .form__field:required,
 .form__field:invalid,
@@ -218,6 +220,10 @@ a {
     outline: none;
     border-radius: 15px;
     text-decoration: none;
+}
+
+.button__actions__ghost--tijdInstellingen {
+    width: 20rem;
 }
 
 .content--button__actions__ghost:hover,
