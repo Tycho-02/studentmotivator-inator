@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Studiebuddy Instellingen</h1>
-    <form action="/updatestudiebuddy" class="form">
+    <form action="/updatestudiebuddy" class="form" method="POST">
         @csrf
         @method('POST')
             <section class="form__group">

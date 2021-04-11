@@ -16,8 +16,7 @@ Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController
 
 Route::get('/mobiel', [\App\Http\Controllers\MobielController::class, 'index']);
 Route::get('/timer', [\App\Http\Controllers\TimerController::class, 'index']);
-Route::get('/studiebuddy/weerbericht', [App\Http\Controllers\StudiebuddyController::class, 'weerbericht']);
 Route::get('/studiebuddy', [App\Http\Controllers\StudiebuddyController::class, 'index']);
-Route::get('/updatestudiebuddy', [App\Http\Controllers\StudiebuddyController::class, 'update']);
+Route::post('/updatestudiebuddy', [App\Http\Controllers\StudiebuddyController::class, 'update']);
 
 
