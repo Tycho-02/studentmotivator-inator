@@ -18,21 +18,21 @@ class AfspeellijstSeeder extends Seeder
             'userId' => '1',
             'afspeellijstId' => '1',
             'naam' => 'Tijd om te blokken lijst',
-            'aantalNummers' => 1,
+            'aantalNummers' => 4,
             'humeur' => "Blokken"
         ]);
         DB::table('afspeellijst')->insert([ 
             'userId' => '1',
             'afspeellijstId' => '2',
             'naam' => 'Anti-Stress lijst',
-            'aantalNummers' => 0,
+            'aantalNummers' => 10,
             'humeur' => "Stress"
         ]);
         DB::table('afspeellijst')->insert([ 
             'userId' => '1',
             'afspeellijstId' => '3',
             'naam' => 'Pauze lijst',
-            'aantalNummers' => 0 ,
+            'aantalNummers' => 1 ,
             'humeur' => "Pauze"
         ]);
     }

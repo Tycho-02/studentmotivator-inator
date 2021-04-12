@@ -129,6 +129,8 @@ function vorigNummer(afspeellijst) {
         const vorige = afspeellijst[nummer].bestandLocatie;
         //zet het vorige nummer in van de lijst
         audio.setAttribute('src', "/muziek/" + vorige);
+        //muziek wordt op pauze gezet
+        muziek.pause();
         //laad het vorige nummer in van de lijst
         muziek.load();
         //veranderd de innerhtml naar de bijbehoordende nummer
@@ -140,18 +142,27 @@ function vorigNummer(afspeellijst) {
 }
 
 
-//functie die de lijst van nummers binnen krijgt
+//functie die de lijst van nummers binnen krijgts
 function volgendNummer(afspeellijst) {
-    nummer += 1;
     //selecteerd het volgende nummer in de lijst
-    const volgende = afspeellijst[nummer].bestandLocatie;
-    //zet het volgende nummer in van de lijst
-    audio.setAttribute('src', "/muziek/" + volgende);
-    //laad het volgende nummer in van de lijst
-    muziek.load();
-    //veranderd de innerhtml naar de bijbehoordende nummer
-    nummerNaam.innerHTML = afspeellijst[nummer].naam;
-    nummerArtiest.innerHTML = afspeellijst[nummer].artiest;
-    //speeld het nummer af
-    muziek.play();
+    nummer += 1;
+    console.log(afspeellijst[nummer])
+    if (afspeellijst[nummer] != undefined) {
+        const volgende = afspeellijst[nummer].bestandLocatie;
+        // zet het volgende nummer in van de lijst
+        audio.setAttribute('src', "/muziek/" + volgende);
+        //muziek wordt op pauze gezet
+        muziek.pause();
+        //laad het volgende nummer in van de lijst
+        muziek.load();
+        //veranderd de innerhtml naar de bijbehoordende nummer
+        nummerNaam.innerHTML = afspeellijst[nummer].naam;
+        nummerArtiest.innerHTML = afspeellijst[nummer].artiest;
+        //speeld het nummer af
+        muziek.play();
+    } else (
+        console.log("nope")
+    )
+
 }
+
