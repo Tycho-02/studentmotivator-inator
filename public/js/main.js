@@ -118,9 +118,9 @@ window.onload = function () {
 
 }
 
+//de functies moeten buiten de onload funcatie aangemaakt worden anders kunnen ze niet aan geroepen worden door de onclick die een object meegeeft
 let nummer = 0;
 const basisURL = 'http://127.0.0.1:8000/nummers/'
-
 //functie die de lijst van nummers binnen krijgt
 function vorigNummer(afspeellijst) {
     if (nummer != 0) {
@@ -139,7 +139,7 @@ function vorigNummer(afspeellijst) {
     }
 }
 
-//de functies moeten buiten de onload funcatie aangemaakt worden anders kunnen ze niet aan geroepen worden door de onclick die een object meegeeft
+
 //functie die de lijst van nummers binnen krijgt
 function volgendNummer(afspeellijst) {
     nummer += 1;

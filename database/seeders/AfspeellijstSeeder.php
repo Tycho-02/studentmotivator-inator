@@ -17,23 +17,23 @@ class AfspeellijstSeeder extends Seeder
         DB::table('afspeellijst')->insert([ 
             'userId' => '1',
             'afspeellijstId' => '1',
-            'naam' => 'Chill lijst',
+            'naam' => 'Tijd om te blokken lijst',
             'aantalNummers' => 1,
-            'humeur' => "Blij"
+            'humeur' => "Blokken"
         ]);
         DB::table('afspeellijst')->insert([ 
             'userId' => '1',
             'afspeellijstId' => '2',
-            'naam' => 'meh lijst',
+            'naam' => 'Anti-Stress lijst',
             'aantalNummers' => 0,
-            'humeur' => "Meh"
+            'humeur' => "Stress"
         ]);
         DB::table('afspeellijst')->insert([ 
             'userId' => '1',
             'afspeellijstId' => '3',
-            'naam' => 'sad lijst',
+            'naam' => 'Pauze lijst',
             'aantalNummers' => 0 ,
-            'humeur' => "Verdrietig"
+            'humeur' => "Pauze"
         ]);
     }
 }
