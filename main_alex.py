@@ -1,3 +1,14 @@
+
+#created by 1118551 - student motivator-inator 1118551 voor ipmedt5
+
+#functionaliteiten
+#wakker worden met behulp van een arduino sensor 
+#buzzer instellen op aan en uit
+
+
+
+
+
 import mysql.connector
 import time
 import serial
@@ -36,10 +47,10 @@ buzzerInstellingen = slapen[2]
 
 
 
+
 print('tijd naar bed gebruiker: ' + str(naar_bed))
 print('tijd uit bed gebruiker: ' + str(uit_bed))
 print('buzzer instelling: ' + str(buzzerInstellingen))
-
 
 print(datetime.datetime.now().strftime("%H:%M:%S"))
 
@@ -109,22 +120,19 @@ while gebruikerNaarBed == False:
                 print('geupdate, gebruiker gaat nu uit bed')
                 os.system("python update_uit_bed_alex.py")
                 time.sleep(2)
-                exit()
+                os.system("python whatsapp_alex.py") #we sturen alvast een melding naar de gebruiker door middel van whatsapp berichtje
+                print('we gaan checken of de gebruiker echt wakker wordt. Dit doen we door buzzer opnieuw af te laten gaan in een minuut')
+                time.sleep(2)
+            elif rcv == 'w':
+                time.sleep(2)
+                port.write('v')
+                time.sleep(2)
+                print('gebruiker is echt wakker') #gebruiker is nu echt wakker!
+                os.system("python whatsapp_alex.py")
+                 
+            
                
 mydb.close()
-
-
-
-
-
-
-#created by 1118551 - student motivator-inator 1118551 voor ipmedt5
-
-#functionaliteiten
-#wakker worden met behulp van een arduino sensor 
-#buzzer instellen op aan en uit
-
-
 
 
 
