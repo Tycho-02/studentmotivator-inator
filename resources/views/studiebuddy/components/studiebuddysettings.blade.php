@@ -31,7 +31,6 @@
                     <img class="form__icon" src="/img/ladybugicon.png" alt="">
                     <input type="radio" id="Ladybug" name="skin" value="Ladybug" {{ ($studiebuddy->skin=="Ladybug")? "checked" : "" }}>
                 </div>
-                
             </section>
             <section class="form__group form__group--slider">
                 <label for="temp" class="form__label">Temperatuur</label>
