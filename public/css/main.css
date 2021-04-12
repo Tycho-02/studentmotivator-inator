@@ -184,6 +184,17 @@ a {
     display: flex;
     justify-content: center;
 }
+.timer__form-field{
+    text-align: center;
+}
+.timer__buttonsSection{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    gap: 2rem;
+    margin: 0 auto;
+}
 
 
 /* reset input */
@@ -452,11 +463,22 @@ audio {
     }
     .timer__form-field{
         width: 50%;
-        text-align: center;
         font-size: 1.8rem;
     }
     .timer__form-submitBtn{
         width: 50%;
+    }
+    .timer__buttonsSection{
+        width: 50%;
+    }
+    .timer__form-submitBtn {
+        width: 50%;
+        margin-bottom: 2rem;
+    }
+    .timer__button{
+        width: 100% !important;
+        padding: 1.6rem 1.2rem;
+        margin-bottom: 0;
     }
 }
 
@@ -511,6 +533,9 @@ audio {
     .timer__form-submitBtn{
         width: 40%;
     }
+    .timer__buttonsSection{
+        width: 40%;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -525,18 +550,21 @@ audio {
     .timer__form-submitBtn{
         width: 30%;
     }
+    .timer__buttonsSection{
+        width: 30%;
+    }
 }
 
 @media (min-width: 1440px) {
     .taken__form {
         width: 25%;
     }
-    .timer__form-field {
+    /* .timer__form-field {
         width: 50%;
     }
     .timer__form-submitBtn {
         width: 50%;
-    }
+    } */
 }
 .content--tijdInstellingen {
     margin-top: 5rem;
