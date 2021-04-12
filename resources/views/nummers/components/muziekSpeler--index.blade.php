@@ -31,9 +31,9 @@
                         <p id="js--nummerArtiest" class="ondertext">{{$afspeellijstEersteNummer->artiest}}</p>
                     </article>
                     <section class="muziekSpeler--buttons">
-                        <i  onclick="vorigNummer({{$afspeellijst}})" class="fas fa-step-backward muziekSpeler--play__Button "></i>
+                        <i  id="js--vorigeNummerButton" onclick="vorigNummer({{$afspeellijst}})" class="fas fa-step-backward muziekSpeler--play__Button "></i>
                         <i  id="js--pButton" class="fas fa-pause muziekSpeler--play__Button "></i>
-                        <i  onclick="volgendNummer({{$afspeellijst}})" class="fas fa-step-forward muziekSpeler--play__Button "></i>
+                        <i  id="js--volgendNummerButton" onclick="volgendNummer({{$afspeellijst}})" class="fas fa-step-forward muziekSpeler--play__Button "></i>
                     </section>
                 </section>
                 <div id="js--timeline" class="muziekSpeler--timeline" >

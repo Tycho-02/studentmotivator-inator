@@ -1,10 +1,13 @@
 window.onload = function () {
     //deze variableen worden globaal gemaakt omdat de onclick functies anders niet werken
+    // de globalen variabelen moeten in de onload omdat de variablen anders geen items bevatten
     muziek = document.getElementById('js--muziek'); // id for audio element
     // bekijkt of muziek aanwezig is en voert daarna code van afspelen
     audio = document.getElementById('js--muziek-audio');
     nummerNaam = document.getElementById('js--nummerNaam');
     nummerArtiest = document.getElementById('js--nummerArtiest');
+    volgendNummerButton = document.getElementById('js--volgendNummerButton');
+
     if (muziek != null) {
         const pButton = document.getElementById('js--pButton'); // play knop
         const playhead = document.getElementById('js--playhead'); // playhead
@@ -75,10 +78,16 @@ window.onload = function () {
         // Synchronizes playhead position with current point in audio
         function timeUpdate() {
             var playPercent = timelineWidth * (muziek.currentTime / duration);
+            console.log(playPercent);
             playhead.style.marginLeft = playPercent + "px";
             if (muziek.currentTime == duration) {
+                //wanneer muziek klaar is word de muziek gestopt
                 pButton.className = "muziekSpeler--play__Button";
                 pButton.className = "fas fa-play muziekSpeler--play__Button";
+                //wanneer nummer klaar is zou het volgende nummer moeten gaan spelen
+                //de funtie volgendNummer() kan niet zomaar aangeroepen worden omdat
+                //er een object vanuit de database meegegeven moet worden dus word er een onclick nagebootst
+                volgendNummerButton.click();
             }
         }
 
@@ -120,9 +129,8 @@ window.onload = function () {
 
 //de functies moeten buiten de onload funcatie aangemaakt worden anders kunnen ze niet aan geroepen worden door de onclick die een object meegeeft
 let nummer = 0;
-const basisURL = 'http://127.0.0.1:8000/nummers/'
-//functie die de lijst van nummers binnen krijgt
-function vorigNummer(afspeellijst) {
+//functie die de lijst van nummers binnen krijgt word gebruikt in de html
+const vorigNummer = (afspeellijst) => {
     if (nummer != 0) {
         nummer -= 1;
         //selecteerd het vorige nummer in de lijst
@@ -142,8 +150,8 @@ function vorigNummer(afspeellijst) {
 }
 
 
-//functie die de lijst van nummers binnen krijgts
-function volgendNummer(afspeellijst) {
+//functie die de lijst van nummers binnen krijgt word aangeroepen in de html
+const volgendNummer = (afspeellijst) => {
     //selecteerd het volgende nummer in de lijst
     nummer += 1;
     console.log(afspeellijst[nummer])
@@ -160,9 +168,12 @@ function volgendNummer(afspeellijst) {
         nummerArtiest.innerHTML = afspeellijst[nummer].artiest;
         //speeld het nummer af
         muziek.play();
-    } else (
+    } else {
         console.log("nope")
-    )
-
+        //afspeellijst word gereset
+        nummer = 0;
+        //de button click voor volgendnummer word na gebootst
+        volgendNummerButton.click();
+    }
 }
 

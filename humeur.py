@@ -18,19 +18,19 @@ mycursor = mydb.cursor()
 while True:
     rcv = port.read().strip()
     if( rcv == b'a'):
-        mycursor.execute("update users SET humeur = 'Blij' WHERE userId = 1;")
-        print("Blij")
+        mycursor.execute("update users SET humeur = 'Blokken' WHERE userId = 1;")
+        print("Blokken")
         print(mycursor.rowcount, "humeur succesvol geupdate")
 
     elif( rcv == b'b'):
-        mycursor.execute("update users SET humeur = 'Meh' WHERE userId = 1;")
-        print("Meh")
+        mycursor.execute("update users SET humeur = 'Stress' WHERE userId = 1;")
+        print("Stress")
         print(mycursor.rowcount, "humeur succesvol geupdate")
 
 
     elif( rcv == b'c'):
-        mycursor.execute("update users SET humeur = 'Verdrietig' WHERE userId = 1;")
-        print("Verdrietig")
+        mycursor.execute("update users SET humeur = 'Pauze' WHERE userId = 1;")
+        print("Pauze")
         print(mycursor.rowcount, "humeur succesvol geupdate")
 
         
