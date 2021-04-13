@@ -56,6 +56,48 @@ a {
     grid-area: content;
 }
 
+.menu{
+    grid-area: menu;
+    border: 1px solid green;
+}
+
+
+.content{
+    grid-area: content;
+    
+}
+.muziekSpeler{
+    grid-area: player;
+}
+
+.list{
+    list-style: none;
+}
+
+.list__item{
+    display:grid;
+    grid-column: 1fr 1fr;
+    grid-row: 1fr 1fr;
+    grid-template-areas:
+    "naam naam"
+    "artiest genre"
+}
+.list__item >p:nth-child(1){
+    grid-area: naam;
+    font-size: 1.6rem;
+}
+.list__item >p:nth-child(2){
+    grid-area: artiest;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.548);
+}
+.list__item >p:nth-child(3){
+    grid-area: genre;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.548);
+    text-align: right
+}
+
 .content--button__actions__primary {
     padding: 1.6rem 4.2rem;
     box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
