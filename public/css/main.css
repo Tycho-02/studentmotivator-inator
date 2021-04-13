@@ -56,47 +56,6 @@ a {
     grid-area: content;
 }
 
-.menu{
-    grid-area: menu;
-}
-
-
-.content{
-    grid-area: content;
-    
-}
-.muziekSpeler{
-    grid-area: player;
-}
-
-.list{
-    list-style: none;
-}
-
-.list__item{
-    display:grid;
-    grid-column: 1fr 1fr;
-    grid-row: 1fr 1fr;
-    grid-template-areas:
-    "naam naam"
-    "artiest genre"
-}
-.list__item >p:nth-child(1){
-    grid-area: naam;
-    font-size: 1.6rem;
-}
-.list__item >p:nth-child(2){
-    grid-area: artiest;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.548);
-}
-.list__item >p:nth-child(3){
-    grid-area: genre;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.548);
-    text-align: right
-}
-
 .content--button__actions__primary {
     padding: 1.6rem 4.2rem;
     box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
@@ -225,19 +184,12 @@ a {
     display: flex;
     justify-content: center;
 }
-.timer__form-field{
-    text-align: center;
-}
-.timer__buttonsSection{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    width: 100%;
-    gap: 2rem;
-    margin: 0 auto;
-}
 
 
+/* reset input */
+/* .form__field:required,
+.form__field:invalid {
+} */
 
 /* reset input */
 .form__field:required,
@@ -291,15 +243,6 @@ a {
     background-color: transparent;
     border: none;
     grid-area: play;
-}
-.button__actions__ghost--tijdInstellingen {
-    width: 20rem;
-}
-
-.content--button__actions__ghost:hover,
-.content--button__actions__ghost:active {
-    background-color: var(--TextColor);
-    color: #000;
 }
 
 /* menu styling */
@@ -424,7 +367,7 @@ audio {
 }
 
 @media (min-width: 500px) {
-    .content__nummers {
+    .content {
         margin-left: -30rem;
     }
     .content--button__actions__primary {
@@ -509,22 +452,11 @@ audio {
     }
     .timer__form-field{
         width: 50%;
+        text-align: center;
         font-size: 1.8rem;
     }
     .timer__form-submitBtn{
         width: 50%;
-    }
-    .timer__buttonsSection{
-        width: 50%;
-    }
-    .timer__form-submitBtn {
-        width: 50%;
-        margin-bottom: 2rem;
-    }
-    .timer__button{
-        width: 100% !important;
-        padding: 1.6rem 1.2rem;
-        margin-bottom: 0;
     }
 }
 
@@ -579,9 +511,6 @@ audio {
     .timer__form-submitBtn{
         width: 40%;
     }
-    .timer__buttonsSection{
-        width: 40%;
-    }
 }
 
 @media (min-width: 1024px) {
@@ -596,21 +525,18 @@ audio {
     .timer__form-submitBtn{
         width: 30%;
     }
-    .timer__buttonsSection{
-        width: 30%;
-    }
 }
 
 @media (min-width: 1440px) {
     .taken__form {
         width: 25%;
     }
-    /* .timer__form-field {
+    .timer__form-field {
         width: 50%;
     }
     .timer__form-submitBtn {
         width: 50%;
-    } */
+    }
 }
 .content--tijdInstellingen {
     margin-top: 5rem;
