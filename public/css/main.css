@@ -367,9 +367,6 @@ audio {
 }
 
 @media (min-width: 500px) {
-    .content {
-        margin-left: -30rem;
-    }
     .content--button__actions__primary {
         width: fit-content;
     }
