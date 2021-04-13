@@ -11,7 +11,7 @@ class Studiebuddy extends Model
     protected $table = "studiebuddy";
     protected $primaryKey = 'userId';
 
-    public function user(){
-        return this.belongsTo(\App\Models\Users::class, "user_id", "userId");
+    public function myUser(){
+        return $this->belongsTo(\App\Models\Users::class, "userId", "userId");
     }
 }

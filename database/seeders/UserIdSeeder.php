@@ -20,7 +20,8 @@ class UserIdSeeder extends Seeder
             'email' => 's1118551@student.hsleiden.nl',
             'telefoonnummer' => '0686090814',
             'password' => 'lol',
-            'humeur' => 'Blokken'        
+            'humeur' => 'Blokken',
+            'punten' => '50'        
             ]);
         //
     }

@@ -51,7 +51,7 @@ Route::get('/timer', [\App\Http\Controllers\TimerController::class, 'index']);
 Route::post('/timer', [\App\Http\Controllers\TimerController::class, 'store']);
 Route::get('/studiebuddy', [App\Http\Controllers\StudiebuddyController::class, 'index']);
 Route::post('/updatestudiebuddy', [App\Http\Controllers\StudiebuddyController::class, 'update']);
-
+Route::get('//gekochteuiterlijkjes/shop', [App\Http\Controllers\GekochtUiterlijkjeController::class, 'shop']);
 
 Route::get('/', function(){
         return view('layouts.mobiel');

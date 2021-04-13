@@ -16,6 +16,9 @@ class CreateGekochteUiterlijkjesTable extends Migration
         Schema::create('gekochte_uiterlijkjes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger("userId");
+            $table->foreign('userId')->references('userId')->on('users');
+            $table->string('skin');
         });
     }
 

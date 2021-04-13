@@ -39,21 +39,30 @@
                 <div class="studiebuddySettingsForm__radioWrapper studiebuddySettingsForm__radioWrapper--center">
                     <div class="studiebuddySettingsForm__radio">
                         <img class="form__icon" src="/img/snorlaxicon.png" alt="">
-                        <input type="radio" id="Snorlax" name="skin" value="Snorlax" {{ ($studiebuddy->skin=="Snorlax")? "checked" : "" }}>
+                        
+                        @if(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Snorlax")->first()))
+                            <input type="radio" id="Snorlax" name="skin" value="Snorlax" {{ ($studiebuddy->skin=="Snorlax")? "checked" : "" }}>
+                        @else
+                            <a href="/gekochteuiterlijkjes/shop" class="studiebuddySettingsForm__field studiebuddySettingsForm__field--button studiebuddySettingsForm__field--link" href="google.com">Kopen</a>
+                        @endif
                     </div>
                     <div class="studiebuddySettingsForm__radio">
                         <img class="form__icon" src="/img/charizardicon.png" alt="">
+                        @if(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first()))
                         <input type="radio" id="Charizard" name="skin" value="Charizard" {{ ($studiebuddy->skin=="Charizard")? "checked" : "" }}>
+                        @else
+                        <a href="/gekochteuiterlijkjes/shop" class="studiebuddySettingsForm__field studiebuddySettingsForm__field--button studiebuddySettingsForm__field--link" href="google.com">Kopen</a>
+                        @endif
                     </div>
                 </div>
                 
             </section>
             <section class="studiebuddySettingsForm__group">
-                <label for="temp">Temperatuur</label>
+                <label for="temp">Jouw ideale temperatuur</label>
                 <div class="studiebuddySettingsForm__rangeHolder"><p>15&#8451;</p><input class="studiebuddySettingsForm__field" type="range" id="temp" name="temp" min="15" max="25" step="1" value="{{$studiebuddy->ideale_temp}}"><p>25&#8451;</p></div>
             </section>
             <section class="studiebuddySettingsForm__group">
-                <label for="temp">Luchtvochtigheid</label>
+                <label for="temp">Jouw ideale luchtvochtigheid</label>
                     <div class="studiebuddySettingsForm__rangeHolder"><p>10%</p><input class="studiebuddySettingsForm__field" type="range" id="luchtvochtigheid" name="luchtvochtigheid" min="10" max="90" step="5" value="{{$studiebuddy->ideale_luchtvochtigheid}}"><p>90%</p></div>
             </section>
             <section class="studiebuddySettingsForm__group">
