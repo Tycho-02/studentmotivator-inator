@@ -18,12 +18,12 @@ class NummersController extends Controller
         //checkt de humeur van de gebruiker
         $userHumeur = User::first()->pluck('humeur')->first();
         //zoekt de afspeellijst met de nummers die overeenkomt met de humeur van de gebruiker
-        $afspeellijst = Afspeellijst::where('humeur', $userHumeur)->first()->nummers;
+        $afspeellijst = Afspeellijst::where('humeur', $userHumeur)->first()->nummers->shuffle();
         //shuffle de lijst met nummers
-        $afspeellijstShuffle = $afspeellijst->shuffle();
+        // $afspeellijstShuffle = $afspeellijst->shuffle();
         //pakt het eerste nummer van de lijst
         $afspeellijstEersteNummer = $afspeellijst->first();
-        return view('nummers.nummers', compact("nummers","userHumeur", "afspeellijst","afspeellijstShuffle","afspeellijstEersteNummer"));
+        return view('nummers.nummers', compact("nummers","userHumeur", "afspeellijst","afspeellijstEersteNummer"));
     }
 
     public function show(){

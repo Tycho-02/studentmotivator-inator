@@ -367,7 +367,7 @@ audio {
 }
 
 @media (min-width: 500px) {
-    .content {
+    .content__nummers {
         margin-left: -30rem;
     }
     .content--button__actions__primary {

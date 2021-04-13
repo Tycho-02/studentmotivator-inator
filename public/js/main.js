@@ -1,134 +1,132 @@
-window.onload = function () {
-    //deze variableen worden globaal gemaakt omdat de onclick functies anders niet werken
-    // de globalen variabelen moeten in de onload omdat de variablen anders geen items bevatten
-    muziek = document.getElementById('js--muziek'); // id for audio element
-    // bekijkt of muziek aanwezig is en voert daarna code van afspelen
-    audio = document.getElementById('js--muziek-audio');
-    nummerNaam = document.getElementById('js--nummerNaam');
-    nummerArtiest = document.getElementById('js--nummerArtiest');
-    volgendNummerButton = document.getElementById('js--volgendNummerButton');
+//deze variableen worden globaal gemaakt omdat de onclick functies anders niet werken
+// de globalen variabelen moeten in de onload omdat de variablen anders geen items bevatten
+const muziek = document.getElementById('js--muziek'); // id for audio element
+// bekijkt of muziek aanwezig is en voert daarna code van afspelen
+const audio = document.getElementById('js--muziek-audio');
+const nummerNaam = document.getElementById('js--nummerNaam');
+const nummerArtiest = document.getElementById('js--nummerArtiest');
+const volgendNummerButton = document.getElementById('js--volgendNummerButton');
+let nummer = 0;
 
-    if (muziek != null) {
-        const pButton = document.getElementById('js--pButton'); // play knop
-        const playhead = document.getElementById('js--playhead'); // playhead
-        const timeline = document.getElementById('js--timeline'); // tijdlijn
-        let duration = muziek.duration; // De duratie van het nummer
+if (muziek != null) {
+    const pButton = document.getElementById('js--pButton'); // play knop
+    const playhead = document.getElementById('js--playhead'); // playhead
+    const timeline = document.getElementById('js--timeline'); // tijdlijn
+    let duration = muziek.duration; // De duratie van het nummer
 
-        // timeline width adjusted for playhead
-        let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
-        // play button event listenter
-        pButton.addEventListener("click", play);
-        // timeupdate event listener
-        muziek.addEventListener("timeupdate", timeUpdate, false);
+    // timeline width adjusted for playhead
+    let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+    // play button event listenter
+    pButton.addEventListener("click", play);
+    // timeupdate event listener
+    muziek.addEventListener("timeupdate", timeUpdate, false);
 
-        // makes timeline clickable
-        timeline.addEventListener("click", function (event) {
+    // makes timeline clickable
+    timeline.addEventListener("click", function (event) {
+        moveplayhead(event);
+        muziek.currentTime = duration * clickPercent(event);
+    }, false);
+
+    // returns click as decimal (.77) of the total timelineWidth
+    function clickPercent(event) {
+        return (event.clientX - getPosition(timeline)) / timelineWidth;
+    }
+
+    // makes playhead draggable
+    playhead.addEventListener('mousedown', mouseDown, false);
+    window.addEventListener('mouseup', mouseUp, false);
+
+    // Boolean value so that audio position is updated only when the playhead is released
+    var onplayhead = false;
+
+    // mouseDown EventListener
+    function mouseDown() {
+        onplayhead = true;
+        window.addEventListener('mousemove', moveplayhead, true);
+        muziek.removeEventListener('timeupdate', timeUpdate, false);
+    }
+
+    // mouseUp EventListener
+    // getting input from all mouse clicks
+    function mouseUp(event) {
+        if (onplayhead == true) {
             moveplayhead(event);
+            window.removeEventListener('mousemove', moveplayhead, true);
+            // change current time
             muziek.currentTime = duration * clickPercent(event);
-        }, false);
-
-        // returns click as decimal (.77) of the total timelineWidth
-        function clickPercent(event) {
-            return (event.clientX - getPosition(timeline)) / timelineWidth;
+            muziek.addEventListener('timeupdate', timeUpdate, false);
         }
+        onplayhead = false;
+    }
+    // mousemove EventListener
+    // Moves playhead as user drags
+    function moveplayhead(event) {
+        var newMargLeft = event.clientX - getPosition(timeline);
 
-        // makes playhead draggable
-        playhead.addEventListener('mousedown', mouseDown, false);
-        window.addEventListener('mouseup', mouseUp, false);
-
-        // Boolean value so that audio position is updated only when the playhead is released
-        var onplayhead = false;
-
-        // mouseDown EventListener
-        function mouseDown() {
-            onplayhead = true;
-            window.addEventListener('mousemove', moveplayhead, true);
-            muziek.removeEventListener('timeupdate', timeUpdate, false);
+        if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
+            playhead.style.marginLeft = newMargLeft + "px";
         }
-
-        // mouseUp EventListener
-        // getting input from all mouse clicks
-        function mouseUp(event) {
-            if (onplayhead == true) {
-                moveplayhead(event);
-                window.removeEventListener('mousemove', moveplayhead, true);
-                // change current time
-                muziek.currentTime = duration * clickPercent(event);
-                muziek.addEventListener('timeupdate', timeUpdate, false);
-            }
-            onplayhead = false;
+        if (newMargLeft < 0) {
+            playhead.style.marginLeft = "0px";
         }
-        // mousemove EventListener
-        // Moves playhead as user drags
-        function moveplayhead(event) {
-            var newMargLeft = event.clientX - getPosition(timeline);
-
-            if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
-                playhead.style.marginLeft = newMargLeft + "px";
-            }
-            if (newMargLeft < 0) {
-                playhead.style.marginLeft = "0px";
-            }
-            if (newMargLeft > timelineWidth) {
-                playhead.style.marginLeft = timelineWidth + "px";
-            }
+        if (newMargLeft > timelineWidth) {
+            playhead.style.marginLeft = timelineWidth + "px";
         }
+    }
 
-        // timeUpdate
-        // Synchronizes playhead position with current point in audio
-        function timeUpdate() {
-            var playPercent = timelineWidth * (muziek.currentTime / duration);
-            console.log(playPercent);
-            playhead.style.marginLeft = playPercent + "px";
-            if (muziek.currentTime == duration) {
-                //wanneer muziek klaar is word de muziek gestopt
-                pButton.className = "muziekSpeler--play__Button";
-                pButton.className = "fas fa-play muziekSpeler--play__Button";
-                //wanneer nummer klaar is zou het volgende nummer moeten gaan spelen
-                //de funtie volgendNummer() kan niet zomaar aangeroepen worden omdat
-                //er een object vanuit de database meegegeven moet worden dus word er een onclick nagebootst
-                volgendNummerButton.click();
-            }
+    // timeUpdate
+    // Synchronizes playhead position with current point in audio
+    function timeUpdate() {
+        var playPercent = timelineWidth * (muziek.currentTime / duration);
+        console.log(playPercent);
+        playhead.style.marginLeft = playPercent + "px";
+        if (muziek.currentTime == duration) {
+            //wanneer muziek klaar is word de muziek gestopt
+            pButton.className = "muziekSpeler--play__Button";
+            pButton.className = "fas fa-play muziekSpeler--play__Button";
+            //wanneer nummer klaar is zou het volgende nummer moeten gaan spelen
+            //de funtie volgendNummer() kan niet zomaar aangeroepen worden omdat
+            //er een object vanuit de database meegegeven moet worden dus word er een onclick nagebootst
+            volgendNummerButton.click();
         }
+    }
 
-        //Play and Pause
-        function play() {
-            // start music
-            if (muziek.paused) {
-                muziek.play();
-                // remove play, add pause
-                pButton.className = "muziekSpeler--play__Button";
-                pButton.className = "fas fa-pause muziekSpeler--play__Button";
-            } else { // pause music
-                muziek.pause();
-                // remove pause, add play
-                pButton.className = "muziekSpeler--play__Button";
-                pButton.className = "fas fa-play muziekSpeler--play__Button";
-            }
+    //Play and Pause
+    function play() {
+        // start music
+        if (muziek.paused) {
+            muziek.play();
+            // remove play, add pause
+            pButton.className = "muziekSpeler--play__Button";
+            pButton.className = "fas fa-pause muziekSpeler--play__Button";
+        } else { // pause music
+            muziek.pause();
+            // remove pause, add play
+            pButton.className = "muziekSpeler--play__Button";
+            pButton.className = "fas fa-play muziekSpeler--play__Button";
         }
+    }
 
 
 
 
 
-        // Gets audio file duration
-        muziek.addEventListener("canplaythrough", function () {
-            duration = muziek.duration;
+    // Gets audio file duration
+    muziek.addEventListener("canplaythrough", function () {
+        duration = muziek.duration;
 
-        }, false);
+    }, false);
 
-        // getPosition
-        // Returns elements left position relative to top-left of viewport
-        function getPosition(el) {
-            return el.getBoundingClientRect().left;
-        }
-
+    // getPosition
+    // Returns elements left position relative to top-left of viewport
+    function getPosition(el) {
+        return el.getBoundingClientRect().left;
     }
 
 }
 
+
 //de functies moeten buiten de onload funcatie aangemaakt worden anders kunnen ze niet aan geroepen worden door de onclick die een object meegeeft
-let nummer = 0;
 //functie die de lijst van nummers binnen krijgt word gebruikt in de html
 const vorigNummer = (afspeellijst) => {
     if (nummer != 0) {
