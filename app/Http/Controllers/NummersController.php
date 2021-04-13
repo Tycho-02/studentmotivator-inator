@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Nummer as Nummer;
 use App\Models\Afspeellijst as Afspeellijst;
 use App\Models\Users as User;
+use App\Models\Timer as Timer;
 use Illuminate\Support\Facades\Validator;
 use Storage;
 use DB;
@@ -23,7 +24,10 @@ class NummersController extends Controller
         // $afspeellijstShuffle = $afspeellijst->shuffle();
         //pakt het eerste nummer van de lijst
         $afspeellijstEersteNummer = $afspeellijst->first();
-        return view('nummers.nummers', compact("nummers","userHumeur", "afspeellijst","afspeellijstEersteNummer"));
+
+        $pauze = Timer::first();
+
+        return view('nummers.nummers', compact("pauze","nummers","userHumeur", "afspeellijst","afspeellijstEersteNummer"));
     }
 
     public function show(){

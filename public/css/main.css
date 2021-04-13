@@ -312,6 +312,9 @@ audio {
     flex-direction: row;
     justify-content: space-between;
 }
+.muziekSpeler--info__text{
+    width:75%;
+}
 
 .muziekSpeler--timeline {
     width: 100%;
@@ -440,9 +443,6 @@ audio {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
-    .muziekSpeler--info__text{
-        width: 75%;
-    }
     .muziekSpeler--buttons {
         display: flex;
         justify-content: center;
@@ -465,8 +465,6 @@ audio {
 }
 
 /*tijd instellingen*/
-
-.content--tijdInstellingen__form__section
 
 /* Taken styling */
 .taken__add__section {
@@ -500,6 +498,9 @@ audio {
     .content--tijdInstellingen__form__section {
         display: grid;
         grid-row-gap: 0.5rem;
+    }
+    .muziekSpeler{
+        margin-top: 30rem;
     }
 }
 
