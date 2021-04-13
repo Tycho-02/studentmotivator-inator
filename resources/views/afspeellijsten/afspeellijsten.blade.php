@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<section class="content__nummers">
     <h1>Afspeellijsten</h1>
     <ul class="list">
         <li class="list__item hidden">
@@ -8,6 +9,7 @@
             <h2>Humeur</h2>
         </li>
         @include('afspeellijsten.components.afspeellijst--index')
+    </section>
     </ul>
 @endsection
 

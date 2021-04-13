@@ -12,9 +12,10 @@
         <p>{{ $afspeellijstnummer->naam }}</p>
         <p>{{ $afspeellijstnummer->artiest }}</p>
         <p>{{ $afspeellijstnummer->genre }}</p>
-        <button class="list__item--button__play">
+        <!-- button voor muziek laten afspelen -->
+        <!-- <button class="list__item--button__play">
             <a href="{{ route('afspeellijstNummer',  ['nummer' => $afspeellijstnummer->bestandLocatie, 'afspeellijstId' => $afspeellijstId])}}"><i class=" fas fa-play"></i></a>
-        </button>
+        </button> -->
     </li>   
     @endforeach
 </section>

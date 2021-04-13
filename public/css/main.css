@@ -367,8 +367,8 @@ audio {
 }
 
 @media (min-width: 500px) {
-    .content {
-        margin-left: -30rem;
+    .content__nummers {
+        margin-left: -20rem;
     }
     .content--button__actions__primary {
         width: fit-content;
@@ -440,9 +440,13 @@ audio {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+    .muziekSpeler--info__text{
+        width: 75%;
+    }
     .muziekSpeler--buttons {
         display: flex;
         justify-content: center;
+        
     }
     .muziekSpeler--buttons > i {
         margin: 0 1rem;
