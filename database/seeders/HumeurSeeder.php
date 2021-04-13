@@ -15,13 +15,13 @@ class HumeurSeeder extends Seeder
     public function run()
     {
         DB::table('humeur')->insert([ 
-            'humeur' => 'blij'       
+            'humeur' => 'Blokken'       
         ]);
         DB::table('humeur')->insert([ 
-            'humeur' => 'meh'       
+            'humeur' => 'Stress'       
         ]);
         DB::table('humeur')->insert([ 
-            'humeur' => 'verdrietig'       
+            'humeur' => 'Pauze'       
         ]);
 }
 }

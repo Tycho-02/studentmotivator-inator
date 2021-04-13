@@ -1,11 +1,11 @@
 /* VARIABELEN */
 
 :root {
-    --PrimaryColor: #1a1a1d;
-    --SecondaryColor: #4e4e50;
-    --ThirdColor: #c3073f;
-    --TextColor: #fff;
-    --fullwidth: 100%;
+  --PrimaryColor: #1A1A1D;
+  --SecondaryColor: #4E4E50;
+  --ThirdColor: #C3073F;
+  --TextColor: #fff;
+  --fullwidth: 100%;
 }
 
 * {
@@ -174,7 +174,9 @@ a {
     border-image: linear-gradient(to right, #c3073f, #950740);
     border-image-slice: 1;
 }
-
+.timer{
+    margin-top: 2rem;
+}
 .timer__header{
     display: flex;
     justify-content: center;
@@ -185,7 +187,30 @@ a {
     justify-content: center;
 }
 
-
+.timer__label{
+    text-align: center;
+}
+.timer__form-field{
+    text-align: center;
+}
+.timer__buttonsSection{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    gap: 2rem;
+    margin: 0 auto;
+}
+.timer__button{
+    margin-bottom: 0rem !important;
+    padding: 1.6rem 0rem !important;
+    font-size: 1.4rem !important;
+}
+.timer__form-alert{
+    margin-bottom: 1rem;
+    color: red;
+    text-align: center;
+}
 /* reset input */
 /* .form__field:required,
 .form__field:invalid {
@@ -289,8 +314,8 @@ a {
     justify-content: center;
     align-items: center;
 }
-.menu__list__item > a > i {
-    margin-bottom: 0.2em;
+.menu__list__item > a > i{
+    margin-bottom: 0.2em ;
 }
 
 /* audio styling */
@@ -300,12 +325,12 @@ audio {
     color: var(--TextColor);
 }
 .muziekSpeler {
-    margin-top: 10rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     grid-area: player;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
 }
 .muziekSpeler--info {
     display: flex;
@@ -366,10 +391,11 @@ audio {
     color: #f39c12;
 }
 
+/* meldingen voor taken */
+
+
+
 @media (min-width: 500px) {
-    .content {
-        margin-left: -30rem;
-    }
     .content--button__actions__primary {
         width: fit-content;
     }
@@ -447,6 +473,10 @@ audio {
     .muziekSpeler--buttons > i {
         margin: 0 1rem;
     }
+    .timer{
+        margin-top: 5rem;
+        margin-left: -15rem;
+    }
     .timer__form{
         align-items: center;
     }
@@ -457,6 +487,19 @@ audio {
     }
     .timer__form-submitBtn{
         width: 50%;
+    }
+    .timer__buttonsSection{
+        width: 50%;
+    }
+    .timer__form-submitBtn {
+        width: 50%;
+        margin-bottom: 2rem;
+    }
+    .timer__button{
+        width: 100% !important;
+        padding: 1.6rem 1.2rem;
+        margin-bottom: 0;
+        font-size: 1.2rem !important;
     }
 }
 
@@ -485,6 +528,88 @@ audio {
     padding: 1rem;
 }
 
+
+
+.studiebuddySettings{
+    width: 100%;
+    align-content: center;
+    display: flex;
+
+}
+
+.studiebuddySettingsForm{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 1px 1px 10px var(--SecondaryColor);
+    border: 1px solid var(--PrimaryColor);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.studiebuddySettingsForm__group{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.studiebuddySettingsForm__radioWrapper{
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 2rem;
+}
+
+
+.studiebuddySettingsForm__radio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.studiebuddySettingsForm__rangeHolder{
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.studiebuddySettingsForm__field--button{
+    background: linear-gradient(90deg, #C3073F 5%, #950740 100%);
+    border-radius: 10px;
+    color: var(--TextColor);
+    border: none;
+}
+
+.studiebuddySettingsForm__radio input[type="radio"]{
+    align-self: center;
+}
+
+.studiebuddySettingsForm__field{
+   border-radius: 0.5rem;
+   padding-top: 0.75rem;
+   padding-bottom: 0.75rem;
+   padding-left: 0.5rem;
+   width: 100%;
+   font-size: 1.6rem;
+}
+
+.studiebuddySettingsForm__field--button{
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 425px){
+    .studiebuddySettingsForm__radio img{
+        width: 100%;
+    }
+}
+
 @media (min-width: 500px) {
     .taken__form {
         width: 70%;
@@ -498,17 +623,30 @@ audio {
         grid-row-gap: 0.5rem;
     }
 }
-
+@media(min-width: 700px){
+    .timer{
+        margin-left: -20rem;
+    }
+    .timer__button {
+        font-size: 1.4rem !important;
+    }
+}
 @media (min-width: 768px) {
     .taken__form {
         width: 50%;
     }
 }
 @media (min-width: 900px) {
+    .timer{
+        margin-left: -30rem;
+    }
     .timer__form-field{
         width: 40%;
     }
     .timer__form-submitBtn{
+        width: 40%;
+    }
+    .timer__buttonsSection{
         width: 40%;
     }
 }
@@ -519,24 +657,43 @@ audio {
     }
 }
 @media (min-width: 1100px) {
+    .timer{
+        margin-left: -35rem;
+    }
     .timer__form-field{
         width: 30%;
     }
     .timer__form-submitBtn{
         width: 30%;
     }
+    .timer__buttonsSection{
+        width: 30%;
+    }
+    .timer__button {
+        font-size: 1.6rem !important;
+    }
+    .timer__form-alert > p {
+        font-size: 2rem;
+    }
 }
-
+/* @media(min-width: 1200px){
+    .timer{
+        margin-left: -10rem;
+    }
+} */
 @media (min-width: 1440px) {
     .taken__form {
         width: 25%;
     }
-    .timer__form-field {
+    .timer{
+        margin-left: -45rem;
+    }
+    /* .timer__form-field {
         width: 50%;
     }
     .timer__form-submitBtn {
         width: 50%;
-    }
+    }*/
 }
 .content--tijdInstellingen {
     margin-top: 5rem;

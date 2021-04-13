@@ -13,13 +13,14 @@ use RealRashid\SweetAlert\Facades\Alert;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController@index");
-Route::get("/tijdinstellingen/edit", "App\Http\Controllers\TijdInstellingenController@edit");
-//Route::put("/tijdinstellingen/update", "App\Http\Controllers\TijdInstellingenController@update");
-Route::post('/update', [
+Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController@index"); //slapen tijd overzicht
+Route::get("/tijdinstellingen/edit", "App\Http\Controllers\TijdInstellingenController@edit"); //wijzigen tijd slapen
+Route::put('/update', [
     'uses' => 'App\Http\Controllers\TijdInstellingenController@update',
     'as' => 'tijdinstellingen.update',
 ]);
+Route::get('slapen/grafiek', [\App\Http\Controllers\TijdSlapenController::class, 'index']);
+
 
 Route::get('/taken', [\App\Http\Controllers\TakenController::class, 'index']); // Het taken overzicht
 Route::get('/taken/create', [\App\Http\Controllers\TakenController::class, 'create']); // Een taak toevoegen
@@ -48,6 +49,9 @@ Route::post("/toevoegen", "App\Http\Controllers\NummersController@upload");
 // Route::get('/mobiel', [\App\Http\Controllers\MobielController::class, 'index']);
 Route::get('/timer', [\App\Http\Controllers\TimerController::class, 'index']);
 Route::post('/timer', [\App\Http\Controllers\TimerController::class, 'store']);
+Route::get('/studiebuddy', [App\Http\Controllers\StudiebuddyController::class, 'index']);
+Route::post('/updatestudiebuddy', [App\Http\Controllers\StudiebuddyController::class, 'update']);
+
 
 Route::get('/', function(){
         return view('layouts.mobiel');

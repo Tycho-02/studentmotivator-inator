@@ -17,9 +17,9 @@ class CreateMobielTable extends Migration
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('userId')->on('users');
             $table->id('mobielId');
-            $table->boolean('beschikbaar');
-            $table->boolean('berichtsturen');
-            $table->boolean('smiley');
+            // $table->boolean('beschikbaar');
+            // $table->boolean('berichtsturen');
+            // $table->boolean('smiley');
         });
     }
 

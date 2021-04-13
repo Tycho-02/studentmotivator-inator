@@ -10,6 +10,7 @@ class Humeur extends Model
     use HasFactory;
 
     protected $table = 'humeur';
+    protected $fillable = ["humeur"];
     public $timestamps = false;
 
     public function userHumeur(){

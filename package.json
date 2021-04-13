@@ -20,6 +20,7 @@
         "jplayer": "^2.9.2",
         "jquery": "^3.6.0",
         "mediaelement": "^4.2.16",
+        "mysql": "^2.18.1",
         "sweetalert": "^2.1.2"
     }
 }

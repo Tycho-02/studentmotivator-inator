@@ -7,16 +7,21 @@
     </section>
     <form class="timer__form form" action="/timer" method="post">
         {{ csrf_field()}}
-        <label class="form__label" for="time" >Voer hier de gewenste tijd in:</label>
+        <label class="timer__label form__label" for="time" >Voer hier de gewenste tijd in:</label>
         <input class="timer__form-field form__field" id="time" type="time" name="tijd">
+        @if (session()->has('message'))
+            <div class="timer__form-alert">
+                <p>{{ session()->get('message') }}</p>
+            </div>
+        @endif
         <button class="timer__form-submitBtn content--button__actions__primary" type="submit">Bevestigen</button>
+        
     </form>
-    <!-- <section class="timer__buttonsSection" action="/timer" method="post">
+    <form class="timer__buttonsSection" action="/timer" method="post">
         {{ csrf_field()}}
-        <button class="timer__button1 u-btn-style"  type="submit" name="submit" Value="30">30 min</button>
-        <button class="timer__button2 u-btn-style">45 min</button>
-        <button class="timer__button3 u-btn-style">1 uur</button>
-        <button class="timer__button4 u-btn-style">1uur 15 min</button>
-        <button class="timer__buttonGo">Start de tijd!</button>
-    </section> -->
+        <input class="timer__button content--button__actions__primary" type="submit" name="30" value="30 min">
+        <input class="timer__button content--button__actions__primary" type="submit" name="45" value="45 min">
+        <input class="timer__button content--button__actions__primary" type="submit" name="60" value="1 uur">
+        <input class="timer__button content--button__actions__primary" type="submit" name="75" value="1 uur 15 min">
+    </form>
 </section>

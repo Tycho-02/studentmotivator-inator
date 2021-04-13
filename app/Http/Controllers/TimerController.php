@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Timer;
+use Exception;
 
 class TimerController extends Controller
 {
@@ -16,12 +17,27 @@ class TimerController extends Controller
     public function store(Request $request){
         $timer = \App\Models\Timer::first();
         $timer->tijd = $request->input('tijd');
-        $timer->save();
 
-        // if($request->submit == "30"){
-        //     $timer->tijd = "00:30";
-        //     $timer->save();
-        // }
-        return redirect('/timer');
+        if($request->input('30')){
+            $timer->tijd = "00:30";
+        }
+        if($request->input('45')){
+            $timer->tijd = "00:45";
+        }
+        if($request->input('60')){
+            $timer->tijd = "01:00";
+        }
+        if($request->input('75')){
+            $timer->tijd = "01:15";
+        }
+        try {
+            $timer->save();
+            return redirect('/timer');
+
+        } catch (Exception $err) {
+
+            return redirect('/timer')->with('message', 'Vul een tijd in!');
+        }
+        
     }
 }

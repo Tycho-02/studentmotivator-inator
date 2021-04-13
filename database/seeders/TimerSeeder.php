@@ -4,11 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use DB;
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 4565b5cf15e6096150312ebaf0c775226ec2faa3
 class TimerSeeder extends Seeder
 {
     /**
@@ -22,6 +18,7 @@ class TimerSeeder extends Seeder
             'mobielId' => '1',
             'buzzer' => 0,
             'tijd' => '00:30',
+            'pauze' => 0,
         ]);
     }
 }

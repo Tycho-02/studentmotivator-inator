@@ -4,7 +4,7 @@
             <i class="fas fa-bed fa-2x"></i>
             <p>Slaaptijd</p>
         </a>
-    </li>
+    </li> 
     <li class="menu__list__item">
         <a href="#">
             <i class="fas fa-calendar-alt fa-2x"></i>
