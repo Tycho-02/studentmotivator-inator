@@ -20,6 +20,7 @@ class CreateTijdInstellingenTable extends Migration
             $table->time('tijdInBed');
             $table->time('tijdUitBed');
             $table->string('buzzer');
+            $table->string('meldingen');
             $table->timestamp('updated_at')->nullable();
         });
     }

@@ -19,7 +19,7 @@
           data: cData.data,
           
           borderColor: [
-            "#fffffff",
+            "#eeeeee",
             "#989898",
             "#CB252B",
             "#E39371",
@@ -43,14 +43,15 @@
         position: "top",
         text: "Grafiek van jouw slaaptijd",
         fontSize: 18,
-        fontColor: "#111"
+        fontColor: "#ffffff",
+        color: "#eeeeee"
       },
       legend: {
         display: true,
         fill: false,
         position: "bottom",
         labels: {
-          fontColor: "#333",
+          fontColor: "#eeeeee",
           fontSize: 16
         }
       }

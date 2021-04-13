@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<section class="content__nummers">
     <h1>Nummers</h1>
     <a class="content--hyperlink__button" href="/nummerToevoegen">Voeg nummer toe</a>
     <ul class="list">
@@ -10,5 +11,6 @@
         </li>
         @include('nummers.components.nummer--index')
     </ul>
+</section>
 @endsection
 
