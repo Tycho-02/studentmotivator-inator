@@ -81,7 +81,7 @@ void smileyBlij(){
     B00000,
   };
 
-  cd.createChar(1, smileyBlij1);
+  lcd.createChar(1, smileyBlij1);
   lcd.createChar(2, smileyBlij2);
   lcd.createChar(3, smileyBlij3);
   lcd.createChar(4, smileyBlij4);

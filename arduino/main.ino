@@ -7,7 +7,6 @@
 #include <PN532.h>
 #include <NfcAdapter.h>
 
-//smiley display
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 //pinnen voor timer
@@ -88,6 +87,7 @@ void timer(boolean success){
       verliesPunten = 0;
       displayTime(countdownTime);
       smileyBlij();
+      
     }
   }
 //buzzer gaat af wanneer de timer is afgelopen
@@ -167,5 +167,4 @@ void displayTimeBreak(unsigned long countdownTimeBreak){
     punten += 10;
     delay(30000);
   }
-
 }
