@@ -7,6 +7,7 @@
     <form action="{{ route('tijdinstellingen.update') }}" class="content--tijdInstellingen__form" method="POST">
     <input type="hidden" name="id" value="{{ $data['id'] }}">
     @csrf
+    @method('PUT')
 
         <section class="content--tijdInstellingen__form__section">
             <label for="tijdInBed">Tijd naar bed:</label>
@@ -23,11 +24,24 @@
             <option value="uit">Buzzer uit</option>
         </select>
     </section>
+    
+    <section class="content--tijdInstellingen__form__section ">
+        <label for="meldingen">Meldingen ontvangen van taken:</label>
+        <select class="content--tijdInstellingen__form__section__select" name="meldingen" id="meldingen">
+            <option value="aan">Meldingen aan</option>
+            <option value="uit">Meldingen uit</option>
+        </select>
+    </section>
 
+
+    <section class="content--tijdInstellingen__form__section">
         <div class="content--tijdInstellingen__actions">
             <button type="submit" class="content--button__actions__primary">Opslaan</button>
             <a href="/tijdinstellingen" class="content--button__actions__ghost">Annuleren</a>
         </div>
+    </section>
+</label>
+
     </form>
 </article>
 @include('sweetalert::alert')

@@ -18,6 +18,7 @@ class TimerSeeder extends Seeder
             'mobielId' => '1',
             'buzzer' => 0,
             'tijd' => '00:30',
+            'pauze' => 0,
         ]);
     }
 }

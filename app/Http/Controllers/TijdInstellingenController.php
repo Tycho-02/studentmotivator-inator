@@ -49,9 +49,10 @@ class TijdInstellingenController extends Controller
         $updaten->tijdInBed = $request->tijdInBed;
         $updaten->tijdUitBed = $request->tijdUitBed;
         $updaten->buzzer = $request->buzzer;
+        $updaten->meldingen = $request->meldingen;
         $updaten->save();
 
-        return redirect('/tijdinstellingen')->with('success', 'Bedtijd is succesvol gewijzigd!');
+        return redirect('/tijdinstellingen')->with('success', 'Succesvol gewijzigd!');
         
     }
         //wordt later gecodeerd met Auth::user 
