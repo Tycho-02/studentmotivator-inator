@@ -50,8 +50,9 @@ print('nummer is ' + nummer)
 
 
 # Your Account Sid and Auth Token from twilio.com/user/account
-account_sid = os.environ['TWILIO_ACCOUNT_SID'] #We moeten dit prive houden vanwege security issues 
-auth_token = os.environ['TWILIO_AUTH_TOKEN'] #We moeten dit prive houden vanwege security issues 
+account_sid = '' #AC3ba4ca5f47e86034ff9a853b8d1106b9
+ #We moeten dit prive houden vanwege security issues 
+auth_token = '' #We moeten dit prive houden vanwege security issues  b65d189b3135343750c2555516840b0e
 client = Client(account_sid, auth_token)
 
 
