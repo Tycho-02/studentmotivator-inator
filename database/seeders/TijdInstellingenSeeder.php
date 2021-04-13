@@ -17,7 +17,8 @@ class TijdInstellingenSeeder extends Seeder
             'userId' => '1',
             'tijdInBed' => '22:00',
             'tijdUitBed' => '05:30',
-            'buzzer' => 'aan'
+            'buzzer' => 'aan',
+            'meldingen' => 'aan'
             ]);
         //
     }

@@ -366,6 +366,10 @@ audio {
     color: #f39c12;
 }
 
+/* meldingen voor taken */
+
+
+
 @media (min-width: 500px) {
     .content--button__actions__primary {
         width: fit-content;
