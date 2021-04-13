@@ -10,7 +10,8 @@ class TakenController extends Controller
 {
     // Deze functie zorgt ervoor dat alle taken worden getoond gessorteerd op uitvoerdatum en op deadline
     public function index() {
-        $collection = \App\Models\Taak::all();
+        $date = today()->format('Y-m-d');
+        $collection = \App\Models\Taak::all()->where('deadline', '>=', $date);
 
         $filterd = $collection->sortBy(function($data, $key) {
             return $data['uitvoerdatum'].$data['deadline'];
@@ -32,7 +33,7 @@ class TakenController extends Controller
 
         $taak->title = request('title');
         $taak->omschrijving = request('omschrijving');
-        $taak->label = request('label');
+        $taak->vak = request('vak');
         $taak->prioriteit = request('prioriteit', 0);
         $taak->deadline = request('deadline');
         $taak->uitvoerdatum = request('uitvoerdatum');
@@ -51,9 +52,27 @@ class TakenController extends Controller
     }
 
     // Deze functie is om een taak te verwijderen aan de hand van zijn id
-    public function destroy($taakId) {
-        \App\Models\Taak::destroy($taakId);
-        return redirect('/taken');
+    public function voltooi($taakId) {
+        $taak = \App\Models\Taak::find($taakId);
+
+        if($taak->status === "klaar") {
+            $taak->status = "niet voltooid";
+        } else {
+            $taak->status = "klaar";
+        }
+
+
+        try {
+            // Hier word de taak opgeslagen
+            $taak->save();
+            // Er word terug genavigeerd naar het taken overzicht met een extra message dat het gelukt is.
+            return redirect('/taken')->with('message', 'Taak is succesvol gewijzigd');
+
+        } catch (Exception $err) {
+            // Als de taak niet kon worden toegevoegd word er terug genavigeerd naar de wijzigen pagina
+            // en word er een message getoond dat het niet is gelukt
+            return redirect("/taken/" . $taakId . "/edit")->with('message', 'Taak kon niet worden voltooid!');
+        }
     }
 
     // Deze functie navigeerd naar de edit pagina van een taak
@@ -68,7 +87,7 @@ class TakenController extends Controller
 
         $taak->title = request('title');
         $taak->omschrijving = request('omschrijving');
-        $taak->label = request('label');
+        $taak->vak = request('vak');
         $taak->prioriteit = request('prioriteit', 0);
         $taak->deadline = request('deadline');
         $taak->uitvoerdatum = request('uitvoerdatum');

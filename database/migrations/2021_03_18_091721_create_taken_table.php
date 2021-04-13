@@ -20,7 +20,7 @@ class CreateTakenTable extends Migration
             $table->longText("title")->nullable(false);
             $table->longText("omschrijving")->nullable();
             $table->string('status')->default('niet voltooid');
-            $table->string('label')->nullable();
+            $table->string('vak')->nullable();
             $table->integer('prioriteit')->default(0);
             $table->date('deadline');
             $table->date('uitvoerdatum');
@@ -37,7 +37,7 @@ class CreateTakenTable extends Migration
         // Schema::table('taken', function (Blueprint $table) {
         //     $table->dropForeign('taken_userId_foreign');
         // });
-        
+
         Schema::dropIfExists('taken');
     }
 }

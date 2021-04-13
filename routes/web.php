@@ -25,7 +25,7 @@ Route::get('slapen/grafiek', [\App\Http\Controllers\TijdSlapenController::class,
 Route::get('/taken', [\App\Http\Controllers\TakenController::class, 'index']); // Het taken overzicht
 Route::get('/taken/create', [\App\Http\Controllers\TakenController::class, 'create']); // Een taak toevoegen
 Route::post('/taken', [\App\Http\Controllers\TakenController::class, 'store']); // Een taak opslaan in de DB
-Route::get('/taken/{id}/destroy', [\App\Http\Controllers\TakenController::class, 'destroy']); // Een taak verwijderen
+Route::get('/taken/{id}/voltooi', [\App\Http\Controllers\TakenController::class, 'voltooi']); // Een taak verwijderen
 Route::get('/taken/{id}/edit', [\App\Http\Controllers\TakenController::class, 'edit']); // update pagina
 Route::put('/taken/{id}', [\App\Http\Controllers\TakenController::class, 'update']); // Een taak updaten
 
