@@ -215,7 +215,9 @@ a {
     border-image: linear-gradient(to right, #c3073f, #950740);
     border-image-slice: 1;
 }
-
+.timer{
+    margin-top: 2rem;
+}
 .timer__header{
     display: flex;
     justify-content: center;
@@ -224,6 +226,10 @@ a {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
+}
+
+.timer__label{
+    text-align: center;
 }
 .timer__form-field{
     text-align: center;
@@ -236,7 +242,11 @@ a {
     gap: 2rem;
     margin: 0 auto;
 }
-
+.timer__button{
+    margin-bottom: 0rem !important;
+    padding: 1.6rem 0rem !important;
+    font-size: 1.4rem !important;
+}
 
 
 /* reset input */
@@ -504,6 +514,10 @@ audio {
     .muziekSpeler--buttons > i {
         margin: 0 1rem;
     }
+    .timer{
+        margin-top: 5rem;
+        margin-left: 15rem;
+    }
     .timer__form{
         align-items: center;
     }
@@ -525,6 +539,7 @@ audio {
         width: 100% !important;
         padding: 1.6rem 1.2rem;
         margin-bottom: 0;
+        font-size: 1.2rem !important;
     }
 }
 
@@ -566,13 +581,23 @@ audio {
         grid-row-gap: 0.5rem;
     }
 }
-
+@media(min-width: 700px){
+    .timer{
+        margin-left: 10rem;
+    }
+    .timer__button {
+        font-size: 1.4rem !important;
+    }
+}
 @media (min-width: 768px) {
     .taken__form {
         width: 50%;
     }
 }
 @media (min-width: 900px) {
+    .timer{
+        margin-left: 0rem;
+    }
     .timer__form-field{
         width: 40%;
     }
@@ -590,6 +615,9 @@ audio {
     }
 }
 @media (min-width: 1100px) {
+    .timer{
+        margin-left: -5rem;
+    }
     .timer__form-field{
         width: 30%;
     }
@@ -599,11 +627,21 @@ audio {
     .timer__buttonsSection{
         width: 30%;
     }
+    .timer__button {
+        font-size: 1.6rem !important;
+    }
 }
-
+@media(min-width: 1200px){
+    .timer{
+        margin-left: -10rem;
+    }
+}
 @media (min-width: 1440px) {
     .taken__form {
         width: 25%;
+    }
+    .timer{
+        margin-left: -15rem;
     }
     /* .timer__form-field {
         width: 50%;
