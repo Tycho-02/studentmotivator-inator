@@ -198,8 +198,6 @@ a{
     transition: 0.2s;
     font-size: 1.6rem;
     color: var(--TextColor);
-
-
   }
   
   .form__field:focus {
@@ -236,6 +234,14 @@ a{
   background-color: var(--TextColor);
   color: #000;
 }
+
+
+
+
+
+
+
+
 
 @media (min-width: 500px) {
     .grid {

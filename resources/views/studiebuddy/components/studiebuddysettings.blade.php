@@ -3,8 +3,9 @@
 @endsection
 
 @section('content')
-    <h1>Studiebuddy Instellingen</h1>
+    <section class="studiebuddyFormWrapper">
     <form action="/updatestudiebuddy" class="form" method="POST">
+    <h1>Studiebuddy Instellingen</h1>
         @csrf
         @method('POST')
             <section class="form__group">
@@ -41,8 +42,6 @@
             <section class="form__group">
                 <input type="submit">
             </section>
-    
-    
-    
     </form>
+    </section>
 @endsection
