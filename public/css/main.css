@@ -187,7 +187,6 @@ a {
     justify-content: center;
 }
 
-<<<<<<< HEAD
 .timer__label{
     text-align: center;
 }
@@ -207,8 +206,6 @@ a {
     padding: 1.6rem 0rem !important;
     font-size: 1.4rem !important;
 }
-=======
->>>>>>> efef358c57091ab7936020cd96acd9b27fdd6240
 
 /* reset input */
 /* .form__field:required,
@@ -401,7 +398,7 @@ audio {
     .grid {
         display: grid;
         grid-gap: 2rem;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 0fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
             "menu content content "
@@ -474,7 +471,7 @@ audio {
     }
     .timer{
         margin-top: 5rem;
-        margin-left: 15rem;
+        margin-left: -10rem;
     }
     .timer__form{
         align-items: center;
@@ -487,7 +484,6 @@ audio {
     .timer__form-submitBtn{
         width: 50%;
     }
-<<<<<<< HEAD
     .timer__buttonsSection{
         width: 50%;
     }
@@ -501,8 +497,6 @@ audio {
         margin-bottom: 0;
         font-size: 1.2rem !important;
     }
-=======
->>>>>>> efef358c57091ab7936020cd96acd9b27fdd6240
 }
 
 /*tijd instellingen*/
@@ -544,9 +538,9 @@ audio {
     }
 }
 @media(min-width: 700px){
-    .timer{
+    /* .timer{
         margin-left: 10rem;
-    }
+    } */
     .timer__button {
         font-size: 1.4rem !important;
     }
@@ -557,13 +551,16 @@ audio {
     }
 }
 @media (min-width: 900px) {
-    .timer{
+    /* .timer{
         margin-left: 0rem;
-    }
+    } */
     .timer__form-field{
         width: 40%;
     }
     .timer__form-submitBtn{
+        width: 40%;
+    }
+    .timer__buttonsSection{
         width: 40%;
     }
 }
@@ -574,16 +571,15 @@ audio {
     }
 }
 @media (min-width: 1100px) {
-    .timer{
+    /* .timer{
         margin-left: -5rem;
-    }
+    } */
     .timer__form-field{
         width: 30%;
     }
     .timer__form-submitBtn{
         width: 30%;
     }
-<<<<<<< HEAD
     .timer__buttonsSection{
         width: 30%;
     }
@@ -591,30 +587,24 @@ audio {
         font-size: 1.6rem !important;
     }
 }
-@media(min-width: 1200px){
+/* @media(min-width: 1200px){
     .timer{
         margin-left: -10rem;
     }
-=======
->>>>>>> efef358c57091ab7936020cd96acd9b27fdd6240
-}
+} */
 @media (min-width: 1440px) {
     .taken__form {
         width: 25%;
     }
-<<<<<<< HEAD
     .timer{
         margin-left: -15rem;
     }
     /* .timer__form-field {
-=======
-    .timer__form-field {
->>>>>>> efef358c57091ab7936020cd96acd9b27fdd6240
         width: 50%;
     }
     .timer__form-submitBtn {
         width: 50%;
-    }
+    }*/
 }
 .content--tijdInstellingen {
     margin-top: 5rem;
