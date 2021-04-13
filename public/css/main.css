@@ -528,6 +528,88 @@ audio {
     padding: 1rem;
 }
 
+
+
+.studiebuddySettings{
+    width: 100%;
+    align-content: center;
+    display: flex;
+
+}
+
+.studiebuddySettingsForm{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 1px 1px 10px var(--SecondaryColor);
+    border: 1px solid var(--PrimaryColor);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.studiebuddySettingsForm__group{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.studiebuddySettingsForm__radioWrapper{
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 2rem;
+}
+
+
+.studiebuddySettingsForm__radio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.studiebuddySettingsForm__rangeHolder{
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.studiebuddySettingsForm__field--button{
+    background: linear-gradient(90deg, #C3073F 5%, #950740 100%);
+    border-radius: 10px;
+    color: var(--TextColor);
+    border: none;
+}
+
+.studiebuddySettingsForm__radio input[type="radio"]{
+    align-self: center;
+}
+
+.studiebuddySettingsForm__field{
+   border-radius: 0.5rem;
+   padding-top: 0.75rem;
+   padding-bottom: 0.75rem;
+   padding-left: 0.5rem;
+   width: 100%;
+   font-size: 1.6rem;
+}
+
+.studiebuddySettingsForm__field--button{
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 425px){
+    .studiebuddySettingsForm__radio img{
+        width: 100%;
+    }
+}
+
 @media (min-width: 500px) {
     .taken__form {
         width: 70%;
