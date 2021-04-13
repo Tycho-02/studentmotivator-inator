@@ -21,8 +21,8 @@ class CreateStudiebuddyTable extends Migration
             $table->string('naam');
             $table->string('skin');
             $table->double('ideale_temp');
-            $table->double('ideale_luchtvochtingheid');
-            $table->double('ideale_licht');
+            $table->double('ideale_luchtvochtigheid');
+            $table->timestamps();
         });
     }
 

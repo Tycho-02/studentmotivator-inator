@@ -6,6 +6,9 @@
 #include <PN532_I2C.h>
 #include <PN532.h>
 #include <NfcAdapter.h>
+
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 //pinnen voor timer
 const int CLK = 6;
 const int DIO = 9;
@@ -41,6 +44,8 @@ void setup(){
   nfc.setPassiveActivationRetries(0xFF);
   // configure board to read RFID tags
   nfc.SAMConfig(); 
+  lcd.init();
+  lcd.backlight();
   
   delay(20);
 
@@ -81,6 +86,8 @@ void timer(boolean success){
       countdownTime = countdownTime - 2;
       verliesPunten = 0;
       displayTime(countdownTime);
+      smileyBlij();
+      
     }
   }
 //buzzer gaat af wanneer de timer is afgelopen
@@ -98,10 +105,12 @@ void timer(boolean success){
     punten -= 10;  
     Serial.println("pa");
     verliesPunten = 1;
+    smileyVerdrietig();
   }
 //start de pauze timer
   if(!success && countdownTime == 1){
     timerBreak(hoursBreak, minutesBreak);
+    smileyBlij();
   }
     
 }
@@ -153,12 +162,9 @@ void displayTimeBreak(unsigned long countdownTimeBreak){
     delay(30000);
   }
 
-  if(countdownTimeBreak > 1 && succes){
+  if(countdownTimeBreak > 1 && success){
     display.printTime(0, 0, false);
     punten += 10;
     delay(30000);
   }
-
-
-  
 }
