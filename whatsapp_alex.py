@@ -1,4 +1,6 @@
 #ontwikkeld door S1118551 
+
+
 #We sturen in deze file een whatsapp bericht naar gebruiker wanner die wakker is geworden met de taken die hem te wachten staan op deze dag.
 #mocht de gebruiker geen taak hebben op die dag, dan krijgt die een melding dat die goed bezig was de afgelopen dag
 #Dit is een koppeling met subsysteem van Tycho!
@@ -45,9 +47,13 @@ print('naam is ' + naam)
 print('nummer is ' + nummer)
 
 
-account = "AC3ba4ca5f47e86034ff9a853b8d1106b9"
-token = "9dfb96f2a27d39dd7c489ec19632a9e2"
-client = Client(account, token)
+
+
+# Your Account Sid and Auth Token from twilio.com/user/account
+account_sid = os.environ['TWILIO_ACCOUNT_SID'] #We moeten dit prive houden vanwege security issues 
+auth_token = os.environ['TWILIO_AUTH_TOKEN'] #We moeten dit prive houden vanwege security issues 
+client = Client(account_sid, auth_token)
+
 
 from_whatsapp_number='whatsapp:+14155238886'
 to_whatsapp_number = 'whatsapp:' + nummer
@@ -56,4 +62,4 @@ if(taken > 0): #als gebruiker taken op die dag heeft staan
 
     client.messages.create(body='Beste ' + naam + ',\nvandaag heb je op planning de volgende taken staan:\n' + takenOpen + '.\nVeel succes en zet hem op!', from_=from_whatsapp_number,to=to_whatsapp_number)
 else:
-    client.messages.create(body='Beste Alex, vandaag heb je geen taken open staan. Je bent goed bezig geweest de afgelopen dagen, ga zo door!', from_=from_whatsapp_number,to=to_whatsapp_number)
+    client.messages.create(body='Beste ' + naam + ',\nvandaag heb je geen taken open staan. Je bent goed bezig geweest de afgelopen dagen, ga zo door!', from_=from_whatsapp_number,to=to_whatsapp_number)

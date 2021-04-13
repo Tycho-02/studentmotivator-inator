@@ -361,6 +361,10 @@ audio {
     color: #f39c12;
 }
 
+/* meldingen voor taken */
+
+
+
 @media (min-width: 500px) {
     .content {
         margin-left: -30rem;
