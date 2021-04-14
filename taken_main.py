@@ -15,12 +15,14 @@ mycursor = mydb.cursor()
 
 def taakKlaar(id): #functie om taken KLAAR te markeren
     mycursor.execute("UPDATE taken SET status = 'klaar' WHERE id = " + str(id) + ";")
+    mycursor.execute("UPDATE puntentelling SET punten = punten + 10;")
 
 def taakNietKlaar(id): #functie om taken NIET VOLTOOID te markeren
     mycursor.execute("UPDATE taken SET status = 'niet voltooid' WHERE id = " + str(id) + ";")
+    mycursor.execute("UPDATE puntentelling SET punten = punten - 12;")
 
 def laadTaken():
-    mycursor.execute("SELECT id, vak FROM taken WHERE (DATE(deadline) >= CURDATE() AND status != 'klaar') ORDER BY uitvoerdatum;")
+    mycursor.execute("SELECT id, vak FROM taken WHERE (DATE(deadline) >= CURDATE() AND status != 'klaar') ORDER BY uitvoerdatum, deadline;")
     i = 0
     global ids
     global taken
