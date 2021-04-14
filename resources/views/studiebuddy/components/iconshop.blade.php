@@ -11,7 +11,7 @@
         
         <input type="hidden" name="userId" value="{{$studiebuddy->myUser->userId}}">
         <input type="hidden" name="skin" value="Snorlax">
-        <input type="submit" @{{@if($studiebuddy->myUser->myPuntentelling->punten >= 350)}} value="Kopen" @elseif(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Snorlax")->first())) value="Deze heb je al" @else value="Niet genoeg punten" @endif class="iconshop__button" @{{@if($studiebuddy->myUser->myPuntentelling->punten <= 50 or !is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Snorlax")->first())) disabled @endif}}>
+        <input type="submit" @{{@if($studiebuddy->myUser->myPuntentelling->punten >= 350)}} value="Kopen" @elseif(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Snorlax")->first())) value="Deze heb je al" @else value="Niet genoeg punten" @endif class="iconshop__button" @{{@if($studiebuddy->myUser->myPuntentelling->punten <= 350 or !is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Snorlax")->first())) disabled @endif}}>
     </form>        
     <form action="/gekochteuiterlijkjes/koop" method="POST" class="iconshop__form">
         @csrf
@@ -20,7 +20,7 @@
         
         <input type="hidden" name="userId" value="{{$studiebuddy->myUser->userId}}">
         <input type="hidden" name="skin" value="Charizard">
-        <input type="submit" @{{@if($studiebuddy->myUser->myPuntentelling->punten >= 500)}} value="Kopen" @elseif(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first())) value="Deze heb je al" @else value="Niet genoeg punten" @endif class="iconshop__button" @{{@if($studiebuddy->myUser->myPuntentelling->punten <= 50 or !is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first())) disabled @endif}}>
+        <input type="submit" @{{@if($studiebuddy->myUser->myPuntentelling->punten >= 500)}} value="Kopen" @elseif(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first())) value="Deze heb je al" @else value="Niet genoeg punten" @endif class="iconshop__button" @{{@if($studiebuddy->myUser->myPuntentelling->punten <= 500 or !is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first())) disabled @endif}}>
     </form>
     </div>
 </section>

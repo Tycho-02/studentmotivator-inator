@@ -13,11 +13,11 @@ class GekochtUiterlijkjeController extends Controller
         $aankoop->userId = $request->userId;
         $user = \App\Models\Users::find($request->userId);
         if($request->skin == "Snorlax"){
-            $user->myPuntentelling->punten = $user->myPuntentelling->punten - 350;
+            $user->myPuntentelling->aftrek($request->userId, 350);
             $user->save();
         }
         else{
-            $user->myPuntentelling->punten = $user->myPuntentelling->punten - 500;
+            $user->myPuntentelling->aftrek($request->userId, 500);
             $user->save();
         }
         $aankoop->skin = $request->skin;

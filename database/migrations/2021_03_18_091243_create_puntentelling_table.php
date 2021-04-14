@@ -17,6 +17,7 @@ class CreatePuntentellingTable extends Migration
             $table->unsignedBigInteger('userId');
             $table->foreign('userId')->references('userId')->on('users');
             $table->integer('punten');
+            $table->timestamps();
         });
     }
 
