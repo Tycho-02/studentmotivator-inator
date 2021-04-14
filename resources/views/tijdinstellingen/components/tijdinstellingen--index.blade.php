@@ -30,7 +30,7 @@
         </article>
 
         <div class="content--tijdInstellingen__actions">
-            <a href="{{ url('tijdinstellingen/edit') }}" class="content--button__actions__primary"><span>Wijzigen</span></a>
+            <a href="{{ url('tijdinstellingen/edit/1') }}" class="content--button__actions__primary button__actions__primary--tijdInstellingen"><span>Wijzigen</span></a>
             <a href="{{ url('/slapen/grafiek') }}" class="content--button__actions__ghost button__actions__ghost--tijdInstellingen"><span>Grafiek bekijken</span></a>
         </div>
  

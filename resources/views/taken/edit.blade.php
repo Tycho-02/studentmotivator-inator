@@ -18,8 +18,8 @@
             <label class="taken__form__label" for="omschrijving">Omschrijving</label>
             <textarea class="taken__form__field" name="omschrijving" rows="5" placeholder="Taak omschrijving....">{{$taak->omschrijving}}</textarea>
 
-            <label class="taken__form__label" for="label">Label</label>
-            <input value="{{$taak->label}}" class="taken__form__field" type="text" name="label" placeholder="Label" />
+            <label class="taken__form__label" for="label">VAk</label>
+            <input value="{{$taak->vak}}" class="taken__form__field" type="text" name="vak" placeholder="vak" />
 
             <label class="taken__form__label" for="prioriteit">Prioriteit (0-3)</label>
             <input class="taken__form__field" type="number" name="prioriteit" min="0" max="3" value="{{$taak->prioriteit}}"/>

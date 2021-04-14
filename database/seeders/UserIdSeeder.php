@@ -18,7 +18,7 @@ class UserIdSeeder extends Seeder
             'userId' => '1',
             'name' => 'Alex',
             'email' => 's1118551@student.hsleiden.nl',
-            'telefoonnummer' => '0686090814',
+            'telefoonnummer' => '0640534620',
             'password' => 'lol',
             'humeur' => 'Blokken'        
             ]);

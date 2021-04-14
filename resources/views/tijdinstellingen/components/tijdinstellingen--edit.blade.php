@@ -4,7 +4,7 @@
 
 <article class="content--tijdInstellingen">
 <h2 class="content--tijdInstellingen__header">Huidige dagelijkse bedtijd wijzigen</h2>
-    <form action="{{ route('tijdinstellingen.update') }}" class="content--tijdInstellingen__form" method="POST">
+    <form action="/tijdinstellingen/{{$data['id']}}" class="content--tijdInstellingen__form" method="POST">
     <input type="hidden" name="id" value="{{ $data['id'] }}">
     @csrf
     @method('PUT')
@@ -36,8 +36,8 @@
 
     <section class="content--tijdInstellingen__form__section">
         <div class="content--tijdInstellingen__actions">
-            <button type="submit" class="content--button__actions__primary">Opslaan</button>
-            <a href="/tijdinstellingen" class="content--button__actions__ghost">Annuleren</a>
+            <button type="submit" class="content--button__actions__primary button__actions__primary--tijdInstellingen">Opslaan</button>
+            <a href="/tijdinstellingen" class="content--button__actions__ghost button__actions__ghost--tijdInstellingen">Annuleren</a>
         </div>
     </section>
 </label>

@@ -126,8 +126,8 @@ while gebruikerNaarBed == False:
                 if(meldingen == 'aan'):
                     os.system("python whatsapp_alex.py") #we sturen alvast een melding naar de gebruiker door middel van whatsapp berichtje
                     #we sturen het alleen als de gebruiker melding aan heeft staan
-                print('we gaan checken of de gebruiker echt wakker wordt. Dit doen we door buzzer opnieuw af te laten gaan in een minuut')
-                time.sleep(2)
+                print('we gaan checken of de gebruiker echt wakker wordt. Dit doen we door buzzer opnieuw af te laten gaan in 2 minuten')
+                time.sleep(120)
             elif rcv == 'w':
                 time.sleep(2)
                 port.write('v')
