@@ -435,6 +435,33 @@ audio {
     cursor: pointer;
 }
 
+/* muziek popup stytling */
+
+.swal-modal {
+    background-color: var(--SecondaryColor);
+    border: 3px solid var(--PrimaryColor);
+    border-radius: 2.5rem;
+}
+.swal-title {
+    color: var(--TextColor)
+}
+.swal-text {
+    color: var(--TextColor);
+}
+.swal-icon--success::before{
+    top: -0.8rem;
+    background-color: var(--SecondaryColor);
+}
+.swal-icon--success::after{
+    top: -1rem;
+    background-color: var(--SecondaryColor);
+}
+.swal-icon--success__hide-corners{
+    background-color: var(--SecondaryColor);
+    border: none;
+}
+
+
 .section__select {
     width: 100%;
     height: 3em;
@@ -487,6 +514,7 @@ audio {
     background-color: red;
     padding: 1rem;
 }
+
 
 
 
