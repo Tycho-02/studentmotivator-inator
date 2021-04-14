@@ -14,11 +14,8 @@ use RealRashid\SweetAlert\Facades\Alert;
 |
 */
 Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController@index"); //slapen tijd overzicht
-Route::get("/tijdinstellingen/edit", "App\Http\Controllers\TijdInstellingenController@edit"); //wijzigen tijd slapen
-Route::put('/update', [
-    'uses' => 'App\Http\Controllers\TijdInstellingenController@update',
-    'as' => 'tijdinstellingen.update',
-]);
+Route::get("/tijdinstellingen/edit/{id}", "App\Http\Controllers\TijdInstellingenController@edit"); //wijzigen tijd slapen
+Route::put('/tijdinstellingen/{id}', 'App\Http\Controllers\TijdInstellingenController@update'); //updaten
 Route::get('slapen/grafiek', [\App\Http\Controllers\TijdSlapenController::class, 'index']);
 
 

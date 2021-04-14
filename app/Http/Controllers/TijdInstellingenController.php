@@ -22,14 +22,17 @@ class TijdInstellingenController extends Controller
 
     }
 
-    public function edit() {
+    public function edit($id) {
         $userId = 1;
+        if($id != $userId) {
+            return redirect ('/');
+        } else {
         $data = TijdInstellingen::where('userId',$userId)->first();
         return view('tijdinstellingen.edit', ['data'=>$data]);
+        }
     }
 
     public function update(Request $request) {
-
         //validatie request
 
         $validator = Validator::make($request->all(), [
