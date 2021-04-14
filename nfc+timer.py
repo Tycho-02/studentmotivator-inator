@@ -18,20 +18,27 @@ while True:
     rcv = port.readline().strip()
     # mobiel aanwezig
     if(rcv == 'm1'):
-        os.system("python update.py")
+        mycursor.execute("UPDATE mobiel SET beschikbaar = false;")
     #mobiel niet aanwezig 
     if(rcv == 'm0'):
-        os.system("python update.py")
+        mycursor.execute("UPDATE mobiel SET beschikbaar = true;")
     # punten bij
     if(rcv == 'pb'):
         mycursor.execute("UPDATE puntentelling SET punten = punten + 10;")
     # punten af
     if(rcv == 'pa'):
-        mycursor.execute("UPDATE puntentelling SET punten = punten - 10;")
-
+        mycursor.execute("UPDATE puntentelling SET punten = punten - 15;")
+    #smiley blij 
+    if(rcv == 'sb'):
+        mycursor.execute("UPDATE mobiel SET smiley = true;")
+    #smiley verdietig
+    if(rcv == 'sv'):
+        mycursor.execute("UPDATE mobiel SET smiley = false;")
     #pauze
     if(rcv == 'pauze'):
         mycursor.execute("UPDATE timer SET pauze = 1;")
+        # andere muzieklijst voor de pauze
+        mycursor.execute("UPDATE users SET humeur = 'Pauze' WHERE userId = 1;")
     #pauze voorbij
     if(rcv == 'pauzeV'):
         mycursor.execute("UPDATE timer SET pauze = 0;")
@@ -45,7 +52,7 @@ while True:
         port.write(timer)
         if rcv:
             print(rcv) 
-    time.sleep(1)
+    # time.sleep(1)
     mydb.commit()
 
 mydb.close()

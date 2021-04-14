@@ -17,9 +17,9 @@ class MobielTableSeeder extends Seeder
         DB::table('mobiel')->insert([
             'userId' => '1',
             'mobielId' => '1',
-            // 'beschikbaar' => true,
-            // 'berichtsturen' => false,
-            // 'smiley' => false
+            'beschikbaar' => true,
+            'berichtsturen' => false,
+            'smiley' => false
         ]);
     }
     

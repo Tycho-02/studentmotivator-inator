@@ -3,7 +3,7 @@
         <h1>Stel je timer in</h1>
     </header>
     <section class="timer__timeSection">
-        <h2>{{$timer->tijd}}</h2>
+        <h2>Gewenste tijd: {{$timer->tijd}}</h2>
     </section>
     <form class="timer__form form" action="/timer" method="post">
         {{ csrf_field()}}
