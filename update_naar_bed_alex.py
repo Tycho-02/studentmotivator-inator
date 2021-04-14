@@ -2,10 +2,10 @@ import mysql.connector
 import time
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="alex",
-    database="ipmedt5"
+    host="vserver385.axc.nl",
+    user="tychogp385_ipmedt5",
+    passwd="ipmedt5",
+    database="tychogp385_ipmedt5"
 )
 
 
