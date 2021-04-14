@@ -10,7 +10,7 @@ const checkPauze = document.getElementById('js--checkVoorPauze');
 // variuabelen die bij timer horen om zo de tijd bijtehouden
 let nummer = 0;
 let uren = 0;
-let minuten = 9;
+let minuten = 0;
 let seconden = 0;
 // i variabelen om bij te houden hoevaak de pauze functie is aangeroepen
 let i = 0;
