@@ -604,7 +604,7 @@ audio {
     }
 
     .tijdInstellingen__naarBed__input, .tijdInstellingen__uitBed__input, .tijdInstellingen__form__section__select {
-        width: 50% !important;
+        width: 30% !important;
     }
 }
 
