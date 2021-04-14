@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             TakenTableSeeder::class,
             PuntentellingSeeder::class,
             StudiebuddySeeder::class,
+            GekochteUiterlijkjesSeeder::class
         ]);
     }
 }
