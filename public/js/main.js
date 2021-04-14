@@ -189,7 +189,7 @@ const speelNummer = (nummer) => {
 
 const pauze = (tijd) => {
     i += 1;
-    let tijdBezig = "0" + uren + ":0" + minuten + ":" + seconden;
+    let tijdBezig = "0" + uren + ":0" + minuten + ":0" + seconden;
     //omdat de timeupdate 4 keer afgaat in een seconden
     //pak je de modelo van 4 en als die gelijk staat aan 0 telt de functie 1 seconden
     if (i % 4 == 0) {
@@ -209,8 +209,7 @@ const pauze = (tijd) => {
         //wanneer de tijd die is ingesteld dat je wilt gaan leren gelijk staat aan de tijd van de timer
         //mag er pauze gehouden worden
         //ook komt er een popup in het scherm
-
-        if ("00:00:20" == tijdBezig) {
+        if (tijd == tijdBezig) {
             //wanneer de tijd van de ingestelde timer en de tijd dat je bezig bent gelijk staat komt er een popup dat je pauze mag houden er reload de page naar de pauze playlist
             swal("Gefeliciteerd je hebt pauze!", "over 5 seconden komt de pauze playlist", "success", {
                 button: 'Nice!',
