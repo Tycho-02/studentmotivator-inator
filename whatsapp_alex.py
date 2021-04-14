@@ -42,25 +42,26 @@ for user in records:
     gegevens.append(user[1])
 naam = gegevens[0]
 nummer = '+31' + str(gegevens[1])
-
+print('taken')
 print('naam is ' + naam)
 print('nummer is ' + nummer)
 
 
 
-
-# Your Account Sid and Auth Token from twilio.com/user/account
-account_sid = '' #AC3ba4ca5f47e86034ff9a853b8d1106b9
  #We moeten dit prive houden vanwege security issues 
-auth_token = '' #We moeten dit prive houden vanwege security issues  b65d189b3135343750c2555516840b0e
+account_sid = '' 
+auth_token = '' #We moeten dit prive houden vanwege security issu
 client = Client(account_sid, auth_token)
 
 
-from_whatsapp_number='whatsapp:+14155238886'
+##WAARSCHUWING
+ #gebruiker moet eerst bericht op whatsapp 'join above-noon' sturen naar nummer +14155238886 om berichten te kunnen ontvangen, omdat we gebruik maken van een sandbox: 
+##
+
+from_whatsapp_number='whatsapp:+14155238886' 
 to_whatsapp_number = 'whatsapp:' + nummer
 
 if(taken > 0): #als gebruiker taken op die dag heeft staan
-
-    client.messages.create(body='Beste ' + naam + ',\nvandaag heb je op planning de volgende taken staan:\n' + takenOpen + '.\nVeel succes en zet hem op!', from_=from_whatsapp_number,to=to_whatsapp_number)
-else:
-    client.messages.create(body='Beste ' + naam + ',\nvandaag heb je geen taken open staan. Je bent goed bezig geweest de afgelopen dagen, ga zo door!', from_=from_whatsapp_number,to=to_whatsapp_number)
+    client.messages.create(body='Beste ' + naam + ',\nvandaag heb je op planning de volgende taak/taken staan:\n' + takenOpen + '.\nVeel succes en zet hem op!', from_=from_whatsapp_number,to=to_whatsapp_number)
+else:    #anders sturen we gebruiker een leuk bericht met dat die de afgelopen weken goed is bezig geweest
+    client.messages.create(body='Beste ' + naam + ',\nvandaag heb je geen taak/taken open staan. Je bent goed bezig geweest de afgelopen dagen, ga zo door!', from_=from_whatsapp_number,to=to_whatsapp_number)

@@ -93,7 +93,17 @@ a {
     height: 200px;
 }
 .content--tijdInstellingen__actions {
-    margin-top: 5rem;
+    text-align: center;
+    margin-top: 3rem;
+    display: grid;
+}
+
+.content--tijdInstellingen__buzzer__text {
+    margin-top: 1rem;
+}
+
+.content--tijdInstellingen__meldingen {
+    margin-top: 3rem;
 }
 
 .content--button__actions__ghost {
@@ -108,6 +118,7 @@ a {
     border-radius: 15px;
     text-decoration: none;
 }
+
 
 .content--button__actions__ghost:hover,
 .content--button__actions__ghost:active {
@@ -361,9 +372,17 @@ audio {
     -o-transition: 0.25s all ease;
     transition: 0.25s all ease;
 }
+
+.content--tijdInstellingen__form__section {
+    margin-top: 3rem;
+}
 /* Transition */
 .section__select:hover::after {
     color: #f39c12;
+}
+
+.button__actions__ghost--tijdInstellingen {
+    width: 100%;
 }
 
 /* meldingen voor taken */
@@ -371,6 +390,9 @@ audio {
 
 
 @media (min-width: 500px) {
+    .button__actions__primary--tijdInstellingen {
+        width: 100% !important;
+    }
     .content--button__actions__primary {
         width: fit-content;
     }
@@ -492,7 +514,7 @@ audio {
     }
     .content--tijdInstellingen__form {
         display: grid;
-        grid-row-gap: 3rem;
+        grid-row-gap: 1rem;
     }
     .content--tijdInstellingen__form__section {
         display: grid;
@@ -501,11 +523,38 @@ audio {
 }
 
 @media (min-width: 768px) {
+
+    .content--tijdInstellingen_naarBed__input, .content--tijdInstellingen_uitBed__input, .content--tijdInstellingen__form__section__select {
+        width: 100% !important;
+    }
+
+    .button__actions__primary--tijdInstellingen {
+        width: 50% !important;
+        grid-column: 1 / 12;
+    }
+
+    .content--tijdInstellingen__actions {
+        display: grid;
+        grid-column: 1 / span 12;
+    }
+
+    .button__actions__ghost--tijdInstellingen {
+        grid-column: 1 / 12;
+        width: 50% !important;
+        height: 5.5rem;
+    }
     .taken__form {
         width: 50%;
     }
 }
 @media (min-width: 900px) {
+    
+    .button__actions__ghost--tijdInstellingen, .button__actions__primary--tijdInstellingen {
+        width: 50% !important;
+        grid-column: 1 / 12;
+     
+    }
+
     .timer__form-field{
         width: 40%;
     }
@@ -518,6 +567,9 @@ audio {
     .taken__form {
         width: 40%;
     }
+
+
+  
 }
 @media (min-width: 1100px) {
     .timer__form-field{
@@ -525,6 +577,16 @@ audio {
     }
     .timer__form-submitBtn{
         width: 30%;
+    }
+
+    .button__actions__ghost--tijdInstellingen, .button__actions__primary--tijdInstellingen {
+        width: 30% !important;
+        grid-column: 1 / 12;
+     
+    }
+
+    .content--tijdInstellingen_naarBed__input, .content--tijdInstellingen_uitBed__input, .content--tijdInstellingen__form__section__select {
+        width: 50% !important;
     }
 }
 
@@ -550,7 +612,7 @@ audio {
 .content--tijdInstellingen_naarBed__input,
 .content--tijdInstellingen_uitBed__input {
     font-size: 150%;
-    width: 10em;
+    width: 100%;
 }
 
 .content--tijdInstellingen__section {
@@ -577,8 +639,8 @@ select::-ms-expand {
     display: none;
 }
 /* Custom Select */
-.content--tijdInstellingen__form__section__select {
-    width: 20em;
+.content--tijdInstellingen__form__section__select, .content--tijdInstellingen__form__section__select {
+    width: 100%;
     height: 3em;
     line-height: 3;
     background: var(--SecondaryColor);
