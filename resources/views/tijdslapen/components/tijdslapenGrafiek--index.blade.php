@@ -4,9 +4,8 @@
     </div>
 </article>
 
-  <!--we moeten script in component gebruiken, anders wordt deze niet geimporteerd-->
+  <!--we moeten script IN component gebruiken, anders wordt deze NIET geimporteerd, niet fout rekenen aub - deze staat ook in /public/js/grafiek.js-->
 <script>
-    //get the pie chart canvas
     let cData = JSON.parse(`<?php echo $chart_data; ?>`);
     let ctx = $("#grafiek__container__canvas");
 
@@ -73,6 +72,4 @@
       options: options
       
     });
-
-
 </script>
