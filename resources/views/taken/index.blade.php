@@ -18,11 +18,12 @@
         {{-- Lijst met alle taken --}}
         @foreach ($taken as $taak)
         <ul>
+            <li>id: {{$taak->id}}</li>
             <li>Titel: {{$taak->title}}</li>
             <li>Omschrijving: {{$taak->omschrijving}}</li>
             <li>Status: {{$taak->status}}</li>
-            @if ($taak->label)
-                <li>Label: {{$taak->label}}</li>
+            @if ($taak->vak)
+                <li>Vak: {{$taak->vak}}</li>
             @endif
             @if ($taak->prioriteit > 0)
                 <li>Prioriteit: {{$taak->prioriteit}}</li>
@@ -31,7 +32,7 @@
             @if ($taak->uitvoerdatum != $taak->deadline)
                 <li>Uitvoerdatum: {{$taak->uitvoerdatum}}</li>
             @endif
-            <a href="/taken/{{$taak->id}}/destroy"><button>Voltooi Taak</button></a>
+            <a href="/taken/{{$taak->id}}/voltooi"><button>Voltooi Taak</button></a>
             <a href="/taken/{{$taak->id}}/edit"><button>Wijzig Taak</button></a>
         </ul>
         <hr>

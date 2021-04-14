@@ -29,6 +29,13 @@ while True:
     if(rcv == 'pa'):
         mycursor.execute("UPDATE puntentelling SET punten = punten - 10;")
 
+    #pauze
+    if(rcv == 'pauze'):
+        mycursor.execute("UPDATE timer SET pauze = 1;")
+    #pauze voorbij
+    if(rcv == 'pauzeV'):
+        mycursor.execute("UPDATE timer SET pauze = 0;")
+        
     sql_timer = "SELECT tijd FROM timer WHERE mobielId = 1"
     mycursor.execute(sql_timer)
     for x in mycursor:
