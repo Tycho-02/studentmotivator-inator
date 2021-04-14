@@ -11,6 +11,7 @@
         </li>
         @include('nummers.components.nummer--index')
     </ul>
+    <div id="js--checkVoorPauze" onclick="pauze('{{$timer->tijd}}')"></div>
 </section>
 @endsection
 

@@ -25,9 +25,9 @@ class NummersController extends Controller
         //pakt het eerste nummer van de lijst
         $afspeellijstEersteNummer = $afspeellijst->first();
 
-        $pauze = Timer::first();
+        $timer = Timer::first();
 
-        return view('nummers.nummers', compact("pauze","nummers","userHumeur", "afspeellijst","afspeellijstEersteNummer"));
+        return view('nummers.nummers', compact("timer","nummers","userHumeur", "afspeellijst","afspeellijstEersteNummer"));
     }
 
     public function show(){
