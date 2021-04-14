@@ -21,10 +21,10 @@ gebruikerNaarBed = False
 gebruikerEerderUitBed = False
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="alex",
-    database="ipmedt5"
+    host="vserver385.axc.nl",
+    user="tychogp385_ipmedt5",
+    passwd="ipmedt5",
+    database="tychogp385_ipmedt5"
 )
 
 slapen = []
@@ -104,20 +104,36 @@ while gebruikerNaarBed == False:
                 time.sleep(10)
                 print('Nu gaat sensor kijken wanneer de gebruiker wakker is. Dit kan ook eerder zijn dan de ingestelde tijd!')
                 ###while loop check om wekker af te laten gaan wanneer de gebruiker wakker wordt
-                while(datetime.datetime.now().strftime("%H:%M:%S") <= str(uit_bed)):
-                    print('#### USER WAKKERWORDEN BUZZER CHECK ####')
-                    print('Gebruiker is nog niet wakker. Tijd dat gebruiker wakker wilt worden:' + str(uit_bed))
-                    print("tijd nu :" + datetime.datetime.now().strftime("%H:%M:%S"))
-                    time.sleep(1)
-                else:
-                    if str(buzzerInstellingen) == 'aan':
-                        port.write('a')
+                if(str(uit_bed) >= datetime.datetime.now().strftime("%H:%M:%S")):
+                    while(datetime.datetime.now().strftime("%H:%M:%S") <= str(uit_bed)):
+                        print('#### USER WAKKERWORDEN BUZZER CHECK ####')
+                        print('Gebruiker is nog niet wakker. Tijd dat gebruiker wakker wilt worden:' + str(uit_bed))
+                        print("tijd nu :" + datetime.datetime.now().strftime("%H:%M:%S"))
+                        time.sleep(1)
                     else:
-                        port.write('u')
-                    print('gebruiker wordt wakker volgens de gekozen tijd!')
-                    port.write('b')
-                    time.sleep(3)
-                    print('naar bed geschreven naar port')
+                        if str(buzzerInstellingen) == 'aan':
+                            port.write('a')
+                        else:
+                            port.write('u')
+                        print('gebruiker wordt wakker volgens de gekozen tijd!')
+                        port.write('b')
+                        time.sleep(3)
+                        print('naar bed geschreven naar port')
+                elif(str(uit_bed) <= datetime.datetime.now().strftime("%H:%M:%S")):
+                    while(datetime.datetime.now().strftime("%H:%M:%S") >= str(uit_bed)):
+                        print('#### USER WAKKERWORDEN BUZZER CHECK ####')
+                        print('Gebruiker is nog niet wakker. Tijd dat gebruiker wakker wilt worden:' + str(uit_bed))
+                        print("tijd nu :" + datetime.datetime.now().strftime("%H:%M:%S"))
+                        time.sleep(1)
+                    else:
+                        if str(buzzerInstellingen) == 'aan':
+                            port.write('a')
+                        else:
+                            port.write('u')
+                        print('gebruiker wordt wakker volgens de gekozen tijd!')
+                        port.write('b')
+                        time.sleep(3)
+                        print('naar bed geschreven naar port')
                 #mocht gebruiker eerder willen opstaan
             elif rcv == 't':
                 print('geupdate, gebruiker gaat nu uit bed')

@@ -1,32 +1,27 @@
-<div class="chart-container">
-    <div class="line-chart-container">
-      <canvas id="line-chart"></canvas>
+<article class="grafiek">
+    <div class="grafiek__container">
+      <canvas id="grafiek__container__canvas"></canvas>
     </div>
-  </div>
+</article>
 
-  <!--we moeten script in component gebruiken, anders wordt deze niet geimporteerd-->
+  <!--we moeten script IN component gebruiken, anders wordt deze NIET geimporteerd, niet fout rekenen aub - deze staat ook in /public/js/grafiek.js-->
 <script>
-    //get the pie chart canvas
     let cData = JSON.parse(`<?php echo $chart_data; ?>`);
-    let ctx = $("#line-chart");
+    let ctx = $("#grafiek__container__canvas");
 
     //line chart data
     let data = {
       labels: cData.label,
+      
       datasets: [
         {
           label: "Totaal aantal uren geslapen op deze dag",
           data: cData.data,
           
-          borderColor: [
-            "#eeeeee",
-            "#989898",
-            "#CB252B",
-            "#E39371",
-            "#1D7A46",
-            "#F4A460",
-            "#CDA776",
-          ],
+             borderColor: '#ffffff',
+             backgroundColor: "#C3073F",
+
+
           borderWidth: [1, 1, 1, 1, 1,1,1]
         }
   
@@ -36,22 +31,35 @@
 
     //options
     let options = {
+      
       responsive: true,
       title: {
         display: true,
-        fill: false,
+        fill: true,
         position: "top",
         text: "Grafiek van jouw slaaptijd",
         fontSize: 18,
         fontColor: "#ffffff",
-        color: "#eeeeee"
+        
+        color: "#ffffff"
       },
+      scales: {
+              xAxes: [{ticks: { color: "white" }, ticks: {
+                               fontColor: "#ffffff",
+                               fontSize: 16
+                              }}],
+             yAxes: [{ticks: { color: "white" }, ticks: {
+                               fontColor: "#ffffff",
+                               fontSize: 20
+                              }}],
+              },
       legend: {
         display: true,
-        fill: false,
+        fill: true,
         position: "bottom",
+        
         labels: {
-          fontColor: "#eeeeee",
+          fontColor: "#ffffff",
           fontSize: 16
         }
       }
@@ -62,7 +70,6 @@
       type: "line",
       data: data,
       options: options
+      
     });
-
-
 </script>

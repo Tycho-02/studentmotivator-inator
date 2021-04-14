@@ -12,10 +12,10 @@ import mysql.connector
 
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="alex",
-    database="ipmedt5"
+    host="vserver385.axc.nl",
+    user="tychogp385_ipmedt5",
+    passwd="ipmedt5",
+    database="tychogp385_ipmedt5"
 )
 
 
@@ -48,8 +48,7 @@ print('nummer is ' + nummer)
 
 
 
- #We moeten dit prive houden vanwege security issues 
-account_sid = '' 
+account_sid = '' #We moeten dit prive houden vanwege security issues 
 auth_token = '' #We moeten dit prive houden vanwege security issu
 client = Client(account_sid, auth_token)
 
