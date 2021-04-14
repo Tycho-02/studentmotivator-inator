@@ -1,29 +1,26 @@
-@section('title')
-Icoon Shop
-@endsection
-
 @extends('default')
 
-@section('content')
+
 <section class="iconshop">
-    <h3>Je hebt: {{ $user->punten }} punten</h3>
+    <h3 class="">Je hebt: {{ $studiebuddy->myUser->myPuntentelling->punten }} punten</h3>
     <div class="iconshop__formWrapper">
-    <form action="/gekochteuiterlijkjes/kopen" method="POST" class="iconshop__form">
+    <form action="/gekochteuiterlijkjes/koop" method="POST" class="iconshop__form">
         @csrf
         <img src="/img/snorlax_highres.png" alt="Snorlax image">
-        <p class="iconshop__price">50 punten</p>
-        <input type="hidden" value="{{$user->userId}}">
-        <input type="hidden" value="Snorlax">
-        <input type="submit" value="Kopen" class="iconshop__button">
-    </form>
-    <form action="/gekochteuiterlijkjes/kopen" method="POST" class="iconshop__form">
+        <p class="iconshop__price">350 punten</p>
+        
+        <input type="hidden" name="userId" value="{{$studiebuddy->myUser->userId}}">
+        <input type="hidden" name="skin" value="Snorlax">
+        <input type="submit" @{{@if($studiebuddy->myUser->myPuntentelling->punten >= 350)}} value="Kopen" @elseif(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Snorlax")->first())) value="Deze heb je al" @else value="Niet genoeg punten" @endif class="iconshop__button" @{{@if($studiebuddy->myUser->myPuntentelling->punten <= 50 or !is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Snorlax")->first())) disabled @endif}}>
+    </form>        
+    <form action="/gekochteuiterlijkjes/koop" method="POST" class="iconshop__form">
         @csrf
         <img src="/img/charizard_highres.png" alt="Charizard image">
-        <p class="iconshop__price">50 punten</p>
-        <input type="hidden" value="{{$user->userId}}">
-        <input type="hidden" value="Charizard">
-        <input type="submit" value="Kopen" class="iconshop__button">
+        <p class="iconshop__price">500 punten</p>
+        
+        <input type="hidden" name="userId" value="{{$studiebuddy->myUser->userId}}">
+        <input type="hidden" name="skin" value="Charizard">
+        <input type="submit" @{{@if($studiebuddy->myUser->myPuntentelling->punten >= 500)}} value="Kopen" @elseif(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first())) value="Deze heb je al" @else value="Niet genoeg punten" @endif class="iconshop__button" @{{@if($studiebuddy->myUser->myPuntentelling->punten <= 50 or !is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first())) disabled @endif}}>
     </form>
     </div>
 </section>
-@endsection

@@ -31,4 +31,8 @@ class Users extends Model
     function afspeellijst(){
         return $this->belongTo('\App\Models\Afspeellijst', 'userId', "userId");
     }
+
+    function myPuntentelling(){
+        return $this->hasOne('\App\Models\Puntentelling', 'userId', 'userId');
+    }
 }

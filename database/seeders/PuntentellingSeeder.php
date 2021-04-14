@@ -16,7 +16,7 @@ class PuntentellingSeeder extends Seeder
     {
         DB::table('puntentelling')->insert([ 
             'userId' => '1',
-            'punten' => '10',
+            'punten' => '500',
         ]);
     }
 }

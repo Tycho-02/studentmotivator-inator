@@ -37,23 +37,19 @@
                     </div>
                 </div>
                 <div class="studiebuddySettingsForm__radioWrapper studiebuddySettingsForm__radioWrapper--center">
+                    @if(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Snorlax")->first()))
                     <div class="studiebuddySettingsForm__radio">
                         <img class="form__icon" src="/img/snorlaxicon.png" alt="">
-                        
-                        @if(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Snorlax")->first()))
-                            <input type="radio" id="Snorlax" name="skin" value="Snorlax" {{ ($studiebuddy->skin=="Snorlax")? "checked" : "" }}>
-                        @else
-                            <a href="/gekochteuiterlijkjes/shop" class="studiebuddySettingsForm__field studiebuddySettingsForm__field--button studiebuddySettingsForm__field--link" href="google.com">Kopen</a>
-                        @endif
+                        <input type="radio" id="Snorlax" name="skin" value="Snorlax" {{ ($studiebuddy->skin=="Snorlax")? "checked" : "" }}>
                     </div>
+                    @endif
+                    @if(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first()))
                     <div class="studiebuddySettingsForm__radio">
                         <img class="form__icon" src="/img/charizardicon.png" alt="">
-                        @if(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first()))
+                        
                         <input type="radio" id="Charizard" name="skin" value="Charizard" {{ ($studiebuddy->skin=="Charizard")? "checked" : "" }}>
-                        @else
-                        <a href="/gekochteuiterlijkjes/shop" class="studiebuddySettingsForm__field studiebuddySettingsForm__field--button studiebuddySettingsForm__field--link" href="google.com">Kopen</a>
-                        @endif
                     </div>
+                    @endif
                 </div>
                 
             </section>
@@ -69,6 +65,7 @@
                 <input class="studiebuddySettingsForm__field studiebuddySettingsForm__field--button" type="submit">
             </section>
     </form>
+    @include('studiebuddy.components.iconshop')
     </section>
     
 @endsection

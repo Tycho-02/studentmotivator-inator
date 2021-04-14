@@ -14,9 +14,6 @@ class GekochteUiterlijkjesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('gekochte_uiterlijkjes')->insert([ 
-            'userId' => '1',
-            'skin' => 'Snorlax',
-            ]);
+
     }
 }

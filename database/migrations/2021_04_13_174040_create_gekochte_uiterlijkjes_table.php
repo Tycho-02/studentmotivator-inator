@@ -19,6 +19,7 @@ class CreateGekochteUiterlijkjesTable extends Migration
             $table->unsignedBigInteger("userId");
             $table->foreign('userId')->references('userId')->on('users');
             $table->string('skin');
+            
         });
     }
 
