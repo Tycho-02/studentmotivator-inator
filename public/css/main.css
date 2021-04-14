@@ -584,6 +584,7 @@ audio {
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
+        min-width: 40rem;
     }
     .muziek .muziekSpeler--info {
         display: grid;
