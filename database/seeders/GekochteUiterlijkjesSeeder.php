@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use DB;
 
-class PuntentellingSeeder extends Seeder
+class GekochteUiterlijkjesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,9 +14,6 @@ class PuntentellingSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('puntentelling')->insert([ 
-            'userId' => '1',
-            'punten' => '500',
-        ]);
+
     }
 }
