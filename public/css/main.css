@@ -56,6 +56,8 @@ a {
     grid-area: content;
 }
 
+
+
 .content--button__actions__primary {
     padding: 1.6rem 4.2rem;
     box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
@@ -92,8 +94,22 @@ a {
     width: 200px;
     height: 200px;
 }
-.content--tijdInstellingen__actions {
-    margin-top: 5rem;
+.tijdInstellingen__actions {
+    text-align: center;
+    margin-top: 3rem;
+    display: grid;
+}
+
+.tijdInstellingen__naarBed, .tijdInstellingen__uitBed, .tijdInstellingen__buzzer, .tijdInstellingen__meldingen, .tijdInstellingen__form__section  {
+    margin-top: 3rem;
+}
+
+.tijdinstellingen__buzzer__text {
+    margin-top: 1rem;
+}
+
+.tijdinstellingen__meldingen {
+    margin-top: 3rem;
 }
 
 .content--button__actions__ghost {
@@ -108,6 +124,7 @@ a {
     border-radius: 15px;
     text-decoration: none;
 }
+
 
 .content--button__actions__ghost:hover,
 .content--button__actions__ghost:active {
@@ -277,7 +294,11 @@ select {
     padding: 1.6rem 0rem !important;
     font-size: 1.4rem !important;
 }
-
+.timer__form-alert{
+    margin-bottom: 1rem;
+    color: red;
+    text-align: center;
+}
 /* reset input */
 /* .form__field:required,
 .form__field:invalid {
@@ -485,9 +506,18 @@ audio {
     -o-transition: 0.25s all ease;
     transition: 0.25s all ease;
 }
+
+.tijdinstellingen__form__section {
+    margin-top: 3rem;
+}
 /* Transition */
 .section__select:hover::after {
     color: #f39c12;
+}
+
+.button__actions__ghost--tijdInstellingen {
+    width: 100%;
+    text-transform: uppercase;
 }
 
 /* meldingen voor taken */
@@ -516,9 +546,18 @@ audio {
 }
 
 
+.tijdInstellingen__naarBed__input, .tijdInstellingen__uitBed__input {
+    font-size: 150%;
+}
 
+.tijdInstellingen__naarBed__text, .tijdInstellingen__uitBed__text {
+    margin-top: 2rem;
+}
 
 @media (min-width: 500px) {
+    .button__actions__primary--tijdInstellingen {
+        width: 100% !important;
+    }
     .content--button__actions__primary {
         width: fit-content;
     }
@@ -540,7 +579,7 @@ audio {
         cursor: pointer;
     }
 
-    .content--tijdInstellingen__uitBed {
+    .tijdinstellingen__uitBed {
         margin-top: 3rem;
     }
 
@@ -600,7 +639,7 @@ audio {
     }
     .timer{
         margin-top: 5rem;
-        margin-left: 15rem;
+        margin-left: -15rem;
     }
     .timer__form{
         align-items: center;
@@ -626,39 +665,181 @@ audio {
         margin-bottom: 0;
         font-size: 1.2rem !important;
     }
+}
+
+/*tijd instellingen*/
+
+
+/* Taken styling */
+.taken__add__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.taken__form {
+    margin: 0 auto;
+}
+
+.taken__add__header {
+    text-align: center;
+}
+
+.taken__form__alert {
+    background-color: red;
+    padding: 1rem;
+}
+
+
+
+.studiebuddySettings{
+    width: 100%;
+    align-content: center;
+    display: flex;
+
+}
+
+.studiebuddySettingsForm{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 1px 1px 10px var(--SecondaryColor);
+    border: 1px solid var(--PrimaryColor);
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+.studiebuddySettingsForm__group{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.studiebuddySettingsForm__radioWrapper{
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 2rem;
+}
+
+
+.studiebuddySettingsForm__radio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.studiebuddySettingsForm__rangeHolder{
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.studiebuddySettingsForm__field--button{
+    background: linear-gradient(90deg, #C3073F 5%, #950740 100%);
+    border-radius: 10px;
+    color: var(--TextColor);
+    border: none;
+}
+
+.studiebuddySettingsForm__radio input[type="radio"]{
+    align-self: center;
+}
+
+.studiebuddySettingsForm__field{
+   border-radius: 0.5rem;
+   padding-top: 0.75rem;
+   padding-bottom: 0.75rem;
+   padding-left: 0.5rem;
+   width: 100%;
+   font-size: 1.6rem;
+}
+
+.studiebuddySettingsForm__field--button{
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 425px){
+    .studiebuddySettingsForm__radio img{
+        width: 100%;
+    }
+}
+
+@media (min-width: 500px) {
     .taken__form {
         width: 70%;
     }
-    .content--tijdInstellingen__form {
+    .tijdInstellingen__form {
         display: grid;
-        grid-row-gap: 3rem;
+        grid-row-gap: 1rem;
     }
-    .content--tijdInstellingen__form__section {
+    .tijdInstellingen__form__section {
         display: grid;
         grid-row-gap: 0.5rem;
     }
     .muziekSpeler{
         margin-top: 30rem;
     }
+
+    .tijdInstellingen__naarBed__input,
+    .tijdInstellingen__uitBed__input {
+    font-size: 150% !important;
+    width: 100% !important;
+}
 }
 
 
 @media(min-width: 700px){
     .timer{
-        margin-left: 10rem;
+        margin-left: -20rem;
     }
     .timer__button {
         font-size: 1.4rem !important;
     }
 }
 @media (min-width: 768px) {
+
+    .tijdInstellingen__naarBed__input, .tijdInstellingen__uitBed__input, .tijdInstellingen__form__section__select, .tijdInstellingen__naarBed__input {
+        width: 50% !important;
+    }
+
+    .button__actions__primary--tijdInstellingen {
+        width: 50% !important;
+        grid-column: 1 / 12;
+    }
+
+    .tijdInstellingen__actions {
+        display: grid;
+        grid-column: 1 / span 12;
+    }
+
+    .button__actions__ghost--tijdInstellingen {
+        grid-column: 1 / 12;
+        width: 50% !important;
+        height: 5.5rem;
+    }
     .taken__form {
         width: 50%;
     }
 }
 @media (min-width: 900px) {
+    
+    .button__actions__ghost--tijdInstellingen, .button__actions__primary--tijdInstellingen {
+        width: 50% !important;
+        grid-column: 1 / 12;
+     
+    }
+
     .timer{
-        margin-left: 0rem;
+        margin-left: -30rem;
     }
     .timer__form-field{
         width: 40%;
@@ -668,6 +849,9 @@ audio {
     }
     .content__nummers {
         margin-left: -10rem;
+    }
+    .timer__buttonsSection{
+        width: 40%;
     }
 }
 
@@ -681,7 +865,7 @@ audio {
 }
 @media (min-width: 1100px) {
     .timer{
-        margin-left: -5rem;
+        margin-left: -35rem;
     }
     .timer__form-field{
         width: 30%;
@@ -689,26 +873,109 @@ audio {
     .timer__form-submitBtn{
         width: 30%;
     }
+
+    .button__actions__ghost--tijdInstellingen, .button__actions__primary--tijdInstellingen {
+        width: 30% !important;
+        grid-column: 1 / 12;
+     
+    }
+
+    .tijdInstellingen__naarBed__input, .tijdInstellingen__uitBed__input, .tijdInstellingen__form__section__select {
+        width: 30% !important;
+    }
     .timer__buttonsSection{
         width: 30%;
     }
     .timer__button {
         font-size: 1.6rem !important;
     }
+    .timer__form-alert > p {
+        font-size: 2rem;
+    }
 }
-@media(min-width: 1200px){
+/* @media(min-width: 1200px){
     .timer{
         margin-left: -10rem;
     }
-}
+} */
 @media (min-width: 1440px) {
     .taken__form {
         width: 25%;
     }
-    .timer__form-field {
+    .timer{
+        margin-left: -45rem;
+    }
+    /* .timer__form-field {
         width: 50%;
     }
     .timer__form-submitBtn {
         width: 50%;
-    }
+    }*/
 }
+.tijdInstellingen {
+    margin-top: 5rem;
+}
+
+.tijdInstellingen__form {
+    margin-top: 4rem;
+}
+
+
+
+.tijdInstellingen__section {
+    margin-top: 3rem;
+}
+
+.tijdInstellingen__buzzer {
+    margin-top: 3rem;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: var(--PrimaryColor);
+    background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+/* Custom Select */
+.tijdInstellingen__form__section__select, .tijdInstellingen__form__section__select {
+    width: 100%;
+    height: 3em;
+    line-height: 3;
+    background: var(--SecondaryColor);
+    overflow: hidden;
+    border-radius: 0.25em;
+}
+select {
+    flex: 1;
+    padding: 0 0.5em;
+    color: #fff;
+    cursor: pointer;
+}
+.tijdInstellingen__form__section__select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: var(--SecondaryColor);
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+}
+/* Transition */
+.tijdInstellingen__form__section__select:hover::after {
+    color: #f39c12;
+}
+
+/* Arrow */

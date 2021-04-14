@@ -14,18 +14,15 @@ use RealRashid\SweetAlert\Facades\Alert;
 |
 */
 Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController@index"); //slapen tijd overzicht
-Route::get("/tijdinstellingen/edit", "App\Http\Controllers\TijdInstellingenController@edit"); //wijzigen tijd slapen
-Route::put('/update', [
-    'uses' => 'App\Http\Controllers\TijdInstellingenController@update',
-    'as' => 'tijdinstellingen.update',
-]);
+Route::get("/tijdinstellingen/edit/{id}", "App\Http\Controllers\TijdInstellingenController@edit"); //wijzigen tijd slapen
+Route::put('/tijdinstellingen/{id}', 'App\Http\Controllers\TijdInstellingenController@update'); //updaten
 Route::get('slapen/grafiek', [\App\Http\Controllers\TijdSlapenController::class, 'index']);
 
 
 Route::get('/taken', [\App\Http\Controllers\TakenController::class, 'index']); // Het taken overzicht
 Route::get('/taken/create', [\App\Http\Controllers\TakenController::class, 'create']); // Een taak toevoegen
 Route::post('/taken', [\App\Http\Controllers\TakenController::class, 'store']); // Een taak opslaan in de DB
-Route::get('/taken/{id}/destroy', [\App\Http\Controllers\TakenController::class, 'destroy']); // Een taak verwijderen
+Route::get('/taken/{id}/voltooi', [\App\Http\Controllers\TakenController::class, 'voltooi']); // Een taak verwijderen
 Route::get('/taken/{id}/edit', [\App\Http\Controllers\TakenController::class, 'edit']); // update pagina
 Route::put('/taken/{id}', [\App\Http\Controllers\TakenController::class, 'update']); // Een taak updaten
 

@@ -1,33 +1,40 @@
 
-#define echoPin 2 // attach pin D2 Arduino to pin Echo of HC-SR04
-#define trigPin 3 //attach pin D3 Arduino to pin Trig of HC-SR04
+//Developed by S1118551 for IPMEDT5 product groep 2
 
-// defines variables
+
+#define echoPin 2 // D2 pin op sensor zetten
+#define trigPin 3 // D3 pin op sensor zetten
+
+// variabelen definieren
 long duration; // variable for the duration of sound wave travel
 int distance; // variable for the distance measurement
 int buzzer = 8;//the pin of the active buzzer
+int lichtje = 6; // pin of the lightning
 boolean stoppen = false;
 int buzzerInstellingen;
 
 boolean gestuurd = false;
-int binnenAfstand; // withindistance - calculate how often user keeps his hand in front of sensor
+int binnenAfstand; // calculeren hoe ver gebruikers hand is van sensor zelf
 boolean reset = false;
 boolean opstaan = false;
+boolean echtWakker = false;
 int data = 0;
 char object = ' ';
 void setup() {
-  pinMode(trigPin, OUTPUT); // Sets the trigPin as an OUTPUT
-  pinMode(echoPin, INPUT); // Sets the echoPin as an INPUT
-  Serial.begin(9600); // // Serial Communication is starting with 9600 of baudrate speed
-  pinMode(buzzer,OUTPUT);//initialize the buzzer pin as an output
+  pinMode(trigPin, OUTPUT); // trigpin als output zetten
+  pinMode(echoPin, INPUT); // echopin als input zetten
+  pinMode(lichtje, OUTPUT); //licht als output zetten
+  Serial.begin(9600); // // Serial Communicatie op 9600 zetten
+  pinMode(buzzer,OUTPUT);//buzzer pin als een output zetten
 }
 
 
 
 void loop() {
 
-while(Serial.available()) {
-  
+  digitalWrite(lichtje, HIGH); // lichtje aanzeten
+  while(Serial.available()) { // 
+
     if(Serial.read() == 'u') {
       buzzerInstellingen = 2; 
       //buzzer uit
@@ -36,40 +43,47 @@ while(Serial.available()) {
         //aan
     }
     while(binnenAfstand < 100) {
-    // Clears the trigPin condition
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
-    // Sets the trigPin HIGH (ACTIVE) for 10 microseconds
+    //Zet trigPin op actief voor 2 microseconden
     digitalWrite(trigPin, HIGH);
     delayMicroseconds(10);
     digitalWrite(trigPin, LOW);
     duration = pulseIn(echoPin, HIGH);
-    // Calculating the distance
-    distance = duration * 0.034 / 2; // Speed of sound wave divided by 2 (go and back)
-   // Displays the distance on the Serial Monitor
+    distance = duration * 0.034 / 2;     // afstand calculeren
 
-    // Displays the distance on the Serial Monitor
+
+    // afstand op seriele monitor printen
     Serial.println(distance);
     
     if(distance <= 50) {
       binnenAfstand += 1;
-      //We zetten boozer uit indien gebruikers object heel dichtbij is bij sensor.
+      //We zetten boozer uit indien gebruikers hand heel dichtbij is bij sensor.
       noTone(buzzer);
       delay(10);
     }
     
-    if(distance > 50 and gestuurd == false and reset == false and stoppen == false and Serial.read() == 'x' and buzzerInstellingen != 2) {
+    if(distance > 50 and gestuurd == false and reset == false and stoppen == false and Serial.read() == 'x' and buzzerInstellingen != 2) { 
+      //we laten voor het slapen buzzer afgaan
       tone(buzzer, 10);
       delay(10);
     }
 
-    if(distance > 50 and gestuurd == true and reset == true and stoppen == false and Serial.read() == 'b' and buzzerInstellingen != 2) {
+    if(distance > 50 and gestuurd == true and reset == true and stoppen == false and Serial.read() == 'b' and buzzerInstellingen != 2) { 
+      //eerste keer wakker worden met de buzzer aan
       tone(buzzer, 10);
       delay(10);
   }
+
+     if(distance > 50 and echtWakker == true and Serial.read() == 'v' and buzzerInstellingen != 2) { 
+       //tweede keer wakker worden met de buzzer aan
+      tone(buzzer, 10);
+      delay(10);
   }
+  
 
-
+   //Gebruiker heeft lang genoeg zijn hand voor sensor gehouden nadat die is gaan slapen, we zetten paar variabele op true en printen 't' naar seriele communicatie
+   //We resetten binnenAfstand op 0 voor de volgende keer voor wakker worden
    if(binnenAfstand >= 100 && gestuurd == false && stoppen == false) {
     Serial.println('s');
     reset = true;
@@ -79,17 +93,30 @@ while(Serial.available()) {
   
   
   
-  if(binnenAfstand >= 100 && reset == true && stoppen == false) {
+  if(binnenAfstand >= 100 && reset == true && stoppen == false && echtWakker == false) {
+   //Gebruiker heeft lang genoeg zijn hand voor sensor gehouden nadat die is gaan slapen, we zetten paar variabele op true en printen 't' naar seriele communicatie
+   //We resetten binnenAfstand op 0 om een extra check te doen dat gebruiker echt wakker wordt
     Serial.println('t');
     reset = false;
+    echtWakker = true;
     stoppen = true;
+    binnenAfstand = 0;
   }
+
+ if(binnenAfstand >= 100 && stoppen == true && echtWakker == true) {
+    //We resetten binnenAfstand op 0 om een extra check te doen dat gebruiker echt wakker wordt. We resetten binnenAfstand niet meer
+    Serial.println('w');
+  }
+
+    }
+
  
 
   }
 
   
-  
+
+  /*Extra testjes*/
 
   
  /* while(Serial.available()) {
@@ -116,7 +143,7 @@ while(Serial.available()) {
     break;
   }
  }*/
- }
+}
 
 
 
