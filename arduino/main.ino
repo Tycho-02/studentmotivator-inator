@@ -151,6 +151,21 @@ void timerBreak(int hoursBreak, int minutesBreak){
     countdownTimeBreak = countdownTimeBreak - 4;
     displayTimeBreak(countdownTimeBreak);
   }
+  // pauze voorbij
+  if (countdownTimeBreak == 1){
+    Serial.println(F("Countdown Finished"));
+    speakerMAP = map(5, 800, 1023, 800, 1000);
+    tone(speakerPIN, speakerMAP, 10000);
+    display.printTime(0, 0, false);
+    delay(30000);
+  }
+//
+//  if(countdownTimeBreak > 1 && success){
+//    display.printTime(0, 0, false);
+//    punten += 10;
+//    countdownTimeBreak = 1;
+//    delay(30000);
+//  }
 }
 // laten zien van de pauze timer
 void displayTimeBreak(unsigned long countdownTimeBreak){
@@ -165,23 +180,5 @@ void displayTimeBreak(unsigned long countdownTimeBreak){
   Serial.print(F(":"));
   Serial.println(secondsBreak);
   display.printTime(hoursBreak, minutesBreak, true);
-
-  // pauze voorbij
-  if (countdownTimeBreak == 1){
-    Serial.println(F("Countdown Finished"));
-    // speaker gaat af
-    speakerMAP = map(5, 800, 1023, 800, 1000);
-    tone(speakerPIN, speakerMAP, 10000);
-    display.printTime(0, 0, false);
-    delay(30000);
-  }
-  
-  // punten erbij voor de vroeg weg leggen van de mobiel
-  // if(countdownTimeBreak > 1 && success){
-  //   display.printTime(0, 0, false);
-  //   Serial.println("pb");
-  //   punten += 10;
-  //   delay(30000);
-  // }
   
 }
