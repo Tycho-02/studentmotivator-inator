@@ -122,6 +122,77 @@ a {
     cursor: pointer;
     color: #fff;
 }
+.content--tijdInstellingen {
+    margin-top: 5rem;
+}
+
+.content--tijdInstellingen__form {
+    margin-top: 4rem;
+}
+
+.content--tijdInstellingen_naarBed__input,
+.content--tijdInstellingen_uitBed__input {
+    font-size: 150%;
+    width: 10em;
+}
+
+.content--tijdInstellingen__section {
+    margin-top: 3rem;
+}
+
+.content--tijdInstellingen__buzzer {
+    margin-top: 3rem;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: var(--PrimaryColor);
+    background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+/* Custom Select */
+.content--tijdInstellingen__form__section__select {
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: var(--SecondaryColor);
+    overflow: hidden;
+    border-radius: 0.25em;
+}
+select {
+    flex: 1;
+    padding: 0 0.5em;
+    color: #fff;
+    cursor: pointer;
+}
+.content--tijdInstellingen__form__section__select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: var(--SecondaryColor);
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+}
+/* Transition */
+.content--tijdInstellingen__form__section__select:hover::after {
+    color: #f39c12;
+}
+
+/* Arrow */
 .form,
 .taken__form {
     margin-top: 2rem;
@@ -264,6 +335,8 @@ a {
     background-color: transparent;
     border: none;
     grid-area: play;
+    color: var(--TextColor);
+    margin: 0 auto;
 }
 
 /* menu styling */
@@ -392,12 +465,32 @@ audio {
 
 /* meldingen voor taken */
 
+/*tijd instellingen*/
+
+/* Taken styling */
+.taken__add__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.taken__form {
+    margin: 0 auto;
+}
+
+.taken__add__header {
+    text-align: center;
+}
+
+.taken__form__alert {
+    background-color: red;
+    padding: 1rem;
+}
+
 
 
 @media (min-width: 500px) {
-    .content__nummers {
-        margin-left: -20rem;
-    }
     .content--button__actions__primary {
         width: fit-content;
     }
@@ -504,32 +597,6 @@ audio {
         margin-bottom: 0;
         font-size: 1.2rem !important;
     }
-}
-
-/*tijd instellingen*/
-
-/* Taken styling */
-.taken__add__section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.taken__form {
-    margin: 0 auto;
-}
-
-.taken__add__header {
-    text-align: center;
-}
-
-.taken__form__alert {
-    background-color: red;
-    padding: 1rem;
-}
-
-@media (min-width: 500px) {
     .taken__form {
         width: 70%;
     }
@@ -545,6 +612,8 @@ audio {
         margin-top: 30rem;
     }
 }
+
+
 @media(min-width: 700px){
     .timer{
         margin-left: 10rem;
@@ -568,11 +637,17 @@ audio {
     .timer__form-submitBtn{
         width: 40%;
     }
+    .content__nummers {
+        margin-left: -10rem;
+    }
 }
 
 @media (min-width: 1024px) {
     .taken__form {
         width: 40%;
+    }
+    .content__nummers {
+        margin-left: -20rem;
     }
 }
 @media (min-width: 1100px) {
@@ -608,74 +683,3 @@ audio {
         width: 50%;
     }
 }
-.content--tijdInstellingen {
-    margin-top: 5rem;
-}
-
-.content--tijdInstellingen__form {
-    margin-top: 4rem;
-}
-
-.content--tijdInstellingen_naarBed__input,
-.content--tijdInstellingen_uitBed__input {
-    font-size: 150%;
-    width: 10em;
-}
-
-.content--tijdInstellingen__section {
-    margin-top: 3rem;
-}
-
-.content--tijdInstellingen__buzzer {
-    margin-top: 3rem;
-}
-
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none;
-    outline: 0;
-    box-shadow: none;
-    border: 0 !important;
-    background: var(--PrimaryColor);
-    background-image: none;
-}
-/* Remove IE arrow */
-select::-ms-expand {
-    display: none;
-}
-/* Custom Select */
-.content--tijdInstellingen__form__section__select {
-    width: 20em;
-    height: 3em;
-    line-height: 3;
-    background: var(--SecondaryColor);
-    overflow: hidden;
-    border-radius: 0.25em;
-}
-select {
-    flex: 1;
-    padding: 0 0.5em;
-    color: #fff;
-    cursor: pointer;
-}
-.content--tijdInstellingen__form__section__select::after {
-    content: "\25BC";
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 1em;
-    background: var(--SecondaryColor);
-    cursor: pointer;
-    pointer-events: none;
-    -webkit-transition: 0.25s all ease;
-    -o-transition: 0.25s all ease;
-    transition: 0.25s all ease;
-}
-/* Transition */
-.content--tijdInstellingen__form__section__select:hover::after {
-    color: #f39c12;
-}
-
-/* Arrow */

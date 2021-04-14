@@ -173,6 +173,20 @@ const volgendNummer = (afspeellijst) => {
     }
 }
 
+const speelNummer = (nummer) => {
+    // zet het volgende nummer in van de lijst
+    audio.setAttribute('src', "/muziek/" + nummer.bestandLocatie);
+    //muziek wordt op pauze gezet
+    muziek.pause();
+    //laad het volgende nummer in van de lijst
+    muziek.load();
+    //veranderd de innerhtml naar de bijbehoordende nummer
+    nummerNaam.innerHTML = nummer.naam;
+    nummerArtiest.innerHTML = nummer.artiest;
+    //speeld het nummer af
+    muziek.play();
+}
+
 const pauze = (tijd) => {
     i += 1;
     let tijdBezig = "0" + uren + ":0" + minuten + ":" + seconden;
@@ -195,22 +209,22 @@ const pauze = (tijd) => {
         //wanneer de tijd die is ingesteld dat je wilt gaan leren gelijk staat aan de tijd van de timer
         //mag er pauze gehouden worden
         //ook komt er een popup in het scherm
-        if (tijd == tijdBezig) {
+        if ("00:00:20" == tijdBezig) {
             //wanneer de tijd van de ingestelde timer en de tijd dat je bezig bent gelijk staat komt er een popup dat je pauze mag houden er reload de page naar de pauze playlist
+            swal("Gefeliciteerd je hebt pauze!", "over 5 seconden komt de pauze playlist", "success", {
+                button: 'Nice!',
+            });
             setTimeout(function () {
                 location.reload();
-                swal("Gefeliciteerd je hebt pauze!", "over 5 seconden komt de pauze playlist", "success", {
-                    button: 'Nice!',
-                });
             }, 5000)
         }
         if ("00:15:00" == tijdBezig) {
             //wanneer pauze voorbij is speeld de nomale playlist weer
+            swal("pauze is voorbij!", "over 5 seconden komt de Blokken playlist", "success", {
+                button: 'Aan de slag!',
+            });
             setTimeout(function () {
                 location.reload();
-                swal("pauze is voorbij!", "over 5 seconden komt de Blokken playlist", "success", {
-                    button: 'Aan de slag!',
-                });
             }, 5000)
         }
     }
