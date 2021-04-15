@@ -9,7 +9,6 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <button class="menu--button__action" onclick="window.location='/'" ><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
     @yield('content')
 </body>
 </html>

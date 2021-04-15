@@ -30,9 +30,12 @@
     };
 
     //options
+    document.getElementById("grafiek__container__canvas").style.height = "466px";
+    
     let options = {
       
       responsive: true,
+      maintainAspectRatio: false,
       title: {
         display: true,
         fill: true,
@@ -69,7 +72,8 @@
     let chart1 = new Chart(ctx, {
       type: "line",
       data: data,
-      options: options
+      options: options,
+      maintainAspectRatio: false
       
     });
 </script><?php /**PATH /home/pi/studentmotivator-inator/resources/views/tijdslapen/components/tijdslapenGrafiek--index.blade.php ENDPATH**/ ?>

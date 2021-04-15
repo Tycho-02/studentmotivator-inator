@@ -16,7 +16,7 @@ class TimerController extends Controller
 
     public function store(Request $request){
         $timer = \App\Models\Timer::first();
-        $timer->tijd = $request->input('tijd');
+        $timer->tijd = $request->input('tijd');        
 
         if($request->input('30')){
             $timer->tijd = "00:30";
@@ -32,7 +32,7 @@ class TimerController extends Controller
         }
         try {
             $timer->save();
-            return redirect('/timer');
+            return redirect('/timer')->with('success', 'Timer is succesvol aangepast.');
 
         } catch (Exception $err) {
 
