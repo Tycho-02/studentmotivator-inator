@@ -697,7 +697,7 @@ audio {
     width: 100%;
     align-content: center;
     display: flex;
-
+    flex-direction: column;
 }
 
 .studiebuddySettingsForm{
@@ -724,7 +724,7 @@ audio {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 
@@ -758,12 +758,78 @@ audio {
    padding-top: 0.75rem;
    padding-bottom: 0.75rem;
    padding-left: 0.5rem;
+   padding-right: 0.5rem;
    width: 100%;
-   font-size: 1.6rem;
+   font-size: 1.6rem;  
+}
+
+.studiebuddySettingsForm__price{
+    margin-top: 1rem;
+    text-align: center;
 }
 
 .studiebuddySettingsForm__field--button{
     margin-top: 1rem;
+    
+}
+
+.studiebuddySettingsForm__field--link{
+    text-align: center;
+}
+
+.iconshop{
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+
+}
+
+.iconshop__formWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.iconshop__button{
+    background: linear-gradient(90deg, #C3073F 5%, #950740 100%);
+    border-radius: 10px;
+    color: var(--TextColor);
+    border: none;
+    border-radius: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100%;
+    font-size: 1.6rem;  
+}
+
+
+.iconshop__button:disabled, .iconshop__button[disabled]{
+    background: linear-gradient(90deg, #7A4152 5%, #3C232D 100%);
+}
+
+.iconshop__form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+    justify-content: center;
+}
+
+.iconshop img{
+    max-width: 100%;
+}
+
+.iconshop__price{
+    text-align: center;
 }
 
 
@@ -772,6 +838,27 @@ audio {
         width: 100%;
     }
 }
+
+@media (min-width: 425px){
+    .iconshop__form{
+        max-width: 20rem;
+    }
+}
+
+@media (min-width: 768px){
+    
+    .iconshop__formWrapper{
+        flex-direction: row;
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 1rem;
+    }
+
+    .iconshop__form{
+        max-width: 18rem;
+    }
+}
+
 
 @media (min-width: 500px) {
     .taken__form {

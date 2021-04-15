@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
     <script src="/js/location.js"></script>
-    <title>mobiel</title>
+    <title>@yield('title')</title>
 </head>
 <body>
     @yield('content')
