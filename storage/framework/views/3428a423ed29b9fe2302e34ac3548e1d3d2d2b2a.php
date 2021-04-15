@@ -8,7 +8,7 @@
     </div> 
 <?php endif; ?>
 <section class="tijdInstellingen">
-    <h1 class="tijdInstellingen__header">Huidige dagelijkse tijd</h1>
+    <h1 class="tijdInstellingen__header">Huidige dagelijkse bedtijd</h1>
     <section class="tijdInstellingen__section">
         <article class="tijdInstellingen__naarBed">
             <h2 class="tijdInstellingen__naarBed__header">Tijd naar bed:</h2>

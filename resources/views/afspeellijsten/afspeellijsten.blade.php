@@ -12,7 +12,7 @@
             <h2>Humeur</h2>
         </li>
         @include('afspeellijsten.components.afspeellijst--index')
-    </section>
     </ul>
+</section>
 @endsection
 
