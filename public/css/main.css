@@ -553,6 +553,10 @@ audio {
     margin-top: 2rem;
 }
 
+.grafiek {
+    margin-top: 3rem;
+}
+
 @media (min-width: 500px) {
     .button__actions__primary--tijdInstellingen {
         width: 100% !important;

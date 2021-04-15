@@ -31,6 +31,7 @@
 
     //options
     document.getElementById("grafiek__container__canvas").style.height = "466px";
+    
     let options = {
       
       responsive: true,
