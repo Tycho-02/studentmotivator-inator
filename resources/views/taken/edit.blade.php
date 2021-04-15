@@ -7,6 +7,7 @@
 
 <!-- Content -->
 @section('content')
+<button class="menu--button__action" onclick="window.location='/taken'" ><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
 <section class="taken__add__section">
     <h2 class="taken__add__header">Taak Wijzigen</h2>
     <form class="taken__form" method='POST' action="/taken/{{$taak->id}}">
@@ -18,7 +19,7 @@
             <label class="taken__form__label" for="omschrijving">Omschrijving</label>
             <textarea class="taken__form__field" name="omschrijving" rows="5" placeholder="Taak omschrijving....">{{$taak->omschrijving}}</textarea>
 
-            <label class="taken__form__label" for="label">VAk</label>
+            <label class="taken__form__label" for="label">Vak</label>
             <input value="{{$taak->vak}}" class="taken__form__field" type="text" name="vak" placeholder="vak" />
 
             <label class="taken__form__label" for="prioriteit">Prioriteit (0-3)</label>

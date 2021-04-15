@@ -7,6 +7,7 @@
 
 <!-- Content -->
 @section('content')
+<button class="menu--button__action" onclick="window.location='/taken'" ><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
 <section class="taken__add__section">
     <h2 class="taken__add__header">Taak Toevoegen</h2>
     <form class="taken__form" method='POST' action="/taken">

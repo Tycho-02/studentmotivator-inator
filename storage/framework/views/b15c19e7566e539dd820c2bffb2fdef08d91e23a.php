@@ -9,7 +9,6 @@
     <title><?php echo $__env->yieldContent('title'); ?></title>
 </head>
 <body>
-    <button class="menu--button__action" onclick="window.location='/'" ><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
     <?php echo $__env->yieldContent('content'); ?>
 </body>
 </html>
