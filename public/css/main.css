@@ -25,8 +25,6 @@ body {
     padding: 3rem;
     background: var(--PrimaryColor);
     font-family: sans-serif;
-    width: 99vw;
-    height: 99vh;
 }
 
 h1 {
@@ -140,6 +138,77 @@ a {
     cursor: pointer;
     color: #fff;
 }
+.content--tijdInstellingen {
+    margin-top: 5rem;
+}
+
+.content--tijdInstellingen__form {
+    margin-top: 4rem;
+}
+
+.content--tijdInstellingen_naarBed__input,
+.content--tijdInstellingen_uitBed__input {
+    font-size: 150%;
+    width: 10em;
+}
+
+.content--tijdInstellingen__section {
+    margin-top: 3rem;
+}
+
+.content--tijdInstellingen__buzzer {
+    margin-top: 3rem;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: var(--PrimaryColor);
+    background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+/* Custom Select */
+.content--tijdInstellingen__form__section__select {
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: var(--SecondaryColor);
+    overflow: hidden;
+    border-radius: 0.25em;
+}
+select {
+    flex: 1;
+    padding: 0 0.5em;
+    color: #fff;
+    cursor: pointer;
+}
+.content--tijdInstellingen__form__section__select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: var(--SecondaryColor);
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+}
+/* Transition */
+.content--tijdInstellingen__form__section__select:hover::after {
+    color: #f39c12;
+}
+
+/* Arrow */
 .form,
 .taken__form {
     margin-top: 2rem;
@@ -286,6 +355,8 @@ a {
     background-color: transparent;
     border: none;
     grid-area: play;
+    color: var(--TextColor);
+    margin: 0 auto;
 }
 
 /* menu styling */
@@ -355,6 +426,9 @@ audio {
     flex-direction: row;
     justify-content: space-between;
 }
+.muziekSpeler--info__text {
+    width: 75%;
+}
 
 .muziekSpeler--timeline {
     width: 100%;
@@ -379,6 +453,32 @@ audio {
     margin-top: -4px;
     background: var(--SecondaryColor);
     cursor: pointer;
+}
+
+/* muziek popup stytling */
+
+.swal-modal {
+    background-color: var(--SecondaryColor);
+    border: 3px solid var(--PrimaryColor);
+    border-radius: 2.5rem;
+}
+.swal-title {
+    color: var(--TextColor);
+}
+.swal-text {
+    color: var(--TextColor);
+}
+.swal-icon--success::before {
+    top: -0.8rem;
+    background-color: var(--SecondaryColor);
+}
+.swal-icon--success::after {
+    top: -1rem;
+    background-color: var(--SecondaryColor);
+}
+.swal-icon--success__hide-corners {
+    background-color: var(--SecondaryColor);
+    border: none;
 }
 
 .section__select {
@@ -419,6 +519,29 @@ audio {
 }
 
 /* meldingen voor taken */
+
+/*tijd instellingen*/
+
+/* Taken styling */
+.taken__add__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.taken__form {
+    margin: 0 auto;
+}
+
+.taken__add__header {
+    text-align: center;
+}
+
+.taken__form__alert {
+    background-color: red;
+    padding: 1rem;
+}
 
 .tijdInstellingen__naarBed__input,
 .tijdInstellingen__uitBed__input {
@@ -499,6 +622,7 @@ audio {
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
+        min-width: 40rem;
     }
     .muziek .muziekSpeler--info {
         display: grid;
@@ -578,6 +702,7 @@ audio {
     width: 100%;
     align-content: center;
     display: flex;
+    flex-direction: column;
 }
 
 .studiebuddySettingsForm {
@@ -604,7 +729,7 @@ audio {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .studiebuddySettingsForm__radio {
@@ -637,17 +762,100 @@ audio {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 0.5rem;
+    padding-right: 0.5rem;
     width: 100%;
     font-size: 1.6rem;
+}
+
+.studiebuddySettingsForm__price {
+    margin-top: 1rem;
+    text-align: center;
 }
 
 .studiebuddySettingsForm__field--button {
     margin-top: 1rem;
 }
 
+.studiebuddySettingsForm__field--link {
+    text-align: center;
+}
+
+.iconshop {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.iconshop__formWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.iconshop__button {
+    background: linear-gradient(90deg, #c3073f 5%, #950740 100%);
+    border-radius: 10px;
+    color: var(--TextColor);
+    border: none;
+    border-radius: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100%;
+    font-size: 1.6rem;
+}
+
+.iconshop__button:disabled,
+.iconshop__button[disabled] {
+    background: linear-gradient(90deg, #7a4152 5%, #3c232d 100%);
+}
+
+.iconshop__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+    justify-content: center;
+}
+
+.iconshop img {
+    max-width: 100%;
+}
+
+.iconshop__price {
+    text-align: center;
+}
+
 @media (max-width: 425px) {
     .studiebuddySettingsForm__radio img {
         width: 100%;
+    }
+}
+
+@media (min-width: 425px) {
+    .iconshop__form {
+        max-width: 20rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .iconshop__formWrapper {
+        flex-direction: row;
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 1rem;
+    }
+
+    .iconshop__form {
+        max-width: 18rem;
     }
 }
 
@@ -670,6 +878,7 @@ audio {
         width: 100% !important;
     }
 }
+
 @media (min-width: 700px) {
     .timer {
         margin-left: -20rem;
@@ -721,6 +930,9 @@ audio {
     .timer__form-submitBtn {
         width: 40%;
     }
+    .content__nummers {
+        margin-left: -10rem;
+    }
     .timer__buttonsSection {
         width: 40%;
     }
@@ -729,6 +941,9 @@ audio {
 @media (min-width: 1024px) {
     .taken__form {
         width: 40%;
+    }
+    .content__nummers {
+        margin-left: -20rem;
     }
 }
 @media (min-width: 1100px) {

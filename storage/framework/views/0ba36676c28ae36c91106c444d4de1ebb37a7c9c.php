@@ -1,0 +1,2 @@
+<h1>wa wa wa</h1>
+<?php echo $__env->make('default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/pi/studentmotivator-inator/resources/views/studiebuddy/components/weerbericht.blade.php ENDPATH**/ ?>

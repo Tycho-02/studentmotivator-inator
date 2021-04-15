@@ -26,7 +26,7 @@ while True:
         buddySkin = x[4]
         idealTemp = int(x[5])
         idealHum = int(x[6])
-        idealLight = int(x[7])
+        
     
     selectstring = "SELECT * from studieplanning WHERE userId = '1' AND datum = %s"
     selectvals =  (today,)
