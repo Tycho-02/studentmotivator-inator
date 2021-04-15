@@ -1,4 +1,5 @@
 void smileyBlij(){
+  // smiley blij maken 
   byte smileyBlij1[8] = {
     B00000,
     B00000,
@@ -81,6 +82,7 @@ void smileyBlij(){
     B00000,
   };
 
+  //smiley blij word toegewezen aan een cijfer
   lcd.createChar(1, smileyBlij1);
   lcd.createChar(2, smileyBlij2);
   lcd.createChar(3, smileyBlij3);
@@ -90,7 +92,7 @@ void smileyBlij(){
   lcd.createChar(7, smileyBlij7);
   lcd.createChar(8, smileyBlij8);
   lcd.home();
-
+  //het neerzetten van elk onderdeel van de smiley
   lcd.setCursor(1, 0);
   lcd.write(1);
   lcd.write(2);
@@ -122,7 +124,7 @@ void smileyBlij(){
   lcd.write(7);
   lcd.write(8);
 }
-
+// smiley verdrietig maken 
 void smileyVerdrietig(){
   byte smiley1[8] = {
     B00000,
@@ -205,7 +207,7 @@ void smileyVerdrietig(){
     B00000,
     B00000,
   };
-
+//smiley verdrietig word toegewezen aan een cijfer
   lcd.createChar(1, smiley1);
   lcd.createChar(2, smiley2);
   lcd.createChar(3, smiley3);
@@ -215,7 +217,7 @@ void smileyVerdrietig(){
   lcd.createChar(7, smiley7);
   lcd.createChar(8, smiley8);
   lcd.home();
-
+//het neerzetten van elk onderdeel van de smiley
   lcd.setCursor(1, 0);
   lcd.write(1);
   lcd.write(2);

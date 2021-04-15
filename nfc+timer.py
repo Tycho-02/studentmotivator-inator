@@ -5,10 +5,10 @@ import serial
 import os
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="damion",
-    passwd="damion",
-    database="ipmedt5",
+    host="vserver385.axc.nl",
+    user="tychogp385_ipmedt5",
+    passwd="ipmedt5",
+    database="tychogp385_ipmedt5",
     buffered=True
 )
 port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
@@ -42,6 +42,8 @@ while True:
     #pauze voorbij
     if(rcv == 'pauzeV'):
         mycursor.execute("UPDATE timer SET pauze = 0;")
+         # andere muzieklijst voor het blokken
+        mycursor.execute("UPDATE users SET humeur = 'Blokken' WHERE userId = 1;")
         
     sql_timer = "SELECT tijd FROM timer WHERE mobielId = 1"
     mycursor.execute(sql_timer)

@@ -6,9 +6,9 @@
         </a>
     </li> 
     <li class="menu__list__item">
-        <a href="#">
-            <i class="fas fa-calendar-alt fa-2x"></i>
-            <p>Rooster</p>
+        <a href="/slapen/grafiek">
+            <i class="fas fa-chart-bar fa-2x"></i>
+            <p>Grafiek</p>
         </a>
     </li>
     <li class="menu__list__item">

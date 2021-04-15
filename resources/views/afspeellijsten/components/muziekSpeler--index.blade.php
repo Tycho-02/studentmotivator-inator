@@ -1,4 +1,4 @@
-
+<!-- Dit component zou later nog gebruikt kunnen worden maar momenteel blijkt deze gecomment -->
     <!-- word gekeken of de variabelen bestaan zo niet dan word de else gedisplayed -->
     <!-- @if(isset($afspeellijstnummers, $nummer))
         <audio id="music" preload="true">

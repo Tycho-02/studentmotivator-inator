@@ -1,11 +1,11 @@
 /* VARIABELEN */
 
 :root {
-  --PrimaryColor: #1A1A1D;
-  --SecondaryColor: #4E4E50;
-  --ThirdColor: #C3073F;
-  --TextColor: #fff;
-  --fullwidth: 100%;
+    --PrimaryColor: #1a1a1d;
+    --SecondaryColor: #4e4e50;
+    --ThirdColor: #c3073f;
+    --TextColor: #fff;
+    --fullwidth: 100%;
 }
 
 * {
@@ -25,8 +25,6 @@ body {
     padding: 3rem;
     background: var(--PrimaryColor);
     font-family: sans-serif;
-    width: 99vw;
-    height: 99vh;
 }
 
 h1 {
@@ -54,9 +52,8 @@ a {
 
 .content {
     grid-area: content;
+    margin-top: 2rem;
 }
-
-
 
 .content--button__actions__primary {
     padding: 1.6rem 4.2rem;
@@ -100,7 +97,11 @@ a {
     display: grid;
 }
 
-.tijdInstellingen__naarBed, .tijdInstellingen__uitBed, .tijdInstellingen__buzzer, .tijdInstellingen__meldingen, .tijdInstellingen__form__section  {
+.tijdInstellingen__naarBed,
+.tijdInstellingen__uitBed,
+.tijdInstellingen__buzzer,
+.tijdInstellingen__meldingen,
+.tijdInstellingen__form__section {
     margin-top: 3rem;
 }
 
@@ -124,7 +125,6 @@ a {
     border-radius: 15px;
     text-decoration: none;
 }
-
 
 .content--button__actions__ghost:hover,
 .content--button__actions__ghost:active {
@@ -262,26 +262,26 @@ select {
     border-image: linear-gradient(to right, #c3073f, #950740);
     border-image-slice: 1;
 }
-.timer{
+.timer {
     margin-top: 2rem;
 }
-.timer__header{
+.timer__header {
     display: flex;
     justify-content: center;
 }
-.timer__timeSection{
+.timer__timeSection {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
 }
 
-.timer__label{
+.timer__label {
     text-align: center;
 }
-.timer__form-field{
+.timer__form-field {
     text-align: center;
 }
-.timer__buttonsSection{
+.timer__buttonsSection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -289,12 +289,12 @@ select {
     gap: 2rem;
     margin: 0 auto;
 }
-.timer__button{
+.timer__button {
     margin-bottom: 0rem !important;
     padding: 1.6rem 0rem !important;
     font-size: 1.4rem !important;
 }
-.timer__form-alert{
+.timer__form-alert {
     margin-bottom: 1rem;
     color: red;
     text-align: center;
@@ -323,7 +323,7 @@ select {
     margin-top: 1rem;
     grid-template-areas:
         "naam naam naam play"
-        "artiest artiest genre play";
+        "artiest genre genre play";
 }
 
 .hidden {
@@ -404,8 +404,8 @@ select {
     justify-content: center;
     align-items: center;
 }
-.menu__list__item > a > i{
-    margin-bottom: 0.2em ;
+.menu__list__item > a > i {
+    margin-bottom: 0.2em;
 }
 
 /* audio styling */
@@ -427,8 +427,8 @@ audio {
     flex-direction: row;
     justify-content: space-between;
 }
-.muziekSpeler--info__text{
-    width:75%;
+.muziekSpeler--info__text {
+    width: 75%;
 }
 
 .muziekSpeler--timeline {
@@ -464,24 +464,23 @@ audio {
     border-radius: 2.5rem;
 }
 .swal-title {
-    color: var(--TextColor)
+    color: var(--TextColor);
 }
 .swal-text {
     color: var(--TextColor);
 }
-.swal-icon--success::before{
+.swal-icon--success::before {
     top: -0.8rem;
     background-color: var(--SecondaryColor);
 }
-.swal-icon--success::after{
+.swal-icon--success::after {
     top: -1rem;
     background-color: var(--SecondaryColor);
 }
-.swal-icon--success__hide-corners{
+.swal-icon--success__hide-corners {
     background-color: var(--SecondaryColor);
     border: none;
 }
-
 
 .section__select {
     width: 100%;
@@ -545,13 +544,18 @@ audio {
     padding: 1rem;
 }
 
-
-.tijdInstellingen__naarBed__input, .tijdInstellingen__uitBed__input {
+.tijdInstellingen__naarBed__input,
+.tijdInstellingen__uitBed__input {
     font-size: 150%;
 }
 
-.tijdInstellingen__naarBed__text, .tijdInstellingen__uitBed__text {
+.tijdInstellingen__naarBed__text,
+.tijdInstellingen__uitBed__text {
     margin-top: 2rem;
+}
+
+.grafiek {
+    margin-top: 3rem;
 }
 
 @media (min-width: 500px) {
@@ -632,34 +636,33 @@ audio {
     .muziekSpeler--buttons {
         display: flex;
         justify-content: center;
-        
     }
     .muziekSpeler--buttons > i {
         margin: 0 1rem;
     }
-    .timer{
+    .timer {
         margin-top: 5rem;
         margin-left: -15rem;
     }
-    .timer__form{
+    .timer__form {
         align-items: center;
     }
-    .timer__form-field{
+    .timer__form-field {
         width: 50%;
         text-align: center;
         font-size: 1.8rem;
     }
-    .timer__form-submitBtn{
+    .timer__form-submitBtn {
         width: 50%;
     }
-    .timer__buttonsSection{
+    .timer__buttonsSection {
         width: 50%;
     }
     .timer__form-submitBtn {
         width: 50%;
         margin-bottom: 2rem;
     }
-    .timer__button{
+    .timer__button {
         width: 100% !important;
         padding: 1.6rem 1.2rem;
         margin-bottom: 0;
@@ -669,13 +672,193 @@ audio {
 
 /*tijd instellingen*/
 
-
 /* Taken styling */
+.takenlijst {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.takenlijst__lijn {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: 0.25rem solid var(--TextColor);
+}
+
+.takenlijst__taak {
+    margin-bottom: 3rem;
+}
+
+.taak__header__title {
+    margin-left: calc(25px + 1rem);
+    max-width: calc(100vw - 7rem - 25px);
+}
+
+.taak__buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 425px) {
+    .taak__buttons {
+        display: block;
+    }
+}
+
+@media (min-width: 700px) {
+    .takenlijst__taak {
+        max-width: 80vw;
+    }
+}
+@media (min-width: 768px) {
+    .takenlijst__taak {
+        max-width: 65vw;
+    }
+}
+@media (min-width: 900px) {
+    .takenlijst__taak {
+        max-width: 50vw;
+    }
+}
+
+.taak__body {
+    margin-top: 1rem;
+}
+
+.taak__alert {
+    border: 0.2rem solid #950740;
+    padding: 2rem;
+    width: 100%;
+    max-width: 50rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: taakAlert 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes taakAlert {
+    0% {
+        opacity: 0;
+        height: initial;
+        margin-bottom: 2rem;
+        border: 0.2rem solid #950740;
+        padding: 2rem;
+    }
+    10% {
+        opacity: 1;
+        height: initial;
+        margin-bottom: 2rem;
+        border: 0.2rem solid #950740;
+        padding: 2rem;
+    }
+    89% {
+        opacity: 1;
+        height: initial;
+        margin-bottom: 2rem;
+        border: 0.2rem solid #950740;
+        padding: 2rem;
+    }
+    99% {
+        opacity: 0;
+        height: initial;
+        margin-bottom: 2rem;
+        border: 0.2rem solid #950740;
+        padding: 2rem;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+}
+
+.takenlijst--button--first {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.takenlijst--button--second {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background: transparent;
+    border: 0.2rem solid #950740;
+}
+
+.takenlijst__checkbox {
+    /* display: block; */
+    position: absolute;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.takenlijst__checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.u--checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.takenlijst__checkbox:hover input ~ .u--checkmark {
+    background-color: #ccc;
+}
+
+.takenlijst__checkbox input:checked ~ .u--checkmark {
+    background-color: green;
+}
+
+.u--checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.takenlijst__checkbox input:checked ~ .u--checkmark:after {
+    display: block;
+}
+
+.takenlijst__checkbox .u--checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 .taken__add__section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
 }
 
 .taken__form {
@@ -684,6 +867,7 @@ audio {
 
 .taken__add__header {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .taken__form__alert {
@@ -691,16 +875,14 @@ audio {
     padding: 1rem;
 }
 
-
-
-.studiebuddySettings{
+.studiebuddySettings {
     width: 100%;
     align-content: center;
     display: flex;
     flex-direction: column;
 }
 
-.studiebuddySettingsForm{
+.studiebuddySettingsForm {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -711,14 +893,14 @@ audio {
     border-radius: 0.5rem;
 }
 
-.studiebuddySettingsForm__group{
+.studiebuddySettingsForm__group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding-left: 0.5rem;
 }
 
-.studiebuddySettingsForm__radioWrapper{
+.studiebuddySettingsForm__radioWrapper {
     width: 100%;
     flex-direction: row;
     display: flex;
@@ -727,66 +909,63 @@ audio {
     gap: 3rem;
 }
 
-
-.studiebuddySettingsForm__radio{
+.studiebuddySettingsForm__radio {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
 }
 
-.studiebuddySettingsForm__rangeHolder{
+.studiebuddySettingsForm__rangeHolder {
     display: flex;
     flex-direction: row;
     gap: 0.25rem;
     align-items: center;
 }
 
-.studiebuddySettingsForm__field--button{
-    background: linear-gradient(90deg, #C3073F 5%, #950740 100%);
+.studiebuddySettingsForm__field--button {
+    background: linear-gradient(90deg, #c3073f 5%, #950740 100%);
     border-radius: 10px;
     color: var(--TextColor);
     border: none;
 }
 
-.studiebuddySettingsForm__radio input[type="radio"]{
+.studiebuddySettingsForm__radio input[type="radio"] {
     align-self: center;
 }
 
-.studiebuddySettingsForm__field{
-   border-radius: 0.5rem;
-   padding-top: 0.75rem;
-   padding-bottom: 0.75rem;
-   padding-left: 0.5rem;
-   padding-right: 0.5rem;
-   width: 100%;
-   font-size: 1.6rem;  
+.studiebuddySettingsForm__field {
+    border-radius: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100%;
+    font-size: 1.6rem;
 }
 
-.studiebuddySettingsForm__price{
+.studiebuddySettingsForm__price {
     margin-top: 1rem;
     text-align: center;
 }
 
-.studiebuddySettingsForm__field--button{
+.studiebuddySettingsForm__field--button {
     margin-top: 1rem;
-    
 }
 
-.studiebuddySettingsForm__field--link{
+.studiebuddySettingsForm__field--link {
     text-align: center;
 }
 
-.iconshop{
+.iconshop {
     max-width: 100%;
     margin: 0 auto;
     margin-top: 2rem;
     width: 100%;
     text-align: center;
-
 }
 
-.iconshop__formWrapper{
+.iconshop__formWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -797,8 +976,8 @@ audio {
     padding-bottom: 1rem;
 }
 
-.iconshop__button{
-    background: linear-gradient(90deg, #C3073F 5%, #950740 100%);
+.iconshop__button {
+    background: linear-gradient(90deg, #c3073f 5%, #950740 100%);
     border-radius: 10px;
     color: var(--TextColor);
     border: none;
@@ -808,15 +987,15 @@ audio {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 100%;
-    font-size: 1.6rem;  
+    font-size: 1.6rem;
 }
 
-
-.iconshop__button:disabled, .iconshop__button[disabled]{
-    background: linear-gradient(90deg, #7A4152 5%, #3C232D 100%);
+.iconshop__button:disabled,
+.iconshop__button[disabled] {
+    background: linear-gradient(90deg, #7a4152 5%, #3c232d 100%);
 }
 
-.iconshop__form{
+.iconshop__form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -824,41 +1003,38 @@ audio {
     justify-content: center;
 }
 
-.iconshop img{
+.iconshop img {
     max-width: 100%;
 }
 
-.iconshop__price{
+.iconshop__price {
     text-align: center;
 }
 
-
-@media (max-width: 425px){
-    .studiebuddySettingsForm__radio img{
+@media (max-width: 425px) {
+    .studiebuddySettingsForm__radio img {
         width: 100%;
     }
 }
 
-@media (min-width: 425px){
-    .iconshop__form{
+@media (min-width: 425px) {
+    .iconshop__form {
         max-width: 20rem;
     }
 }
 
-@media (min-width: 768px){
-    
-    .iconshop__formWrapper{
+@media (min-width: 768px) {
+    .iconshop__formWrapper {
         flex-direction: row;
         width: 50%;
         margin: 0 auto;
         margin-top: 1rem;
     }
 
-    .iconshop__form{
+    .iconshop__form {
         max-width: 18rem;
     }
 }
-
 
 @media (min-width: 500px) {
     .taken__form {
@@ -872,20 +1048,16 @@ audio {
         display: grid;
         grid-row-gap: 0.5rem;
     }
-    .muziekSpeler{
-        margin-top: 30rem;
-    }
 
     .tijdInstellingen__naarBed__input,
     .tijdInstellingen__uitBed__input {
-    font-size: 150% !important;
-    width: 100% !important;
-}
+        font-size: 150% !important;
+        width: 100% !important;
+    }
 }
 
-
-@media(min-width: 700px){
-    .timer{
+@media (min-width: 700px) {
+    .timer {
         margin-left: -20rem;
     }
     .timer__button {
@@ -893,8 +1065,10 @@ audio {
     }
 }
 @media (min-width: 768px) {
-
-    .tijdInstellingen__naarBed__input, .tijdInstellingen__uitBed__input, .tijdInstellingen__form__section__select, .tijdInstellingen__naarBed__input {
+    .tijdInstellingen__naarBed__input,
+    .tijdInstellingen__uitBed__input,
+    .tijdInstellingen__form__section__select,
+    .tijdInstellingen__naarBed__input {
         width: 50% !important;
     }
 
@@ -918,26 +1092,25 @@ audio {
     }
 }
 @media (min-width: 900px) {
-    
-    .button__actions__ghost--tijdInstellingen, .button__actions__primary--tijdInstellingen {
+    .button__actions__ghost--tijdInstellingen,
+    .button__actions__primary--tijdInstellingen {
         width: 50% !important;
         grid-column: 1 / 12;
-     
     }
 
-    .timer{
+    .timer {
         margin-left: -30rem;
     }
-    .timer__form-field{
+    .timer__form-field {
         width: 40%;
     }
-    .timer__form-submitBtn{
+    .timer__form-submitBtn {
         width: 40%;
     }
     .content__nummers {
         margin-left: -10rem;
     }
-    .timer__buttonsSection{
+    .timer__buttonsSection {
         width: 40%;
     }
 }
@@ -951,26 +1124,28 @@ audio {
     }
 }
 @media (min-width: 1100px) {
-    .timer{
+    .timer {
         margin-left: -35rem;
     }
-    .timer__form-field{
+    .timer__form-field {
         width: 30%;
     }
-    .timer__form-submitBtn{
+    .timer__form-submitBtn {
         width: 30%;
     }
 
-    .button__actions__ghost--tijdInstellingen, .button__actions__primary--tijdInstellingen {
+    .button__actions__ghost--tijdInstellingen,
+    .button__actions__primary--tijdInstellingen {
         width: 30% !important;
         grid-column: 1 / 12;
-     
     }
 
-    .tijdInstellingen__naarBed__input, .tijdInstellingen__uitBed__input, .tijdInstellingen__form__section__select {
+    .tijdInstellingen__naarBed__input,
+    .tijdInstellingen__uitBed__input,
+    .tijdInstellingen__form__section__select {
         width: 30% !important;
     }
-    .timer__buttonsSection{
+    .timer__buttonsSection {
         width: 30%;
     }
     .timer__button {
@@ -989,7 +1164,7 @@ audio {
     .taken__form {
         width: 25%;
     }
-    .timer{
+    .timer {
         margin-left: -45rem;
     }
     /* .timer__form-field {
@@ -1006,8 +1181,6 @@ audio {
 .tijdInstellingen__form {
     margin-top: 4rem;
 }
-
-
 
 .tijdInstellingen__section {
     margin-top: 3rem;
@@ -1033,7 +1206,8 @@ select::-ms-expand {
     display: none;
 }
 /* Custom Select */
-.tijdInstellingen__form__section__select, .tijdInstellingen__form__section__select {
+.tijdInstellingen__form__section__select,
+.tijdInstellingen__form__section__select {
     width: 100%;
     height: 3em;
     line-height: 3;

@@ -3,10 +3,10 @@ import time
 import serial
 
 mydb = mysql.connector.connect( #Verbinding maken met de database
-    host="127.0.0.1",
-    user="laravel",
-    passwd="laravel",
-    database="ipmedt5",
+    host="vserver385.axc.nl",
+    user="tychogp385_ipmedt5",
+    passwd="ipmedt5",
+    database="tychogp385_ipmedt5",
     buffered=True
 )
 
