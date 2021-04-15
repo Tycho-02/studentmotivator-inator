@@ -202,7 +202,7 @@ const pauze = (tijd) => {
             uren = uren + 1;
             minuten = 0;
         } if (minuten > 9) {
-            tijdBezig = "0" + uren + ":" + minuten + ":" + seconden;
+            tijdBezig = "0" + uren + ":" + minuten + ":0" + seconden;
         }
         console.log(tijdBezig)
         console.log(tijd)
