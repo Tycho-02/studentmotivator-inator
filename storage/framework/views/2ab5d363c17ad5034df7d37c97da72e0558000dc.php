@@ -1,15 +1,13 @@
-
-@extends('layouts.app')
-@section('title')
+<?php $__env->startSection('title'); ?>
     Upload
-@endsection
-@section('content')
-@foreach($errors->all() as $error)
-    <li>{{ $error }}</li>
-@endforeach
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+<?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <li><?php echo e($error); ?></li>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     <h2>Upload Nummer</h2>
     <form class='form' method="POST" action="toevoegen" enctype="multipart/form-data">
-        @csrf
+        <?php echo csrf_field(); ?>
         <input type="hidden" name="afspeellijstId" value='1' >
         <label class="form__label" for="muziek">muziek</label>
         <input class='form__field' type="file" name="muziek">
@@ -27,6 +25,8 @@
         </select>
         <button class="content--button__actions__primary" type="submit">Upload</button>
     </form>
-    @include('sweetalert::alert')
-@endsection
+    <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/pi/studentmotivator-inator-1/resources/views/nummers/upload.blade.php ENDPATH**/ ?>

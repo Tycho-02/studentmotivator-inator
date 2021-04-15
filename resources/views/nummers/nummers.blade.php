@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    Nummers
+@endsection
 @section('content')
 <section class="content__nummers">
     <h1>Nummers</h1>

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    Afspeellijst nummers
+@endsection
 @section('content')
 <section class="content__nummers">
     <h1>{{ $afspeellijst }}</h1>

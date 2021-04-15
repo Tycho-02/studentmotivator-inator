@@ -1,3 +1,6 @@
+<?php $__env->startSection('title'); ?>
+    Afspeellijst nummers
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <section class="content__nummers">
     <h1><?php echo e($afspeellijst); ?></h1>
