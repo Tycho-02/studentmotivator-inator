@@ -20,7 +20,7 @@
             <textarea class="taken__form__field" name="omschrijving" rows="5" placeholder="Taak omschrijving....">{{$taak->omschrijving}}</textarea>
 
             <label class="taken__form__label" for="label">Vak</label>
-            <input value="{{$taak->vak}}" class="taken__form__field" type="text" name="vak" placeholder="vak" />
+            <input value="{{$taak->vak}}" class="taken__form__field" type="text" name="vak" placeholder="vak" required/>
 
             <label class="taken__form__label" for="prioriteit">Prioriteit (0-3)</label>
             <input class="taken__form__field" type="number" name="prioriteit" min="0" max="3" value="{{$taak->prioriteit}}"/>
