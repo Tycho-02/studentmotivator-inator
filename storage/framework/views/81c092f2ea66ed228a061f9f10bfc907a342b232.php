@@ -63,7 +63,7 @@
                     <div class="studiebuddySettingsForm__rangeHolder"><p>10%</p><input class="studiebuddySettingsForm__field" type="range" id="luchtvochtigheid" name="luchtvochtigheid" min="10" max="90" step="5" value="<?php echo e($studiebuddy->ideale_luchtvochtigheid); ?>"><p>90%</p></div>
             </section>
             <section class="studiebuddySettingsForm__group">
-                <input class="studiebuddySettingsForm__field studiebuddySettingsForm__field--button" type="submit">
+                <input class="studiebuddySettingsForm__field studiebuddySettingsForm__field--button" type="submit" value="Opslaan">
             </section>
     </form>
     <?php echo $__env->make('studiebuddy.components.iconshop', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
