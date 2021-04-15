@@ -52,6 +52,7 @@ a {
 
 .content {
     grid-area: content;
+    margin-top: 2rem;
 }
 
 .content--button__actions__primary {
