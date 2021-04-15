@@ -1,5 +1,5 @@
 @section('title')
-    {{"Studiebuddy instellingen"}}
+    {{"Student motivator-inator | Studiebuddy instellingen"}}
 @endsection
 
 @section('content')
@@ -47,12 +47,12 @@
                     @if(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first()))
                     <div class="studiebuddySettingsForm__radio">
                         <img class="form__icon" src="/img/charizardicon.png" alt="">
-                        
+
                         <input type="radio" id="Charizard" name="skin" value="Charizard" {{ ($studiebuddy->skin=="Charizard")? "checked" : "" }}>
                     </div>
                     @endif
                 </div>
-                
+
             </section>
             <section class="studiebuddySettingsForm__group">
                 <label for="temp">Jouw ideale temperatuur</label>
@@ -68,5 +68,5 @@
     </form>
     @include('studiebuddy.components.iconshop')
     </section>
-    
+
 @endsection

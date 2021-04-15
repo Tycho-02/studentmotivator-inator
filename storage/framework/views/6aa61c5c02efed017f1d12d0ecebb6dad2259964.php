@@ -1,9 +1,10 @@
 <?php $__env->startSection('title'); ?>
-    <?php echo e("Studiebuddy instellingen"); ?>
+    <?php echo e("Student motivator-inator | Studiebuddy instellingen"); ?>
 
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
+    <button class="menu--button__action" onclick="window.location='/'"><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
     <section class="studiebuddySettings">
     <form action="/updatestudiebuddy" class="studiebuddySettingsForm" method="POST">
     <h1>Studiebuddy Instellingen</h1>
@@ -47,12 +48,12 @@
                     <?php if(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first())): ?>
                     <div class="studiebuddySettingsForm__radio">
                         <img class="form__icon" src="/img/charizardicon.png" alt="">
-                        
+
                         <input type="radio" id="Charizard" name="skin" value="Charizard" <?php echo e(($studiebuddy->skin=="Charizard")? "checked" : ""); ?>>
                     </div>
                     <?php endif; ?>
                 </div>
-                
+
             </section>
             <section class="studiebuddySettingsForm__group">
                 <label for="temp">Jouw ideale temperatuur</label>
@@ -68,5 +69,6 @@
     </form>
     <?php echo $__env->make('studiebuddy.components.iconshop', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </section>
-    
-<?php $__env->stopSection(); ?><?php /**PATH /home/tych02/code/studentmotivator-inator/resources/views/studiebuddy/components/studiebuddysettings.blade.php ENDPATH**/ ?>
+
+<?php $__env->stopSection(); ?>
+<?php /**PATH /home/tych02/code/studentmotivator-inator/resources/views/studiebuddy/components/studiebuddysettings.blade.php ENDPATH**/ ?>
