@@ -24,4 +24,5 @@
         <input class="timer__button content--button__actions__primary" type="submit" name="60" value="1 uur">
         <input class="timer__button content--button__actions__primary" type="submit" name="75" value="1 uur 15 min">
     </form>
+    @include('sweetalert::alert')
 </section>

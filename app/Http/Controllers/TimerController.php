@@ -32,7 +32,7 @@ class TimerController extends Controller
         }
         try {
             $timer->save();
-            return redirect('/timer');
+            return redirect('/timer')->with('success', 'Timer is succesvol aangepast.');
 
         } catch (Exception $err) {
 

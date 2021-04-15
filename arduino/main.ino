@@ -159,13 +159,6 @@ void timerBreak(int hoursBreak, int minutesBreak){
     display.printTime(0, 0, false);
     delay(30000);
   }
-//
-//  if(countdownTimeBreak > 1 && success){
-//    display.printTime(0, 0, false);
-//    punten += 10;
-//    countdownTimeBreak = 1;
-//    delay(30000);
-//  }
 }
 // laten zien van de pauze timer
 void displayTimeBreak(unsigned long countdownTimeBreak){
