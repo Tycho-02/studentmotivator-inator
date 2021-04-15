@@ -4,6 +4,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
+    <button class="menu--button__action" onclick="window.location='/'"><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
     <section class="studiebuddySettings">
     <form action="/updatestudiebuddy" class="studiebuddySettingsForm" method="POST">
     <h1>Studiebuddy Instellingen</h1>

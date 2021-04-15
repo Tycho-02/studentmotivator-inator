@@ -18,7 +18,7 @@
         </a>
     </li>
     <li class="menu__list__item">
-        <a href="#">
+        <a href="/studiebuddy">
             <i class="fas fa-dog fa-2x"></i>
             <p>Buddy</p>
         </a>
