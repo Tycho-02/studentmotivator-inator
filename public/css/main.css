@@ -680,6 +680,178 @@ audio {
     margin-top: 2rem;
 }
 
+.takenlijst__lijn {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: 0.25rem solid var(--TextColor);
+}
+
+.takenlijst__taak {
+    margin-bottom: 3rem;
+}
+
+.taak__header__title {
+    margin-left: calc(25px + 1rem);
+    max-width: calc(100vw - 7rem - 25px);
+}
+
+.taak__buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 425px) {
+    .taak__buttons {
+        display: block;
+    }
+}
+
+@media (min-width: 700px) {
+    .takenlijst__taak {
+        max-width: 80vw;
+    }
+}
+@media (min-width: 768px) {
+    .takenlijst__taak {
+        max-width: 65vw;
+    }
+}
+@media (min-width: 900px) {
+    .takenlijst__taak {
+        max-width: 50vw;
+    }
+}
+
+.taak__body {
+    margin-top: 1rem;
+}
+
+.taak__alert {
+    border: 0.2rem solid #950740;
+    padding: 2rem;
+    width: 100%;
+    max-width: 50rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: taakAlert 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes taakAlert {
+    0% {
+        opacity: 0;
+        height: initial;
+        margin-bottom: 2rem;
+        border: 0.2rem solid #950740;
+        padding: 2rem;
+    }
+    10% {
+        opacity: 1;
+        height: initial;
+        margin-bottom: 2rem;
+        border: 0.2rem solid #950740;
+        padding: 2rem;
+    }
+    89% {
+        opacity: 1;
+        height: initial;
+        margin-bottom: 2rem;
+        border: 0.2rem solid #950740;
+        padding: 2rem;
+    }
+    99% {
+        opacity: 0;
+        height: initial;
+        margin-bottom: 2rem;
+        border: 0.2rem solid #950740;
+        padding: 2rem;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+}
+
+.takenlijst--button--first {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.takenlijst--button--second {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background: transparent;
+    border: 0.2rem solid #950740;
+}
+
+.takenlijst__checkbox {
+    /* display: block; */
+    position: absolute;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.takenlijst__checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.u--checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+.takenlijst__checkbox:hover input ~ .u--checkmark {
+    background-color: #ccc;
+}
+
+.takenlijst__checkbox input:checked ~ .u--checkmark {
+    background-color: green;
+}
+
+.u--checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.takenlijst__checkbox input:checked ~ .u--checkmark:after {
+    display: block;
+}
+
+.takenlijst__checkbox .u--checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
 .taken__add__section {
     display: flex;
     flex-direction: column;
