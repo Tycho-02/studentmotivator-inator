@@ -3,7 +3,7 @@
         <h1>Stel je timer in</h1>
     </header>
     <section class="timer__timeSection">
-        <h2>Gewenste tijd: <?php echo e($timer->tijd); ?></h2>
+        <h2>Gewenste tijd: <?php echo e(\Carbon\Carbon::createFromFormat('H:i:s',$timer->tijd)->format('H:i')); ?></h2>
     </section>
     <form class="timer__form form" action="/timer" method="post">
         <?php echo e(csrf_field()); ?>
@@ -26,5 +26,6 @@
         <input class="timer__button content--button__actions__primary" type="submit" name="60" value="1 uur">
         <input class="timer__button content--button__actions__primary" type="submit" name="75" value="1 uur 15 min">
     </form>
+    <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </section>
 <?php /**PATH /home/tych02/code/studentmotivator-inator/resources/views/timer/components/timer--index.blade.php ENDPATH**/ ?>
