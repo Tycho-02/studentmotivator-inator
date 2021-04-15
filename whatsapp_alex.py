@@ -27,9 +27,8 @@ sql_select_Query = "select title, omschrijving from taken where uitvoerdatum = c
 mycursor.execute(sql_select_Query)
 records = mycursor.fetchall()
 for row in records:
-    #print("tijdInBed  = ", row[2])
     taken.append(row[1])
-takenOpen = ',\n'.join(taken) #we zetten list om in een string vol met taken op die dag
+takenOpen = ',\n'.join(taken) #we zetten list om in een string vol met omschrijving van de taken op die dag
 
 
 #gegevens ophalen
@@ -48,8 +47,8 @@ print('nummer is ' + nummer)
 
 
 
-account_sid = '' #We moeten dit prive houden vanwege security issues 
-auth_token = '' #We moeten dit prive houden vanwege security issu
+account_sid = '' #We moeten dit prive houden in github vanwege security issues 
+auth_token = '' #We moeten dit prive houden in github vanwege security issu
 client = Client(account_sid, auth_token)
 
 

@@ -1,15 +1,15 @@
 
-//Developed by S1118551 for IPMEDT5 product groep 2
+//Developed by S1118551 for IPMEDT5 'wekker subsysteem' groep 2
 
 
 #define echoPin 2 // D2 pin op sensor zetten
 #define trigPin 3 // D3 pin op sensor zetten
 
 // variabelen definieren
-long duration; // variable for the duration of sound wave travel
-int distance; // variable for the distance measurement
-int buzzer = 8;//the pin of the active buzzer
-int lichtje = 6; // pin of the lightning
+long duration; // duratie van geluidsgolf
+int distance; // variabele om afstand te meten
+int buzzer = 8;//D8 pin van buzzer
+int lichtje = 6; // D6 pin van het lichtje
 boolean stoppen = false;
 int buzzerInstellingen;
 
@@ -23,8 +23,8 @@ char object = ' ';
 void setup() {
   pinMode(trigPin, OUTPUT); // trigpin als output zetten
   pinMode(echoPin, INPUT); // echopin als input zetten
-  pinMode(lichtje, OUTPUT); //licht als output zetten
-  Serial.begin(9600); // // Serial Communicatie op 9600 zetten
+  pinMode(lichtje, OUTPUT); //lichtje als output zetten
+  Serial.begin(9600); // // Seriele Communicatie op 9600 zetten
   pinMode(buzzer,OUTPUT);//buzzer pin als een output zetten
 }
 
@@ -32,8 +32,8 @@ void setup() {
 
 void loop() {
 
-  digitalWrite(lichtje, HIGH); // lichtje aanzeten
-  while(Serial.available()) { // 
+  digitalWrite(lichtje, HIGH); // lichtje aanzeten wanneer arduino aan gaat
+  while(Serial.available()) { // wanner seriele communicatie beschikbaar is voeren we onderstaande code uit
 
     if(Serial.read() == 'u') {
       buzzerInstellingen = 2; 
