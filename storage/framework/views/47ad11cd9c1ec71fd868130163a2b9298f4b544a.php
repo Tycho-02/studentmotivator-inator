@@ -14,7 +14,7 @@
         <p><?php echo e($afspeellijstnummer->naam); ?></p>
         <p><?php echo e($afspeellijstnummer->artiest); ?></p>
         <p><?php echo e($afspeellijstnummer->genre); ?></p>
-        <!-- button voor muziek laten afspelen -->
+        <!-- button voor muziek laten afspelen wo5rdt momenteel niet meer gebruikt maar zou later nog kunnen-->
         <!-- <button class="list__item--button__play">
             <a href="<?php echo e(route('afspeellijstNummer',  ['nummer' => $afspeellijstnummer->bestandLocatie, 'afspeellijstId' => $afspeellijstId])); ?>"><i class=" fas fa-play"></i></a>
         </button> -->
