@@ -14,6 +14,8 @@
         </li>
         @include('nummers.components.nummer--index')
     </ul>
+    <!-- dit is een onzichtbare div deze heb ik nodig om te kijken wat de timer is -->
+    <!-- word gebruikt in main.js -->
     <div id="js--checkVoorPauze" onclick="pauze('{{$timer->tijd}}')"></div>
 </section>
 @endsection

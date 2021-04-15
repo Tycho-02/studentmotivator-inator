@@ -321,7 +321,7 @@ select {
     margin-top: 1rem;
     grid-template-areas:
         "naam naam naam play"
-        "artiest artiest genre play";
+        "artiest genre genre play";
 }
 
 .hidden {
