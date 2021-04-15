@@ -1,11 +1,11 @@
 /* VARIABELEN */
 
 :root {
-  --PrimaryColor: #1A1A1D;
-  --SecondaryColor: #4E4E50;
-  --ThirdColor: #C3073F;
-  --TextColor: #fff;
-  --fullwidth: 100%;
+    --PrimaryColor: #1a1a1d;
+    --SecondaryColor: #4e4e50;
+    --ThirdColor: #c3073f;
+    --TextColor: #fff;
+    --fullwidth: 100%;
 }
 
 * {
@@ -25,8 +25,6 @@ body {
     padding: 3rem;
     background: var(--PrimaryColor);
     font-family: sans-serif;
-    width: 99vw;
-    height: 99vh;
 }
 
 h1 {
@@ -55,8 +53,6 @@ a {
 .content {
     grid-area: content;
 }
-
-
 
 .content--button__actions__primary {
     padding: 1.6rem 4.2rem;
@@ -100,7 +96,11 @@ a {
     display: grid;
 }
 
-.tijdInstellingen__naarBed, .tijdInstellingen__uitBed, .tijdInstellingen__buzzer, .tijdInstellingen__meldingen, .tijdInstellingen__form__section  {
+.tijdInstellingen__naarBed,
+.tijdInstellingen__uitBed,
+.tijdInstellingen__buzzer,
+.tijdInstellingen__meldingen,
+.tijdInstellingen__form__section {
     margin-top: 3rem;
 }
 
@@ -125,7 +125,6 @@ a {
     text-decoration: none;
 }
 
-
 .content--button__actions__ghost:hover,
 .content--button__actions__ghost:active {
     background-color: var(--TextColor);
@@ -139,6 +138,77 @@ a {
     cursor: pointer;
     color: #fff;
 }
+.content--tijdInstellingen {
+    margin-top: 5rem;
+}
+
+.content--tijdInstellingen__form {
+    margin-top: 4rem;
+}
+
+.content--tijdInstellingen_naarBed__input,
+.content--tijdInstellingen_uitBed__input {
+    font-size: 150%;
+    width: 10em;
+}
+
+.content--tijdInstellingen__section {
+    margin-top: 3rem;
+}
+
+.content--tijdInstellingen__buzzer {
+    margin-top: 3rem;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: var(--PrimaryColor);
+    background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+/* Custom Select */
+.content--tijdInstellingen__form__section__select {
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: var(--SecondaryColor);
+    overflow: hidden;
+    border-radius: 0.25em;
+}
+select {
+    flex: 1;
+    padding: 0 0.5em;
+    color: #fff;
+    cursor: pointer;
+}
+.content--tijdInstellingen__form__section__select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: var(--SecondaryColor);
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+}
+/* Transition */
+.content--tijdInstellingen__form__section__select:hover::after {
+    color: #f39c12;
+}
+
+/* Arrow */
 .form,
 .taken__form {
     margin-top: 2rem;
@@ -191,26 +261,26 @@ a {
     border-image: linear-gradient(to right, #c3073f, #950740);
     border-image-slice: 1;
 }
-.timer{
+.timer {
     margin-top: 2rem;
 }
-.timer__header{
+.timer__header {
     display: flex;
     justify-content: center;
 }
-.timer__timeSection{
+.timer__timeSection {
     margin-top: 2rem;
     display: flex;
     justify-content: center;
 }
 
-.timer__label{
+.timer__label {
     text-align: center;
 }
-.timer__form-field{
+.timer__form-field {
     text-align: center;
 }
-.timer__buttonsSection{
+.timer__buttonsSection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -218,12 +288,12 @@ a {
     gap: 2rem;
     margin: 0 auto;
 }
-.timer__button{
+.timer__button {
     margin-bottom: 0rem !important;
     padding: 1.6rem 0rem !important;
     font-size: 1.4rem !important;
 }
-.timer__form-alert{
+.timer__form-alert {
     margin-bottom: 1rem;
     color: red;
     text-align: center;
@@ -285,6 +355,8 @@ a {
     background-color: transparent;
     border: none;
     grid-area: play;
+    color: var(--TextColor);
+    margin: 0 auto;
 }
 
 /* menu styling */
@@ -331,8 +403,8 @@ a {
     justify-content: center;
     align-items: center;
 }
-.menu__list__item > a > i{
-    margin-bottom: 0.2em ;
+.menu__list__item > a > i {
+    margin-bottom: 0.2em;
 }
 
 /* audio styling */
@@ -353,6 +425,9 @@ audio {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.muziekSpeler--info__text {
+    width: 75%;
 }
 
 .muziekSpeler--timeline {
@@ -378,6 +453,32 @@ audio {
     margin-top: -4px;
     background: var(--SecondaryColor);
     cursor: pointer;
+}
+
+/* muziek popup stytling */
+
+.swal-modal {
+    background-color: var(--SecondaryColor);
+    border: 3px solid var(--PrimaryColor);
+    border-radius: 2.5rem;
+}
+.swal-title {
+    color: var(--TextColor);
+}
+.swal-text {
+    color: var(--TextColor);
+}
+.swal-icon--success::before {
+    top: -0.8rem;
+    background-color: var(--SecondaryColor);
+}
+.swal-icon--success::after {
+    top: -1rem;
+    background-color: var(--SecondaryColor);
+}
+.swal-icon--success__hide-corners {
+    background-color: var(--SecondaryColor);
+    border: none;
 }
 
 .section__select {
@@ -419,11 +520,36 @@ audio {
 
 /* meldingen voor taken */
 
-.tijdInstellingen__naarBed__input, .tijdInstellingen__uitBed__input {
+/*tijd instellingen*/
+
+/* Taken styling */
+.taken__add__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.taken__form {
+    margin: 0 auto;
+}
+
+.taken__add__header {
+    text-align: center;
+}
+
+.taken__form__alert {
+    background-color: red;
+    padding: 1rem;
+}
+
+.tijdInstellingen__naarBed__input,
+.tijdInstellingen__uitBed__input {
     font-size: 150%;
 }
 
-.tijdInstellingen__naarBed__text, .tijdInstellingen__uitBed__text {
+.tijdInstellingen__naarBed__text,
+.tijdInstellingen__uitBed__text {
     margin-top: 2rem;
 }
 
@@ -496,6 +622,7 @@ audio {
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
+        min-width: 40rem;
     }
     .muziek .muziekSpeler--info {
         display: grid;
@@ -508,29 +635,29 @@ audio {
     .muziekSpeler--buttons > i {
         margin: 0 1rem;
     }
-    .timer{
+    .timer {
         margin-top: 5rem;
         margin-left: -15rem;
     }
-    .timer__form{
+    .timer__form {
         align-items: center;
     }
-    .timer__form-field{
+    .timer__form-field {
         width: 50%;
         text-align: center;
         font-size: 1.8rem;
     }
-    .timer__form-submitBtn{
+    .timer__form-submitBtn {
         width: 50%;
     }
-    .timer__buttonsSection{
+    .timer__buttonsSection {
         width: 50%;
     }
     .timer__form-submitBtn {
         width: 50%;
         margin-bottom: 2rem;
     }
-    .timer__button{
+    .timer__button {
         width: 100% !important;
         padding: 1.6rem 1.2rem;
         margin-bottom: 0;
@@ -540,13 +667,21 @@ audio {
 
 /*tijd instellingen*/
 
-
 /* Taken styling */
+.takenlijst {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
 .taken__add__section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
 }
 
 .taken__form {
@@ -555,6 +690,7 @@ audio {
 
 .taken__add__header {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .taken__form__alert {
@@ -562,16 +698,14 @@ audio {
     padding: 1rem;
 }
 
-
-
-.studiebuddySettings{
+.studiebuddySettings {
     width: 100%;
     align-content: center;
     display: flex;
     flex-direction: column;
 }
 
-.studiebuddySettingsForm{
+.studiebuddySettingsForm {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -582,14 +716,14 @@ audio {
     border-radius: 0.5rem;
 }
 
-.studiebuddySettingsForm__group{
+.studiebuddySettingsForm__group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     padding-left: 0.5rem;
 }
 
-.studiebuddySettingsForm__radioWrapper{
+.studiebuddySettingsForm__radioWrapper {
     width: 100%;
     flex-direction: row;
     display: flex;
@@ -598,66 +732,63 @@ audio {
     gap: 3rem;
 }
 
-
-.studiebuddySettingsForm__radio{
+.studiebuddySettingsForm__radio {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
 }
 
-.studiebuddySettingsForm__rangeHolder{
+.studiebuddySettingsForm__rangeHolder {
     display: flex;
     flex-direction: row;
     gap: 0.25rem;
     align-items: center;
 }
 
-.studiebuddySettingsForm__field--button{
-    background: linear-gradient(90deg, #C3073F 5%, #950740 100%);
+.studiebuddySettingsForm__field--button {
+    background: linear-gradient(90deg, #c3073f 5%, #950740 100%);
     border-radius: 10px;
     color: var(--TextColor);
     border: none;
 }
 
-.studiebuddySettingsForm__radio input[type="radio"]{
+.studiebuddySettingsForm__radio input[type="radio"] {
     align-self: center;
 }
 
-.studiebuddySettingsForm__field{
-   border-radius: 0.5rem;
-   padding-top: 0.75rem;
-   padding-bottom: 0.75rem;
-   padding-left: 0.5rem;
-   padding-right: 0.5rem;
-   width: 100%;
-   font-size: 1.6rem;  
+.studiebuddySettingsForm__field {
+    border-radius: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100%;
+    font-size: 1.6rem;
 }
 
-.studiebuddySettingsForm__price{
+.studiebuddySettingsForm__price {
     margin-top: 1rem;
     text-align: center;
 }
 
-.studiebuddySettingsForm__field--button{
+.studiebuddySettingsForm__field--button {
     margin-top: 1rem;
-    
 }
 
-.studiebuddySettingsForm__field--link{
+.studiebuddySettingsForm__field--link {
     text-align: center;
 }
 
-.iconshop{
+.iconshop {
     max-width: 100%;
     margin: 0 auto;
     margin-top: 2rem;
     width: 100%;
     text-align: center;
-
 }
 
-.iconshop__formWrapper{
+.iconshop__formWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -668,8 +799,8 @@ audio {
     padding-bottom: 1rem;
 }
 
-.iconshop__button{
-    background: linear-gradient(90deg, #C3073F 5%, #950740 100%);
+.iconshop__button {
+    background: linear-gradient(90deg, #c3073f 5%, #950740 100%);
     border-radius: 10px;
     color: var(--TextColor);
     border: none;
@@ -679,15 +810,15 @@ audio {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 100%;
-    font-size: 1.6rem;  
+    font-size: 1.6rem;
 }
 
-
-.iconshop__button:disabled, .iconshop__button[disabled]{
-    background: linear-gradient(90deg, #7A4152 5%, #3C232D 100%);
+.iconshop__button:disabled,
+.iconshop__button[disabled] {
+    background: linear-gradient(90deg, #7a4152 5%, #3c232d 100%);
 }
 
-.iconshop__form{
+.iconshop__form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -695,41 +826,38 @@ audio {
     justify-content: center;
 }
 
-.iconshop img{
+.iconshop img {
     max-width: 100%;
 }
 
-.iconshop__price{
+.iconshop__price {
     text-align: center;
 }
 
-
-@media (max-width: 425px){
-    .studiebuddySettingsForm__radio img{
+@media (max-width: 425px) {
+    .studiebuddySettingsForm__radio img {
         width: 100%;
     }
 }
 
-@media (min-width: 425px){
-    .iconshop__form{
+@media (min-width: 425px) {
+    .iconshop__form {
         max-width: 20rem;
     }
 }
 
-@media (min-width: 768px){
-    
-    .iconshop__formWrapper{
+@media (min-width: 768px) {
+    .iconshop__formWrapper {
         flex-direction: row;
         width: 50%;
         margin: 0 auto;
         margin-top: 1rem;
     }
 
-    .iconshop__form{
+    .iconshop__form {
         max-width: 18rem;
     }
 }
-
 
 @media (min-width: 500px) {
     .taken__form {
@@ -746,12 +874,13 @@ audio {
 
     .tijdInstellingen__naarBed__input,
     .tijdInstellingen__uitBed__input {
-    font-size: 150% !important;
-    width: 100% !important;
+        font-size: 150% !important;
+        width: 100% !important;
+    }
 }
-}
-@media(min-width: 700px){
-    .timer{
+
+@media (min-width: 700px) {
+    .timer {
         margin-left: -20rem;
     }
     .timer__button {
@@ -759,8 +888,10 @@ audio {
     }
 }
 @media (min-width: 768px) {
-
-    .tijdInstellingen__naarBed__input, .tijdInstellingen__uitBed__input, .tijdInstellingen__form__section__select, .tijdInstellingen__naarBed__input {
+    .tijdInstellingen__naarBed__input,
+    .tijdInstellingen__uitBed__input,
+    .tijdInstellingen__form__section__select,
+    .tijdInstellingen__naarBed__input {
         width: 50% !important;
     }
 
@@ -784,23 +915,25 @@ audio {
     }
 }
 @media (min-width: 900px) {
-    
-    .button__actions__ghost--tijdInstellingen, .button__actions__primary--tijdInstellingen {
+    .button__actions__ghost--tijdInstellingen,
+    .button__actions__primary--tijdInstellingen {
         width: 50% !important;
         grid-column: 1 / 12;
-     
     }
 
-    .timer{
+    .timer {
         margin-left: -30rem;
     }
-    .timer__form-field{
+    .timer__form-field {
         width: 40%;
     }
-    .timer__form-submitBtn{
+    .timer__form-submitBtn {
         width: 40%;
     }
-    .timer__buttonsSection{
+    .content__nummers {
+        margin-left: -10rem;
+    }
+    .timer__buttonsSection {
         width: 40%;
     }
 }
@@ -809,31 +942,33 @@ audio {
     .taken__form {
         width: 40%;
     }
-
-
-  
+    .content__nummers {
+        margin-left: -20rem;
+    }
 }
 @media (min-width: 1100px) {
-    .timer{
+    .timer {
         margin-left: -35rem;
     }
-    .timer__form-field{
+    .timer__form-field {
         width: 30%;
     }
-    .timer__form-submitBtn{
+    .timer__form-submitBtn {
         width: 30%;
     }
 
-    .button__actions__ghost--tijdInstellingen, .button__actions__primary--tijdInstellingen {
+    .button__actions__ghost--tijdInstellingen,
+    .button__actions__primary--tijdInstellingen {
         width: 30% !important;
         grid-column: 1 / 12;
-     
     }
 
-    .tijdInstellingen__naarBed__input, .tijdInstellingen__uitBed__input, .tijdInstellingen__form__section__select {
+    .tijdInstellingen__naarBed__input,
+    .tijdInstellingen__uitBed__input,
+    .tijdInstellingen__form__section__select {
         width: 30% !important;
     }
-    .timer__buttonsSection{
+    .timer__buttonsSection {
         width: 30%;
     }
     .timer__button {
@@ -852,7 +987,7 @@ audio {
     .taken__form {
         width: 25%;
     }
-    .timer{
+    .timer {
         margin-left: -45rem;
     }
     /* .timer__form-field {
@@ -869,8 +1004,6 @@ audio {
 .tijdInstellingen__form {
     margin-top: 4rem;
 }
-
-
 
 .tijdInstellingen__section {
     margin-top: 3rem;
@@ -896,7 +1029,8 @@ select::-ms-expand {
     display: none;
 }
 /* Custom Select */
-.tijdInstellingen__form__section__select, .tijdInstellingen__form__section__select {
+.tijdInstellingen__form__section__select,
+.tijdInstellingen__form__section__select {
     width: 100%;
     height: 3em;
     line-height: 3;

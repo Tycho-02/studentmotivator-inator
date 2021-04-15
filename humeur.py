@@ -5,10 +5,14 @@ import serial
 import os
 
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="peter",
+    host='localhost',
+    # host="vserver385.axc.nl",
+    user='peter',
+    # user="tychogp385_ipmedt5",
     passwd='gaaf345',
-    database='laravel'
+    # passwd='ipmedt5',
+    database='laravel',
+    # database='tychogp385_ipmedt5'
 )
 port = serial.Serial("/dev/ttyUSB0", baudrate=9600, timeout=3.0)
 

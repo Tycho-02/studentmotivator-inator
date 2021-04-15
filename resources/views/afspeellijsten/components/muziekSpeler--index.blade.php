@@ -1,6 +1,6 @@
 
     <!-- word gekeken of de variabelen bestaan zo niet dan word de else gedisplayed -->
-    @if(isset($afspeellijstnummers, $nummer))
+    <!-- @if(isset($afspeellijstnummers, $nummer))
         <audio id="music" preload="true">
                 <source src="/muziek/{{$nummer->bestandLocatie}}">
             </audio>
@@ -43,4 +43,4 @@
                     <div id="playhead" class="muziekSpeler--timeline__playhead" ></div>
                 </div>
             </section>
-    @endif
+    @endif -->

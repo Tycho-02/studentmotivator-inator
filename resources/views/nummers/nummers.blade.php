@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    Nummers
+@endsection
 @section('content')
 <section class="content__nummers">
     <h1>Nummers</h1>
@@ -11,6 +14,7 @@
         </li>
         @include('nummers.components.nummer--index')
     </ul>
+    <div id="js--checkVoorPauze" onclick="pauze('{{$timer->tijd}}')"></div>
 </section>
 @endsection
 
