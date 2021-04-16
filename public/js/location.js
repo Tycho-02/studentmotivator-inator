@@ -11,6 +11,6 @@ function getLocation() {
 }
 
 function showPosition(position) {
-  lat.value = position.coords.latitude;
-  long.value = position.coords.longitude;
+  lat.value = Math.round(position.coords.latitude * 1000) / 1000;
+  long.value = Math.round(position.coords.longitude * 1000) / 1000;
 }

@@ -17,9 +17,9 @@
             <section class="studiebuddySettingsForm__group">
                 <h2 class="studiebuddySettingsForm_groupheader">Locatie</h2>
                 <label for="Naam">Latitude</label>
-                <input class="studiebuddySettingsForm__field" type="number" id="js--latitude" type="number" name="lat" value="<?php echo e($studiebuddy->lat); ?>">
+                <input class="studiebuddySettingsForm__field" type="number" id="js--latitude" type="number" name="lat" value="<?php echo e($studiebuddy->lat); ?>" step="0.001">
                 <label for="Naam">Longitude</label>
-                <input class="studiebuddySettingsForm__field" type="number" id="js--longitude" type="number" name="long" value="<?php echo e($studiebuddy->long); ?>">
+                <input class="studiebuddySettingsForm__field" type="number" id="js--longitude" type="number" name="long" value="<?php echo e($studiebuddy->long); ?>" step="0.001">
                 <button class="studiebuddySettingsForm__field studiebuddySettingsForm__field--button" type="button" onclick="getLocation()">Locatie Ophalen</button>
             </section>
             <section class="studiebuddySettingsForm__group studiebuddySettingsForm__group--radio">
