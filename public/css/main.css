@@ -7,12 +7,14 @@
 }
 
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 html {
+    -webkit-box-sizing: inherit;
     box-sizing: inherit;
     font-size: 62.5%;
 }
@@ -57,6 +59,9 @@ a {
 }
 
 .content--button__actions__primary {
+    -o-transition: background-color 0.6s ease;
+    -webkit-box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.5);
+    -webkit-transition: background-color 0.6s ease;
     background: #950740;
     border: 1px solid #950740;
     border-radius: 15px;
@@ -75,6 +80,10 @@ a {
 }
 
 .content--button__actions__primary:after {
+    -o-transition: width 0.3s ease, height 0.3s ease;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -webkit-transform-style: flat;
+    -webkit-transition: width 0.3s ease, height 0.3s ease;
     background: rgba(white, 0.1);
     border-radius: 100%;
     height: 0;
@@ -97,6 +106,7 @@ a {
 }
 
 .tijdInstellingen__actions {
+    display: -ms-grid;
     display: grid;
     margin-top: 3rem;
     text-align: center;
@@ -152,7 +162,10 @@ a {
 select {
     -moz-appearance: none;
     -ms-appearance: none;
+    -ms-flex: 1;
     -webkit-appearance: none;
+    -webkit-box-flex: 1;
+    -webkit-box-shadow: none;
     appearance: none;
     background: var(--primarycolor);
     background-image: none;
@@ -176,6 +189,11 @@ select {
 
 .form,
 .taken__form {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
@@ -190,6 +208,8 @@ select {
 
 .form__field,
 .taken__form__field {
+    -o-transition: border-color 0.2s;
+    -webkit-transition: border-color 0.2s;
     background: transparent;
     border: 0;
     border-bottom: 2px solid #4e4e50;
@@ -203,11 +223,6 @@ select {
     width: 100%;
 }
 
-.form__field::placeholder,
-.taken__form__field::placeholder {
-    color: transparent;
-}
-
 .form__field:placeholder-shown ~ .form__label {
     cursor: text;
     font-size: 1.4rem;
@@ -215,6 +230,8 @@ select {
 
 .form__label,
 .taken__form_label {
+    -o-transition: 0.2s;
+    -webkit-transition: 0.2s;
     color: var(--textcolor);
     font-size: 1.6rem;
     transition: 0.2s;
@@ -222,6 +239,14 @@ select {
 
 .form__field:focus,
 .taken__form__field:focus {
+    -o-border-image: -o-linear-gradient(left, #c3073f, #950740);
+    border-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#c3073f),
+        to(#950740)
+    );
     border-image: linear-gradient(to right, #c3073f, #950740);
     border-image-slice: 1;
     border-width: 3px;
@@ -230,23 +255,54 @@ select {
 }
 
 .timer__header {
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: center;
 }
 
 .timer__timeSection {
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     justify-content: center;
     margin-top: 2rem;
 }
 
 .timer__buttonsSection {
+    -ms-grid-columns: 1fr 2rem 1fr;
+    -ms-grid-rows: 1fr 2rem 1fr;
+    display: -ms-grid;
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     margin: 0 auto;
     width: 100%;
+}
+
+.timer__buttonsSection > :nth-child(1) {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+}
+
+.timer__buttonsSection > :nth-child(2) {
+    -ms-grid-column: 3;
+    -ms-grid-row: 1;
+}
+
+.timer__buttonsSection > :nth-child(3) {
+    -ms-grid-column: 1;
+    -ms-grid-row: 3;
+}
+
+.timer__buttonsSection > :nth-child(4) {
+    -ms-grid-column: 3;
+    -ms-grid-row: 3;
 }
 
 .timer__button {
@@ -265,6 +321,7 @@ select {
 .form__field:invalid,
 .taken__form__field:required,
 .taken__form__field:invalid {
+    -webkit-box-shadow: none;
     box-shadow: none;
 }
 
@@ -273,6 +330,8 @@ select {
 }
 
 .list__item {
+    -ms-grid-columns: (1fr) [4];
+    display: -ms-grid;
     display: grid;
     grid-auto-rows: minmax(10px, auto);
     grid-template-areas: "naam naam naam play" "artiest genre genre play";
@@ -281,17 +340,25 @@ select {
 }
 
 .list__item > p:nth-child(1) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    -ms-grid-row: 1;
     font-size: 1.6rem;
     grid-area: naam;
 }
 
 .list__item > p:nth-child(2) {
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
     color: rgba(255, 255, 255, 0.548);
     font-size: 1.2rem;
     grid-area: artiest;
 }
 
 .list__item > p:nth-child(3) {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    -ms-grid-row: 2;
     color: rgba(255, 255, 255, 0.548);
     font-size: 1.2rem;
     grid-area: genre;
@@ -299,12 +366,18 @@ select {
 }
 
 .list__item > a {
+    -ms-grid-column: 4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
     font-size: 1.6rem;
     grid-area: play;
     margin-left: 2rem;
 }
 
 .list__item--button__play {
+    -ms-grid-column: 4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
     background-color: transparent;
     border: none;
     color: var(--textcolor);
@@ -332,6 +405,11 @@ select {
 }
 
 .menu__list {
+    -ms-flex-pack: center;
+    -ms-flex-wrap: wrap;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
     height: 100%;
@@ -340,9 +418,18 @@ select {
 }
 
 .menu__list__item {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
     align-items: center;
     background-color: #c3073f;
     border-radius: 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     height: 9rem;
@@ -352,7 +439,16 @@ select {
 }
 
 .menu__list__item > a {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -370,6 +466,11 @@ audio {
 }
 
 .muziekSpeler {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     grid-area: player;
@@ -379,6 +480,13 @@ audio {
 }
 
 .muziekSpeler--info {
+    -ms-flex-direction: row;
+    -ms-flex-pack: justify;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: justify;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -450,7 +558,16 @@ audio {
 }
 
 .taken__add__section {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -525,6 +642,19 @@ select::-ms-expand,
     color: var(--textcolor);
 }
 
+.form__field::-webkit-input-placeholder,
+.taken__form__field::-webkit-input-placeholder,
+.form__field::-moz-placeholder,
+.taken__form__field::-moz-placeholder,
+.form__field:-ms-input-placeholder,
+.taken__form__field:-ms-input-placeholder,
+.form__field::-ms-input-placeholder,
+.taken__form__field::-ms-input-placeholder,
+.form__field::placeholder,
+.taken__form__field::placeholder {
+    color: transparent;
+}
+
 @media (min-width: 500px) {
     .button__actions__primary--tijdInstellingen {
         width: 100% !important;
@@ -532,11 +662,16 @@ select::-ms-expand,
 
     .content--button__actions__primary {
         cursor: pointer;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
         width: fit-content;
         width: fit-content;
     }
 
     .grid {
+        -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr;
+        -ms-grid-rows: 1fr 2rem 1fr 2rem 1fr;
+        display: -ms-grid;
         display: grid;
         grid-gap: 2rem;
         grid-template-areas: "menu content content " "menu content content" "player player player";
@@ -553,12 +688,15 @@ select::-ms-expand,
     }
 
     .list__item {
+        -ms-grid-columns: (1fr) [4];
         grid-auto-rows: minmax(10px, auto);
         grid-template-areas: "nummer artiest genre play";
         grid-template-columns: repeat(4, 1fr);
     }
 
     .list__item:nth-child(1) {
+        -ms-grid-columns: (1fr) [4];
+        display: -ms-grid;
         display: grid;
         grid-auto-rows: minmax(10px, auto);
         grid-template-areas: "nummer artiest genre play";
@@ -567,12 +705,18 @@ select::-ms-expand,
     }
 
     .list__item > p:nth-child(1) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
         color: var(--textcolor);
         font-size: 1.6rem;
         grid-area: nummer;
     }
 
     .list__item > p:nth-child(2) {
+        -ms-grid-column: 1;
+        -ms-grid-column: 2;
+        -ms-grid-row: 2;
+        -ms-grid-row: 1;
         color: var(--textcolor);
         font-size: 1.6rem;
         grid-area: artiest;
@@ -580,6 +724,12 @@ select::-ms-expand,
     }
 
     .list__item > p:nth-child(3) {
+        -ms-grid-column: 2;
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 2;
+        -ms-grid-column-span: 1;
+        -ms-grid-row: 2;
+        -ms-grid-row: 1;
         color: var(--textcolor);
         font-size: 1.6rem;
         grid-area: genre;
@@ -587,66 +737,143 @@ select::-ms-expand,
         text-align: left;
     }
 
-    .menu {
-        align-items: center;
-        display: flex;
-        flex-wrap: nowrap;
-        grid-column-end: 2;
-        grid-column-start: 2;
-        grid-row-end: 3;
-        grid-row-start: 2;
-        min-width: 40rem;
+    .list__item:nth-child(1) > p:nth-child(1) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
     }
 
-    .muziek .muziekSpeler--info {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+    .list__item:nth-child(1) > p:nth-child(2) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1;
     }
 
-    .muziekSpeler--buttons {
-        display: flex;
-        justify-content: center;
-    }
-
-    .muziekSpeler--buttons > i {
-        margin: 0 1rem;
-    }
-
-    .timer {
-        margin-left: -15rem;
-        margin-top: 5rem;
-    }
-
-    .timer__form {
-        align-items: center;
-    }
-
-    .timer__form-field {
-        font-size: 1.8rem;
-        text-align: center;
-        width: 50%;
-    }
-
-    .timer__form-submitBtn {
-        margin-bottom: 2rem;
-        width: 50%;
-        width: 50%;
-    }
-
-    .timer__buttonsSection {
-        width: 50%;
-    }
-
-    .timer__button {
-        font-size: 1.2rem !important;
-        margin-bottom: 0;
-        padding: 1.6rem 1.2rem;
-        width: 100% !important;
+    .list__item:nth-child(1) > p:nth-child(3) {
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 1;
+        -ms-grid-row: 1;
     }
 }
 
-.takenlijst {
+.menu {
+    -ms-flex-align: center;
+    -ms-flex-wrap: nowrap;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 0;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -webkit-box-align: center;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: nowrap;
+    grid-column-end: 2;
+    grid-column-start: 2;
+    grid-row-end: 3;
+    grid-row-start: 2;
+    min-width: 40rem;
+}
+
+.muziek .muziekSpeler--info {
+    -ms-grid-columns: (1fr) [3];
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.muziekSpeler--buttons {
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+}
+
+.muziekSpeler--buttons > i {
+    margin: 0 1rem;
+}
+
+.timer {
+    margin-left: -15rem;
+    margin-top: 5rem;
+}
+
+.timer__form {
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.timer__form-field {
+    font-size: 1.8rem;
+    text-align: center;
+    width: 50%;
+}
+
+.timer__form-submitBtn {
+    margin-bottom: 2rem;
+    width: 50%;
+    width: 50%;
+}
+
+.timer__buttonsSection {
+    width: 50%;
+}
+
+.timer__button {
+    font-size: 1.2rem !important;
+    margin-bottom: 0;
+    padding: 1.6rem 1.2rem;
+    width: 100% !important;
+}
+
+.content {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+}
+
+.muziekSpeler {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    -ms-grid-row: 5;
+}
+
+.list__item > p:nth-child(2),
+.list__item:nth-child(1) > p:nth-child(2) {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+}
+
+.list__item > p:nth-child(3),
+.list__item:nth-child(1) > p:nth-child(3) {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    -ms-grid-row: 1;
+}
+
+.list__item > a,
+.list__item:nth-child(1) > a,
+.list__item--button__play,
+.list__item:nth-child(1) > .list__item--button__play {
+    -ms-grid-column: 4;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+}
+
+.takenlijst {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -673,7 +900,14 @@ select::-ms-expand,
 }
 
 .taak__buttons {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
 }
@@ -715,6 +949,8 @@ select::-ms-expand,
 }
 
 .taak__alert {
+    -webkit-animation: taakAlert 5s;
+    -webkit-animation-fill-mode: forwards;
     animation: taakAlert 5s;
     animation-fill-mode: forwards;
     border: 0.2rem solid #950740;
@@ -723,6 +959,35 @@ select::-ms-expand,
     padding: 2rem;
     text-align: center;
     width: 100%;
+}
+
+@-webkit-keyframes taakAlert {
+    100% {
+        border: none;
+        display: none;
+        height: 0;
+        margin: 0;
+        opacity: 0;
+        padding: 0;
+    }
+
+    0%,
+    99% {
+        border: 0.2rem solid #950740;
+        height: initial;
+        margin-bottom: 2rem;
+        opacity: 0;
+        padding: 2rem;
+    }
+
+    10%,
+    89% {
+        border: 0.2rem solid #950740;
+        height: initial;
+        margin-bottom: 2rem;
+        opacity: 1;
+        padding: 2rem;
+    }
 }
 
 @keyframes taakAlert {
@@ -826,7 +1091,16 @@ select::-ms-expand,
 }
 
 .taken__add__section {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -848,7 +1122,13 @@ select::-ms-expand,
 }
 
 .studiebuddySettings {
+    -ms-flex-direction: column;
+    -ms-flex-line-pack: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
     align-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
@@ -856,9 +1136,15 @@ select::-ms-expand,
 }
 
 .studiebuddySettingsForm {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-shadow: 1px 1px 10px var(--secondarycolor);
     border: 1px solid var(--primarycolor);
     border-radius: 0.5rem;
     box-shadow: 1px 1px 10px var(--secondarycolor);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -867,6 +1153,11 @@ select::-ms-expand,
 }
 
 .studiebuddySettingsForm__group {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -874,6 +1165,13 @@ select::-ms-expand,
 }
 
 .studiebuddySettingsForm__radioWrapper {
+    -ms-flex-direction: row;
+    -ms-flex-pack: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     gap: 3rem;
@@ -883,6 +1181,13 @@ select::-ms-expand,
 }
 
 .studiebuddySettingsForm__radio {
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -890,13 +1195,28 @@ select::-ms-expand,
 }
 
 .studiebuddySettingsForm__rangeHolder {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: row;
     gap: 0.25rem;
 }
 
 .studiebuddySettingsForm__field--button {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(5%, #c3073f),
+        to(#950740)
+    );
+    background: -o-linear-gradient(left, #c3073f 5%, #950740 100%);
     background: linear-gradient(90deg, #c3073f 5%, #950740 100%);
     border: none;
     border-radius: 10px;
@@ -905,6 +1225,8 @@ select::-ms-expand,
 }
 
 .studiebuddySettingsForm__radio input[type="radio"] {
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
     align-self: center;
 }
 
@@ -929,7 +1251,16 @@ select::-ms-expand,
 }
 
 .iconshop__formWrapper {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -940,6 +1271,14 @@ select::-ms-expand,
 }
 
 .iconshop__button {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(5%, #c3073f),
+        to(#950740)
+    );
+    background: -o-linear-gradient(left, #c3073f 5%, #950740 100%);
     background: linear-gradient(90deg, #c3073f 5%, #950740 100%);
     border: none;
     border-radius: 10px;
@@ -952,10 +1291,25 @@ select::-ms-expand,
 
 .iconshop__button:disabled,
 .iconshop__button[disabled] {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(5%, #7a4152),
+        to(#3c232d)
+    );
+    background: -o-linear-gradient(left, #7a4152 5%, #3c232d 100%);
     background: linear-gradient(90deg, #7a4152 5%, #3c232d 100%);
 }
 
 .iconshop__form {
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -986,6 +1340,9 @@ select::-ms-expand,
 
 @media (min-width: 768px) {
     .iconshop__formWrapper {
+        -ms-flex-direction: row;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
         flex-direction: row;
         margin: 0 auto;
         margin-top: 1rem;
@@ -1003,11 +1360,13 @@ select::-ms-expand,
     }
 
     .tijdInstellingen__form {
+        display: -ms-grid;
         display: grid;
         grid-row-gap: 1rem;
     }
 
     .tijdInstellingen__form__section {
+        display: -ms-grid;
         display: grid;
         grid-row-gap: 0.5rem;
     }
@@ -1038,16 +1397,23 @@ select::-ms-expand,
     }
 
     .button__actions__primary--tijdInstellingen {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 11;
         grid-column: 1 / 12;
         width: 50% !important;
     }
 
     .tijdInstellingen__actions {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 12;
+        display: -ms-grid;
         display: grid;
         grid-column: 1 / span 12;
     }
 
     .button__actions__ghost--tijdInstellingen {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 11;
         grid-column: 1 / 12;
         height: 5.5rem;
         width: 50% !important;
@@ -1061,6 +1427,8 @@ select::-ms-expand,
 @media (min-width: 900px) {
     .button__actions__ghost--tijdInstellingen,
     .button__actions__primary--tijdInstellingen {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 11;
         grid-column: 1 / 12;
         width: 50% !important;
     }
@@ -1097,6 +1465,8 @@ select::-ms-expand,
 
     .button__actions__ghost--tijdInstellingen,
     .button__actions__primary--tijdInstellingen {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 11;
         grid-column: 1 / 12;
         width: 30% !important;
     }
@@ -1143,7 +1513,10 @@ select::-ms-expand,
 select {
     -moz-appearance: none;
     -ms-appearance: none;
+    -ms-flex: 1;
     -webkit-appearance: none;
+    -webkit-box-flex: 1;
+    -webkit-box-shadow: none;
     appearance: none;
     background: var(--primarycolor);
     background-image: none;
