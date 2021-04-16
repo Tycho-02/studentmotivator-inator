@@ -14,13 +14,13 @@
         @csrf
         @method('POST')
             <label class="taken__form__label" for="title">Taak</label>
-            <input class="taken__form__field" id="title" type="text" name="title" placeholder="Nieuw taak" required/>
+            <input class="taken__form__field" id="title" type="text" name="title" required/>
 
             <label class="taken__form__label" for="omschrijving">Omschrijving</label>
-            <textarea class="taken__form__field" id="omschrijving" name="omschrijving" rows="5" placeholder="Taak omschrijving...."></textarea>
+            <textarea class="taken__form__field" id="omschrijving" name="omschrijving" rows="5"></textarea>
 
             <label class="taken__form__label" for="vak">Vak</label>
-            <input class="taken__form__field" id="vak" type="text" name="vak" placeholder="vak" required/>
+            <input class="taken__form__field" id="vak" type="text" name="vak" required/>
 
             <label class="taken__form__label" for="prioriteit">Prioriteit (0-3)</label>
             <input class="taken__form__field" id="prioriteit" type="number" name="prioriteit" min="0" max="3" />
