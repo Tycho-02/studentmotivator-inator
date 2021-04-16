@@ -1,5 +1,3 @@
-let lat;
-let long;
 function getLocation() {
   lat = document.getElementById("js--latitude");
   long = document.getElementById("js--longitude");
