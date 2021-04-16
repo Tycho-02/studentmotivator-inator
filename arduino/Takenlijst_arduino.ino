@@ -156,7 +156,7 @@ void nieuweTaken() { // Start de procedure om nieuwe taken te laden
 }
 
 void loop() {
-  if(load) {
+  if(load) { //Check welke loop er gedaan moet worden
     nieuweTaken();
   } else {
     if(pageState <= 5) {
@@ -164,7 +164,7 @@ void loop() {
     }
   }
 
-  if (!digitalRead(RESET)){
+  if (!digitalRead(RESET)){ //Checkt of er op de knop ik geklikt
     delay(10);
     if (!digitalRead(RESET)){
       if (!pressed){
@@ -176,13 +176,13 @@ void loop() {
     pressed = false;
   }
 
-  if (load) {
+  if (load) { // Als de nieuwe taken ingeladen kunnen worden
     delay(1500);
     int i = 0;
     while(Serial.available()) {
       while(i <= 3) {
         i++;
-        String x = Serial.readStringUntil('#');
+        String x = Serial.readStringUntil('#'); //Vak namen worden verstuurd met # ertussen (bv. IPMEDT5#IML#IATBD#)
         switch(i) {
           case 1: vak1 = x; break;
           case 2: vak2 = x; break;
@@ -195,14 +195,14 @@ void loop() {
   } else {
     u8g2.firstPage();
     do {
-      if (pageState <= 5) {
+      if (pageState <= 5) { //Check of alle taken zijn afgevinkt
         if (!digitalRead(SWITCH1) && !digitalRead(SWITCH2) && !digitalRead(SWITCH3)) {
           pageState = 5;
         } else if(pageState == 5 && (digitalRead(SWITCH1) || digitalRead(SWITCH2) || digitalRead(SWITCH3))) {
           pageState = 1;
         }
       }
-      switch(pageState) {
+      switch(pageState) { //Checkt welke pagina/functie er moet worden uitgevoerd
         case 1: overzichtTakenPage(); break;
         case 2: taak(1); break;
         case 3: taak(2); break;

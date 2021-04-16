@@ -8,7 +8,7 @@
 <?php $__env->startSection('content'); ?>
 <button class="menu--button__action" onclick="window.location='/'" ><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
 <section class="takenlijst">
-    <a href="/taken/create"><button class="content--button__actions__primary">Nieuwe taak toevoegen</button></a>
+    <button class="content--button__actions__primary" onclick="window.location='/taken/create'">Nieuwe taak toevoegen</button>
     
     <?php if(session()->has('message')): ?>
         <div class="taak__alert">
@@ -57,20 +57,16 @@
                 <?php endif; ?>
             </section>
             <section class="taak__buttons">
-                <a href="/taken/<?php echo e($taak->id); ?>/voltooi">
-                    <button class="content--button__actions__primary takenlijst--button--first">
-                        <?php if($taak->status === "niet voltooid"): ?>
-                            <?php echo e("Voltooi Taak"); ?>
+                <button class="content--button__actions__primary takenlijst--button--first" onclick="window.location='/taken/<?php echo e($taak->id); ?>/voltooi'">
+                    <?php if($taak->status === "niet voltooid"): ?>
+                        <?php echo e("Voltooi Taak"); ?>
 
-                        <?php else: ?>
-                            <?php echo e("Markeer Onvoltooid"); ?>
+                    <?php else: ?>
+                        <?php echo e("Markeer Onvoltooid"); ?>
 
-                        <?php endif; ?>
-                    </button>
-                </a>
-                <a href="/taken/<?php echo e($taak->id); ?>/edit">
-                    <button class="content--button__actions__primary takenlijst--button--second">Wijzig Taak</button>
-                </a>
+                    <?php endif; ?>
+                </button>
+                <button class="content--button__actions__primary takenlijst--button--second" onclick="window.location='/taken/<?php echo e($taak->id); ?>/edit'">Wijzig Taak</button>
             </section>
         <article>
         <hr class="takenlijst__lijn"/>

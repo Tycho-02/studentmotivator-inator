@@ -1,6 +1,6 @@
-
+<!-- Dit component zou later nog gebruikt kunnen worden maar momenteel blijkt deze gecomment -->
     <!-- word gekeken of de variabelen bestaan zo niet dan word de else gedisplayed -->
-    <?php if(isset($afspeellijstnummers, $nummer)): ?>
+    <!-- <?php if(isset($afspeellijstnummers, $nummer)): ?>
         <audio id="music" preload="true">
                 <source src="/muziek/<?php echo e($nummer->bestandLocatie); ?>">
             </audio>
@@ -43,5 +43,5 @@
                     <div id="playhead" class="muziekSpeler--timeline__playhead" ></div>
                 </div>
             </section>
-    <?php endif; ?>
+    <?php endif; ?> -->
 <?php /**PATH /home/tych02/code/studentmotivator-inator/resources/views/afspeellijsten/components/muziekSpeler--index.blade.php ENDPATH**/ ?>
