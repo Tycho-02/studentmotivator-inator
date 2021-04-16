@@ -88,7 +88,7 @@ void timer(boolean success){
     if (currentMillis - lastTick >= 1000){
       lastTick += 1000;
       // aftellen van de timer
-      countdownTime = countdownTime - 2;
+      countdownTime = countdownTime - 1;
       displayTime(countdownTime);
       verliesPunten = 0;
       smileyBlij();
@@ -139,7 +139,14 @@ void displayTime(unsigned long aTime){
   Serial.print(minutes);
   Serial.print(F(":"));
   Serial.println(seconds);
-  display.printTime(hours, minutes, true);
+  // laat uren en minuten zien
+  // tenzij uren op 0 staat, laat dan minuten en secondes zien
+  if(hours > 0){
+    display.printTime(hours, minutes, true);
+  }
+  if(hours == 0){
+    display.printTime(minutes, seconds, true);
+  }
 }
 //aftellen van de tijd voor de pauze timer
 void timerBreak(int hoursBreak, int minutesBreak){
