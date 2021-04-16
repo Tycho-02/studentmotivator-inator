@@ -13,10 +13,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController@index"); //slapen tijd overzicht
-Route::get("/tijdinstellingen/edit/{id}", "App\Http\Controllers\TijdInstellingenController@edit"); //wijzigen tijd slapen
-Route::put('/tijdinstellingen/{id}', 'App\Http\Controllers\TijdInstellingenController@update'); //updaten
-Route::get('slapen/grafiek', [\App\Http\Controllers\TijdSlapenController::class, 'index']);
+Route::get("/tijdinstellingen", "App\Http\Controllers\TijdInstellingenController@index"); //bedtijd pagina
+Route::get("/tijdinstellingen/edit/{id}", "App\Http\Controllers\TijdInstellingenController@edit"); //wijzigen bedtijd
+Route::put('/tijdinstellingen/{id}', 'App\Http\Controllers\TijdInstellingenController@update'); //updaten bedtijd / buzzer instellingen / meldingen aan/uit
+Route::get('/slapen/grafiek', [\App\Http\Controllers\TijdSlapenController::class, 'index']); //grafiek van de slaaptijd als overzicht
 
 
 Route::get('/taken', [\App\Http\Controllers\TakenController::class, 'index']); // Het taken overzicht
