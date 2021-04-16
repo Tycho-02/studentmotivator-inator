@@ -1,3 +1,7 @@
+    <?php $__env->startSection('title'); ?>
+        <?php echo e("Grafiek van jouw bedtijd"); ?>
+
+    <?php $__env->stopSection(); ?>
     <?php $__env->startSection('content'); ?>
         <?php echo $__env->make('tijdslapen.components.tijdslapenGrafiek--index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <?php $__env->stopSection(); ?>

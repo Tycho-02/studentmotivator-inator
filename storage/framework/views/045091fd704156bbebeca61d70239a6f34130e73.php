@@ -1,3 +1,6 @@
+<?php $__env->startSection('title'); ?>
+    Upload
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
     <li><?php echo e($error); ?></li>
@@ -16,9 +19,9 @@
         <input class='form__field' type="text" name="genre">
         <label class="form__label" for="mood">Mood van het nummer</label>
         <select class='form__field section__select' id="mood" name="mood">
-            <option value="1">Blij</option>
-            <option value="2">Meh</option>
-            <option value="3">Verdrietig</option>
+            <option value="1">Blokken</option>
+            <option value="2">Stress</option>
+            <option value="3">Pauze</option>
         </select>
         <button class="content--button__actions__primary" type="submit">Upload</button>
     </form>

@@ -1,9 +1,10 @@
 <?php $__env->startSection('title'); ?>
-    <?php echo e("Studiebuddy instellingen"); ?>
+    <?php echo e("Student motivator-inator | Studiebuddy instellingen"); ?>
 
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
+    <button class="menu--button__action" onclick="window.location='/'"><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
     <section class="studiebuddySettings">
     <form action="/updatestudiebuddy" class="studiebuddySettingsForm" method="POST">
     <h1>Studiebuddy Instellingen</h1>
@@ -16,9 +17,9 @@
             <section class="studiebuddySettingsForm__group">
                 <h2 class="studiebuddySettingsForm_groupheader">Locatie</h2>
                 <label for="Naam">Latitude</label>
-                <input class="studiebuddySettingsForm__field" type="number" id="js--latitude" type="number" name="lat" value="<?php echo e($studiebuddy->lat); ?>">
+                <input class="studiebuddySettingsForm__field" type="number" id="js--latitude" type="number" name="lat" value="<?php echo e($studiebuddy->lat); ?>" step="0.001">
                 <label for="Naam">Longitude</label>
-                <input class="studiebuddySettingsForm__field" type="number" id="js--longitude" type="number" name="long" value="<?php echo e($studiebuddy->long); ?>">
+                <input class="studiebuddySettingsForm__field" type="number" id="js--longitude" type="number" name="long" value="<?php echo e($studiebuddy->long); ?>" step="0.001">
                 <button class="studiebuddySettingsForm__field studiebuddySettingsForm__field--button" type="button" onclick="getLocation()">Locatie Ophalen</button>
             </section>
             <section class="studiebuddySettingsForm__group studiebuddySettingsForm__group--radio">
@@ -47,12 +48,12 @@
                     <?php if(!is_null($studiebuddy->myUser->gekochteuiterlijkjes->where('skin', "Charizard")->first())): ?>
                     <div class="studiebuddySettingsForm__radio">
                         <img class="form__icon" src="/img/charizardicon.png" alt="">
-                        
+
                         <input type="radio" id="Charizard" name="skin" value="Charizard" <?php echo e(($studiebuddy->skin=="Charizard")? "checked" : ""); ?>>
                     </div>
                     <?php endif; ?>
                 </div>
-                
+
             </section>
             <section class="studiebuddySettingsForm__group">
                 <label for="temp">Jouw ideale temperatuur</label>
@@ -68,5 +69,6 @@
     </form>
     <?php echo $__env->make('studiebuddy.components.iconshop', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </section>
-    
-<?php $__env->stopSection(); ?><?php /**PATH /home/tych02/code/studentmotivator-inator/resources/views/studiebuddy/components/studiebuddysettings.blade.php ENDPATH**/ ?>
+
+<?php $__env->stopSection(); ?>
+<?php /**PATH /home/tych02/code/studentmotivator-inator/resources/views/studiebuddy/components/studiebuddysettings.blade.php ENDPATH**/ ?>

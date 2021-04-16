@@ -13,22 +13,22 @@
         <?php echo csrf_field(); ?>
         <?php echo method_field('PUT'); ?>
             <label class="taken__form__label" for="title">Taak</label>
-            <input value="<?php echo e($taak->title); ?>" class="taken__form__field" type="text" name="title" placeholder="Nieuw taak" required/>
+            <input value="<?php echo e($taak->title); ?>" id="title" class="taken__form__field" type="text" name="title" placeholder="Nieuw taak" required/>
 
             <label class="taken__form__label" for="omschrijving">Omschrijving</label>
-            <textarea class="taken__form__field" name="omschrijving" rows="5" placeholder="Taak omschrijving...."><?php echo e($taak->omschrijving); ?></textarea>
+            <textarea class="taken__form__field" id="omschrijving" name="omschrijving" rows="5" placeholder="Taak omschrijving...."><?php echo e($taak->omschrijving); ?></textarea>
 
             <label class="taken__form__label" for="label">Vak</label>
-            <input value="<?php echo e($taak->vak); ?>" class="taken__form__field" type="text" name="vak" placeholder="vak" required/>
+            <input value="<?php echo e($taak->vak); ?>" id="label" class="taken__form__field" type="text" name="vak" placeholder="vak" required/>
 
             <label class="taken__form__label" for="prioriteit">Prioriteit (0-3)</label>
-            <input class="taken__form__field" type="number" name="prioriteit" min="0" max="3" value="<?php echo e($taak->prioriteit); ?>"/>
+            <input class="taken__form__field" id="prioriteit" type="number" name="prioriteit" min="0" max="3" value="<?php echo e($taak->prioriteit); ?>"/>
 
             <label class="taken__form__label" for="deadline">Deadline</label>
-            <input value="<?php echo e($taak->deadline); ?>" class="taken__form__field" type="date" name="deadline" value="<?php echo e(date('Y-m-d', time() + 86400)); ?>" min="<?php echo e(date('Y-m-d')); ?>" />
+            <input value="<?php echo e($taak->deadline); ?>" id="deadline" class="taken__form__field" type="date" name="deadline" min="<?php echo e(date('Y-m-d')); ?>" />
 
             <label class="taken__form__label" for="uitvoerdatum">Uitvoerdatum</label>
-            <input value="<?php echo e($taak->uitvoerdatum); ?>" class="taken__form__field" type="date" name="uitvoerdatum" value="<?php echo e(date('Y-m-d')); ?>" min="<?php echo e(date('Y-m-d')); ?>" />
+            <input value="<?php echo e($taak->uitvoerdatum); ?>" id="uitvoerdatum" class="taken__form__field" type="date" name="uitvoerdatum" min="<?php echo e(date('Y-m-d')); ?>" />
 
             <input class="content--button__actions__primary" type="submit" value="Taak wijzigen"/>
 

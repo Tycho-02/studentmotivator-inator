@@ -21,7 +21,7 @@ def taakNietKlaar(id): #functie om taken NIET VOLTOOID te markeren
     mycursor.execute("UPDATE taken SET status = 'niet voltooid' WHERE id = " + str(id) + ";")
     mycursor.execute("UPDATE puntentelling SET punten = punten - 12;")
 
-def laadTaken():
+def laadTaken(): #functie om de volgende drie taken te sturen naar de arduino
     mycursor.execute("SELECT id, vak FROM taken WHERE (DATE(deadline) >= CURDATE() AND status != 'klaar') ORDER BY uitvoerdatum, deadline;")
     i = 0
     global ids
@@ -39,7 +39,7 @@ def laadTaken():
         port.write(x.encode())
         port.write(str("#").encode())
 
-while (True):
+while (True): #Check communicatie tussen arduino en backend
     rcv = port.readline().strip()
 
     if (rcv == "r"): #Taken synchroniseren met arduino
