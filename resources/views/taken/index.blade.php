@@ -32,7 +32,7 @@
                     <span class="u--checkmark"></span>
                 </label>
                 @endif
-                <h2 class="taak__header__title">{{$taak->title}}</h2>
+                <h2 class="taak__header__title">{{$taak->vak}} - {{$taak->title}}</h2>
             </section>
             <section class="taak__body">
                 <p><b>Uitvoerdatum:</b> {{$taak->uitvoerdatum}}</p>

@@ -31,7 +31,7 @@
                     <span class="u--checkmark"></span>
                 </label>
                 <?php endif; ?>
-                <h2 class="taak__header__title"><?php echo e($taak->title); ?></h2>
+                <h2 class="taak__header__title"><?php echo e($taak->vak); ?> - <?php echo e($taak->title); ?></h2>
             </section>
             <section class="taak__body">
                 <p><b>Uitvoerdatum:</b> <?php echo e($taak->uitvoerdatum); ?></p>
