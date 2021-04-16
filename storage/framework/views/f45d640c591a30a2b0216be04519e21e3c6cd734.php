@@ -6,6 +6,7 @@
 
 <!-- Content -->
 <?php $__env->startSection('content'); ?>
+<button class="menu--button__action" onclick="window.location='/taken'" ><i class="fas fa-long-arrow-alt-left fa-2x"></i></button>
 <section class="taken__add__section">
     <h2 class="taken__add__header">Taak Wijzigen</h2>
     <form class="taken__form" method='POST' action="/taken/<?php echo e($taak->id); ?>">
@@ -17,8 +18,8 @@
             <label class="taken__form__label" for="omschrijving">Omschrijving</label>
             <textarea class="taken__form__field" name="omschrijving" rows="5" placeholder="Taak omschrijving...."><?php echo e($taak->omschrijving); ?></textarea>
 
-            <label class="taken__form__label" for="label">Label</label>
-            <input value="<?php echo e($taak->label); ?>" class="taken__form__field" type="text" name="label" placeholder="Label" />
+            <label class="taken__form__label" for="label">Vak</label>
+            <input value="<?php echo e($taak->vak); ?>" class="taken__form__field" type="text" name="vak" placeholder="vak" required/>
 
             <label class="taken__form__label" for="prioriteit">Prioriteit (0-3)</label>
             <input class="taken__form__field" type="number" name="prioriteit" min="0" max="3" value="<?php echo e($taak->prioriteit); ?>"/>

@@ -11,8 +11,8 @@
             <h2>Humeur</h2>
         </li>
         <?php echo $__env->make('afspeellijsten.components.afspeellijst--index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    </section>
     </ul>
+</section>
 <?php $__env->stopSection(); ?>
 
 

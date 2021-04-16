@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
-    <title>mobiel</title>
+    <script src="/js/location.js"></script>
+    <title><?php echo $__env->yieldContent('title'); ?></title>
 </head>
 <body>
     <?php echo $__env->yieldContent('content'); ?>

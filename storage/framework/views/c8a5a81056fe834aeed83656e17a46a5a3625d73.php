@@ -13,7 +13,10 @@
         </li>
         <?php echo $__env->make('nummers.components.nummer--index', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     </ul>
+    <!-- dit is een onzichtbare div deze heb ik nodig om te kijken wat de timer is -->
+    <!-- word gebruikt in main.js -->
     <div id="js--checkVoorPauze" onclick="pauze('<?php echo e($timer->tijd); ?>')"></div>
+    <script src="/js/main.js" defer></script>
 </section>
 <?php $__env->stopSection(); ?>
 
