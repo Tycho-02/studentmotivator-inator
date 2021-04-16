@@ -1,17 +1,15 @@
-/* VARIABELEN */
-
 :root {
-    --PrimaryColor: #1a1a1d;
-    --SecondaryColor: #4e4e50;
-    --ThirdColor: #c3073f;
-    --TextColor: #fff;
     --fullwidth: 100%;
+    --primarycolor: #1a1a1d;
+    --secondarycolor: #4e4e50;
+    --textcolor: #fff;
+    --thirdcolor: #c3073f;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -20,34 +18,37 @@ html {
 }
 
 body {
-    font-size: 1.8rem;
-    color: var(--TextColor);
-    padding: 3rem;
-    background: var(--PrimaryColor);
+    background: var(--primarycolor);
+    color: var(--textcolor);
     font-family: sans-serif;
+    font-size: 1.8rem;
+    padding: 3rem;
 }
 
 h1 {
     font-size: 2.8rem;
 }
+
 h2 {
     font-size: 2.4rem;
 }
+
 h3 {
     font-size: 2rem;
 }
+
 p {
     font-size: 1.6rem;
 }
 
 a {
-    color: var(--TextColor);
+    color: var(--textcolor);
     text-decoration: none;
 }
 
 .ondertext {
-    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.548);
+    font-size: 1.2rem;
 }
 
 .content {
@@ -56,89 +57,84 @@ a {
 }
 
 .content--button__actions__primary {
-    padding: 1.6rem 4.2rem;
-    box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.5);
-    line-height: 1.25;
-    border-radius: 15px;
     background: #950740;
-    text-decoration: none;
-    color: white;
+    border: 1px solid #950740;
+    border-radius: 15px;
+    box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.5);
+    color: #fff;
     font-size: 1.6rem;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
-    position: relative;
-    transition: background-color 0.6s ease;
-    overflow: hidden;
-    border: 1px solid #950740;
+    line-height: 1.25;
     margin-bottom: 2rem;
-}
-.content--button__actions__primary:after {
-    width: 0;
-    height: 0;
-    transform-style: flat;
-    transform: translate3d(-50%, -50%, 0);
-    background: rgba(white, 0.1);
-    border-radius: 100%;
-    transition: width 0.3s ease, height 0.3s ease;
-}
-.content--button__actions__primary :focus,
-.content--button__actions__primary :hover {
-    cursor: pointer;
-    background: darken(#4e4e50, 7%);
-}
-.content--button__actions__primary :active,
-.content--button__actions__primary :after {
-    width: 200px;
-    height: 200px;
-}
-.tijdInstellingen__actions {
-    text-align: center;
-    margin-top: 3rem;
-    display: grid;
+    overflow: hidden;
+    padding: 1.6rem 4.2rem;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color 0.6s ease;
 }
 
-.tijdInstellingen__naarBed,
-.tijdInstellingen__uitBed,
-.tijdInstellingen__buzzer,
-.tijdInstellingen__meldingen,
-.tijdInstellingen__form__section {
+.content--button__actions__primary:after {
+    background: rgba(white, 0.1);
+    border-radius: 100%;
+    height: 0;
+    transform: translate3d(-50%, -50%, 0);
+    transform-style: flat;
+    transition: width 0.3s ease, height 0.3s ease;
+    width: 0;
+}
+
+.content--button__actions__primary :focus,
+.content--button__actions__primary :hover {
+    background: darken(#4e4e50, 7%);
+    cursor: pointer;
+}
+
+.content--button__actions__primary :active,
+.content--button__actions__primary :after {
+    height: 200px;
+    width: 200px;
+}
+
+.tijdInstellingen__actions {
+    display: grid;
     margin-top: 3rem;
+    text-align: center;
 }
 
 .tijdinstellingen__buzzer__text {
     margin-top: 1rem;
 }
 
-.tijdinstellingen__meldingen {
-    margin-top: 3rem;
-}
-
 .content--button__actions__ghost {
-    display: inline-block;
-    border-radius: 12px;
-    width: 150px;
-    padding: 15px;
-    color: #fff;
     border: 1px solid #fff;
-    text-align: center;
-    outline: none;
+    border-radius: 12px;
     border-radius: 15px;
+    color: #fff;
+    display: inline-block;
+    outline: none;
+    padding: 15px;
+    text-align: center;
     text-decoration: none;
+    width: 150px;
 }
 
 .content--button__actions__ghost:hover,
 .content--button__actions__ghost:active {
-    background-color: var(--TextColor);
+    background-color: var(--textcolor);
     color: #000;
 }
+
 .content--hyperlink__button {
-    color: var(--ThirdColor);
+    color: var(--thirdcolor);
     text-decoration: underline;
 }
+
 .content--hyperlink__button:hover {
-    cursor: pointer;
     color: #fff;
+    cursor: pointer;
 }
+
 .content--tijdInstellingen {
     margin-top: 5rem;
 }
@@ -153,158 +149,118 @@ a {
     width: 10em;
 }
 
-.content--tijdInstellingen__section {
-    margin-top: 3rem;
-}
-
-.content--tijdInstellingen__buzzer {
-    margin-top: 3rem;
-}
-
 select {
-    -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
+    -webkit-appearance: none;
     appearance: none;
-    outline: 0;
-    box-shadow: none;
-    border: 0 !important;
-    background: var(--PrimaryColor);
+    background: var(--primarycolor);
     background-image: none;
-}
-/* Remove IE arrow */
-select::-ms-expand {
-    display: none;
-}
-/* Custom Select */
-.content--tijdInstellingen__form__section__select {
-    width: 20em;
-    height: 3em;
-    line-height: 3;
-    background: var(--SecondaryColor);
-    overflow: hidden;
-    border-radius: 0.25em;
-}
-select {
-    flex: 1;
-    padding: 0 0.5em;
+    border: 0 !important;
+    box-shadow: none;
     color: #fff;
     cursor: pointer;
-}
-.content--tijdInstellingen__form__section__select::after {
-    content: "\25BC";
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 1em;
-    background: var(--SecondaryColor);
-    cursor: pointer;
-    pointer-events: none;
-    -webkit-transition: 0.25s all ease;
-    -o-transition: 0.25s all ease;
-    transition: 0.25s all ease;
-}
-/* Transition */
-.content--tijdInstellingen__form__section__select:hover::after {
-    color: #f39c12;
+    flex: 1;
+    outline: 0;
+    padding: 0 0.5em;
 }
 
-/* Arrow */
+.content--tijdInstellingen__form__section__select {
+    background: var(--secondarycolor);
+    border-radius: 0.25em;
+    height: 3em;
+    line-height: 3;
+    overflow: hidden;
+    width: 20em;
+}
+
 .form,
 .taken__form {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
 }
 
 .form__group {
-    position: relative;
-    padding: 15px 0 0;
     margin-top: 10px;
+    padding: 15px 0 0;
+    position: relative;
     width: 50%;
 }
 
 .form__field,
 .taken__form__field {
-    font-family: inherit;
-    width: 100%;
+    background: transparent;
     border: 0;
     border-bottom: 2px solid #4e4e50;
-    outline: 0;
+    color: var(--textcolor);
+    font-family: inherit;
     font-size: 1.3rem;
-    color: var(--TextColor);
-    padding: 0.5rem 0;
     margin: 1rem 0;
-    background: transparent;
+    outline: 0;
+    padding: 0.5rem 0;
     transition: border-color 0.2s;
+    width: 100%;
 }
+
 .form__field::placeholder,
 .taken__form__field::placeholder {
     color: transparent;
 }
+
 .form__field:placeholder-shown ~ .form__label {
-    font-size: 1.4rem;
     cursor: text;
+    font-size: 1.4rem;
 }
 
 .form__label,
 .taken__form_label {
-    transition: 0.2s;
+    color: var(--textcolor);
     font-size: 1.6rem;
-    color: var(--TextColor);
+    transition: 0.2s;
 }
 
 .form__field:focus,
 .taken__form__field:focus {
-    padding-bottom: 0.5rem;
-    font-weight: 700;
-    border-width: 3px;
     border-image: linear-gradient(to right, #c3073f, #950740);
     border-image-slice: 1;
+    border-width: 3px;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
 }
-.timer {
-    margin-top: 2rem;
-}
+
 .timer__header {
     display: flex;
     justify-content: center;
 }
+
 .timer__timeSection {
-    margin-top: 2rem;
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
 }
 
-.timer__label {
-    text-align: center;
-}
-.timer__form-field {
-    text-align: center;
-}
 .timer__buttonsSection {
     display: grid;
+    gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    width: 100%;
-    gap: 2rem;
     margin: 0 auto;
+    width: 100%;
 }
+
 .timer__button {
-    margin-bottom: 0rem !important;
-    padding: 1.6rem 0rem !important;
     font-size: 1.4rem !important;
+    margin-bottom: 0 !important;
+    padding: 1.6rem 0 !important;
 }
+
 .timer__form-alert {
-    margin-bottom: 1rem;
     color: red;
+    margin-bottom: 1rem;
     text-align: center;
 }
-/* reset input */
-/* .form__field:required,
-.form__field:invalid {
-} */
 
-/* reset input */
 .form__field:required,
 .form__field:invalid,
 .taken__form__field:required,
@@ -318,60 +274,57 @@ select {
 
 .list__item {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(10px, auto);
+    grid-template-areas: "naam naam naam play" "artiest genre genre play";
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 1rem;
-    grid-template-areas:
-        "naam naam naam play"
-        "artiest genre genre play";
-}
-
-.hidden {
-    display: none;
 }
 
 .list__item > p:nth-child(1) {
-    grid-area: naam;
     font-size: 1.6rem;
+    grid-area: naam;
 }
+
 .list__item > p:nth-child(2) {
+    color: rgba(255, 255, 255, 0.548);
+    font-size: 1.2rem;
     grid-area: artiest;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.548);
 }
+
 .list__item > p:nth-child(3) {
-    grid-area: genre;
-    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.548);
+    font-size: 1.2rem;
+    grid-area: genre;
     text-align: right;
 }
+
 .list__item > a {
-    grid-area: play;
     font-size: 1.6rem;
+    grid-area: play;
     margin-left: 2rem;
 }
 
 .list__item--button__play {
-    float: right;
     background-color: transparent;
     border: none;
+    color: var(--textcolor);
+    float: right;
     grid-area: play;
-    color: var(--TextColor);
     margin: 0 auto;
 }
 
-/* menu styling */
 .menu {
     min-height: 10%;
     width: 100%;
 }
+
 .menu--button__action {
     background-color: transparent;
-    color: var(--ThirdColor);
-    border: 1px solid var(--ThirdColor);
-    width: 12rem;
-    height: 3rem;
+    border: 1px solid var(--thirdcolor);
     border-radius: 2rem;
+    color: var(--thirdcolor);
+    height: 3rem;
+    width: 12rem;
 }
 
 .menu--button__action:hover {
@@ -379,164 +332,132 @@ select {
 }
 
 .menu__list {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
     justify-content: center;
+    width: 100%;
 }
 
 .menu__list__item {
-    width: 9rem;
-    height: 9rem;
-    margin: 1rem 1.4rem;
+    align-items: center;
     background-color: #c3073f;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    height: 9rem;
+    justify-content: center;
+    margin: 1rem 1.4rem;
+    width: 9rem;
 }
+
 .menu__list__item > a {
-    padding: 1rem;
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding: 1rem;
 }
+
 .menu__list__item > a > i {
     margin-bottom: 0.2em;
 }
 
-/* audio styling */
 audio {
-    width: 100%;
+    color: var(--textcolor);
     height: 3rem;
-    color: var(--TextColor);
+    width: 100%;
 }
+
 .muziekSpeler {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    grid-area: player;
     display: flex;
     flex-direction: column;
+    grid-area: player;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
     width: 100%;
 }
+
 .muziekSpeler--info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 .muziekSpeler--info__text {
     width: 75%;
 }
 
 .muziekSpeler--timeline {
-    width: 100%;
+    -webkit-border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.849);
+    border-radius: 1.5rem;
     height: 2px;
     margin-top: 2rem;
-    -webkit-border-radius: 1.5rem;
-    border-radius: 1.5rem;
-    background: rgba(255, 255, 255, 0.849);
+    width: 100%;
 }
 
 .muziekSpeler--play__Button {
-    margin-top: 12px;
+    color: var(--textcolor);
     cursor: pointer;
-    color: var(--TextColor);
+    margin-top: 12px;
 }
 
 .muziekSpeler--timeline__playhead {
-    width: 1rem;
-    height: 1rem;
     -webkit-border-radius: 50%;
+    background: var(--secondarycolor);
     border-radius: 50%;
-    margin-top: -4px;
-    background: var(--SecondaryColor);
     cursor: pointer;
+    height: 1rem;
+    margin-top: -4px;
+    width: 1rem;
 }
-
-/* muziek popup stytling */
 
 .swal-modal {
-    background-color: var(--SecondaryColor);
-    border: 3px solid var(--PrimaryColor);
+    background-color: var(--secondarycolor);
+    border: 3px solid var(--primarycolor);
     border-radius: 2.5rem;
 }
-.swal-title {
-    color: var(--TextColor);
-}
-.swal-text {
-    color: var(--TextColor);
-}
+
 .swal-icon--success::before {
+    background-color: var(--secondarycolor);
     top: -0.8rem;
-    background-color: var(--SecondaryColor);
 }
+
 .swal-icon--success::after {
+    background-color: var(--secondarycolor);
     top: -1rem;
-    background-color: var(--SecondaryColor);
 }
+
 .swal-icon--success__hide-corners {
-    background-color: var(--SecondaryColor);
+    background-color: var(--secondarycolor);
     border: none;
 }
 
 .section__select {
-    width: 100%;
-    height: 3em;
-    padding-left: 1rem;
-    line-height: 3;
-    background: var(--SecondaryColor);
-    overflow: hidden;
+    background: var(--secondarycolor);
     border-radius: 0.25em;
-}
-
-.section__select::after {
-    content: "\25BC";
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 1em;
-    background: var(--SecondaryColor);
-    cursor: pointer;
-    pointer-events: none;
-    -webkit-transition: 0.25s all ease;
-    -o-transition: 0.25s all ease;
-    transition: 0.25s all ease;
-}
-
-.tijdinstellingen__form__section {
-    margin-top: 3rem;
-}
-/* Transition */
-.section__select:hover::after {
-    color: #f39c12;
+    height: 3em;
+    line-height: 3;
+    overflow: hidden;
+    padding-left: 1rem;
+    width: 100%;
 }
 
 .button__actions__ghost--tijdInstellingen {
-    width: 100%;
     text-transform: uppercase;
+    width: 100%;
 }
 
-/* meldingen voor taken */
-
-/*tijd instellingen*/
-
-/* Taken styling */
 .taken__add__section {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .taken__form {
     margin: 0 auto;
-}
-
-.taken__add__header {
-    text-align: center;
 }
 
 .taken__form__alert {
@@ -549,38 +470,82 @@ audio {
     font-size: 150%;
 }
 
+.tijdInstellingen__naarBed,
+.tijdInstellingen__uitBed,
+.tijdInstellingen__buzzer,
+.tijdInstellingen__meldingen,
+.tijdInstellingen__form__section,
+.tijdinstellingen__meldingen,
+.content--tijdInstellingen__section,
+.content--tijdInstellingen__buzzer,
+.tijdinstellingen__form__section,
+.grafiek {
+    margin-top: 3rem;
+}
+
+select::-ms-expand,
+.hidden {
+    display: none;
+}
+
+.content--tijdInstellingen__form__section__select::after,
+.section__select::after {
+    -o-transition: 0.25s all ease;
+    -webkit-transition: 0.25s all ease;
+    background: var(--secondarycolor);
+    content: "\25BC";
+    cursor: pointer;
+    padding: 0 1em;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.25s all ease;
+}
+
+.content--tijdInstellingen__form__section__select:hover::after,
+.section__select:hover::after {
+    color: #f39c12;
+}
+
+.timer,
 .tijdInstellingen__naarBed__text,
 .tijdInstellingen__uitBed__text {
     margin-top: 2rem;
 }
 
-.grafiek {
-    margin-top: 3rem;
+.timer__label,
+.timer__form-field,
+.taken__add__header {
+    text-align: center;
+}
+
+.swal-title,
+.swal-text {
+    color: var(--textcolor);
 }
 
 @media (min-width: 500px) {
     .button__actions__primary--tijdInstellingen {
         width: 100% !important;
     }
+
     .content--button__actions__primary {
+        cursor: pointer;
+        width: fit-content;
         width: fit-content;
     }
+
     .grid {
         display: grid;
         grid-gap: 2rem;
+        grid-template-areas: "menu content content " "menu content content" "player player player";
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas:
-            "menu content content "
-            "menu content content"
-            "player player player";
     }
+
     .form__field {
         width: 30%;
-    }
-    .content--button__actions__primary {
-        width: fit-content;
-        cursor: pointer;
     }
 
     .tijdinstellingen__uitBed {
@@ -588,107 +553,114 @@ audio {
     }
 
     .list__item {
-        grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: minmax(10px, auto);
         grid-template-areas: "nummer artiest genre play";
+        grid-template-columns: repeat(4, 1fr);
     }
+
     .list__item:nth-child(1) {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: minmax(10px, auto);
-        margin-top: 1rem;
         grid-template-areas: "nummer artiest genre play";
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 1rem;
     }
 
     .list__item > p:nth-child(1) {
-        color: var(--TextColor);
+        color: var(--textcolor);
         font-size: 1.6rem;
         grid-area: nummer;
     }
 
     .list__item > p:nth-child(2) {
-        color: var(--TextColor);
-        margin-left: 0.5rem;
+        color: var(--textcolor);
         font-size: 1.6rem;
         grid-area: artiest;
+        margin-left: 0.5rem;
     }
+
     .list__item > p:nth-child(3) {
-        color: var(--TextColor);
+        color: var(--textcolor);
         font-size: 1.6rem;
-        margin-left: 0.8rem;
         grid-area: genre;
+        margin-left: 0.8rem;
         text-align: left;
     }
+
     .menu {
-        grid-column-start: 2;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        grid-row-end: 3;
+        align-items: center;
         display: flex;
         flex-wrap: nowrap;
-        align-items: center;
+        grid-column-end: 2;
+        grid-column-start: 2;
+        grid-row-end: 3;
+        grid-row-start: 2;
         min-width: 40rem;
     }
+
     .muziek .muziekSpeler--info {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+
     .muziekSpeler--buttons {
         display: flex;
         justify-content: center;
     }
+
     .muziekSpeler--buttons > i {
         margin: 0 1rem;
     }
+
     .timer {
-        margin-top: 5rem;
         margin-left: -15rem;
+        margin-top: 5rem;
     }
+
     .timer__form {
         align-items: center;
     }
+
     .timer__form-field {
-        width: 50%;
-        text-align: center;
         font-size: 1.8rem;
-    }
-    .timer__form-submitBtn {
+        text-align: center;
         width: 50%;
     }
+
+    .timer__form-submitBtn {
+        margin-bottom: 2rem;
+        width: 50%;
+        width: 50%;
+    }
+
     .timer__buttonsSection {
         width: 50%;
     }
-    .timer__form-submitBtn {
-        width: 50%;
-        margin-bottom: 2rem;
-    }
+
     .timer__button {
-        width: 100% !important;
-        padding: 1.6rem 1.2rem;
-        margin-bottom: 0;
         font-size: 1.2rem !important;
+        margin-bottom: 0;
+        padding: 1.6rem 1.2rem;
+        width: 100% !important;
     }
 }
 
-/*tijd instellingen*/
-
-/* Taken styling */
 .takenlijst {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin-top: 2rem;
 }
 
 .takenlijst__lijn {
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    border-bottom: none;
     border-left: none;
     border-right: none;
-    border-bottom: none;
-    border-top: 0.25rem solid var(--TextColor);
+    border-top: 0.25rem solid var(--textcolor);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    width: 100%;
 }
 
 .takenlijst__taak {
@@ -701,8 +673,8 @@ audio {
 }
 
 .taak__buttons {
-    display: flex;
     align-items: center;
+    display: flex;
     flex-direction: column;
 }
 
@@ -714,24 +686,27 @@ audio {
 
 @media (min-width: 700px) {
     .takenlijst__taak {
-        min-width: 50rem;
         max-width: 80vw;
+        min-width: 50rem;
     }
 }
+
 @media (min-width: 768px) {
     .takenlijst__taak {
         max-width: 65vw;
     }
 }
+
 @media (min-width: 900px) {
     .takenlijst__taak {
         max-width: 50vw;
     }
 }
+
 @media (min-width: 1100px) {
     .takenlijst__taak {
-        min-width: 50vw;
         max-width: 50vw;
+        min-width: 50vw;
     }
 }
 
@@ -740,94 +715,84 @@ audio {
 }
 
 .taak__alert {
-    border: 0.2rem solid #950740;
-    padding: 2rem;
-    width: 100%;
-    max-width: 50rem;
-    text-align: center;
-    margin-bottom: 2rem;
     animation: taakAlert 5s;
     animation-fill-mode: forwards;
+    border: 0.2rem solid #950740;
+    margin-bottom: 2rem;
+    max-width: 50rem;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
 }
 
 @keyframes taakAlert {
-    0% {
-        opacity: 0;
-        height: initial;
-        margin-bottom: 2rem;
-        border: 0.2rem solid #950740;
-        padding: 2rem;
-    }
-    10% {
-        opacity: 1;
-        height: initial;
-        margin-bottom: 2rem;
-        border: 0.2rem solid #950740;
-        padding: 2rem;
-    }
-    89% {
-        opacity: 1;
-        height: initial;
-        margin-bottom: 2rem;
-        border: 0.2rem solid #950740;
-        padding: 2rem;
-    }
-    99% {
-        opacity: 0;
-        height: initial;
-        margin-bottom: 2rem;
-        border: 0.2rem solid #950740;
-        padding: 2rem;
-    }
     100% {
-        opacity: 0;
+        border: none;
         display: none;
         height: 0;
         margin: 0;
+        opacity: 0;
         padding: 0;
-        border: none;
+    }
+
+    0%,
+    99% {
+        border: 0.2rem solid #950740;
+        height: initial;
+        margin-bottom: 2rem;
+        opacity: 0;
+        padding: 2rem;
+    }
+
+    10%,
+    89% {
+        border: 0.2rem solid #950740;
+        height: initial;
+        margin-bottom: 2rem;
+        opacity: 1;
+        padding: 2rem;
     }
 }
 
 .takenlijst--button--first {
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
     margin-bottom: 1rem;
-}
-.takenlijst--button--second {
+    margin-top: 1rem;
     padding: 0.5rem 1rem;
-    margin-bottom: 0;
+}
+
+.takenlijst--button--second {
     background: transparent;
     border: 0.2rem solid #950740;
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
 }
 
 .takenlijst__checkbox {
-    /* display: block; */
-    position: absolute;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    font-size: 22px;
-    -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    -webkit-user-select: none;
+    font-size: 22px;
+    margin-bottom: 12px;
+    padding-left: 35px;
+    position: absolute;
     user-select: none;
 }
 
 .takenlijst__checkbox input {
-    position: absolute;
-    opacity: 0;
     cursor: pointer;
     height: 0;
+    opacity: 0;
+    position: absolute;
     width: 0;
 }
 
 .u--checkmark {
+    background-color: #eee;
+    height: 25px;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    height: 25px;
     width: 25px;
-    background-color: #eee;
 }
 
 .takenlijst__checkbox:hover input ~ .u--checkmark {
@@ -840,8 +805,8 @@ audio {
 
 .u--checkmark:after {
     content: "";
-    position: absolute;
     display: none;
+    position: absolute;
 }
 
 .takenlijst__checkbox input:checked ~ .u--checkmark:after {
@@ -849,22 +814,22 @@ audio {
 }
 
 .takenlijst__checkbox .u--checkmark:after {
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    height: 10px;
     left: 9px;
     top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+    width: 5px;
 }
 
 .taken__add__section {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin-top: 2rem;
 }
 
@@ -873,8 +838,8 @@ audio {
 }
 
 .taken__add__header {
-    text-align: center;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .taken__form__alert {
@@ -883,22 +848,22 @@ audio {
 }
 
 .studiebuddySettings {
-    width: 100%;
     align-content: center;
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
+    width: 100%;
 }
 
 .studiebuddySettingsForm {
-    margin: 0 auto;
+    border: 1px solid var(--primarycolor);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 10px var(--secondarycolor);
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    box-shadow: 1px 1px 10px var(--SecondaryColor);
-    border: 1px solid var(--PrimaryColor);
+    margin: 0 auto;
     padding: 2rem;
-    border-radius: 0.5rem;
 }
 
 .studiebuddySettingsForm__group {
@@ -909,33 +874,34 @@ audio {
 }
 
 .studiebuddySettingsForm__radioWrapper {
-    width: 100%;
-    flex-direction: row;
     display: flex;
+    flex-direction: row;
+    gap: 3rem;
     justify-content: center;
     margin-bottom: 1rem;
-    gap: 3rem;
+    width: 100%;
 }
 
 .studiebuddySettingsForm__radio {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 0.5rem;
+    justify-content: center;
 }
 
 .studiebuddySettingsForm__rangeHolder {
+    align-items: center;
     display: flex;
     flex-direction: row;
     gap: 0.25rem;
-    align-items: center;
 }
 
 .studiebuddySettingsForm__field--button {
     background: linear-gradient(90deg, #c3073f 5%, #950740 100%);
-    border-radius: 10px;
-    color: var(--TextColor);
     border: none;
+    border-radius: 10px;
+    color: var(--textcolor);
+    margin-top: 1rem;
 }
 
 .studiebuddySettingsForm__radio input[type="radio"] {
@@ -944,12 +910,9 @@ audio {
 
 .studiebuddySettingsForm__field {
     border-radius: 0.5rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    width: 100%;
     font-size: 1.6rem;
+    padding: 0.75rem 0.5rem;
+    width: 100%;
 }
 
 .studiebuddySettingsForm__price {
@@ -957,45 +920,34 @@ audio {
     text-align: center;
 }
 
-.studiebuddySettingsForm__field--button {
-    margin-top: 1rem;
-}
-
-.studiebuddySettingsForm__field--link {
-    text-align: center;
-}
-
 .iconshop {
-    max-width: 100%;
     margin: 0 auto;
     margin-top: 2rem;
-    width: 100%;
+    max-width: 100%;
     text-align: center;
+    width: 100%;
 }
 
 .iconshop__formWrapper {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 1rem;
     height: 100%;
+    justify-content: center;
     margin-top: 1rem;
     padding-bottom: 1rem;
 }
 
 .iconshop__button {
     background: linear-gradient(90deg, #c3073f 5%, #950740 100%);
-    border-radius: 10px;
-    color: var(--TextColor);
     border: none;
+    border-radius: 10px;
     border-radius: 0.5rem;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    width: 100%;
+    color: var(--textcolor);
     font-size: 1.6rem;
+    padding: 0.75rem 0.5rem;
+    width: 100%;
 }
 
 .iconshop__button:disabled,
@@ -1007,14 +959,15 @@ audio {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 50%;
     justify-content: center;
+    width: 50%;
 }
 
 .iconshop img {
     max-width: 100%;
 }
 
+.studiebuddySettingsForm__field--link,
 .iconshop__price {
     text-align: center;
 }
@@ -1034,9 +987,9 @@ audio {
 @media (min-width: 768px) {
     .iconshop__formWrapper {
         flex-direction: row;
-        width: 50%;
         margin: 0 auto;
         margin-top: 1rem;
+        width: 50%;
     }
 
     .iconshop__form {
@@ -1048,10 +1001,12 @@ audio {
     .taken__form {
         width: 70%;
     }
+
     .tijdInstellingen__form {
         display: grid;
         grid-row-gap: 1rem;
     }
+
     .tijdInstellingen__form__section {
         display: grid;
         grid-row-gap: 0.5rem;
@@ -1068,10 +1023,12 @@ audio {
     .timer {
         margin-left: -20rem;
     }
+
     .timer__button {
         font-size: 1.4rem !important;
     }
 }
+
 @media (min-width: 768px) {
     .tijdInstellingen__naarBed__input,
     .tijdInstellingen__uitBed__input,
@@ -1081,8 +1038,8 @@ audio {
     }
 
     .button__actions__primary--tijdInstellingen {
-        width: 50% !important;
         grid-column: 1 / 12;
+        width: 50% !important;
     }
 
     .tijdInstellingen__actions {
@@ -1092,32 +1049,32 @@ audio {
 
     .button__actions__ghost--tijdInstellingen {
         grid-column: 1 / 12;
-        width: 50% !important;
         height: 5.5rem;
+        width: 50% !important;
     }
+
     .taken__form {
         width: 50%;
     }
 }
+
 @media (min-width: 900px) {
     .button__actions__ghost--tijdInstellingen,
     .button__actions__primary--tijdInstellingen {
-        width: 50% !important;
         grid-column: 1 / 12;
+        width: 50% !important;
     }
 
     .timer {
         margin-left: -30rem;
     }
-    .timer__form-field {
-        width: 40%;
-    }
-    .timer__form-submitBtn {
-        width: 40%;
-    }
+
     .content__nummers {
         margin-left: -10rem;
     }
+
+    .timer__form-field,
+    .timer__form-submitBtn,
     .timer__buttonsSection {
         width: 40%;
     }
@@ -1127,25 +1084,21 @@ audio {
     .taken__form {
         width: 40%;
     }
+
     .content__nummers {
         margin-left: -20rem;
     }
 }
+
 @media (min-width: 1100px) {
     .timer {
         margin-left: -35rem;
     }
-    .timer__form-field {
-        width: 30%;
-    }
-    .timer__form-submitBtn {
-        width: 30%;
-    }
 
     .button__actions__ghost--tijdInstellingen,
     .button__actions__primary--tijdInstellingen {
-        width: 30% !important;
         grid-column: 1 / 12;
+        width: 30% !important;
     }
 
     .tijdInstellingen__naarBed__input,
@@ -1153,35 +1106,32 @@ audio {
     .tijdInstellingen__form__section__select {
         width: 30% !important;
     }
-    .timer__buttonsSection {
-        width: 30%;
-    }
+
     .timer__button {
         font-size: 1.6rem !important;
     }
+
     .timer__form-alert > p {
         font-size: 2rem;
     }
-}
-/* @media(min-width: 1200px){
-    .timer{
-        margin-left: -10rem;
+
+    .timer__form-field,
+    .timer__form-submitBtn,
+    .timer__buttonsSection {
+        width: 30%;
     }
-} */
+}
+
 @media (min-width: 1440px) {
     .taken__form {
         width: 25%;
     }
+
     .timer {
         margin-left: -45rem;
     }
-    /* .timer__form-field {
-        width: 50%;
-    }
-    .timer__form-submitBtn {
-        width: 50%;
-    }*/
 }
+
 .tijdInstellingen {
     margin-top: 5rem;
 }
@@ -1190,61 +1140,55 @@ audio {
     margin-top: 4rem;
 }
 
-.tijdInstellingen__section {
-    margin-top: 3rem;
-}
-
-.tijdInstellingen__buzzer {
-    margin-top: 3rem;
-}
-
 select {
-    -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
+    -webkit-appearance: none;
     appearance: none;
-    outline: 0;
-    box-shadow: none;
-    border: 0 !important;
-    background: var(--PrimaryColor);
+    background: var(--primarycolor);
     background-image: none;
+    border: 0 !important;
+    box-shadow: none;
+    color: #fff;
+    cursor: pointer;
+    flex: 1;
+    outline: 0;
+    padding: 0 0.5em;
 }
-/* Remove IE arrow */
+
 select::-ms-expand {
     display: none;
 }
-/* Custom Select */
+
 .tijdInstellingen__form__section__select,
 .tijdInstellingen__form__section__select {
-    width: 100%;
+    background: var(--secondarycolor);
+    border-radius: 0.25em;
     height: 3em;
     line-height: 3;
-    background: var(--SecondaryColor);
     overflow: hidden;
-    border-radius: 0.25em;
+    width: 100%;
 }
-select {
-    flex: 1;
-    padding: 0 0.5em;
-    color: #fff;
-    cursor: pointer;
-}
+
 .tijdInstellingen__form__section__select::after {
-    content: "\25BC";
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 1em;
-    background: var(--SecondaryColor);
-    cursor: pointer;
-    pointer-events: none;
-    -webkit-transition: 0.25s all ease;
     -o-transition: 0.25s all ease;
+    -webkit-transition: 0.25s all ease;
+    background: var(--secondarycolor);
+    content: "\25BC";
+    cursor: pointer;
+    padding: 0 1em;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
     transition: 0.25s all ease;
 }
-/* Transition */
+
 .tijdInstellingen__form__section__select:hover::after {
     color: #f39c12;
 }
 
-/* Arrow */
+.tijdInstellingen__section,
+.tijdInstellingen__buzzer {
+    margin-top: 3rem;
+}
