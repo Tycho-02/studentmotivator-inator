@@ -14,22 +14,22 @@
         @csrf
         @method('PUT')
             <label class="taken__form__label" for="title">Taak</label>
-            <input value="{{$taak->title}}" class="taken__form__field" type="text" name="title" placeholder="Nieuw taak" required/>
+            <input value="{{$taak->title}}" id="title" class="taken__form__field" type="text" name="title" placeholder="Nieuw taak" required/>
 
             <label class="taken__form__label" for="omschrijving">Omschrijving</label>
-            <textarea class="taken__form__field" name="omschrijving" rows="5" placeholder="Taak omschrijving....">{{$taak->omschrijving}}</textarea>
+            <textarea class="taken__form__field" id="omschrijving" name="omschrijving" rows="5" placeholder="Taak omschrijving....">{{$taak->omschrijving}}</textarea>
 
             <label class="taken__form__label" for="label">Vak</label>
-            <input value="{{$taak->vak}}" class="taken__form__field" type="text" name="vak" placeholder="vak" required/>
+            <input value="{{$taak->vak}}" id="label" class="taken__form__field" type="text" name="vak" placeholder="vak" required/>
 
             <label class="taken__form__label" for="prioriteit">Prioriteit (0-3)</label>
-            <input class="taken__form__field" type="number" name="prioriteit" min="0" max="3" value="{{$taak->prioriteit}}"/>
+            <input class="taken__form__field" id="prioriteit" type="number" name="prioriteit" min="0" max="3" value="{{$taak->prioriteit}}"/>
 
             <label class="taken__form__label" for="deadline">Deadline</label>
-            <input value="{{$taak->deadline}}" class="taken__form__field" type="date" name="deadline" value="{{date('Y-m-d', time() + 86400)}}" min="{{date('Y-m-d')}}" />
+            <input value="{{$taak->deadline}}" id="deadline" class="taken__form__field" type="date" name="deadline" min="{{date('Y-m-d')}}" />
 
             <label class="taken__form__label" for="uitvoerdatum">Uitvoerdatum</label>
-            <input value="{{$taak->uitvoerdatum}}" class="taken__form__field" type="date" name="uitvoerdatum" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" />
+            <input value="{{$taak->uitvoerdatum}}" id="uitvoerdatum" class="taken__form__field" type="date" name="uitvoerdatum" min="{{date('Y-m-d')}}" />
 
             <input class="content--button__actions__primary" type="submit" value="Taak wijzigen"/>
 
