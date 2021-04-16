@@ -48,9 +48,9 @@ while True:
     sql_timer = "SELECT tijd FROM timer WHERE mobielId = 1"
     mycursor.execute(sql_timer)
     for x in mycursor:
+        #de tijd uit de DB wordt omgezet naar een string
         timer = str(x[0])
-        # timer = str(x[2])
-        # print(timer)
+        #de tijd word geschreven naar de Arduino
         port.write(timer)
         if rcv:
             print(rcv) 

@@ -8,7 +8,7 @@ void setuptTimer(int daysBreak, int hoursBreak, int minutesBreak, int secondsBre
   int minutes;
   delay(3000);
 
-  //uilezen van de tijs uit de DB
+  //uilezen van de tijd uit de DB
   while (Serial.available()){
     Serial.println("ja1");
     t_hours = Serial.readStringUntil(':');

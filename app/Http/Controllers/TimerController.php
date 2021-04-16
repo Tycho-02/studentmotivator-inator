@@ -8,16 +8,19 @@ use Exception;
 
 class TimerController extends Controller
 {
+    // het ophalen van de tijd uit de db
     public function index(){
         return view('timer.index', [
             'timer' => \App\Models\Timer::first()
         ]);
     }
-
+     
     public function store(Request $request){
         $timer = \App\Models\Timer::first();
+        // het ingevulde tijd word de nieuwe timer tijd
         $timer->tijd = $request->input('tijd');        
 
+        // elke button heeft een vaste waarden.
         if($request->input('30')){
             $timer->tijd = "00:30";
         }
@@ -31,11 +34,12 @@ class TimerController extends Controller
             $timer->tijd = "01:15";
         }
         try {
+            // als de invoer goed is dan word deze opgeslagen en komt er een succes message tevoorschijn.
             $timer->save();
             return redirect('/timer')->with('success', 'Timer is succesvol aangepast.');
 
         } catch (Exception $err) {
-
+            // de gebruiker heeft iets niet goed gedaan en krijgt dit te zien door een error message
             return redirect('/timer')->with('message', 'Vul een tijd in!');
         }
         

@@ -22,7 +22,7 @@ unsigned long countdownTimeBreak = 0;
 //de pauze tijd
 int daysBreak = 0;
 int hoursBreak = 0;
-int minutesBreak = 1; //10
+int minutesBreak = 10; 
 int secondsBreak = 5;
 
 int run = 0;
@@ -112,7 +112,7 @@ void timer(boolean success){
 //punten beloning word minder voor het te vroeg weg halen van de mobiel  
   if(countdownTime != 1 && !success && verliesPunten == 0){
     // punten eraf
-    punten -= 10; 
+    punten -= 15; 
     Serial.println("pa");
     verliesPunten = 1;
     smileyVerdrietig();
@@ -145,7 +145,7 @@ void displayTime(unsigned long aTime){
 void timerBreak(int hoursBreak, int minutesBreak){
   static unsigned long lastTick = millis();  
   unsigned long currentMillis = millis();
-          
+  // de tijd gaat aftellen 
   if (currentMillis - lastTick >= 1000){
     lastTick += 1000;
     countdownTimeBreak = countdownTimeBreak - 4;
@@ -154,6 +154,7 @@ void timerBreak(int hoursBreak, int minutesBreak){
   // pauze voorbij
   if (countdownTimeBreak == 1){
     Serial.println(F("Countdown Finished"));
+    // speaker gaat af.
     speakerMAP = map(5, 800, 1023, 800, 1000);
     tone(speakerPIN, speakerMAP, 10000);
     display.printTime(0, 0, false);
